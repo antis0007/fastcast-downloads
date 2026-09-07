@@ -42,7 +42,7 @@ The public file boundary is the tracked website pages, their `src/` templates an
 
 ## Screenshots and claims
 
-The native Windows captures use the app's actual Phosphor theme and were taken from the September 7, 2026 appearance-review executable. They are unchanged captures of a development interface newer than the public preview. The social preview card is a generated brand graphic; it is not a product screenshot.
+The native Windows captures use the app's actual Phosphor theme and were taken from the September 7, 2026 appearance-review executable. They are unchanged captures of a development interface; controls can vary by configuration and version. The social preview card is a generated brand graphic; it is not a product screenshot.
 
 Read DESIGN.md for the visual direction and pre-commit critical review. Future collaboration work is identified as future work. Do not fabricate conversations, metrics, testimonials, security guarantees, or feature parity with other communication apps.
 
