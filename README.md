@@ -1,6 +1,6 @@
 # FastCast downloads
 
-Share a Windows screen or window with an Android tablet, phone, or another Windows PC.
+FastCast is building a shared place for small groups: conversations, screens, files, and plans. The downloadable development preview currently provides Windows screen sharing to Android or another Windows PC.
 
 [Visit the website](https://antis0007.github.io/fastcast-downloads/) · [Browse downloads](https://github.com/antis0007/fastcast-downloads/releases)
 
@@ -46,6 +46,23 @@ Do not include invitations, addresses, private media, typed input, or raw device
 
 GitHub Pages publishes this repository's `main` branch from `/`. The website uses static HTML, CSS, and JavaScript with no build dependencies. Push reviewed website changes to `main` to deploy. Keep `.nojekyll` in the root.
 
-The interactive cursor demo runs locally in the browser; it does not capture or stream a screen. The bandwidth graphs calculate video payload from a constant bitrate and session duration; they are not performance measurements. Motion pauses offscreen and respects reduced-motion preferences.
+The interactive community concept starts in #General with five visible destinations: Home, General, Media, Plans, and Files. Watch silently, Join conversation, Share a screen, and Leave are direct actions. Drafts, local messages, sample RSVP, and session state survive navigation within the tab and reset on reload. The demo keeps at most 16 locally composed messages per channel, with a 500-character message limit. Nothing is sent to another person. Sample files are explicitly labeled and downloadable.
+
+Chat, group presence, shared files/plans, and group sessions are product direction demonstrated locally, not shipping collaboration services. The demo never requests microphone, camera, or screen permissions. The calculator reports mathematical video payload estimates, not benchmarks. Motion is opt-in, pauses offscreen, and respects reduced-motion settings.
+
+The site uses FastCast's native charcoal/Cyan, Amber, and Phosphor color roles with square controls. Inter is hosted locally; its license is in `assets/INTER-LICENSE.txt`. Website navigation, platform downloads, setup instructions, and compatibility information remain usable without JavaScript.
 
 Download links are pinned to one matching preview release and work without JavaScript or a GitHub API request. When publishing a new preview, verify every asset and checksum before updating all platform links, sizes, version metadata, and release notes together. macOS, Linux, and iOS downloads are unavailable.
+
+## Validation
+
+No build is needed to serve the page. Development-only dependencies provide repeatable browser checks:
+
+```sh
+npm ci
+npx playwright install chromium firefox webkit
+npm run check
+npm test
+```
+
+The test script starts an isolated local server, exercises Chromium/Firefox/WebKit at 320, 390, 768, and 1440 pixels, checks keyboard operation, draft/session/file/plan behavior, text-only message rendering, 200% text, landscape, reduced motion, and no-JavaScript downloads. Axe checks WCAG A/AA rules on Chromium desktop and phone layouts. Screenshots and results go to ignored `test-results/`. Browser emulation is not physical-device or assistive-technology acceptance.
