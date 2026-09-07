@@ -1,0 +1,15 @@
+{
+  "version": "0.3.1-preview.1",
+  "tag": "v0.3.1-preview.1",
+  "label": "0.3.1 Preview 1",
+  "assets": {
+    "windows": {"url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.1-preview.1/FastCast-0.3.1-preview.1-Setup.exe", "size": "9.5 MB"},
+    "android": {"url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.1-preview.1/FastCast-0.3.1-preview.1-Android.apk", "size": "9.4 MB"},
+    "bundle": {"url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.1-preview.1/FastCast-0.3.1-preview.1-windows-android-x64.zip", "size": "15.8 MB"},
+    "checksums": {"url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.1-preview.1/SHA256SUMS.txt", "size": ""}
+  },
+  "screenshots": {
+    "windows-share": {"width": 1792, "height": 1226, "label": "Windows Share screenshot", "alt": "Actual FastCast Windows Share interface in Phosphor green, with screen and window selection, audio controls, and receiving-device invitation."},
+    "windows-compact": {"width": 1020, "height": 820, "label": "compact Windows screenshot", "alt": "Actual FastCast Share interface in a smaller Windows window using the Phosphor theme."}
+  }
+}

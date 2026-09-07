@@ -1,0 +1,23 @@
+name: Suggest an improvement
+description: Describe something your group wants to do.
+title: "[Idea] "
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: What are you trying to do?
+      description: Describe your group's task and what currently gets in the way.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: What would help?
+      description: Explain the improvement and how it would make your task easier.
+    validations:
+      required: true
+  - type: textarea
+    id: platform
+    attributes:
+      label: Platforms or other context
+      description: Optional. Do not include private invitations or personal information.

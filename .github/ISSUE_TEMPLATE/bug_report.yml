@@ -1,0 +1,33 @@
+name: Report a problem
+description: Help reproduce a problem with the app or website.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for helping improve FastCast. Reports are public. Do not include invitations, recovery codes, credentials, or personal screen content."
+  - type: input
+    id: version
+    attributes:
+      label: FastCast version
+      description: The exact version on each device, or “website”.
+    validations:
+      required: true
+  - type: textarea
+    id: devices
+    attributes:
+      label: Devices and network
+      description: Sending and viewing device, operating systems, and LAN or private-network setup. Do not post IP addresses or invitation contents.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Error message or screenshot
+      description: Optional. Remove private information before attaching anything.

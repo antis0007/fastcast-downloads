@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://antis0007.github.io/fastcast-downloads/sitemap.xml
