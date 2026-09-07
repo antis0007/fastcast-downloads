@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070809" />
+    <meta
+      name="description"
+      content="FastCast is a direct-first Windows and Android screen streamer with computer audio, voice, and optional remote control."
+    />
+    <meta name="fastcast-version" content="0.3.1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://antis0007.github.io/fastcast-downloads/" />
+    <meta property="og:title" content="FastCast — Windows and Android screen sharing" />
+    <meta
+      property="og:description"
+      content="Share a Windows screen to Android with computer audio, voice, and optional remote control."
+    />
+    <meta property="og:image" content="https://antis0007.github.io/fastcast-downloads/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="FastCast — Windows and Android screen sharing over LAN or a private network" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://antis0007.github.io/fastcast-downloads/assets/og.png" />
+    <meta name="twitter:image:alt" content="FastCast — Windows and Android screen sharing over LAN or a private network" />
+    <meta name="twitter:title" content="FastCast — Windows and Android screen sharing" />
+    <meta
+      name="twitter:description"
+      content="Direct-first Windows and Android screen streaming, available as a development preview."
+    />
+    <title>FastCast — Windows and Android screen sharing</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="FastCast home">
+        <span class="brand-mark" aria-hidden="true">F</span>
+        <span>FastCast</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#demo">Demo</a><a href="#bandwidth">Graphs</a>
+        <a data-repo-path="/blob/main/README.md#setup" href="#documentation">Docs</a>
+        <a class="nav-cta" href="#downloads">Download</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> Development preview · <span data-fastcast-version data-prefix="v">v0.3.1</span></div>
+          <h1>Your screen.<br /><span>On their device.</span></h1>
+          <p class="hero-lede">
+            Share a screen or window with computer audio, voice, and optional remote controls over LAN or an existing private network.
+          </p>
+          <div class="hero-actions" id="download">
+            <a class="button button-primary" href="#downloads">
+              <span>Get FastCast</span>
+              <span class="button-arrow" aria-hidden="true">↓</span>
+            </a>
+            <a class="button button-secondary" href="#demo">
+              Try the demo
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <p class="download-note">Matched Windows + Android builds · Unsigned Windows preview · Debug-signed Android APK</p>
+
+          <div class="requirements" aria-label="System requirements">
+            <div>
+              <span class="requirement-label">Sender</span>
+              <strong>Windows PC</strong>
+            </div>
+            <div>
+              <span class="requirement-label">Receiver</span>
+              <strong>Android 8+ or Windows</strong>
+            </div>
+            <div>
+              <span class="requirement-label">Connection</span>
+              <strong>LAN or private mesh</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-stage" aria-label="Illustrative interface preview of the FastCast Windows sender and Android receiver">
+          <canvas class="signal-field" data-signal-field aria-hidden="true"></canvas>
+          <div class="field-hud" aria-hidden="true">
+            <span class="field-index">WINDOWS SENDER</span>
+            <span class="field-coordinate">ANDROID RECEIVER</span>
+            <i class="field-node node-a"></i>
+            <i class="field-node node-b"></i>
+            <i class="field-node node-c"></i>
+          </div>
+          <div class="desktop-window">
+            <div class="window-titlebar">
+              <div class="window-brand">
+                <span class="mini-mark">F</span>
+                <span>
+                  <strong>FastCast</strong>
+                  <small>SCREEN SHARING</small>
+                </span>
+              </div>
+              <div class="window-state"><span></span> READY</div>
+            </div>
+            <div class="organization-strip">
+              <span>GUILD</span> Home <i>/</i> <span>ROOM</span> <b># living-room</b>
+              <small>LOCAL ORGANIZATION</small>
+            </div>
+            <div class="console-grid">
+              <aside class="console-sidebar">
+                <label>GUILDS</label>
+                <button class="selected">Home</button>
+                <button>Studio</button>
+                <label>ROOMS</label>
+                <button class="selected"># living-room</button>
+                <button># workshop</button>
+                <div class="lane-status">
+                  <span><i class="ok"></i> SCREEN <b>READY</b></span>
+                  <span><i class="ok"></i> AUDIO <b>READY</b></span>
+                  <span><i></i> VOICE <b>OFF</b></span>
+                </div>
+              </aside>
+              <div class="console-main">
+                <div class="share-row">
+                  <div><small>SHARING CONTROL</small><strong>Ready to share</strong></div>
+                  <button>Start sharing</button>
+                </div>
+                <div class="console-card pair-card">
+                  <div class="card-heading">
+                    <span>DEVICE INVITATION</span>
+                    <small>From Android: Share invite</small>
+                  </div>
+                  <div class="pair-control"><code>Invitation</code><button>Import</button></div>
+                </div>
+                <div class="console-card compact-card">
+                  <div class="card-heading">
+                    <span>DESTINATION</span>
+                    <small>Receiver connection</small>
+                  </div>
+                  <div class="destination-row">
+                    <span><i class="radio checked"></i> Same network</span>
+                    <span><i class="radio"></i> Private network</span>
+                    <b>Home / #living-room</b>
+                  </div>
+                </div>
+                <div class="console-card stream-card">
+                  <div class="card-heading">
+                    <span>STREAM</span>
+                    <small>GPU capture and quality controls</small>
+                  </div>
+                  <div class="settings-grid">
+                    <span><small>PLAYBACK</small><b>Smooth · 80 ms</b></span>
+                    <span><small>QUALITY</small><b>50 Mbps</b></span>
+                    <span><small>VIDEO</small><b>60 fps · H.264 High</b></span>
+                  </div>
+                  <div class="toggles">
+                    <span><i class="toggle on"></i> Computer audio</span>
+                    <span><i class="toggle"></i> Microphone</span>
+                    <span><i class="toggle"></i> Remote controls</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="phone-preview" aria-hidden="true">
+            <div class="phone-speaker"></div>
+            <div class="phone-screen">
+              <div class="receiver-top"><span>FASTCAST</span><b>LIVE</b></div>
+              <div class="receiver-scene">
+                <div class="scene-window">
+                  <i></i><i></i><i></i>
+                  <span></span>
+                </div>
+                <div class="signal-lines"><i></i><i></i><i></i></div>
+              </div>
+              <div class="receiver-stats"><span>VIDEO</span><span>AUDIO</span><span>INPUT</span></div>
+              <div class="receiver-actions"><b>AUD ON</b><span>MIC OFF</span><span>CTRL</span></div>
+            </div>
+          </div>
+          <div class="field-telemetry" aria-hidden="true">
+            <span><small>TRANSPORT</small><b>PINNED QUIC</b></span>
+            <span><small>VIDEO</small><b>H.264</b></span>
+            <span><small>AUDIO</small><b>RELIABLE</b></span>
+          </div>
+          <p class="preview-caption">Interface illustration · example values</p>
+        </div>
+      </section>
+
+      <section class="signal-bar" aria-label="FastCast highlights">
+        <div><span>01</span><strong>Network connection</strong><small>LAN or your private mesh</small></div>
+        <div><span>02</span><strong>Encrypted connection</strong><small>Receiver certificate checked</small></div>
+        <div><span>03</span><strong>Computer audio</strong><small>Dedicated reliable stream</small></div>
+        <div><span>04</span><strong>Optional voice and input</strong><small>Voice and controls begin off</small></div>
+      </section>
+
+
+      <section class="section downloads-section" id="downloads">
+        <div class="section-intro"><p class="kicker">GET FASTCAST</p><h2>Pick your device. Start here.</h2><p>Version 0.3.1 Preview 1 · Matching apps for Windows and Android. Each button downloads the file directly.</p></div>
+        <div class="download-grid">
+          <article class="download-card"><span class="platform-symbol" aria-hidden="true">⊞</span><h3>Windows</h3><p>Send a screen or receive a stream.<br>64-bit Windows PC.</p><a class="button button-primary" data-platform="windows" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.1-preview.1/FastCast-0.3.1-preview.1-Setup.exe">Download Windows <span aria-hidden="true">↓</span></a><small>EXE installer · 9.5 MB · Unsigned preview</small></article>
+          <article class="download-card"><span class="platform-symbol" aria-hidden="true">▯</span><h3>Android</h3><p>Your phone or tablet, connected.<br>Android 8 or newer.</p><a class="button button-primary" data-platform="android" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.1-preview.1/FastCast-0.3.1-preview.1-Android.apk">Download Android <span aria-hidden="true">↓</span></a><small>APK · 9.4 MB · Debug-signed preview</small></article>
+          <article class="download-card"><span class="platform-symbol" aria-hidden="true">⇄</span><h3>Both, together</h3><p>Portable Windows app + Android APK.<br>Includes USB update helpers.</p><a class="button button-secondary" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.1-preview.1/FastCast-0.3.1-preview.1-windows-android-x64.zip">Download bundle <span aria-hidden="true">↓</span></a><small>ZIP archive · 15.8 MB · Extract before use</small></article>
+        </div>
+        <div class="download-foot"><p>macOS, Linux, and iOS downloads are not available.</p><a href="https://github.com/antis0007/fastcast-downloads/releases/tag/v0.3.1-preview.1">Release notes ↗</a><a href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.1-preview.1/SHA256SUMS.txt">SHA-256 checksums ↓</a></div>
+        <p class="fine-print">Windows may show SmartScreen because this preview is unsigned. Android requires permission to install this APK. Use matching builds on a LAN or reachable private network; automatic public internet connections are still in development.</p>
+      </section>
+
+      <section class="section demo-section" id="demo">
+        <div class="section-intro"><p class="kicker">INTERACTIVE DEMO</p><h2>A little motion. A shared moment.</h2><p>Try an animated cursor effect and mirror it to a second display. Move your pointer or drag inside the scene.</p></div>
+        <div class="demo-toolbar" role="group" aria-label="Demo effects"><button class="effect-button is-selected" data-effect="signal" aria-pressed="true">Signal</button><button class="effect-button" data-effect="orbit" aria-pressed="false">Orbit</button><button class="effect-button" data-effect="ribbon" aria-pressed="false">Ribbon</button><button class="effect-button" id="demo-pause" aria-pressed="false">Pause motion</button><button class="effect-button mirror-button" id="demo-mirror" aria-pressed="true">Mirroring on</button></div>
+        <div class="demo-displays"><div class="demo-display"><div class="demo-display-heading"><span>01 / YOUR SCREEN</span><span class="demo-state">LOCAL DEMO</span></div><canvas id="demo-source" aria-label="Interactive cursor effects canvas; choose an effect with the buttons above"></canvas></div><div class="demo-display"><div class="demo-display-heading"><span>02 / THEIR DEVICE</span><span id="mirror-status">MIRRORING</span></div><canvas id="demo-receiver" aria-label="Illustrative mirrored cursor effects"></canvas></div></div>
+        <p class="fine-print">Browser illustration, not a live FastCast stream or latency benchmark. No screen, microphone, camera, or network connection is requested. Native app effects may differ.</p>
+        <noscript><p>Enable JavaScript to try the effects and adjust the graphs. Downloads work without JavaScript.</p></noscript>
+      </section>
+
+      <section class="section bandwidth-section" id="bandwidth">
+        <div class="section-intro"><p class="kicker">EXPLORE THE NUMBERS</p><h2>What does a stream transfer?</h2><p>Adjust the video bitrate and duration to see the payload estimate. A direct route keeps media between your devices.</p></div>
+        <div class="bandwidth-layout"><div class="model-controls"><label for="bitrate">Video bitrate <output id="bitrate-value" for="bitrate">20 Mbps</output></label><input id="bitrate" type="range" min="5" max="80" step="5" value="20"><label for="duration">Session length <output id="duration-value" for="duration">60 min</output></label><input id="duration" type="range" min="15" max="180" step="15" value="60"><div class="model-total"><small>ESTIMATED VIDEO PAYLOAD</small><strong id="payload-total">9.00 GB</strong><span>one sender → one viewer</span></div></div>
+        <div class="graph-panel"><h3>Cumulative video payload</h3><svg id="payload-graph" viewBox="0 0 560 220" role="img" aria-labelledby="graph-title graph-description"><title id="graph-title">Cumulative video payload estimate</title><desc id="graph-description">At 20 megabits per second, a 60 minute session transfers an estimated 9 gigabytes of video payload.</desc><g class="graph-grid"><path d="M48 20H535M48 100H535M48 180H535M48 20V180H535"/></g><path class="graph-area" d="M48 180L535 20V180Z"/><path class="graph-line" d="M48 180L535 20"/><text x="8" y="185">0</text><text id="graph-max" x="8" y="24">9 GB</text><text x="48" y="210">0 min</text><text id="graph-time" x="475" y="210">60 min</text></svg><h3>Media through a server</h3><div class="comparison-row"><span>Direct route</span><div class="comparison-track"><i class="direct-marker"></i></div><b>0 GB</b></div><div class="comparison-row"><span>Full relay model</span><div class="comparison-track"><i class="relay-bar"></i></div><b id="relay-total">9.00 GB</b></div><p class="fine-print">Hypothetical relay egress for comparison. FastCast does not currently provide a managed media relay. An external private mesh may use its own relay.</p></div></div>
+        <details class="model-details"><summary>How this estimate works</summary><p>Decimal GB = Mbps × 60 × minutes ÷ 8,000. Assumes a constant video bitrate and one viewer. Excludes audio, protocol overhead, retransmissions, and coordination traffic. The direct-route bar counts media server egress only; your devices still transfer the video. These are calculations, not measured performance or a cloud bill.</p></details>
+      </section>
+
+      <section class="section how" id="how-it-works">
+        <div class="section-intro">
+          <p class="kicker">SETUP</p>
+          <h2>Install and connect</h2>
+          <p>
+            Use matching apps on a shared LAN or an existing reachable private network. Windows prefers NVIDIA NVENC and uses CPU H.264 on other supported PCs.
+          </p>
+        </div>
+        <ol class="steps">
+          <li>
+            <span class="step-number">01</span>
+            <div><h3>Download the bundle</h3><p>Get the Windows app and matching Android APK from the same preview release. Check the signing notes and requirements before installing.</p></div>
+          </li>
+          <li>
+            <span class="step-number">02</span>
+            <div><h3>Install both sides</h3><p>Extract the ZIP and run Install FastCast.cmd on Windows. Open the APK on Android, or use Update connected devices.cmd from the bundle over USB.</p></div>
+          </li>
+          <li>
+            <span class="step-number">03</span>
+            <div><h3>Import an invitation</h3><p>On Android, select Share invite. Import it on the PC, choose a screen or window, then select Start sharing.</p></div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section console-section">
+        <div class="section-intro narrow">
+          <p class="kicker">CONTROLS</p>
+          <h2>Source, audio, and permissions</h2>
+          <p>
+            Choose the source and permissions on Windows. Adjust playback volume, microphone,
+            zoom, and granted remote controls on Android.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <div class="feature-icon">60</div>
+            <h3>Video settings</h3>
+            <p>Set frame rate, H.264 profile, bitrate, and playback buffering.</p>
+          </article>
+          <article>
+            <div class="feature-icon audio-bars"><i></i><i></i><i></i><i></i></div>
+            <h3>Audio controls</h3>
+            <p>Enable computer audio, the PC microphone, and viewer voice separately. Microphones start off.</p>
+          </article>
+          <article>
+            <div class="feature-icon control-icon">⌁</div>
+            <h3>Remote input</h3>
+            <p>Enable mouse, keyboard, or gamepad input for each session. Revoke input on the PC with Ctrl+Alt+Shift+F12.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section status-section" id="status">
+        <div class="status-copy">
+          <p class="kicker">DEVELOPMENT STATUS</p>
+          <h2>Development preview</h2>
+          <p>
+            Windows sending and Android/Windows receiving are implemented. Long-session acceptance and
+            off-LAN regression remain open. Automatic public internet connections are not implemented.
+          </p>
+          <a class="text-link" data-repo-path="/blob/main/README.md#status" href="#documentation">Read the implementation status <span>→</span></a>
+        </div>
+        <div class="status-board" id="availability">
+          <div class="status-heading"><span>DEVELOPMENT PREVIEW · <span data-fastcast-version>0.3.1</span></span><b>BUILD STATUS</b></div>
+          <div class="status-row"><span><i class="ok"></i> Windows GPU / CPU sender</span><b class="ready">IMPLEMENTED</b></div>
+          <div class="status-row"><span><i class="ok"></i> Android and Windows receiving</span><b class="ready">IMPLEMENTED</b></div>
+          <div class="status-row"><span><i class="ok"></i> Private invitations + pinned QUIC</span><b class="ready">IMPLEMENTED</b></div>
+          <div class="status-row"><span><i class="testing"></i> Voice + remote control</span><b class="verify">VERIFYING</b></div>
+          <div class="status-row"><span><i></i> Managed public relay</span><b>PLANNED</b></div>
+          <div class="status-row"><span><i></i> Signed Windows installer</span><b>RELEASE GATE</b></div>
+          <p>Current beta packages may trigger Windows SmartScreen until code signing is in place.</p>
+        </div>
+      </section>
+
+      <section class="final-cta" id="documentation">
+        <div>
+          <p class="kicker">DOWNLOAD</p>
+          <h2>Windows and Android apps</h2>
+          <p>Use matching builds on the same LAN or private network. Create the invitation on the viewing device.</p>
+        </div>
+        <a class="button button-primary" href="#downloads">
+          Download FastCast <span class="button-arrow" aria-hidden="true">↓</span>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="#top"><span class="brand-mark">F</span><span>FastCast</span></a>
+      <p>Windows and Android screen sharing.</p>
+      <div>
+        <a data-repo-path="" href="#documentation">GitHub</a>
+        <a data-repo-path="/blob/main/README.md#status" href="#status">Status</a>
+        <a data-repo-path="/blob/main/LICENSE" href="#documentation">License</a>
+      </div>
+    </footer>
+
+    <script src="repository.js"></script>
+    <script src="app.js"></script>
+    <script src="experience.js"></script>
+  </body>
+</html>
