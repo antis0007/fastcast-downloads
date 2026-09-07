@@ -1,0 +1,28 @@
+<section class="page-hero wrap">
+  <p class="eyebrow">Bandwidth / A transparent calculation</p>
+  <h1>Free to use.<br><span>Real data in motion.</span></h1>
+  <p class="lede">Estimate the video payload of one screen-sharing session. See why a direct connection can avoid a central relay bill while still using your devices and network.</p>
+</section>
+<section class="wrap bandwidth-calculator" aria-labelledby="calculator-title">
+  <div class="calculator-controls"><p class="eyebrow">One sender · One viewer</p><h2 id="calculator-title">Plan your session.</h2>
+    <fieldset id="bandwidth-controls" disabled><legend class="sr-only">Video payload assumptions</legend>
+      <label for="bitrate">Video bitrate <span id="bitrate-value">12 Mbps</span></label><input type="range" id="bitrate" min="1" max="50" step="1" value="12">
+      <p class="input-help">A bitrate assumption, not measured app performance.</p>
+      <label for="duration">Session length <span id="duration-value">60 minutes</span></label><input type="range" id="duration" min="5" max="240" step="5" value="60">
+      <p class="input-help">5 minutes to 4 hours.</p>
+      <button type="button" class="text-button" id="reset-bandwidth">Reset example ↺</button>
+    </fieldset>
+    <noscript><p class="note">The example below is 12 Mbps for 60 minutes. Enable JavaScript to change the assumptions.</p></noscript>
+  </div>
+  <div class="calculator-result"><p class="eyebrow">Estimated video payload, one way</p><p class="big-result"><strong id="payload-value">5.40</strong> <span>GB</span></p><p id="payload-description">60 minutes at 12 Mbps, for one viewer.</p>
+    <canvas hidden id="payload-chart" width="720" height="260" role="img" aria-label="Cumulative video payload rises linearly from zero to 5.40 GB over 60 minutes. Exact values are in the table below."></canvas>
+    <p class="chart-caption">Calculated traffic over time · decimal GB · not stored data</p>
+  </div>
+</section>
+<section class="wrap traffic-summary" aria-label="Where the estimated data goes">
+  <article><span>YOUR SENDER UPLOAD</span><strong data-payload>5.40 GB</strong><p>Video leaving the sharing PC.</p></article><article><span>YOUR VIEWER DOWNLOAD</span><strong data-payload>5.40 GB</strong><p>The same video arriving at the viewer.</p></article><article><span>FASTCAST RELAY TRAFFIC</span><strong>0 GB</strong><p>For a direct peer route; no FastCast relay is involved.</p></article>
+</section>
+<p class="wrap note" id="calculator-status" role="status" aria-live="polite"></p>
+<section class="section wrap"><div class="section-heading"><div><p class="eyebrow">Why the route matters</p><h2>A relay adds a server’s traffic.<br>It does not erase yours.</h2></div><p>Generic one-to-one relay model. This is not a measurement of Discord, Teams, or a particular hosting bill.</p></div><div class="relay-comparison"><article><span class="tag">DIRECT PEER ROUTE</span><h3>Sender → viewer</h3><p>Sender uploads <b data-payload>5.40 GB</b>. Viewer downloads that same payload. No central relay needs to receive and forward it.</p></article><article><span class="tag neutral">HYPOTHETICAL MEDIA RELAY</span><h3>Sender → relay → viewer</h3><p>The relay receives <b data-payload>5.40 GB</b> and sends <b data-payload>5.40 GB</b>: <b id="relay-total">10.80 GB</b> combined ingress and egress. Provider billing can count these differently.</p></article></div></section>
+<section class="section wrap calculation-details"><div><p class="eyebrow">Check the arithmetic</p><h2>Every assumption,<br>in the open.</h2><p><code>GB = Mbps × minutes × 0.0075</code></p><p>One megabit is 1,000,000 bits; eight bits make one byte. Multiply by 60 seconds per minute and divide by 1,000,000,000 bytes per decimal GB.</p><p>The model assumes a constant video bitrate. It excludes audio, protocol overhead, retransmissions, error-correction traffic, and VPN overhead. Actual traffic can be higher; variable encoding changes the result. Upload and download are the same payload counted at different endpoints.</p></div><div><table class="support-table"><caption>Calculated cumulative video payload</caption><thead><tr><th scope="col">Elapsed</th><th scope="col">One-way payload</th></tr></thead><tbody id="payload-table"><tr><td>0 min</td><td>0.00 GB</td></tr><tr><td>15 min</td><td>1.35 GB</td></tr><tr><td>30 min</td><td>2.70 GB</td></tr><tr><td>45 min</td><td>4.05 GB</td></tr><tr><td>60 min</td><td>5.40 GB</td></tr></tbody></table></div></section>
+<section class="closing-cta wrap"><div><h2>Know the cost of the connection.</h2><p>Then try a matching preview on your own devices.</p></div><a class="button primary" href="downloads.html">Download free ↓</a></section>

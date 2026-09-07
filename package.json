@@ -4,8 +4,8 @@
   "private": true,
   "description": "Static FastCast website with native app screenshots and verified downloads",
   "scripts": {
-    "test": "node tests/check-site.cjs",
-    "check": "node --check site.js && node --check tests/check-site.cjs",
+    "test": "node tests/bandwidth.cjs && node tests/check-site.cjs",
+    "check": "node --check site.js && node --check bandwidth.js && node --check tests/check-site.cjs",
     "build": "python scripts/build-site.py"
   },
   "devDependencies": {

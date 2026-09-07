@@ -12,11 +12,13 @@ The website is static HTML, CSS, and optional JavaScript. Navigation, direct dow
 - Keep verified public release links in `src/release.json`. Do not point to an unpublished version.
 - Run `npm run build` with Python 3 installed and commit the generated root HTML, sitemap, and robots file alongside their sources. GitHub Pages serves those root files without a server build.
 - Development checks: `npm ci`, `npx playwright install chromium firefox webkit`, `npm run check`, `python scripts/check-links.py`, and `npm test`.
-- Browser checks cover all ten pages at four widths, enlarged text, image loading, no-JavaScript access, keyboard image dismissal, help search, Android download selection, and automated accessibility. They do not qualify native streaming.
+- Browser checks cover all fourteen pages at four widths, enlarged text, image loading, no-JavaScript access, keyboard image dismissal, help search, Android download selection, calculator interactions, and automated accessibility. They do not qualify native streaming.
 
 ## Screenshots and claims
 
-The native Windows captures use the app's actual Phosphor theme and were taken from the September 7, 2026 appearance-review executable. They are unchanged captures of a development interface newer than the public preview. The social preview card is a generated brand graphic; it is not a product screenshot.
+The native Windows captures use the app's default Cyan theme and were taken from the September 7, 2026 appearance-review executable. They capture the client area directly, excluding the operating-system title bar. They are unchanged captures of a development interface newer than the public preview. The social preview card is a generated brand graphic; it is not a product screenshot.
+
+The transparency pages explain the current peer route, cost ownership, and documented data practices. The bandwidth calculator is a constant-rate payload estimate with an accessible table and a no-JavaScript example. It is not a benchmark or a measurement of another app. Discord figures are historical and source-linked; retention periods have different triggers and must not be presented as a universal rule for all data.
 
 Read DESIGN.md for the visual direction and pre-commit critical review. Future collaboration work is identified as future work. Do not fabricate conversations, metrics, testimonials, security guarantees, or feature parity with other communication apps.
 

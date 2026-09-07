@@ -1,38 +1,50 @@
-# FastCast website
+# FastCast website design and evidence
 
-Show the implemented app. The former community concept, fictional conversations, simulated calls, and illustrative performance graphs have been removed.
+## Current direction — September 7, 2026
 
-The screenshots are unaltered native Windows appearance-review captures from September 7, 2026. Their captions distinguish this development interface from the downloadable 0.3.1 preview. Screenshots establish appearance, not streaming reliability.
+Use the native app's default Cyan accent (#6bc9ff), near-black surfaces, square controls, visible navigation, and unaltered native screenshots. Reserve blue primarily for actions, selected information, and diagram values. Keep paragraphs narrow enough to read comfortably, use consistent section spacing, and allow navigation and figures to reflow on phones and with enlarged text.
 
-Use the native app's dark surfaces, square controls, restrained cyan accent, and visible navigation. Downloads and setup work without JavaScript. Keep platform availability and release limitations beside downloads. Do not advertise planned collaboration features or use fabricated metrics.
+The website explains today's Windows/Android screen-sharing preview and the smaller-group direction. It does not advertise full Discord or Teams replacement parity. Free/no-subscription wording describes the current offer. Screenshots show the development interface, newer than the public 0.3.1 preview, and establish appearance rather than native streaming reliability.
 
-Validation: Chromium, Firefox, and WebKit at 320, 390, 768, and 1440 pixels; keyboard screenshot navigation; JavaScript disabled; enlarged text; automated accessibility checks. These checks cover the website, not native streaming or hardware behavior.
+## Alternatives reviewed
 
-## Visual direction selection
+The earlier direction review compared an illustrated social-app page, a plain utility page, and a black/green product showcase. The social illustration depended on fictional scenes; the utility page lacked hierarchy. Black/green retained the original site's identity. Three challengers followed: retro terminal styling was too technical; aurora/glass competed with the interface; a restrained editorial layout improved reading order and was retained.
 
-Criteria: show the real app, recover the original green/black character, welcome nontechnical small groups, make downloads obvious, and stay readable on phones.
+For this refinement, three accent variants were rendered with the same real native screenshot:
 
-Round one:
-- Illustrated social-app page: rejected. It would depend on invented product scenes and compete with the native interface.
-- Plain native utility page: rejected after rendering. Honest but flat, with weak hierarchy and little identity.
-- Black and green product showcase: retained. It connects to the original site and frames real screenshots well.
+- Default Cyan: selected. Actions, screenshots, and diagrams share the app's visual language.
+- Phosphor green: retains the old site's charm, but creates a competing accent beside the default blue app.
+- Amber: legible and distinct, but reads like a warning colour and gives the product less visual continuity.
 
-Three challengers:
-- Retro terminal: rejected. Console styling and dense technical labels would make this feel like an infrastructure tool.
-- Colourful aurora/glass: rejected. More atmosphere, but decorative colour and glass panels compete with the product.
-- Restrained editorial composition: retained and combined with the black/green candidate. A split hero, real screenshot, quiet platform strip, and direct download rows establish the reading order.
+The resulting design keeps dark signal-line decoration from the earlier site, with a calmer blue editorial layout. Decorative lines are not telemetry. Motion is finite, reduced-motion aware, and disabled on narrow screens.
 
-Selected direction: near-black surfaces, phosphor green primary actions and brand detail, neutral supporting text, square controls, and a large unaltered native screenshot. Decorative signal lines are not telemetry. Their animation is finite, disabled on small screens, and respects reduced motion. The screenshot keeps its native colours. No fake performance figures, community conversations, or interactive app substitute.
+Structural references: [Discord](https://discord.com/) for clear social purpose and direct downloads, and [Signal](https://signal.org/) for straightforward product explanations. These are references for visitor tasks, not claims about FastCast features.
 
-Reference review: Discord (https://discord.com/) for its clear social purpose and download action; Signal (https://signal.org/) for straightforward product explanation. These are structural references, not feature or visual claims about FastCast.
+## Information architecture
 
+Home introduces the implemented app and offers direct Windows and Android downloads. Product, Downloads, Getting started, Platforms, Community, Help, Releases, Privacy, and the custom 404 retain distinct practical purposes. Four transparency pages answer additional questions:
 
-## September 7: complete product website and critical review
+- Why FastCast: why independence from large platforms matters, what people can try today, and what remains future work.
+- How it works: the peer media route, the viewer's role, who provides each resource, and connections beyond the media path.
+- Bandwidth: a controllable, constant-rate video-payload estimate with endpoint and hypothetical relay accounting.
+- Data and privacy: source-linked Discord data categories, historical platform-wide message scale, and selected retention periods with their actual triggers.
 
-Use the native Phosphor accent (#89e09d) for primary actions and a limited amount of brand detail. New screenshots come directly from the native review executable with that theme selected. The generated social card is separate brand artwork.
+Navigation, downloads, screenshots, and FAQs work without JavaScript. The calculator has a fixed example and exact table without JavaScript; enabled controls support keyboard use and announce updated results. No analytics, remote fonts, browser persistence, runtime frameworks, or billing forms were added.
 
-The information architecture separates Product, Downloads, Getting started, Platforms, Community, Help, Releases, and Privacy. The home page introduces the app and provides both platform downloads directly. There is also a contextual 404 page. Navigation remains visible on narrow screens.
+## Claims and sources
 
-The pre-commit review judged the site by visitor tasks: understand the current product and price, inspect the real interface, download the correct package, complete setup, recover from failure, and contribute feedback. Changes made after that review: removed the repeated compact screenshot and duplicate pricing pitch from the home page; changed hero downloads from a second page to direct files; fixed mobile navigation wrapping; promoted the Android package on Android; retained distinct practical support pages.
+Network traffic is not retained personal data. The calculator uses decimal GB = Mbps × minutes × 0.0075, excludes overhead and audio, and describes one sender/viewer. Both endpoints transfer the same video payload. A hypothetical relay receives and forwards it; provider billing varies. This is neither a benchmark nor a claim that FastCast reduces a user's traffic relative to Discord.
 
-The extra pages earn their place by answering different questions, not by implying organizational scale. No testimonials, invented user counts, enterprise compliance claims, or speculative feature demos are included. The present website can explain and distribute the preview. It does not establish native launch readiness or replacement parity with Discord or Teams. The remaining product-evidence opportunity is a recorded real sharing session and observed first-time user setup, once device qualification permits it.
+Discord's [engineering report](https://discord.com/blog/how-discord-stores-trillions-of-messages) describes trillions of messages by early 2022. This is historical platform-wide scale, not a present total, a per-user estimate, or call recording. The [privacy policy](https://discord.com/privacy) and [retention explanation](https://support.discord.com/hc/en-us/articles/5431812448791-How-long-Discord-keeps-your-information) were checked September 7, 2026. The page includes relevant limits: Discord says it does not sell personal information and generally does not retain call contents. Selected retention bars use a common five-year scale, explicitly distinguish record types and triggers, and do not suggest all user data has the same retention period.
+
+FastCast's narrower scope is stated beside the comparison. There is no fabricated zero-versus-trillions graphic, testimonial, user count, security certification, or fictional community demo. Local records, GitHub requests, other network providers, and recipient recording remain visible in the explanation.
+
+## Critical review before commit
+
+Review criteria: Can a visitor understand the current product, assess the independence argument, inspect the real app, choose a supported download, start a session, and understand the costs without reading internal project history?
+
+The pass tightened the hero and reading widths, replaced the competing green accent with native blue, removed the operating-system title bar through fresh client-area captures, added practical transparency pages, and separated traffic from storage in both wording and visuals. Mobile screenshots and desktop diagrams were inspected. A narrow-screen overflow at 200% root text size was found and fixed in the payload summary; the full layout suite then passed.
+
+Validation: all fourteen pages in Chromium, Firefox, and WebKit at 320, 390, 768, and 1440 pixels, with enlarged text, loaded images, and no script errors. No-JavaScript downloads, image navigation, FAQs, and calculator example passed. Keyboard image dismissal/focus restoration, FAQ search/reset, Android download selection, calculator minimum/maximum/reset/keyboard behaviour, and automated accessibility at 390/1440 passed. Formula tests cover units, valid bounds, and invalid inputs. Local links and four published download URLs were checked.
+
+These checks support the website's usability and accuracy. They do not establish physical-device acceptance, screen-reader usability, native media reliability, enterprise readiness, or what prospective users actually prefer. A recorded genuine sharing session and observed first-time setup remain useful next evidence.

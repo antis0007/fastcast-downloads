@@ -35,7 +35,11 @@ const server = http.createServer((req, res) => {
 });
 
 async function assertNoOverflow(page, label) {
-  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `${label}: horizontal overflow`);
+  const overflow = await page.evaluate(() => {
+    if (document.documentElement.scrollWidth <= innerWidth + 1) return [];
+    return [`document width ${document.documentElement.scrollWidth}, viewport ${innerWidth}`, ...[...document.querySelectorAll('main *')].filter(el => el.getBoundingClientRect().right > innerWidth + 1).map(el => `${el.tagName}.${el.className}`).slice(0, 12)];
+  });
+  assert.deepEqual(overflow, [], `${label}: horizontal overflow: ${overflow.join(', ')}`);
 }
 
 async function checkLayouts(name, engine) {
@@ -85,6 +89,13 @@ async function checkLayouts(name, engine) {
     assert.equal(await page.locator('.help-search').isVisible(), false);
     await page.locator('summary').first().click();
     assert.ok(await page.locator('details').first().getAttribute('open') !== null);
+    await page.goto(base + 'bandwidth.html');
+    assert.ok(await page.locator('#bitrate').isDisabled());
+    assert.ok(await page.locator('#duration').isDisabled());
+    assert.ok(await page.locator('#reset-bandwidth').isDisabled());
+    assert.equal(await page.locator('#payload-value').textContent(), '5.40');
+    assert.equal(await page.locator('#payload-table tr').count(), 5);
+    assert.equal(await page.locator('#payload-chart').isVisible(), false);
     await context.close();
     console.log(`${name}: no-JavaScript downloads, image and FAQ passed`);
   } finally {
@@ -127,6 +138,27 @@ async function checkJourneysAndAccessibility() {
     await androidPage.goto(base + 'downloads.html');
     assert.ok(await androidPage.locator('[data-platform="android"] .recommendation').isVisible());
     await androidContext.close();
+
+    const calculatorContext = await browser.newContext({ viewport: { width: 390, height: 900 } });
+    const calculatorPage = await calculatorContext.newPage();
+    await calculatorPage.goto(base + 'bandwidth.html');
+    assert.equal(await calculatorPage.locator('#payload-value').textContent(), '5.40');
+    await calculatorPage.locator('#bitrate').fill('1');
+    await calculatorPage.locator('#duration').fill('5');
+    assert.equal(await calculatorPage.locator('#payload-value').textContent(), '0.04');
+    await calculatorPage.locator('#bitrate').fill('50');
+    await calculatorPage.locator('#duration').fill('240');
+    assert.equal(await calculatorPage.locator('#payload-value').textContent(), '90.00');
+    assert.equal(await calculatorPage.locator('#relay-total').textContent(), '180.00 GB');
+    await assertNoOverflow(calculatorPage, 'Maximum calculator values');
+    await calculatorPage.getByRole('button', { name: 'Reset example' }).click();
+    await calculatorPage.locator('#bitrate').focus();
+    await calculatorPage.keyboard.press('ArrowRight');
+    assert.equal(await calculatorPage.locator('#payload-value').textContent(), '5.85');
+    assert.match(await calculatorPage.locator('#payload-chart').getAttribute('aria-label'), /5.85 GB/);
+    assert.equal(await calculatorPage.locator('#payload-table tr').last().textContent(), '60 min5.85 GB');
+    await calculatorContext.close();
+    console.log('Calculator units, bounds, relay totals, keyboard input, reset and accessible table passed');
 
     for (const width of [390, 1440]) {
       const context = await browser.newContext({ viewport: { width, height: 1000 } });
