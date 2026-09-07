@@ -103,7 +103,7 @@ def render(slug, title, description):
   </header>
   <main id="main" tabindex="-1">{body}</main>
   <footer class="site-footer wrap">
-    <div class="footer-intro"><a class="brand" href="index.html">FastCast</a><p>Your screen. Your connection.</p><p class="small-copy">Free to use. No subscriptions in the current preview.</p></div>
+    <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img src="assets/logo-lockup.png" width="512" height="512" alt="" loading="lazy"></a><p>Your screen. Your connection.</p><p class="small-copy">Free to use. No subscriptions in the current preview.</p></div>
     <nav aria-label="Product links"><h2>Product</h2>{link('product','Overview',slug)}{link('downloads','Downloads',slug)}{link('platforms','Platforms',slug)}{link('releases','Release notes',slug)}</nav>
     <nav aria-label="Resources"><h2>Resources</h2>{link('get-started','Getting started',slug)}{link('help','Help & FAQ',slug)}{link('community','Community',slug)}{link('privacy','Privacy & sharing',slug)}</nav>
     <nav aria-label="Transparency"><h2>Transparency</h2>{link('why-fastcast','Why FastCast',slug)}{link('how-it-works','How it works',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
