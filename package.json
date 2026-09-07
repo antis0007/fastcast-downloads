@@ -2,10 +2,10 @@
   "name": "fastcast-public-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Static FastCast website and browser-only community concept",
+  "description": "Static FastCast website with native app screenshots and verified downloads",
   "scripts": {
     "test": "node tests/check-site.cjs",
-    "check": "node --check app.js && node --check experience.js"
+    "check": "node --check tests/check-site.cjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",

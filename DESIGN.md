@@ -1,42 +1,27 @@
-# FastCast website and small-group experience
+# FastCast website
 
-Reviewed September 7, 2026. This document describes the website and its local concept demo. It does not claim that the collaborative backend is implemented.
+Show the implemented app. The former community concept, fictional conversations, simulated calls, and illustrative performance graphs have been removed.
 
-## Product direction
+The screenshots are unaltered native Windows appearance-review captures from September 7, 2026. Their captions distinguish this development interface from the downloadable 0.3.1 preview. Screenshots establish appearance, not streaming reliability.
 
-The center of the product is a conversation with an attached session: see your friends, read and reply, watch quietly or join, share something, and find it later. The audience is a small group of people who already know each other. The website presents that direction while separating it from the downloadable Windows/Android screen-sharing preview.
+Use the native app's dark surfaces, square controls, restrained cyan accent, and visible navigation. Downloads and setup work without JavaScript. Keep platform availability and release limitations beside downloads. Do not advertise planned collaboration features or use fabricated metrics.
 
-Patchbay supplies the concrete information architecture: Home, General, Media, Plans, and Files. FastCast supplies the native visual contract: charcoal surfaces, Cyan/Amber/Phosphor accents, square controls, readable prose, and restrained monospace metadata. No group/category/channel cascade is required in the demo. On narrow screens, the five destinations reflow into visible navigation rather than disappearing into a drawer.
+Validation: Chromium, Firefox, and WebKit at 320, 390, 768, and 1440 pixels; keyboard screenshot navigation; JavaScript disabled; enlarged text; automated accessibility checks. These checks cover the website, not native streaming or hardware behavior.
 
-## Reference comparison
+## Visual direction selection
 
-These are design judgments drawn from the referenced public pages and the existing Patchbay prototype, not measured comparative usability results.
+Criteria: show the real app, recover the original green/black character, welcome nontechnical small groups, make downloads obvious, and stay readable on phones.
 
-| Reference | Useful pattern | FastCast application |
-| --- | --- | --- |
-| [Discord](https://discord.com/) | The central story is friends spending time together: conversation, watching, and joining casually. | Lead with the group; keep a session attached to conversation and separate watching from joining. |
-| [Signal](https://signal.org/) | Explain communication benefits plainly and make platform availability clear. | Readable copy, deliberate participation, explicit download/support information; no borrowed privacy or security guarantees. |
-| [Element](https://element.io/en) | Communication and collaboration share a coherent product story. | Keep files, plans, and conversations connected while targeting a smaller, simpler group model. |
-| [Linear](https://linear.app/) | Product examples explain workflows instead of relying only on feature slogans. | The hero is an interactive conversation with functional local state and concrete objects. |
-| [Raycast](https://www.raycast.com/) | Recognizable tasks and controls give the product a distinct identity. | Direct Watch, Join, Share, and Leave controls; native FastCast colors and typography. |
-| [LocalSend](https://localsend.org/) | Purpose, setup, and platform support are easy to identify. | Keep the supported sender/viewer combinations and setup steps near downloads. |
-| [Tailscale downloads](https://tailscale.com/download) | Platform-specific installation paths are explicit. | One direct Windows download and one direct Android download, plus the matched bundle. Unsupported platforms have no misleading buttons. |
+Round one:
+- Illustrated social-app page: rejected. It would depend on invented product scenes and compete with the native interface.
+- Plain native utility page: rejected after rendering. Honest but flat, with weak hierarchy and little identity.
+- Black and green product showcase: retained. It connects to the original site and frames real screenshots well.
 
-## What changed
+Three challengers:
+- Retro terminal: rejected. Console styling and dense technical labels would make this feel like an infrastructure tool.
+- Colourful aurora/glass: rejected. More atmosphere, but decorative colour and glass panels compete with the product.
+- Restrained editorial composition: retained and combined with the black/green candidate. A split hero, real screenshot, quiet platform strip, and direct download rows establish the reading order.
 
-- Replaced the decorative particle demo and duplicate screen mockups with a conversation-first community concept.
-- Removed the standalone screen/viewer selection sequence from the primary demonstration. Sharing uses an inline choice of two sample sources, with no nested menus.
-- Preserved the meaning of channels, media, plans, and files. A sample file returns to its originating conversation or plan.
-- Added bounded local message composition, per-channel drafts, a sample RSVP, and session continuity across navigation. Input is rendered as text, never interpreted as HTML.
-- Made all everyday actions visible and usable with keyboard and touch. No hover-only controls, automatic microphone activation, or global motion loop.
-- Reorganized the remaining page around the product direction, current downloads, setup, compatibility, and a bandwidth calculator with explicit assumptions.
-- Removed the hypothetical relay-savings graphic. The retained graph responds to bitrate and duration on a stable vertical scale that expands for larger values.
-- Hosted the shared Inter font locally and retained its license. No production JavaScript framework or analytics dependency was added.
+Selected direction: near-black surfaces, phosphor green primary actions and brand detail, neutral supporting text, square controls, and a large unaltered native screenshot. Decorative signal lines are not telemetry. Their animation is finite, disabled on small screens, and respects reduced motion. The screenshot keeps its native colours. No fake performance figures, community conversations, or interactive app substitute.
 
-## Reality and validation
-
-The group is fictional. Messages and drafts stay in the page's memory, reset on reload, and are not delivered remotely. Community presence, plans, shared files, and group sessions remain product direction. Download links point to the existing 0.3.1 Preview 1 screen-sharing packages.
-
-The browser suite covers Chromium, Firefox, and WebKit; 320/390/768/1440-pixel layouts; desktop and phone-sized 200% text; phone landscape; keyboard operation; reduced motion; no-JavaScript access; and key community interactions. Automated accessibility scans cover Chromium phone and desktop layouts. Screenshots are reviewed as part of the development pass. These checks do not prove real phone keyboard behavior, screen-reader usability, native playback, or a working communications service.
-
-The next usability check is a small friend-group task session: find a shared screen, watch without joining voice, reply while watching, locate a file, and return to the conversation. Record completion and confusion rather than declaring the design perfect.
+Reference review: Discord (https://discord.com/) for its clear social purpose and download action; Signal (https://signal.org/) for straightforward product explanation. These are structural references, not feature or visual claims about FastCast.
