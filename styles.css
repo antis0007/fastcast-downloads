@@ -41,9 +41,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 .announcement a { color: var(--muted); text-decoration: none; }
 .status-dot { display: inline-block; width: 5px; height: 5px; margin-right: 8px; vertical-align: middle; background: var(--accent); }
 .site-header { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 20px; border-bottom: 1px solid var(--line); }
-.brand { display: inline-flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 650; text-decoration: none; letter-spacing: -.04em; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand-mark { width: 32px; height: 32px; flex: none; }
+.brand-wordmark { display: block; height: 22px; width: auto; }
 .site-header nav { display: flex; align-items: center; gap: 26px; }
-.site-header > .brand { margin-right: auto; }
+.site-header > .brand { margin-right: auto; min-width: 0; }
 .site-header nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; text-decoration: none; }
 [aria-current="page"] { color: var(--accent); }
 .button { display: inline-flex; justify-content: center; align-items: center; gap: 20px; min-height: 48px; padding: 11px 22px; border: 1px solid #516173; color: var(--text); background: transparent; font-size: 14px; font-weight: 600; text-decoration: none; }
@@ -66,6 +68,8 @@ h3 { font-size: 17px; line-height: 1.4; font-weight: 580; letter-spacing: -.02em
 .hero { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.2fr); gap: 56px; align-items: center; padding-block: 64px 56px; }
 .hero .lede { max-width: 420px; font-size: 15px; }
 .hero .eyebrow { font-size: 9px; }
+.hero-wizard { display: block; width: min(148px, 46vw); height: auto; margin-bottom: 22px; }
+.downloads-hero .hero-wizard { width: min(120px, 38vw); margin-bottom: 18px; }
 .product-stage { position: relative; min-width: 0; }
 .image-label { position: relative; display: flex; justify-content: space-between; gap: 12px; margin-bottom: 14px; color: var(--quiet); font: 9px/1.5 Consolas, monospace; letter-spacing: .12em; }
 .screenshot { position: relative; min-width: 0; }
@@ -221,8 +225,8 @@ section[id], article[id] { scroll-margin-top: 24px; }
 .reading-column p { color: var(--muted); font-size: 15px; margin-bottom: 18px; }
 .site-footer { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1.1fr; gap: 40px; padding-top: 44px; margin-top: 84px; border-top: 1px solid var(--line); }
 .footer-intro { min-width: 0; }
-.footer-brand { display: block; }
-.footer-brand img { width: 100%; max-width: 208px; }
+.footer-brand { display: block; max-width: 228px; }
+.footer-brand img { width: 100%; height: auto; }
 .footer-intro p { color: var(--muted); margin-top: 16px; font-size: 13px; }
 .footer-intro .small-copy { max-width: 240px; font-size: 11px; }
 .site-footer nav { display: flex; flex-direction: column; align-items: flex-start; }
@@ -417,6 +421,8 @@ section[id], article[id] { scroll-margin-top: 24px; }
   .announcement { font-size: 10px; }
   .announcement .wrap { flex-wrap: wrap; gap: 2px 12px; }
   .hero { padding-block: 40px 30px; gap: 28px; }
+  .brand-mark { width: 28px; height: 28px; }
+  .brand-wordmark { height: 18px; }
   h1, .page-hero h1 { font-size: clamp(2.5rem,10vw,3.4rem); }
   .hero .lede, .lede { font-size: 15px; }
   .hero .eyebrow { font-size: 9px; }

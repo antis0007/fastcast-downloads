@@ -82,6 +82,7 @@ def render(slug, title, description):
   <title>{escape(title)} — FastCast</title>
   <link rel="canonical" href="{canonical}">
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FastCast">
@@ -89,8 +90,11 @@ def render(slug, title, description):
   <meta property="og:description" content="{escape(description)}">
   <meta property="og:url" content="{canonical}">
   <meta property="og:image" content="{BASE}assets/og.png">
-  <meta property="og:image:alt" content="FastCast. Your screen. Your connection. Free. No subscriptions. Windows and Android development preview.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FastCast. Your screen. Your connection. Screen sharing for Windows and Android. Free development preview.">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{BASE}assets/og.png">
   <script src="site.js" defer></script>
   {page_script}
 </head>
@@ -98,7 +102,7 @@ def render(slug, title, description):
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Free. No subscriptions.</span><a href="releases.html">{release['label']} <span aria-hidden="true">↗</span></a></div></div>
   <header class="site-header wrap">
-    <a class="brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="30" height="30" alt="">FastCast</a>
+    <a class="brand" href="index.html" aria-label="FastCast home"><img class="brand-mark" src="assets/mark.svg" width="32" height="32" alt=""><img class="brand-wordmark" src="assets/wordmark.png" width="512" height="119" alt=""></a>
     <nav aria-label="Main">{nav}</nav><a class="button small header-download {'current' if slug == 'downloads' else ''}" href="downloads.html">Download <span aria-hidden="true">↓</span></a>
   </header>
   <main id="main" tabindex="-1">{body}</main>
