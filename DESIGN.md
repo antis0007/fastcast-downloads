@@ -2,7 +2,7 @@
 
 ## Current direction — September 7, 2026
 
-Use the native app's default Cyan accent (#6bc9ff), near-black surfaces, square controls, visible navigation, and unaltered native screenshots. Reserve blue primarily for actions, selected information, and diagram values. Identify the product with the illustrated gold lockup, wordmark, and caster art, and keep the flat gold geometric mark for favicon and other sizes below about 96 px. Keep paragraphs narrow enough to read comfortably, use consistent section spacing, and allow navigation and figures to reflow on phones and with enlarged text.
+Use the illustrated gold/orange brand (#ecac2c, #e69127) for identity, and keep the native app's Cyan (#6bc9ff) for actions, selected information, and diagram values. Near-black surfaces, square controls, visible navigation, and unaltered native screenshots stay. The page wash is a two-sided portal: gold at the caster side, cyan toward the app screenshot. Decorative rings mix those colours, are finite or slow, reduced-motion aware, and stop spinning on narrow screens.
 
 The website explains today's Windows/Android screen-sharing preview and the smaller-group direction. It does not advertise full Discord or Teams replacement parity. Free/no-subscription wording describes the current offer. Screenshots show the development interface, newer than the public 0.3.1 preview, and establish appearance rather than native streaming reliability.
 
