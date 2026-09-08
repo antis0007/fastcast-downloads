@@ -3,48 +3,126 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0e0f11">
+  <meta name="theme-color" content="#0c0d0f">
   <meta name="fastcast-version" content="0.3.2-preview.1">
-  <meta name="description" content="Install matching FastCast apps, connect your receiving device, and start your first screen-sharing session.">
+  <meta name="description" content="Matching builds. Viewer writes the invite. Windows starts the share.">
 
-  <title>Get started — FastCast</title>
+  <title>Setup — FastCast</title>
   <link rel="canonical" href="https://antis0007.github.io/fastcast-downloads/get-started.html">
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FastCast">
-  <meta property="og:title" content="Get started — FastCast">
-  <meta property="og:description" content="Install matching FastCast apps, connect your receiving device, and start your first screen-sharing session.">
+  <meta property="og:title" content="Setup — FastCast">
+  <meta property="og:description" content="Matching builds. Viewer writes the invite. Windows starts the share.">
   <meta property="og:url" content="https://antis0007.github.io/fastcast-downloads/get-started.html">
   <meta property="og:image" content="https://antis0007.github.io/fastcast-downloads/assets/og.png">
-  <meta property="og:image:alt" content="FastCast. Your screen. Your connection. Free. No subscriptions. Windows and Android development preview.">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="FastCast. Your screen. Your connection. Windows sender and Android viewer development preview.">
   <meta name="twitter:card" content="summary_large_image">
+
   <script src="site.js" defer></script>
 
 </head>
 <body class="page-get-started">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Free. No subscriptions.</span><a href="releases.html">0.3.2 Preview 1 <span aria-hidden="true">↗</span></a></div></div>
+  <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Development preview</span><a href="releases.html">0.3.2 Preview 1 <span aria-hidden="true">↗</span></a></div></div>
   <header class="site-header wrap">
     <a class="brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="30" height="30" alt="">FastCast</a>
-    <nav aria-label="Main"><a href="product.html">Product</a><a href="why-fastcast.html">Why FastCast</a><a href="get-started.html" aria-current="page">Get started</a><a href="help.html">Help</a></nav><a class="button small header-download " href="downloads.html">Download <span aria-hidden="true">↓</span></a>
+    <nav aria-label="Main"><a href="product.html">Product</a><a href="get-started.html" aria-current="page">Get started</a><a href="help.html">Help</a><a href="https://github.com/antis0007/fastcast-downloads">GitHub</a></nav><a class="button small header-download" href="downloads.html">Download</a>
   </header>
-  <main id="main" tabindex="-1"><section class="page-hero wrap"><p class="eyebrow">Getting started</p><h1>Your first<br><span>shared screen.</span></h1><p class="lede">You’ll need a Windows PC to share from, a Windows or Android device to watch on, and a network route between them.</p></section>
-<nav class="section-nav wrap" aria-label="Setup steps"><a href="#install">1. Install</a><a href="#invite">2. Get an invitation</a><a href="#share">3. Start sharing</a><a href="#portable">Portable & updates</a></nav>
-<div class="wrap guide-layout"><aside class="guide-aside"><p class="eyebrow">Before you begin</p><ul><li>Use matching app versions.</li><li>Start on the same Wi-Fi or LAN.</li><li>Keep invitations private.</li></ul><a href="platforms.html">Check requirements →</a></aside><div>
-<section class="guide-section" id="install"><span class="step-number">01 / INSTALL</span><h2>Put FastCast on both devices.</h2><article id="windows"><h3>On Windows</h3><ol><li><a href="downloads.html#windows">Download the Windows installer</a> and open it.</li><li>Review the publisher warning for this unsigned preview. Confirm the file came from the official FastCast downloads repository.</li><li>Finish installation and open FastCast.</li></ol></article><article id="android"><h3>On Android</h3><ol><li><a href="downloads.html#android">Download the Android APK</a> on your phone or tablet.</li><li>Open the APK. If prompted, grant your browser or file manager permission to install it.</li><li>Complete the system installation and open FastCast. You can turn that install permission off afterwards.</li></ol></article></section>
-<section class="guide-section" id="invite"><span class="step-number">02 / CONNECT</span><h2>Get an invitation from the viewer.</h2><p>The viewing device creates the invitation. The sharing PC imports it.</p><div class="instruction-pair"><article><h3>Android viewer</h3><p>Open FastCast and choose <strong>Share invite</strong>. Transfer the invitation privately to the sharing PC.</p></article><article><h3>Windows viewer</h3><p>Choose <strong>Receive</strong>, then <strong>Start receiving</strong> and <strong>Copy invitation</strong>. Transfer it to the sharing PC.</p></article></div><p class="note">Invitations can contain connection and access information. Don’t post them in public issues, chats, or screenshots.</p></section>
-<section class="guide-section" id="share"><span class="step-number">03 / SHARE</span><h2>Choose the source. Start the session.</h2><ol><li>On the sending PC, open <strong>Share</strong> and import the receiving device’s invitation.</li><li>Select the entire screen or the window you want to share.</li><li>Review audio and remote-input settings. Enable only what you want for this session.</li><li>Choose <strong>Start sharing</strong>. Check the picture and any enabled sound on the actual viewing device.</li><li>Use <strong>Stop sharing</strong> when finished.</li></ol><p>Connection trouble? Start with <a href="help.html#connection">the connection checklist</a>.</p></section>
-<section class="guide-section" id="portable"><span class="step-number">OTHER INSTALL OPTIONS</span><h2>Portable use and manual updates.</h2><h3>Portable bundle</h3><p>Extract the ZIP first. Keep <strong>FastCast.exe</strong> next to <strong>cast-host.exe</strong>. Use <strong>Install FastCast.cmd</strong> if you want to install from the bundle.</p><h3>USB updates for Android</h3><p>The bundle includes the matching APK and <strong>Update connected devices.cmd</strong> for devices with USB debugging already enabled and authorized.</p><h3>Updating this preview</h3><p>Download a matching Windows and Android release, stop active sessions, and install the new pair. Keep older packages if you need to return to a previous preview. Read the release notes before switching versions.</p></section>
-</div></div>
+  <main id="main" tabindex="-1"><section class="page-hero wrap">
+  <p class="eyebrow">Setup</p>
+  <h1>Hook the two<br><span>devices up.</span></h1>
+  <p class="lede">Windows PC to send. Windows or Android to watch. A route between them that already works.</p>
+</section>
+<nav class="section-nav wrap" aria-label="Setup steps">
+  <a href="#install">1. Install</a>
+  <a href="#invite">2. Get an invitation</a>
+  <a href="#share">3. Start sharing</a>
+  <a href="#portable">Portable & updates</a>
+</nav>
+<div class="wrap guide-layout">
+  <aside class="guide-aside">
+    <p class="eyebrow">Before you begin</p>
+    <ul>
+      <li>Use matching app versions.</li>
+      <li>Start on the same Wi-Fi or LAN.</li>
+      <li>Keep invitations private.</li>
+    </ul>
+    <a href="platforms.html">What runs →</a>
+  </aside>
+  <div>
+    <section class="guide-section" id="install">
+      <span class="step-number">01 / INSTALL</span>
+      <h2>Same build on both ends.</h2>
+      <article id="windows">
+        <h3>On Windows</h3>
+        <ol>
+          <li><a href="downloads.html#windows">Download the Windows installer</a> and open it.</li>
+          <li>The installer is unsigned. Confirm the file came from this downloads repo.</li>
+          <li>Finish install and open FastCast.</li>
+        </ol>
+      </article>
+      <article id="android">
+        <h3>On Android</h3>
+        <ol>
+          <li><a href="downloads.html#android">Download the Android APK</a>.</li>
+          <li>If asked, allow install from the browser or file manager.</li>
+          <li>Open FastCast. You can revoke that install permission afterwards.</li>
+        </ol>
+      </article>
+    </section>
+    <section class="guide-section" id="invite">
+      <span class="step-number">02 / CONNECT</span>
+      <h2>Invite comes from the viewer.</h2>
+      <p>The watching device writes it. The sending PC imports it.</p>
+      <div class="instruction-pair">
+        <article>
+          <h3>Android viewer</h3>
+          <p>Open FastCast and choose <strong>Share invite</strong>. Hand that string to the sending PC. Not to the internet.</p>
+        </article>
+        <article>
+          <h3>Windows viewer</h3>
+          <p><strong>Receive</strong>, then <strong>Start receiving</strong>, then <strong>Copy invitation</strong>. Same rule.</p>
+        </article>
+      </div>
+      <p class="note">Invites can contain connection material. Do not paste them in public issues or screenshots.</p>
+    </section>
+    <section class="guide-section" id="share">
+      <span class="step-number">03 / SHARE</span>
+      <h2>Pick the source. Start.</h2>
+      <ol>
+        <li>On the sending PC, open <strong>Share</strong> and import the invite.</li>
+        <li>Entire screen or one window.</li>
+        <li>Audio and remote input stay off unless you want them.</li>
+        <li><strong>Start sharing</strong>. Look at the actual viewer, not only the sender UI.</li>
+        <li><strong>Stop sharing</strong> when you are done.</li>
+      </ol>
+      <p>Nothing connects? <a href="help.html#connection">Connection checklist</a>.</p>
+    </section>
+    <section class="guide-section" id="portable">
+      <span class="step-number">OTHER INSTALL OPTIONS</span>
+      <h2>Zip and USB.</h2>
+      <h3>Portable bundle</h3>
+      <p>Extract first. Keep <strong>FastCast.exe</strong> next to <strong>cast-host.exe</strong>. <strong>Install FastCast.cmd</strong> if you want the installed copy.</p>
+      <h3>USB updates for Android</h3>
+      <p>The zip has the matching APK and <strong>Update connected devices.cmd</strong> for phones that already have USB debugging authorized.</p>
+      <h3>Updating</h3>
+      <p>Stop sessions. Install a matching Windows + Android pair. Keep the old zip if you need to go back.</p>
+    </section>
+  </div>
+</div>
 </main>
   <footer class="site-footer wrap">
-    <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img src="assets/logo-lockup.png" width="512" height="512" alt="" loading="lazy"></a><p>Your screen. Your connection.</p><p class="small-copy">Free to use. No subscriptions in the current preview.</p></div>
+    <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="48" height="48" alt=""><span>FastCast</span></a><p>Your screen. Your connection.</p><p class="small-copy">No account. No subscription. Preview.</p><p class="small-copy">Native application source is maintained separately. This repository publishes the website and preview packages only.</p></div>
     <nav aria-label="Product links"><h2>Product</h2><a href="product.html">Overview</a><a href="downloads.html">Downloads</a><a href="platforms.html">Platforms</a><a href="releases.html">Release notes</a></nav>
-    <nav aria-label="Resources"><h2>Resources</h2><a href="get-started.html" aria-current="page">Getting started</a><a href="help.html">Help & FAQ</a><a href="community.html">Community</a><a href="privacy.html">Privacy & sharing</a></nav>
-    <nav aria-label="Transparency"><h2>Transparency</h2><a href="why-fastcast.html">Why FastCast</a><a href="how-it-works.html">How it works</a><a href="bandwidth.html">Bandwidth calculator</a><a href="data-and-privacy.html">Data & privacy compared</a></nav>
-    <div class="footer-bottom"><span>Windows + Android · Development preview</span><a href="https://github.com/antis0007/fastcast-downloads">GitHub ↗</a><a href="https://github.com/antis0007/fastcast-downloads/blob/main/LICENSE">License ↗</a></div>
+    <nav aria-label="Resources"><h2>Resources</h2><a href="get-started.html" aria-current="page">Setup</a><a href="help.html">Help</a><a href="community.html">Bugs</a><a href="privacy.html">Privacy</a></nav>
+    <nav aria-label="More"><h2>More</h2><a href="why-fastcast.html">Why FastCast</a><a href="how-it-works.html">How it works</a><a href="bandwidth.html">Bandwidth calculator</a><a href="data-and-privacy.html">Data & privacy compared</a></nav>
+    <div class="footer-bottom"><span>Windows sends · Windows or Android watches · Preview</span><a href="https://github.com/antis0007/fastcast-downloads">GitHub ↗</a><a href="https://github.com/antis0007/fastcast-downloads/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
   </footer>
-  <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>Windows Share, September 7, 2026 development build</p></dialog>
+  <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>Windows Share from a September 7, 2026 development capture. The public download is 0.3.2 Preview 1. Not a live session.</p></dialog>
 </body>
 </html>

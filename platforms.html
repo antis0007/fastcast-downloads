@@ -3,45 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0e0f11">
+  <meta name="theme-color" content="#0c0d0f">
   <meta name="fastcast-version" content="0.3.2-preview.1">
-  <meta name="description" content="Check Windows and Android support, hardware requirements, and network compatibility before installing FastCast.">
+  <meta name="description" content="Windows x64 sends and watches. Android 8+ watches. Nothing else yet.">
 
-  <title>Platforms and requirements — FastCast</title>
+  <title>What runs — FastCast</title>
   <link rel="canonical" href="https://antis0007.github.io/fastcast-downloads/platforms.html">
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="FastCast">
-  <meta property="og:title" content="Platforms and requirements — FastCast">
-  <meta property="og:description" content="Check Windows and Android support, hardware requirements, and network compatibility before installing FastCast.">
+  <meta property="og:title" content="What runs — FastCast">
+  <meta property="og:description" content="Windows x64 sends and watches. Android 8+ watches. Nothing else yet.">
   <meta property="og:url" content="https://antis0007.github.io/fastcast-downloads/platforms.html">
   <meta property="og:image" content="https://antis0007.github.io/fastcast-downloads/assets/og.png">
-  <meta property="og:image:alt" content="FastCast. Your screen. Your connection. Free. No subscriptions. Windows and Android development preview.">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="FastCast. Your screen. Your connection. Windows sender and Android viewer development preview.">
   <meta name="twitter:card" content="summary_large_image">
+
   <script src="site.js" defer></script>
 
 </head>
 <body class="page-platforms">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Free. No subscriptions.</span><a href="releases.html">0.3.2 Preview 1 <span aria-hidden="true">↗</span></a></div></div>
+  <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Development preview</span><a href="releases.html">0.3.2 Preview 1 <span aria-hidden="true">↗</span></a></div></div>
   <header class="site-header wrap">
     <a class="brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="30" height="30" alt="">FastCast</a>
-    <nav aria-label="Main"><a href="product.html">Product</a><a href="why-fastcast.html">Why FastCast</a><a href="get-started.html">Get started</a><a href="help.html">Help</a></nav><a class="button small header-download " href="downloads.html">Download <span aria-hidden="true">↓</span></a>
+    <nav aria-label="Main"><a href="product.html">Product</a><a href="get-started.html">Get started</a><a href="help.html">Help</a><a href="https://github.com/antis0007/fastcast-downloads">GitHub</a></nav><a class="button small header-download" href="downloads.html">Download</a>
   </header>
-  <main id="main" tabindex="-1"><section class="page-hero wrap"><p class="eyebrow">Platforms & requirements</p><h1>Windows and Android.<br><span>Nothing else yet.</span></h1><p class="lede">The current public preview supports Windows and Android. Check the sending device, viewing device, and network before installing.</p></section>
+  <main id="main" tabindex="-1"><section class="page-hero wrap"><p class="eyebrow">What runs</p><h1>Windows and Android.<br><span>Nothing else yet.</span></h1><p class="lede">Windows x64 sends and watches. Android 8+ watches. No Mac, Linux, iOS, or browser app.</p></section>
 <section class="wrap"><table class="support-table"><caption>Public 0.3.2 Preview 1 platform availability</caption><thead><tr><th scope="col">Platform</th><th scope="col">Share a screen</th><th scope="col">Receive a screen</th></tr></thead><tbody><tr><th scope="row">Windows x64</th><td><span class="availability">Preview</span></td><td><span class="availability">Preview</span></td></tr><tr><th scope="row">Android 8+</th><td>Unavailable</td><td><span class="availability">Preview</span></td></tr><tr><th scope="row">macOS / Linux</th><td>Unavailable</td><td>Unavailable</td></tr><tr><th scope="row">iPhone / iPad</th><td>Unavailable</td><td>Unavailable</td></tr><tr><th scope="row">Browser</th><td>Unavailable</td><td>Unavailable</td></tr></tbody></table><p class="note">A responsive website does not mean there is a browser version of the app. Use the native downloads for supported platforms.</p></section>
-<section class="section wrap"><div class="use-cases"><article><p class="eyebrow">Sending PC</p><h2>Windows hardware</h2><p>NVIDIA NVENC is preferred for sending. A CPU H.264 fallback is available on other supported PCs. Actual performance depends on your hardware and chosen settings.</p></article><article><p class="eyebrow">Viewing PC</p><h2>Media components</h2><p>Windows receiving needs the Windows media components. Some Windows editions may need those components installed separately.</p></article><article><p class="eyebrow">Phone or tablet</p><h2>Android receiver</h2><p>Install the matching APK on Android 8 or newer. Decoder, audio, and remote-input support can vary by device.</p></article></div></section>
+<section class="section wrap"><div class="use-cases"><article><p class="eyebrow">Sending PC</p><h2>Windows hardware</h2><p>NVIDIA NVENC is preferred for sending. A CPU H.264 fallback is available on other supported PCs. Actual performance depends on your hardware and chosen settings.</p></article><article><p class="eyebrow">Viewing PC</p><h2>Media components</h2><p>Windows receiving needs the Windows media components. Some Windows editions may need those components installed separately.</p></article><article><p class="eyebrow">Phone or tablet</p><h2>Android receiver</h2><p>Install the matching APK on Android 8 or newer. Decoder and audio can vary by device. Remote input is unproven.</p></article></div></section>
 <section class="section wrap split-section"><div><h2>Network<br>requirements.</h2></div><div><p>Use the same LAN or a reachable private network. Guest Wi-Fi and client isolation can prevent devices from reaching each other even when the network name looks the same.</p><p>The public preview does not include automatic public internet traversal or a managed media relay. A private network route needs to exist before FastCast can use it.</p><a class="text-link" href="help.html#connection">Troubleshoot a connection →</a></div></section>
-<section class="closing-cta wrap"><div><h2>Get the apps.</h2><p>Both apps must come from the same release.</p></div><a class="button primary" href="downloads.html">Download free ↓</a></section>
+<section class="closing-cta wrap"><div><h2>Same pair of builds.</h2><p>Don’t mix versions.</p></div><a class="button primary" href="downloads.html">Download ↓</a></section>
 </main>
   <footer class="site-footer wrap">
-    <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img src="assets/logo-lockup.png" width="512" height="512" alt="" loading="lazy"></a><p>Your screen. Your connection.</p><p class="small-copy">Free to use. No subscriptions in the current preview.</p></div>
+    <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="48" height="48" alt=""><span>FastCast</span></a><p>Your screen. Your connection.</p><p class="small-copy">No account. No subscription. Preview.</p><p class="small-copy">Native application source is maintained separately. This repository publishes the website and preview packages only.</p></div>
     <nav aria-label="Product links"><h2>Product</h2><a href="product.html">Overview</a><a href="downloads.html">Downloads</a><a href="platforms.html" aria-current="page">Platforms</a><a href="releases.html">Release notes</a></nav>
-    <nav aria-label="Resources"><h2>Resources</h2><a href="get-started.html">Getting started</a><a href="help.html">Help & FAQ</a><a href="community.html">Community</a><a href="privacy.html">Privacy & sharing</a></nav>
-    <nav aria-label="Transparency"><h2>Transparency</h2><a href="why-fastcast.html">Why FastCast</a><a href="how-it-works.html">How it works</a><a href="bandwidth.html">Bandwidth calculator</a><a href="data-and-privacy.html">Data & privacy compared</a></nav>
-    <div class="footer-bottom"><span>Windows + Android · Development preview</span><a href="https://github.com/antis0007/fastcast-downloads">GitHub ↗</a><a href="https://github.com/antis0007/fastcast-downloads/blob/main/LICENSE">License ↗</a></div>
+    <nav aria-label="Resources"><h2>Resources</h2><a href="get-started.html">Setup</a><a href="help.html">Help</a><a href="community.html">Bugs</a><a href="privacy.html">Privacy</a></nav>
+    <nav aria-label="More"><h2>More</h2><a href="why-fastcast.html">Why FastCast</a><a href="how-it-works.html">How it works</a><a href="bandwidth.html">Bandwidth calculator</a><a href="data-and-privacy.html">Data & privacy compared</a></nav>
+    <div class="footer-bottom"><span>Windows sends · Windows or Android watches · Preview</span><a href="https://github.com/antis0007/fastcast-downloads">GitHub ↗</a><a href="https://github.com/antis0007/fastcast-downloads/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
   </footer>
-  <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>Windows Share, September 7, 2026 development build</p></dialog>
+  <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>Windows Share from a September 7, 2026 development capture. The public download is 0.3.2 Preview 1. Not a live session.</p></dialog>
 </body>
 </html>

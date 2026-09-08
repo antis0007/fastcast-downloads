@@ -1,10 +1,10 @@
 <section class="page-hero wrap">
   <h1>The route from<br><span>screen to viewer.</span></h1>
-  <p class="lede">The current preview connects a Windows sender to a Windows or Android viewer. That path sets both the privacy tradeoffs and the costs.</p>
+  <p class="lede">Windows encodes. A Windows or Android box decodes. GitHub is not in that path. Neither is a FastCast relay.</p>
 </section>
-<nav class="section-nav wrap" aria-label="How FastCast works"><a href="#route">The media path</a><a href="#costs">How it stays free today</a><a href="#outside">Outside your devices</a></nav>
+<nav class="section-nav wrap" aria-label="How FastCast works"><a href="#route">The media path</a><a href="#costs">Who pays</a><a href="#outside">Everyone else</a></nav>
 <section class="section wrap" id="route">
-  <div class="section-heading"><div><h2>Screen → connection → viewer.</h2></div><p>A conceptual data-flow diagram. It describes the route; it is not a live connection monitor.</p></div>
+  <div class="section-heading"><div><h2>Screen → connection → viewer.</h2></div><p>A diagram of the idea. It is not a live monitor.</p></div>
   <div class="route-diagram" role="img" aria-label="A Windows PC encodes a selected screen or window and sends it through an encrypted QUIC peer connection to a Windows or Android viewer. The route requires a reachable LAN or private network.">
     <div class="route-node"><span class="route-symbol" aria-hidden="true">▣</span><small>YOUR WINDOWS PC</small><strong>Capture & encode</strong><p>The screen or window you select.</p></div>
     <div class="route-link"><span aria-hidden="true">⟶</span><strong>Encrypted QUIC</strong><small>Reachable LAN or private route</small></div>
@@ -13,7 +13,7 @@
   <div class="annotation-grid"><p><b>Invitation first.</b> The viewer supplies connection information. Transfer it privately and import it on the sending PC.</p><p><b>No FastCast media relay.</b> A VPN or private mesh may use its own relay. That provider’s route and terms still apply.</p><p><b>The peer is part of the trust boundary.</b> A viewer can see or record what you share. Encryption cannot make the receiving device trustworthy.</p></div>
 </section>
 <section class="section wrap" id="costs">
-  <div class="section-heading"><div><h2>Who pays<br>for what.</h2></div><p>The current offer is free. It uses resources participants already have, and provides fewer hosted services.</p></div>
+  <div class="section-heading"><div><h2>Who pays<br>for what.</h2></div><p>The download is free. Electricity, GPU time, and your ISP are not.</p></div>
   <div class="cost-ledger"><div class="ledger-heading"><span>RESOURCE</span><span>WHO PROVIDES IT</span><span>WHAT THAT MEANS</span></div>
     <article><h3>App access</h3><p>FastCast</p><p>The current preview has no purchase or subscription charge.</p></article>
     <article><h3>Encoding & playback</h3><p>Your devices</p><p>CPU/GPU work, battery use, and electricity remain real costs.</p></article>
@@ -23,4 +23,4 @@
   </div>
   <a class="text-link" href="bandwidth.html">Estimate the data for your session →</a>
 </section>
-<section class="section wrap split-section" id="outside"><div><h2>The other<br>connections.</h2></div><div><p>The website, downloads, and public feedback use GitHub. The service you use to pass an invitation has its own data practices. Your network operator can observe connection metadata even when transport content is encrypted.</p><p>A private-network provider may help devices find one another or relay their traffic. Check that provider’s privacy practices when choosing a route for an off-LAN session.</p><p>Local settings and diagnostics can remain on your devices. FastCast’s direct media path is not a blanket “no data anywhere” claim.</p><a class="text-link" href="privacy.html">Website privacy & sharing precautions →</a></div></section>
+<section class="section wrap split-section" id="outside"><div><h2>The other<br>connections.</h2></div><div><p>The website, downloads, and the issue tracker are GitHub. Whoever you used to pass the invite has their own logs. Your ISP sees that two machines talked, even if the payload is encrypted.</p><p>A mesh or VPN you already pay for may relay packets. That is their terms, not ours.</p><p>Direct media is not “no data anywhere.” The person watching can still record the screen.</p><a class="text-link" href="privacy.html">Site privacy →</a></div></section>

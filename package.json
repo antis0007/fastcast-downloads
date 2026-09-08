@@ -4,9 +4,9 @@
   "private": true,
   "description": "Static FastCast website with native app screenshots and verified downloads",
   "scripts": {
-    "test": "node tests/bandwidth.cjs && node tests/check-site.cjs",
-    "check": "node --check site.js && node --check bandwidth.js && node --check tests/check-site.cjs",
-    "build": "python scripts/build-site.py"
+    "test": "python scripts/check-release.py && node tests/bandwidth.cjs && node tests/check-site.cjs",
+    "check": "node --check site.js && node --check bandwidth.js && node --check tests/check-site.cjs && python scripts/check-release.py",
+    "build": "python scripts/build-site.py && python scripts/check-release.py"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",

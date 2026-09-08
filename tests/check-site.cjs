@@ -116,9 +116,9 @@ async function checkJourneysAndAccessibility() {
     assert.equal(await page.locator('dialog').isVisible(), false);
     assert.ok(await screenshot.evaluate(el => el === document.activeElement));
     assert.equal(await page.locator('.signal-art i').last().evaluate(el => getComputedStyle(el).animationName), 'none');
-    await page.getByRole('link', { name: 'Get started', exact: true }).click();
+    await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Get started', exact: true }).click();
     await page.waitForURL('**/get-started.html');
-    await page.getByRole('link', { name: 'Help', exact: true }).click();
+    await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Help', exact: true }).click();
     await page.waitForURL('**/help.html');
     const search = page.getByRole('searchbox', { name: 'Search help' });
     await search.fill('subscriptions');
@@ -128,6 +128,21 @@ async function checkJourneysAndAccessibility() {
     await page.getByRole('link', { name: 'Connection', exact: true }).click();
     assert.equal(await search.inputValue(), '');
     assert.equal(await page.locator('.faq-group details:visible').count(), 14);
+    await page.goto(base + 'product.html');
+    assert.equal((await page.locator('#capabilities h2').textContent()).trim(), "What's in, what's not.");
+    assert.equal(await page.locator('.status-key dt').count(), 4);
+    assert.equal(await page.locator('.capability-group').count(), 4);
+    assert.equal(await page.locator('.capability-row').count(), 15);
+    for (const word of ['Available', 'Preview', 'Limited', 'Not yet']) {
+      assert.ok(await page.locator('.status-word', { hasText: word }).count());
+    }
+    assert.equal(await page.getByText('The whole feature list').count(), 0);
+    assert.equal(await page.getByText('Meet FastCast').count(), 0);
+    await page.goto(base + 'privacy.html');
+    assert.equal(await page.getByText('FASTCAST_DISCOVERY').count(), 0);
+    assert.equal(await page.getByText('helper URL').count(), 0);
+    await page.goto(base + 'downloads.html');
+    assert.equal(await page.locator('code.hash').count(), 3);
     await context.close();
     console.log('Screenshot close/focus, reduced motion, navigation and FAQ search passed');
 
@@ -138,6 +153,14 @@ async function checkJourneysAndAccessibility() {
     await androidPage.goto(base + 'downloads.html');
     assert.ok(await androidPage.locator('[data-platform="android"] .recommendation').isVisible());
     await androidContext.close();
+
+    const windowsContext = await browser.newContext({ userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36', viewport: { width: 1440, height: 900 } });
+    const windowsPage = await windowsContext.newPage();
+    await windowsPage.goto(base);
+    assert.equal(await windowsPage.locator('.hero .primary').getAttribute('data-download'), 'windows');
+    await windowsPage.goto(base + 'downloads.html');
+    assert.ok(await windowsPage.locator('[data-platform="windows"] .recommendation').isVisible());
+    await windowsContext.close();
 
     const calculatorContext = await browser.newContext({ viewport: { width: 390, height: 900 } });
     const calculatorPage = await calculatorContext.newPage();

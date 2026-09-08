@@ -1,26 +1,24 @@
-<section class="page-hero wrap"><h1>Share a Windows screen<br><span>to a PC or Android device.</span></h1><p class="lede">A Windows sender. A Windows or Android viewer.</p><div class="actions"><a class="button primary" href="downloads.html">Download free ↓</a><a class="text-link" href="get-started.html">See the setup guide →</a></div></section>
-<nav class="section-nav wrap" aria-label="On this page"><a href="#screenshots">Interface</a><a href="#controls">Controls</a><a href="#scope">Available today</a><a href="#capabilities">Every capability</a></nav>
-<section class="section wrap" id="screenshots"><div class="section-heading"><div><h2>Windows Share</h2></div><p>September 7, 2026 development build. Newer than the public {{RELEASE_LABEL}} download, so some controls can differ. Not a live session.</p></div>{{SCREENSHOT_WIDE}}</section>
-<section class="section wrap" id="controls"><div class="section-heading"><div><h2>Know what you’re sharing.</h2></div></div><div class="use-cases"><article><span class="step-number">01</span><h3>Choose the source</h3><p>Share your entire screen or select a window. Check the source before you start, especially if personal notifications are visible.</p></article><article><span class="step-number">02</span><h3>Connect the viewer</h3><p>Use the receiving device’s invitation to set up the session. Keep that invitation private.</p></article><article><span class="step-number">03</span><h3>Review the controls</h3><p>Choose audio and remote-input options for the session. Device permissions and hardware support still apply.</p></article></div></section>
-<section class="feature-band wrap"><div><h2>Share in a smaller window.</h2><p>Open the image full size to read the controls.</p></div><div>{{SCREENSHOT_COMPACT}}</div></section>
-<section class="section wrap" id="scope"><div class="section-heading"><div><h2>What you can download today.</h2></div><p>{{RELEASE_LABEL}} is a development preview. <a href="releases.html">Read its release notes</a> before choosing it for a session.</p></div><div class="scope-grid"><article><span class="tag">IN THE PUBLIC PREVIEW</span><h3>Screen sharing between devices</h3><ul><li>Windows sending and receiving</li><li>Android receiving</li><li>Screen or window selection</li><li>Session invitations</li><li>Audio and remote-control options, subject to device and permission support</li></ul></article><article><span class="tag neutral">FUTURE DIRECTION</span><h3>A place for smaller groups</h3><p>Group messaging, shared community services, and a broader communication experience remain future work. FastCast is not yet a complete replacement for Discord or Teams.</p><a class="text-link" href="community.html">Follow the direction →</a></article></div></section>
-<section class="section wrap" id="capabilities"><div class="section-heading"><div><p class="eyebrow">Every capability, and its real status</p><h2>The whole feature list.</h2></div><p>A capability is called available only where it is implemented and has been exercised on hardware. Anything still waiting on physical validation says so here rather than in a footnote.</p></div>
-<div class="table-scroll" role="region" aria-label="FastCast capabilities and their current status" tabindex="0"><table class="support-table capability-table"><caption>FastCast {{RELEASE_LABEL}} capabilities and their current status</caption><thead><tr><th scope="col">Capability</th><th scope="col">Status</th><th scope="col">What that means today</th></tr></thead><tbody>
-<tr><th scope="row">Screen and window capture</th><td><span class="availability">Available</span></td><td>Share an entire screen, or pick a single window, from a Windows x64 PC.</td></tr>
-<tr><th scope="row">Video quality controls</th><td><span class="availability">Available</span></td><td>Choose 60 or 30 fps and adjust stream quality while a session is running.</td></tr>
-<tr><th scope="row">H.264 encoding</th><td><span class="availability">Available</span></td><td>NVIDIA NVENC is the validated path. Intel and AMD PCs fall back automatically to the built-in Windows CPU encoder, which costs processor time. Vendor hardware acceleration and physical Intel/AMD streaming tests are still pending.</td></tr>
-<tr><th scope="row">Android receiving</th><td><span class="availability">Available</span></td><td>Android 8 or newer, decoding in hardware. Validated on one device.</td></tr>
-<tr><th scope="row">Windows receiving</th><td><span class="availability">Available</span></td><td>A second Windows PC can receive the screen and system audio. Both ends need matching builds.</td></tr>
-<tr><th scope="row">Private session admission</th><td><span class="availability">Available</span></td><td>The receiving device issues a private invitation that authorises the session over a pinned QUIC connection. Expiry, replay and revocation pass loopback tests; physical regression testing is still open.</td></tr>
-<tr><th scope="row">Computer audio</th><td><span class="availability">Available</span></td><td>The sending PC’s audio travels with the screen. A fresh audible regression run on a phone is still outstanding.</td></tr>
-<tr><th scope="row">Two-way microphone voice</th><td><span class="availability">Preview</span></td><td>Builds and passes its checks. Physical round-trip and echo testing have not been done.</td></tr>
-<tr><th scope="row">Remote control from Android</th><td><span class="availability">Preview</span></td><td>Builds and passes its checks. Physical input, and behaviour inside native games, are unproven.</td></tr>
-<tr><th scope="row">Cursor appearance and effects</th><td><span class="availability">Preview</span></td><td>Desktop cursor styling with a local effects budget. The current build labels this preview only.</td></tr>
-<tr><th scope="row">Viewing outside your local network</th><td>Limited</td><td>Works across a private mesh you already run. STUN probing is implemented, but automatic traversal is not, so a reachable route has to exist first.</td></tr>
-<tr><th scope="row">Device-owned accounts and contacts</th><td>Limited</td><td>Held locally on Windows. Sync, recovery, and global handle claims are not implemented.</td></tr>
-<tr><th scope="row">Automatic update checks</th><td>Unreleased</td><td>Present in development builds, not in this download. Update by installing a newer package over the old one.</td></tr>
-<tr><th scope="row">Managed relay and multi-viewer rooms</th><td>Not yet</td><td>There is no FastCast-run media relay, and multi-viewer rooms are not implemented.</td></tr>
-<tr><th scope="row">macOS, Linux, iPhone and iPad</th><td>Not yet</td><td>Not implemented. Windows x64 and Android 8 or newer only.</td></tr>
-</tbody></table></div>
-<p class="note">This table describes the published {{RELEASE_LABEL}} download, not the newest development source. Where a capability is built but has not been proven on real hardware, it is listed as preview rather than available.</p></section>
-<section class="closing-cta wrap"><div><h2>Try the current preview.</h2><p>Free to download. No subscriptions.</p></div><a class="button primary" href="downloads.html">Get FastCast ↓</a></section>
+<section class="page-hero wrap"><h1>Share a Windows screen<br><span>to a PC or Android device.</span></h1><p class="lede">Windows sends. Windows or Android watches. Android does not send.</p><div class="actions"><a class="button primary" href="downloads.html">Download ↓</a><a class="text-link" href="get-started.html">Setup →</a></div></section>
+<nav class="section-nav wrap" aria-label="On this page"><a href="#screenshots">Interface</a><a href="#controls">Controls</a><a href="#capabilities">What's in, what's not</a></nav>
+<section class="section wrap" id="screenshots"><div class="section-heading"><div><h2>Windows Share</h2></div><p>A real capture, 7 Sep 2026. Development UI. Not a pixel-perfect {{RELEASE_LABEL}} match. Not a live session.</p></div>{{SCREENSHOT_WIDE}}</section>
+<section class="section wrap" id="controls"><div class="section-heading"><div><h2>Look before you share.</h2></div></div><div class="use-cases"><article><span class="step-number">01</span><h3>Pick the source</h3><p>Whole screen or one window. Whole screen includes your notifications.</p></article><article><span class="step-number">02</span><h3>Invite from the viewer</h3><p>The watching device writes the invite. The sending PC imports it. Do not paste that string in a public issue.</p></article><article><span class="step-number">03</span><h3>Audio and input are opt-in</h3><p>Leave them off unless you want them. Hardware and OS permissions still apply.</p></article></div></section>
+<section class="feature-band wrap"><div><h2>Smaller window.</h2><p>Open the image if you need to read the controls.</p></div><div>{{SCREENSHOT_COMPACT}}</div></section>
+<section class="section wrap" id="capabilities">
+<span id="scope" hidden></span>
+<div class="section-heading">
+<div>
+<p class="eyebrow">{{RELEASE_LABEL}}</p>
+<h2>What's in, what's not.</h2>
+</div>
+<p>This is the public zip, not a later git checkout. <a href="releases.html">Release notes</a>.</p>
+</div>
+{{CAPABILITY_LEDGER}}
+<aside class="statement" aria-labelledby="evidence-title">
+<h3 id="evidence-title">{{EVIDENCE_HEADLINE}}</h3>
+<p class="note">{{EVIDENCE_SCOPE}}</p>
+{{EVIDENCE}}
+<p><a href="{{RELEASE_URL}}">Original release notes ↗</a></p>
+</aside>
+<p class="capability-after">No group chat. No “community platform.” If you want Discord, use Discord. <a href="community.html">Bugs go here</a>.</p>
+</section>
+<section class="closing-cta wrap"><div><h2>Get the files.</h2><p>No account. No subscription.</p></div><a class="button primary" href="downloads.html">Download ↓</a></section>
