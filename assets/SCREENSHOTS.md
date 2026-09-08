@@ -7,6 +7,4 @@ Both `windows-share.png` and `windows-compact.png` are unchanged client-area cap
 - These show the development interface, newer than the public 0.3.1 Preview 1 package.
 - Neither image depicts a connected media session or establishes streaming performance.
 - Website image frames, labels, and zoom controls are HTML/CSS outside the screenshots.
-- `og.png` is generated brand artwork for social previews: the illustrated caster, wordmark, and product promise. It is not a screenshot.
-- `logo-lockup.png`, `wordmark.png`, `wizard.png`, and `apple-touch-icon.png` are the same illustrated brand, cropped for the header, footer, and home-screen icon. They are not product screenshots.
-- `mark.svg` is the flat geometric mark used at favicon and header sizes, where the illustration is too small to read.
+- `og.png` is a generated typographic brand graphic for social previews, not a screenshot.

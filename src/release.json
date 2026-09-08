@@ -25,13 +25,13 @@
       "width": 1770,
       "height": 1170,
       "label": "Windows Share screenshot",
-      "alt": "Actual FastCast Windows Share interface in the default blue theme, with screen and window selection, audio controls, and receiving-device invitation."
+      "alt": "Windows Share: screen and window selection, audio controls, and the receiving-device invitation."
     },
     "windows-compact": {
       "width": 998,
       "height": 764,
       "label": "compact Windows screenshot",
-      "alt": "Actual FastCast Share interface in a smaller Windows window using the default blue theme."
+      "alt": "Windows Share in a smaller window."
     }
   }
 }

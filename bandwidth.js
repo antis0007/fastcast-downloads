@@ -43,10 +43,7 @@ function initializeCalculator() {
       context.fillText(`${Number(duration.value) * part}m`, left + part * (right - left), height - 10);
     }
     context.beginPath(); context.moveTo(left, bottom); context.lineTo(right, top); context.lineTo(right, bottom); context.closePath();
-    const fill = context.createLinearGradient(left, bottom, right, top);
-    fill.addColorStop(0, '#ecac2c24');
-    fill.addColorStop(1, '#6bc9ff24');
-    context.fillStyle = fill; context.fill();
+    context.fillStyle = '#6bc9ff14'; context.fill();
     context.beginPath(); context.moveTo(left, bottom); context.lineTo(right, top);
     context.lineWidth = 2; context.strokeStyle = accent; context.stroke();
   }
