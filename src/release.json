@@ -1,9 +1,9 @@
 {
-  "version": "0.3.2-preview.1",
-  "tag": "v0.3.2-preview.1",
-  "label": "0.3.2 Preview 1",
-  "published": "2026-09-07",
-  "published_display": "September 7, 2026",
+  "version": "0.3.2-preview.2",
+  "tag": "v0.3.2-preview.2",
+  "label": "0.3.2 Preview 2",
+  "published": "2026-09-10",
+  "published_display": "September 10, 2026",
   "status": "Development preview",
   "network": "LAN or reachable private network",
   "offer": "No account. No subscription. Preview.",
@@ -28,38 +28,38 @@
   },
   "assets": {
     "windows": {
-      "filename": "FastCast-0.3.2-preview.1-Setup.exe",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.1/FastCast-0.3.2-preview.1-Setup.exe",
-      "size": "9.5 MB",
-      "bytes": 9986493,
-      "sha256": "0d613e51f7960200d8e8e16d37eb493801c272a9f5476889841f1dab354d221b",
+      "filename": "FastCast-0.3.2-preview.2-Setup.exe",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.2/FastCast-0.3.2-preview.2-Setup.exe",
+      "size": "11.9 MB",
+      "bytes": 11918182,
+      "sha256": "ec1ffe07e2fd0b7e7c34ad453ca4984200ac124dbd3dfbd312f343335836fa02",
       "role": "Windows sender and receiver",
       "signing": "Unsigned preview"
     },
     "android": {
-      "filename": "FastCast-0.3.2-preview.1-Android.apk",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.1/FastCast-0.3.2-preview.1-Android.apk",
-      "size": "10.7 MB",
-      "bytes": 11178754,
-      "sha256": "7e559f3b9fcaad40eb74fae1d3462e7ddc4e660e5a7e71d33861b7942830bf3b",
+      "filename": "FastCast-0.3.2-preview.2-Android.apk",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.2/FastCast-0.3.2-preview.2-Android.apk",
+      "size": "26.0 MB",
+      "bytes": 25973670,
+      "sha256": "350e10ce3060cb605de50597169733259068fe58b312348495b72c67057a18a4",
       "role": "Android viewer",
       "signing": "Debug-signed preview"
     },
     "bundle": {
-      "filename": "FastCast-0.3.2-preview.1-windows-android-x64.zip",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.1/FastCast-0.3.2-preview.1-windows-android-x64.zip",
-      "size": "17.2 MB",
-      "bytes": 18002831,
-      "sha256": "0e23bcb5ef9b4e754fba1cf618cd6fb7769d91197a5973149de12698a7f2a82c",
+      "filename": "FastCast-0.3.2-preview.2-windows-android-x64.zip",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.2/FastCast-0.3.2-preview.2-windows-android-x64.zip",
+      "size": "27.0 MB",
+      "bytes": 26980022,
+      "sha256": "a52aaccaccdf14d5d0865dc1c711d44d6a8b13adc83f9a241c45e6d9cebd66b4",
       "role": "Portable Windows + Android bundle",
       "signing": "Same unsigned Windows and debug-signed Android packages"
     },
     "checksums": {
       "filename": "SHA256SUMS.txt",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.1/SHA256SUMS.txt",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.2/SHA256SUMS.txt",
       "size": "410 B",
       "bytes": 410,
-      "sha256": "30fec0feb861065d44c841c54af078a45b5324824594758ca9f89525ffa3dc4e"
+      "sha256": "71eeae4a899fd8458af895b0253aaf14bd0d9f19225dafdb87f0b061f9dde3b9"
     }
   },
   "screenshots": {
@@ -161,7 +161,7 @@
         {
           "name": "Computer audio",
           "status": "available",
-          "detail": "The sending PC’s audio travels with the screen. The receiver decoded computer audio in the LAN run with no reported underruns. Audible output on a phone was not independently confirmed."
+          "detail": "The sending PC\u2019s audio travels with the screen. The receiver decoded computer audio in the LAN run with no reported underruns. Audible output on a phone was not independently confirmed."
         }
       ]
     },
@@ -225,9 +225,14 @@
           "detail": "There is no FastCast-run media relay, and multi-viewer rooms are not implemented."
         },
         {
-          "name": "macOS, Linux, iPhone, and iPad",
+          "name": "Linux desktop",
           "status": "not-yet",
-          "detail": "Not implemented. This preview is Windows x64 and Android 8 or newer only. Android does not send."
+          "detail": "Not in these public files. Application source has a Linux viewer (OpenH264, optional VA-API). Linux send is not a product."
+        },
+        {
+          "name": "macOS, iPhone, and iPad",
+          "status": "not-yet",
+          "detail": "Not implemented. This preview download is Windows x64 and Android 8 or newer only. Android does not send."
         }
       ]
     }
@@ -238,16 +243,26 @@
     "Automatic universal Internet traversal is not available.",
     "A FastCast-managed media relay is not available.",
     "Android is a viewer in this public release, not a sender.",
-    "macOS, Linux, iPhone, iPad, and browser apps are not available."
+    "macOS, iPhone, iPad, and browser apps are not available.",
+    "Linux is not in this public zip. Source has a viewer; Linux send is not a product."
   ],
   "history": [
+    {
+      "version": "0.3.2-preview.2",
+      "tag": "v0.3.2-preview.2",
+      "published": "2026-09-10",
+      "current": true,
+      "label": "0.3.2 Preview 2",
+      "published_display": "September 10, 2026",
+      "summary": "UX sheets, host-first Go live watch-place, rustls call-listen fix. Android still viewer-only for capture. Matching Win+Android preview packages."
+    },
     {
       "version": "0.3.2-preview.1",
       "tag": "v0.3.2-preview.1",
       "label": "0.3.2 Preview 1",
       "published": "2026-09-07",
       "published_display": "September 7, 2026",
-      "current": true,
+      "current": false,
       "summary": "Matching Windows and Android builds. One physical Windows-to-Android LAN run on the published files."
     },
     {

@@ -4,7 +4,7 @@
 <section class="faq-group" id="basics"><h2>The basics</h2>
 <details><summary>Is FastCast free? Are there subscriptions?</summary><p>Yes, for this preview: no subscriptions, no billing sign-up, no FastCast account. That is the current offer. It is not a lifetime contract.</p></details>
 <details><summary>Can I replace Discord or Microsoft Teams with it today?</summary><p>No. This is screen sharing. It is not their chat, meetings, or hosted community. If you need that, you already have it.</p></details>
-<details><summary>Can I use FastCast in a web browser, on a Mac, or on an iPhone?</summary><p>The current downloads are for Windows and Android. macOS, Linux, iOS, and browser clients are unavailable. <a href="platforms.html">See the platform table</a>.</p></details>
+<details><summary>Can I use FastCast in a web browser, on a Mac, Linux, or an iPhone?</summary><p>The current downloads are Windows and Android. A Linux viewer is in application source and is not a public package on this tag. macOS, iOS, and browser clients are unavailable. <a href="platforms.html">See the platform table</a>.</p></details>
 <details><summary>Are the screenshots the same as the download?</summary><p>No. They are a later development UI (7 Sep 2026). Real captures, not mockups. {{RELEASE_LABEL}} is what GitHub serves.</p></details>
 </section>
 <section class="faq-group" id="install"><h2>Installation & updates</h2>
@@ -15,13 +15,13 @@
 </section>
 <section class="faq-group" id="connection"><h2>Connection & sharing</h2>
 <details><summary>The devices won’t connect. What should I check first?</summary><ol><li>Confirm both apps came from the same release.</li><li>Put both devices on the same LAN, avoiding isolated guest Wi-Fi.</li><li>Start receiving on the viewing device and create a fresh invitation.</li><li>Import that invitation on the sharing PC.</li><li>Review the specific firewall prompt or connection error. Allow only the required app on a trusted network.</li></ol><p>If it still fails, <a href="{{REPO}}/issues/new?template=bug_report.yml">report the exact error</a> without the invitation itself.</p></details>
-<details><summary>Can I connect across the internet?</summary><p>The public preview needs a reachable private-network route for devices on different networks. It does not include automatic public internet traversal or a managed relay. Test on the same LAN first to separate app setup from network reachability.</p></details>
+<details><summary>Can I connect across the internet?</summary><p>The public zip is still LAN-first. This source tree uses the FastCast helper at https://fastcastrelay.duckdns.org: leave Settings helper empty on both Windows PCs, copy a Receive invitation that includes helper=, and import it on Share. Direct UDP is preferred; the VPS relays encrypted packets only if punch fails. Do not use Tailscale. Rebuild both apps from this checkout. A 120-second unrelated-network pass is not recorded yet.</p></details>
 <details><summary>Where does the invitation come from?</summary><p>The viewing device creates it. On Android, choose Share invite. On a viewing PC, choose Receive, Start receiving, then Copy invitation. The sending PC imports it. <a href="get-started.html#invite">Follow the invitation steps</a>.</p></details>
 </section>
 <section class="faq-group" id="media"><h2>Audio, input & performance</h2>
 <details><summary>I can see the picture but can’t hear sound.</summary><p>Check that the intended audio option is enabled on the sending PC, that the viewer volume and output device are correct, and that any required microphone permission is granted. Audio behaviour is still under preview testing and varies by device.</p></details>
 <details><summary>Why doesn’t remote input work?</summary><p>Remote input needs its own session setting and the required device permissions. Check those before testing a specific key, pointer, or gesture. Report the sending and viewing platforms along with the input that failed.</p></details>
-<details><summary>What frame rate or latency is guaranteed?</summary><p>No performance guarantee is published for this preview. Hardware, source content, encoding settings, decoding, and the network affect the result. The website does not use illustrative graphs as benchmark evidence.</p></details>
+<details><summary>What frame rate or latency is guaranteed?</summary><p>None. Hardware, encode settings, decode path, and the network decide. Android uses a hardware decoder when the device has one; Linux source builds can use VA-API when those plugins exist. The website does not use graphs as benchmark evidence.</p></details>
 </section>
 <p id="no-results" class="statement" hidden>No matching answers. Try another term, or <a href="{{REPO}}/issues/new/choose">ask through the issue tracker</a>.</p>
 </div>

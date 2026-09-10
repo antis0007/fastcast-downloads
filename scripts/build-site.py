@@ -13,17 +13,18 @@ BASE = 'https://antis0007.github.io/fastcast-downloads/'
 REPO = 'https://github.com/antis0007/fastcast-downloads'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
-    'index': ('Your screen. Your connection.', 'Share a Windows screen to another PC or Android phone over a LAN or a private network you can already reach. No account. No FastCast relay.'),
+    'index': ('Your screen. Your connection.', 'A step away from platform dependence — share a Windows screen without a Discord-sized chat platform, a subscription, or a FastCast relay.'),
     'product': ('The Windows app', 'Real screenshots, what the public build can do, and what it still cannot.'),
     'downloads': ('Download FastCast', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
     'get-started': ('Setup', 'Matching builds. Viewer writes the invite. Windows starts the share.'),
-    'platforms': ('What runs', 'Windows x64 sends and watches. Android 8+ watches. Nothing else yet.'),
+    'platforms': ('What runs', 'Windows x64 sends and watches. Android 8+ watches. Linux receive is in source, not in this zip. No Mac, iOS, or browser app.'),
     'community': ('Bugs', 'Public GitHub issues for a screen-sharing preview. Do not paste invitations.'),
     'help': ('Help', 'Install fights, dead connections, audio, input. Search stays in your browser.'),
+    'roadmap': ('Roadmap', 'What is built, what is being qualified, and what is not started yet.'),
     'releases': ('Release notes', 'Published FastCast preview, matching files, known holes, older tags.'),
     'privacy': ('Privacy', 'This site has no analytics. GitHub hosts the files. Keep invites private.'),
     '404': ('Nothing here', 'Downloads, setup, and help.'),
-    'why-fastcast': ('Why FastCast', 'Screen sharing without a chat company, a store login, or a FastCast relay.'),
+    'why-fastcast': ('Why FastCast', 'Not another Discord — screen sharing without a chat empire, a store login, or a FastCast relay.'),
     'how-it-works': ('How the packets move', 'Windows encodes, a viewer decodes, GitHub is not in the live path.'),
     'data-and-privacy': ('Data compared', 'What Discord documents, next to what this FastCast preview actually does.'),
     'bandwidth': ('Bandwidth arithmetic', 'Estimate video payload at each end, and what a hypothetical relay would double.'),
@@ -52,6 +53,17 @@ def screenshot(name, eager=False):
   </a>
   <figcaption>{escape(caption)}{extra}</figcaption>
 </figure>'''
+
+
+def sha_rows():
+    rows = []
+    for key in ('windows', 'android', 'bundle'):
+        asset = release['assets'][key]
+        rows.append(
+            f"<tr><th scope=\"row\"><code>{escape(asset['filename'])}</code></th>"
+            f"<td><code>{escape(asset['sha256'])}</code></td></tr>"
+        )
+    return '\n'.join(rows)
 
 
 def json_ld():
@@ -263,7 +275,7 @@ def render(slug, title, description):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0c0d0f">
+  <meta name="theme-color" content="#0b0d12">
   <meta name="fastcast-version" content="{escape(release['version'])}">
   <meta name="description" content="{escape(description)}">
   {robots}
