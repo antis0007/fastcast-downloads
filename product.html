@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0c0d0f">
-  <meta name="fastcast-version" content="0.3.2-preview.1">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="fastcast-version" content="0.3.2-preview.2">
   <meta name="description" content="Real screenshots, what the public build can do, and what it still cannot.">
 
   <title>The Windows app — FastCast</title>
@@ -28,20 +28,41 @@
 </head>
 <body class="page-product">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Development preview</span><a href="releases.html">0.3.2 Preview 1 <span aria-hidden="true">↗</span></a></div></div>
+  <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Development preview</span><a href="releases.html">0.3.2 Preview 2 <span aria-hidden="true">↗</span></a></div></div>
   <header class="site-header wrap">
     <a class="brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="30" height="30" alt="">FastCast</a>
-    <nav aria-label="Main"><a href="product.html" aria-current="page">Product</a><a href="get-started.html">Get started</a><a href="help.html">Help</a><a href="https://github.com/antis0007/fastcast-downloads">GitHub</a></nav><a class="button small header-download" href="downloads.html">Download</a>
+    <nav aria-label="Main"><a href="product.html" aria-current="page">Product</a><a href="get-started.html">Get started</a><a href="help.html">Help</a><a href="https://github.com/antis0007/fastcast-downloads">GitHub</a></nav>
+    <a class="button small primary header-download" href="downloads.html">Download</a>
   </header>
   <main id="main" tabindex="-1"><section class="page-hero wrap"><h1>Share a Windows screen<br><span>to a PC or Android device.</span></h1><p class="lede">Windows sends. Windows or Android watches. Android does not send.</p><div class="actions"><a class="button primary" href="downloads.html">Download ↓</a><a class="text-link" href="get-started.html">Setup →</a></div></section>
 <nav class="section-nav wrap" aria-label="On this page"><a href="#screenshots">Interface</a><a href="#controls">Controls</a><a href="#capabilities">What's in, what's not</a></nav>
-<section class="section wrap" id="screenshots"><div class="section-heading"><div><h2>Windows Share</h2></div><p>A real capture, 7 Sep 2026. Development UI. Not a pixel-perfect 0.3.2 Preview 1 match. Not a live session.</p></div><figure class="screenshot">
+<section class="section wrap" id="screenshots"><div class="section-heading"><div><h2>Windows Share</h2></div><p>A real capture, 7 Sep 2026. Development UI. Not a pixel-perfect 0.3.2 Preview 2 match. Not a live session.</p></div>
+<div class="app-shell">
+  <div class="app-shell-rail" aria-hidden="true">
+    <span class="app-shell-orb active"></span>
+    <span class="app-shell-orb"></span>
+    <span class="app-shell-orb"></span>
+  </div>
+  <div class="app-shell-channels" aria-hidden="true">
+    <p class="app-shell-guild">Local guild</p>
+    <p class="is-active">Share</p>
+    <p>Receive</p>
+    <p>Table</p>
+    <p>People</p>
+    <p>Cursors</p>
+    <p># Lobby</p>
+  </div>
+  <div class="app-shell-stage">
+    <figure class="screenshot">
   <a class="image-open" href="assets/windows-share.png" data-lightbox aria-label="Enlarge Windows Share screenshot">
     <img src="assets/windows-share.png" width="1770" height="1170" alt="Windows Share in FastCast: screen and window selection, audio controls, and the receiving-device invitation." fetchpriority="high">
     <span class="image-action" aria-hidden="true">View full size ↗</span>
   </a>
-  <figcaption>Windows Share from a September 7, 2026 development capture. The public download is 0.3.2 Preview 1. Not a live session. <a href="product.html#screenshots">What’s on these images</a>.</figcaption>
-</figure></section>
+  <figcaption>Windows Share from a September 7, 2026 development capture. The public download is 0.3.2 Preview 2. Not a live session. <a href="product.html#screenshots">What’s on these images</a>.</figcaption>
+</figure>
+  </div>
+</div>
+</section>
 <section class="section wrap" id="controls"><div class="section-heading"><div><h2>Look before you share.</h2></div></div><div class="use-cases"><article><span class="step-number">01</span><h3>Pick the source</h3><p>Whole screen or one window. Whole screen includes your notifications.</p></article><article><span class="step-number">02</span><h3>Invite from the viewer</h3><p>The watching device writes the invite. The sending PC imports it. Do not paste that string in a public issue.</p></article><article><span class="step-number">03</span><h3>Audio and input are opt-in</h3><p>Leave them off unless you want them. Hardware and OS permissions still apply.</p></article></div></section>
 <section class="feature-band wrap"><div><h2>Smaller window.</h2><p>Open the image if you need to read the controls.</p></div><div><figure class="screenshot">
   <a class="image-open" href="assets/windows-compact.png" data-lightbox aria-label="Enlarge compact Windows screenshot">
@@ -54,7 +75,7 @@
 <span id="scope" hidden></span>
 <div class="section-heading">
 <div>
-<p class="eyebrow">0.3.2 Preview 1</p>
+<p class="eyebrow">0.3.2 Preview 2</p>
 <h2>What's in, what's not.</h2>
 </div>
 <p>This is the public zip, not a later git checkout. <a href="releases.html">Release notes</a>.</p>
@@ -67,7 +88,7 @@
 <div class="capability-row"><dt>Screen and window capture</dt><dd class="status status-available"><span class="status-word">Available</span></dd><dd class="capability-detail">Share an entire screen, or pick a single window, from a Windows x64 PC.</dd></div>
 <div class="capability-row"><dt>Video quality controls</dt><dd class="status status-available"><span class="status-word">Available</span></dd><dd class="capability-detail">Choose 60 or 30 fps and adjust stream quality while a session is running. Those controls do not promise sustained 60 fps on every PC.</dd></div>
 <div class="capability-row"><dt>H.264 encoding</dt><dd class="status status-available"><span class="status-word">Available</span></dd><dd class="capability-detail">NVIDIA NVENC is the validated path. Other PCs fall back to the built-in Windows CPU encoder, which costs processor time. Vendor hardware acceleration and physical Intel/AMD streaming tests are still pending.</dd></div>
-<div class="capability-row"><dt>Android receiving</dt><dd class="status status-available"><span class="status-word">Available</span></dd><dd class="capability-detail">Android 8 or newer, decoding in hardware. Validated on one device in the public 0.3.2 Preview 1 run.</dd></div>
+<div class="capability-row"><dt>Android receiving</dt><dd class="status status-available"><span class="status-word">Available</span></dd><dd class="capability-detail">Android 8 or newer, decoding in hardware. Validated on one device in the public 0.3.2 Preview 2 run.</dd></div>
 <div class="capability-row"><dt>Windows receiving</dt><dd class="status status-available"><span class="status-word">Available</span></dd><dd class="capability-detail">A second Windows PC can receive the screen and system audio. Both ends need matching builds.</dd></div>
 <div class="capability-row"><dt>Computer audio</dt><dd class="status status-available"><span class="status-word">Available</span></dd><dd class="capability-detail">The sending PC’s audio travels with the screen. The receiver decoded computer audio in the LAN run with no reported underruns. Audible output on a phone was not independently confirmed.</dd></div></dl>
 </section>
@@ -89,19 +110,20 @@
 </section>
 <section class="capability-group" id="status-absent" aria-labelledby="status-absent-title">
 <h3 id="status-absent-title">Not in this download</h3>
-<p class="capability-intro">Do not look for these in 0.3.2 Preview 1.</p>
+<p class="capability-intro">Do not look for these in 0.3.2 Preview 2.</p>
 <dl class="capability-ledger">
 <div class="capability-row"><dt>Automatic update checks</dt><dd class="status status-not-yet"><span class="status-word">Not yet</span></dd><dd class="capability-detail">Present in some development builds, not in this download. Update by installing a newer matching Windows and Android pair over the old one.</dd></div>
 <div class="capability-row"><dt>Managed relay and multi-viewer rooms</dt><dd class="status status-not-yet"><span class="status-word">Not yet</span></dd><dd class="capability-detail">There is no FastCast-run media relay, and multi-viewer rooms are not implemented.</dd></div>
-<div class="capability-row"><dt>macOS, Linux, iPhone, and iPad</dt><dd class="status status-not-yet"><span class="status-word">Not yet</span></dd><dd class="capability-detail">Not implemented. This preview is Windows x64 and Android 8 or newer only. Android does not send.</dd></div></dl>
+<div class="capability-row"><dt>Linux desktop</dt><dd class="status status-not-yet"><span class="status-word">Not yet</span></dd><dd class="capability-detail">Not in these public files. Application source has a Linux viewer (OpenH264, optional VA-API). Linux send is not a product.</dd></div>
+<div class="capability-row"><dt>macOS, iPhone, and iPad</dt><dd class="status status-not-yet"><span class="status-word">Not yet</span></dd><dd class="capability-detail">Not implemented. This preview download is Windows x64 and Android 8 or newer only. Android does not send.</dd></div></dl>
 </section>
 <aside class="statement" aria-labelledby="evidence-title">
 <h3 id="evidence-title">One LAN run on these files</h3>
-<p class="note">Exact 0.3.2 Preview 1 Windows host and Android APK</p>
+<p class="note">Exact 0.3.2 Preview 2 Windows host and Android APK</p>
 <ul class="evidence-facts"><li>120.032 seconds over LAN</li><li>5,925 encoded frames and 5,924 rendered frames</li><li>One video reassembly drop, recovered in 229 ms</li><li>Computer audio decoded with no reported underruns; audible output was not independently confirmed</li><li>Variable-cadence test source averaged 49.35 rendered fps</li></ul>
 <p class="note">Observed in one physical Windows-to-Android LAN run. Evidence, not a universal performance guarantee.</p>
 <ul class="evidence-caveats"><li>This does not validate sustained smooth 60 fps.</li><li>Six capture recreations caused presentation gaps over 200 ms, longest 285 ms.</li><li>Audible playback, a 30-minute endurance run, physical remote input, and unrelated-network media remain unqualified.</li></ul>
-<p><a href="https://github.com/antis0007/fastcast-downloads/releases/tag/v0.3.2-preview.1">Original release notes ↗</a></p>
+<p><a href="https://github.com/antis0007/fastcast-downloads/releases/tag/v0.3.2-preview.2">Original release notes ↗</a></p>
 </aside>
 <p class="capability-after">No group chat. No “community platform.” If you want Discord, use Discord. <a href="community.html">Bugs go here</a>.</p>
 </section>
@@ -114,6 +136,6 @@
     <nav aria-label="More"><h2>More</h2><a href="why-fastcast.html">Why FastCast</a><a href="how-it-works.html">How it works</a><a href="bandwidth.html">Bandwidth calculator</a><a href="data-and-privacy.html">Data & privacy compared</a></nav>
     <div class="footer-bottom"><span>Windows sends · Windows or Android watches · Preview</span><a href="https://github.com/antis0007/fastcast-downloads">GitHub ↗</a><a href="https://github.com/antis0007/fastcast-downloads/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
   </footer>
-  <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>Windows Share from a September 7, 2026 development capture. The public download is 0.3.2 Preview 1. Not a live session.</p></dialog>
+  <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>Windows Share from a September 7, 2026 development capture. The public download is 0.3.2 Preview 2. Not a live session.</p></dialog>
 </body>
 </html>
