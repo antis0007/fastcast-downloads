@@ -161,7 +161,7 @@
         {
           "name": "Computer audio",
           "status": "available",
-          "detail": "The sending PC’s audio travels with the screen. The receiver decoded computer audio in the LAN run with no reported underruns. Audible output on a phone was not independently confirmed."
+          "detail": "The sending PC\u2019s audio travels with the screen. The receiver decoded computer audio in the LAN run with no reported underruns. Audible output on a phone was not independently confirmed."
         }
       ]
     },
@@ -250,10 +250,10 @@
     {
       "version": "0.3.2-preview.2",
       "tag": "v0.3.2-preview.2",
-      "label": "0.3.2 Preview 2",
       "published": "2026-09-10",
-      "published_display": "September 10, 2026",
       "current": true,
+      "label": "0.3.2 Preview 2",
+      "published_display": "September 10, 2026",
       "summary": "UX sheets, host-first Go live watch-place, rustls call-listen fix. Android still viewer-only for capture. Matching Win+Android preview packages."
     },
     {
