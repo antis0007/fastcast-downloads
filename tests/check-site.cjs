@@ -115,7 +115,10 @@ async function checkJourneysAndAccessibility() {
     await page.keyboard.press('Escape');
     assert.equal(await page.locator('dialog').isVisible(), false);
     assert.ok(await screenshot.evaluate(el => el === document.activeElement));
-    assert.equal(await page.locator('.signal-art i').last().evaluate(el => getComputedStyle(el).animationName), 'none');
+    // Reduced motion must stop the decorative animation. The seal is the right
+    // probe: it stays visible with motion off, unlike the ember and floating-rune
+    // layers, which are hidden outright and so have nothing to assert on.
+    assert.equal(await page.locator('.rune-ring').first().evaluate(el => getComputedStyle(el).animationName), 'none');
     await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Get started', exact: true }).click();
     await page.waitForURL('**/get-started.html');
     await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Help', exact: true }).click();
@@ -125,8 +128,10 @@ async function checkJourneysAndAccessibility() {
     assert.equal(await page.locator('.faq-group details:visible').count(), 1);
     await search.fill('no-such-answer-8294');
     assert.ok(await page.locator('#no-results').isVisible());
-    await page.getByRole('link', { name: 'Connection', exact: true }).click();
+    await page.getByRole('link', { name: 'Connection & diagnostics', exact: true }).click();
     assert.equal(await search.inputValue(), '');
+    // Fourteen: the standalone "about development and AI assistance" note is a
+    // sibling of the topic groups, not one of their answers.
     assert.equal(await page.locator('.faq-group details:visible').count(), 14);
     await page.goto(base + 'product.html');
     assert.equal((await page.locator('#capabilities h2').textContent()).trim(), "What's in, what's not.");

@@ -1,77 +1,221 @@
 <section class="hero wrap" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <p class="eyebrow">A step away from platform dependence</p>
-    <h1 id="hero-title">Your screen.<br><span>Your connection.</span></h1>
-    <p class="lede">Share a Windows screen with another PC or Android device — without a Discord-sized chat platform, a subscription, or a FastCast-hosted workspace.</p>
+    <p class="eyebrow">Free preview · Windows and Android</p>
+    <h1 id="hero-title">The shortest path between<br><span>your screen and theirs.</span></h1>
+    <p class="lede">Share a screen or a single window with another PC or an Android phone. No account, no subscription, no server in the middle.</p>
     <div class="actions">
       <a class="button primary" data-download="windows" href="{{WINDOWS_URL}}">Download for Windows <span aria-hidden="true">↓</span></a>
-      <a class="button" data-download="android" href="{{ANDROID_URL}}">Download the Android viewer <span aria-hidden="true">↓</span></a>
+      <a class="button" data-download="android" href="{{ANDROID_URL}}">Get the Android viewer <span aria-hidden="true">↓</span></a>
     </div>
-    <p class="small-copy">Free preview · Windows x64 + Android 8+<br>A whole screen, or one window you pick<br>{{NETWORK}} · <a href="downloads.html">Install requirements</a></p>
-    <div class="wizard-stage" data-fx="wizard-orbit" aria-hidden="true">
-      <div class="wizard-glow"></div>
-      <div class="wizard-ring wizard-ring-a"></div>
-      <div class="wizard-ring wizard-ring-b"></div>
-      <div class="wizard-particles" aria-hidden="true"></div>
-      <img class="hero-wizard" src="assets/wizard.png" width="256" height="198" alt="">
-      <span class="wizard-spark"></span>
-      <span class="wizard-spark"></span>
-      <span class="wizard-spark"></span>
-    </div>
+    <ul class="hero-facts">
+      <li>Windows x64 sends and watches</li>
+      <li>Android 8+ watches</li>
+      <li>Straight across your own network</li>
+    </ul>
   </div>
-  <div class="product-stage">
-    <div class="signal-art" aria-hidden="true"><i></i><i></i><i></i></div>
-    {{SCREENSHOT_WIDE}}
+  <div class="hero-visual">
+    <div class="cast-scene">
+      {{FLAME_FIELD}}
+      {{HEX_ACCENTS}}
+      {{RUNE_CIRCLE}}
+      {{FALL_RUNES}}
+      {{RUNE_CLOUD}}
+      {{CIRCUIT_TRACES}}
+      {{FLOATING_RUNES}}
+      <span class="cast-figure">
+        <button class="cast-body" type="button">
+          <img class="cast-wizard" src="assets/fastcast-wizard.webp" width="1203" height="926" alt="" draggable="false">
+          <span class="cast-firelight" aria-hidden="true"></span>
+          <span class="sr-only">The FastCast wizard. Activate for a word from him.</span>
+        </button>
+        <p class="wizard-voice" aria-live="polite" hidden></p>
+      </span>
+    </div>
+    <script type="application/json" id="wizard-voice-lines">{{WIZARD_VOICE}}</script>
   </div>
 </section>
-<div class="platform-strip wrap">
-  <p><span>The current offer</span>Free. No subscriptions.</p>
-  <p><span>The media path</span>A reachable peer connection</p>
-  <p><span>The public release</span>Windows sends · Windows or Android watches</p>
+
+<div class="platform-strip wrap" aria-label="Platform summary">
+  <p><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg><span>Pricing</span>Free preview. No account, no subscription.</p>
+  <p><svg class="icon" aria-hidden="true"><use href="#i-windows"/></svg><span>Sender</span>Windows x64 — a full screen or one window.</p>
+  <p><svg class="icon" aria-hidden="true"><use href="#i-devices"/></svg><span>Viewer</span>A second Windows PC, or Android 8 and newer.</p>
 </div>
-<section class="section wrap" aria-labelledby="role-title">
+
+<section class="section wrap" aria-labelledby="role-title" data-reveal>
   <div class="section-heading">
-    <div><p class="eyebrow">01 / Start here</p><h2 id="role-title">Which screen are<br>you sitting at?</h2></div>
-    <p>Two machines, two different jobs. The watching device writes the invitation first; the Windows PC imports it and decides what actually leaves the screen.</p>
+    <div><p class="eyebrow">The two ends</p><h2 id="role-title">Which screen are<br>you at?</h2></div>
+    <p>Setup runs in two steps. The device that watches creates the invitation; the Windows PC imports it and controls what is shared.</p>
   </div>
   <div class="role-grid">
     <a class="role-card" href="get-started.html#invite">
-      <span class="eyebrow">A second PC, or an Android phone</span>
+      <span class="eyebrow">Step 1 · A second PC or an Android device</span>
       <h3>I want to watch</h3>
-      <p>Open FastCast, create the invitation, and hand it to the sending PC privately. It is access to the session, not a link to post.</p>
-      <p class="role-order">You go first.</p>
+      <p>Install FastCast, create an invitation, and send it to the person sharing. The invitation grants access to the session.</p>
+      <p class="role-order">Start here</p>
       <span class="text-link">Viewer setup →</span>
     </a>
     <a class="role-card" href="get-started.html#share">
-      <span class="eyebrow">The Windows PC with the thing on it</span>
+      <span class="eyebrow">Step 2 · The Windows PC with the screen</span>
       <h3>I have the screen</h3>
-      <p>Import the invitation, pick a whole screen or a single window, then decide about sound and input separately before you start.</p>
-      <p class="role-order">You go second.</p>
+      <p>Import the invitation, choose a full screen or a single window, then set audio and input.</p>
+      <p class="role-order">Finish here</p>
       <span class="text-link">Sender setup →</span>
     </a>
   </div>
 </section>
-<section class="section wrap editorial-intro home-reason">
-  <span class="section-number">02 / Why another app?</span>
-  <div><h2>Communication should bring you closer.<br>It shouldn’t make you more dependent.</h2><p>If you’re tired of subscriptions, crowded platforms, and data collection you can’t easily see, wanting an alternative is reasonable. The usual screen share is bolted onto a chat company.</p><p>FastCast starts with screen sharing. Your devices handle the media. There is no FastCast-managed media relay in this preview — and this is not Discord.</p><a class="text-link" href="why-fastcast.html">Why we’re building FastCast →</a></div>
+
+<section class="light-panel" id="setup">
+  <div class="wrap" data-reveal>
+    <div class="section-heading">
+      <div><p class="eyebrow">Three steps</p><h2>Three steps to<br>a live screen.</h2></div>
+      <p>The viewing device creates the invitation. The Windows PC imports it, picks a source, and starts the stream.</p>
+    </div>
+    <aside class="invitation" id="receive-setup">
+      <svg class="icon invitation-icon" aria-hidden="true"><use href="#i-invite"/></svg>
+      <div><h3>Start on the device that will watch</h3><p>Install the matching app, then create a short-lived invitation and send it to the sharing PC privately.</p></div>
+      <a class="text-link" href="get-started.html#invite">Viewer setup →</a>
+    </aside>
+    <div class="step-intro"><h3>Finish on the Windows PC</h3><p class="note">You decide what leaves the screen.</p></div>
+    <ol class="steps">
+      <li><h4>Select a source</h4><p>Share the entire screen, or a single window.</p></li>
+      <li><h4>Add the invitation</h4><p>FastCast validates it before the stream starts.</p></li>
+      <li><h4>Set the permissions</h4><p>System audio, microphone, and remote input are independent switches.</p></li>
+    </ol>
+    <p class="setup-note">Microphone and remote input are marked Preview. Neither is required to share a screen. <a href="product.html#capabilities">What is qualified →</a></p>
+  </div>
 </section>
-<section class="wrap data-teaser">
-  <div><p class="eyebrow">03 / Follow the data</p><h2>Know what moves.<br>Know what stays.</h2><p>Network traffic and stored personal data are different things. Both deserve a clear explanation.</p><a class="text-link" href="data-and-privacy.html">A sourced look at platform data →</a></div>
-  <div class="payload-preview"><p class="eyebrow">One direct session · 12 Mbps · 60 minutes</p><div class="payload-flow"><div><strong>5.4 <small>GB</small></strong><span>Sender upload</span></div><b aria-hidden="true">→</b><div><strong>5.4 <small>GB</small></strong><span>Viewer download</span></div></div><p>Video payload estimate. The same data at each endpoint; excludes audio and transport overhead.</p><a class="button" href="bandwidth.html">Calculate your session →</a></div>
+
+<section class="light-panel light-panel-2" id="interface">
+  <div class="wrap" data-reveal>
+    <div class="section-heading">
+      <div><p class="eyebrow">The casting desk</p><h2>See what you're<br>about to share.</h2></div>
+      <p>Pick the source, bring in the invitation, set audio and input. Nothing starts until you say so.</p>
+    </div>
+    {{SCREENSHOT_WIDE}}
+    <div class="permissions">
+      <div class="permissions-heading"><h3>Your screen is not<br>blanket permission.</h3><p>Sound, voice, and control are separate. Leave off what you do not need.</p></div>
+      <div class="permission-list" data-snap role="group" aria-label="Permissions you can grant separately" tabindex="0">
+        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-volume"/></svg><div><h4>System audio</h4><p>The sending PC's sound travels with the picture.</p></div><span class="status status-available"><span class="status-word">Available</span></span></article>
+        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-mic"/></svg><div><h4>Microphone</h4><p>Your voice. Sharing a screen never needs it.</p></div><span class="status status-preview"><span class="status-word">Preview</span></span></article>
+        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-input"/></svg><div><h4>Remote input</h4><p>Lets the other device drive your mouse and keyboard.</p></div><span class="status status-preview"><span class="status-word">Preview</span></span></article>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="section wrap">
+
+<section class="section wrap network" id="route" data-reveal>
   <div class="section-heading">
-    <div><p class="eyebrow">04 / A model you can understand</p><h2>Free, with the costs<br>in plain view.</h2></div>
-    <p>Your hardware and connection do the work. The current preview has no subscription, and it provides fewer hosted services. That tradeoff should be visible.</p>
+    <div><p class="eyebrow">Under the surface</p><h2>The direct road<br>comes first.</h2></div>
+    <p>Media travels straight between the two devices. When that path is open, nothing sits in the middle of it.</p>
   </div>
-  <div class="use-cases">
-    <article><h3>Your devices</h3><p>The sharing PC captures and encodes. A Windows or Android viewer decodes and displays.</p></article>
-    <article><h3>Your connection</h3><p>Start on a {{NETWORK}}. Data caps, electricity, and any VPN service remain your costs.</p></article>
-    <article><h3>A smaller hosted footprint</h3><p>GitHub serves the website and downloads. A direct session needs no FastCast media relay.</p></article>
+  <div class="network-grid">
+    <div class="network-copy">
+      {{SCRYING_ORB}}
+      <p>The Windows PC encodes the screen. The device that watches decodes it. A reachable route keeps the media between two machines you already own.</p>
+      <p class="tower-line">A relay is the fallback when the road is blocked. This preview ships without one.</p>
+      <aside class="release-caveat">
+        <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
+        <div><strong>What the public build actually needs.</strong><p>{{RELEASE_LABEL}} wants a reachable LAN or private-network route. Automatic internet traversal and a FastCast-managed relay are not in the package. <a href="platforms.html">Network requirements.</a></p></div>
+      </aside>
+    </div>
+    <figure class="route-card">
+      {{RUNE_CIRCLE_SM}}
+      <p class="diagram-label">Connection design</p>
+      <div class="route-diagram" role="img" aria-label="A preferred direct path from the Windows PC to the viewing device, with an optional relay fallback that is not part of the public download.">
+        <div class="route-end"><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg><span>Windows PC</span></div>
+        <div class="direct-line" aria-hidden="true"><span>DIRECT / PREFERRED</span></div>
+        <div class="route-end"><svg class="icon" aria-hidden="true"><use href="#i-devices"/></svg><span>Viewing device</span></div>
+        <div class="relay-path" aria-hidden="true"><div class="tower-node"><svg class="icon" aria-hidden="true"><use href="#i-tower"/></svg><span>OPTIONAL RELAY · NOT IN THIS DOWNLOAD</span></div></div>
+      </div>
+      <figcaption class="design-caption">A relay would carry traffic onward. It is a route, never the place you watch.</figcaption>
+    </figure>
   </div>
-  <a class="text-link" href="how-it-works.html">See the architecture and costs →</a>
 </section>
-<section class="free-band wrap">
-  <div><p class="eyebrow">A first step, not a forced migration</p><h2>Try it with<br>your people.</h2></div>
-  <div><p>You can test a screen-sharing session without moving your whole group off Discord. Install matching apps, share the viewer’s invitation privately, and choose what to show.</p><a class="button primary" href="get-started.html">Set up your first session →</a><a class="text-link" href="community.html">Help shape what comes next →</a></div>
+
+<section class="class-band wrap" aria-labelledby="class-title" data-reveal>
+  <div class="class-card">
+    <div class="class-body">
+      <p class="eyebrow">At a glance</p>
+      <h2 id="class-title">FastCast is a<br><span>screen-sharing wizard.</span></h2>
+      <p class="class-lede">It does one thing: it puts your screen on another device, over a route you already control. No account, no subscription, and nothing of ours sitting in the middle.</p>
+      <dl class="class-features">
+        <div><dt><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg>Screen cast</dt><dd>At will. No session limit, no host account, no waiting room.</dd></div>
+        <div><dt><svg class="icon" aria-hidden="true"><use href="#i-invite"/></svg>The invitation</dt><dd>A device needs one before it can watch. Treat it as private.</dd></div>
+        <div><dt><svg class="icon" aria-hidden="true"><use href="#i-network"/></svg>How it connects</dt><dd>One machine encodes, the other decodes, over a route you already have.</dd></div>
+        <div><dt><svg class="icon" aria-hidden="true"><use href="#i-host"/></svg>One session at a time</dt><dd>End it and the picture stops. Nothing is left holding your stream.</dd></div>
+        <div><dt><svg class="icon" aria-hidden="true"><use href="#i-devices"/></svg>The viewing device</dt><dd>Windows sends. Android watches, and only ever watches.</dd></div>
+        <div><dt><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>Diagnostics</dt><dd>For when it does not connect. <a href="help.html">Open the checklist →</a></dd></div>
+      </dl>
+      <p class="class-note">No special hardware: pick a window or the full screen. The viewing device creates the invitation, so it goes first.</p>
+    </div>
+    <div class="class-figure" aria-hidden="true">
+      <img src="assets/fastcast-wizard.webp" width="1203" height="926" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="light-panel" id="capabilities">
+  <div class="wrap" data-reveal>
+    <div class="section-heading">
+      <div><p class="eyebrow">The ledger</p><h2>What ships today.</h2></div>
+      <p>{{RELEASE_LABEL}} · published {{PUBLISHED}}. The honest list, with the limits in view.</p>
+    </div>
+    <table class="ledger-table">
+      <caption>Public-build support, from the published release and capability notes.</caption>
+      <thead><tr><th scope="col">Capability</th><th scope="col">Status</th><th scope="col">What to expect</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Windows x64</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Share a screen or window, or receive from another Windows PC. Use matching builds.</td></tr>
+        <tr><th scope="row">Android 8+</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Receives the stream. Android does not send, and device support varies.</td></tr>
+        <tr><th scope="row">System audio</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Decoded in the LAN run. Audible output on a phone was not independently confirmed.</td></tr>
+        <tr><th scope="row">Microphone &amp; remote input</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>In the build. Physical voice, echo, and Android input are still unqualified.</td></tr>
+        <tr><th scope="row">Outside your local network</th><td><span class="status status-limited"><span class="status-word">Limited</span></span></td><td>Needs a route you already run. No automatic universal internet traversal.</td></tr>
+        <tr><th scope="row">Managed relay &amp; rooms</th><td><span class="status status-not-yet"><span class="status-word">Not yet</span></span></td><td>No FastCast media relay and no multi-viewer rooms in this package.</td></tr>
+        <tr><th scope="row">Other platforms</th><td><span class="status status-not-yet"><span class="status-word">Not yet</span></span></td><td>No macOS, iPhone, iPad, or browser app. A Linux viewer is source-only.</td></tr>
+      </tbody>
+    </table>
+    <div class="ledger-footnote"><p>Hardware, decoders, and network conditions decide the result. A short test is not a qualified long session.</p><a class="text-link" href="product.html#capabilities">Full capability notes →</a></div>
+  </div>
+</section>
+
+<section class="light-panel light-panel-2" id="help">
+  <div class="wrap help-grid" data-reveal>
+    <div class="help-heading"><p class="eyebrow">When it fails</p><h2>Start with<br>the basics.</h2><p>Checks worth making before you change every setting or blame the router.</p></div>
+    <div>
+      <details class="faq" open>
+        <summary>The devices won't connect.</summary>
+        <p>Matching versions on both devices, and a network they can both reach — guest Wi-Fi can isolate them even when the name matches. Make a fresh invitation on the viewer and import it on the sharing PC. <a href="help.html#connection">Connection checklist.</a></p>
+      </details>
+      <details class="faq">
+        <summary>Is this remote control, or watching?</summary>
+        <p>Watching is the point. Remote input is a separate, experimental permission — not a promise of responsive control in every game. Leave it off and the view still works.</p>
+      </details>
+      <details class="faq">
+        <summary>What do I need before installing?</summary>
+        <p>Windows x64 to send, and a second Windows PC or Android 8+ to watch. The Windows installer is unsigned and the APK is debug-signed, so check the published checksum. <a href="downloads.html">Install notes.</a></p>
+      </details>
+      <a class="text-link" href="help.html">Open full help →</a>
+    </div>
+  </div>
+</section>
+
+<section class="downloads wrap" id="downloads" data-reveal>
+  <div class="download-heading">
+    <div><p class="eyebrow">One screen to share. One device to watch.</p><h2>Try the current<br>preview.</h2></div>
+    <p>Install matching versions on both devices, start on your own network, and see how it runs on your hardware.</p>
+  </div>
+  <div class="download-grid">
+    <article class="download-card">
+      <div class="card-top"><div><h3>Windows</h3><p>Share a screen, or watch one.</p></div><svg class="icon" aria-hidden="true"><use href="#i-windows"/></svg></div>
+      <dl><div><dt>Platform</dt><dd>Windows x64</dd></div><div><dt>Package</dt><dd>EXE installer · {{WINDOWS_SIZE}}</dd></div><div><dt>Signing</dt><dd>{{WINDOWS_SIGNING}}</dd></div></dl>
+      <a class="button primary" href="{{WINDOWS_URL}}">Download for Windows ↓</a>
+      <a class="text-link" href="get-started.html#windows">Install notes →</a>
+    </article>
+    <article class="download-card">
+      <div class="card-top"><div><h3>Android viewer</h3><p>Watch on a phone or tablet.</p></div><svg class="icon" aria-hidden="true"><use href="#i-android"/></svg></div>
+      <dl><div><dt>Platform</dt><dd>Android 8 or newer</dd></div><div><dt>Package</dt><dd>APK · {{ANDROID_SIZE}}</dd></div><div><dt>Signing</dt><dd>{{ANDROID_SIGNING}}</dd></div></dl>
+      <a class="button" href="{{ANDROID_URL}}">Get the viewer ↓</a>
+      <a class="text-link" href="get-started.html#android">Install notes →</a>
+    </article>
+  </div>
+  <div class="download-footer"><p class="free-note">Free preview. No subscription. Your devices and connection do the work.</p><div class="download-links"><a href="{{BUNDLE_URL}}">Portable bundle</a><a href="{{CHECKSUMS_URL}}">Checksums ↗</a><a href="releases.html">Release notes</a></div></div>
 </section>

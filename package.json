@@ -5,7 +5,7 @@
   "description": "Static FastCast website with native app screenshots and verified downloads",
   "scripts": {
     "test": "python scripts/check-release.py && node tests/bandwidth.cjs && node tests/check-site.cjs",
-    "check": "node --check site.js && node --check bandwidth.js && node --check tests/check-site.cjs && python scripts/check-release.py",
+    "check": "node --check site.js && node --check bandwidth.js && node --check tests/check-site.cjs && python scripts/check-release.py && python scripts/check-contrast.py",
     "build": "python scripts/build-site.py && python scripts/check-release.py"
   },
   "devDependencies": {

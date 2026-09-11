@@ -7,4 +7,4 @@ Both `windows-share.png` and `windows-compact.png` are unchanged client-area cap
 - These images do not represent the public package pixel-for-pixel: Unchanged client-area capture of a development interface. Some controls can differ from the public package. The app Cyan theme is the product UI, not the website brand color.
 - Neither image depicts a connected media session or establishes streaming performance.
 - Website image frames, labels, and zoom controls are HTML/CSS outside the screenshots.
-- `og.png` is a generated typographic brand graphic for social previews, not a screenshot.
+- `og.png` is the FastCast logo lockup on the warm ink ground, generated for social previews; not a screenshot.
