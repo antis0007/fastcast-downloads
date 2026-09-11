@@ -119,16 +119,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-  transition: background .15s ease, border-color .15s ease, color .15s ease;
+  transition: background .15s ease, border-color .15s ease, color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
-.button:hover { color: var(--text); background: var(--surface-raised); border-color: #3d4a5c; }
+.button:hover { color: var(--text); background: var(--surface-raised); border-color: #3d4a5c; transform: translateY(-1px); box-shadow: 0 6px 16px #00000033; }
+.button:active { transform: translateY(0); box-shadow: none; }
 .button.primary {
   color: #081018;
   background: var(--accent);
   border-color: var(--accent);
   box-shadow: 0 8px 24px #6bc9ff22;
 }
-.button.primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: #081018; }
+.button.primary:hover { background: var(--accent-strong); border-color: var(--accent-strong); color: #081018; box-shadow: 0 10px 26px #6bc9ff3d; }
+.button.primary:active { box-shadow: 0 4px 14px #6bc9ff22; }
 .button.small { min-height: 40px; padding: 8px 14px; font-size: 13px; }
 .header-download {
   background: var(--accent);
@@ -361,6 +363,56 @@ figcaption { margin-top: 14px; font-size: 12px; color: var(--quiet); line-height
 .use-cases p { color: var(--muted); font-size: 14px; margin-top: 12px; line-height: 1.7; }
 .line-icon { display: inline-flex; align-items: center; height: 40px; margin-bottom: 14px; color: var(--brand); font-size: 26px; }
 
+/* Capability ledger. build-site.py's capability_ledger() emits this markup
+   but no rule ever styled it, so the product page's densest section was
+   shipping as a browser-default indented <dl>. */
+.status-key {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px 22px;
+  margin: 0 0 36px;
+  padding: 20px 22px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.status-key > div { margin: 0; }
+.status-key dt { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--brand-soft); }
+.status-key dd { margin: 8px 0 0; font-size: 12px; line-height: 1.65; color: var(--muted); }
+.capability-group + .capability-group { margin-top: 44px; }
+.capability-group h3 { font-size: 19px; letter-spacing: -.02em; }
+.capability-intro { margin-top: 10px; max-width: var(--measure); color: var(--muted); font-size: 14px; line-height: 1.7; }
+.capability-group .table-scroll { margin-top: 22px; }
+.capability-after { margin-top: 26px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+/* One row per capability, grouped by status (shipped / unproven / needs your
+   own infra / absent) so the narrative framing survives -- a single flat
+   table across all statuses would lose that. Each group's table is what
+   used to be a definition-list grid; a table scans faster with 4-16 rows. */
+.capability-table th[scope="col"]:nth-child(2), .capability-table td:nth-child(2) { white-space: nowrap; width: 1%; }
+.capability-table th[scope="row"] { overflow-wrap: normal; }
+.status {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: .06em;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--muted);
+}
+.status-available { color: var(--accent-strong); border-color: #2f5f7d; background: #6bc9ff14; }
+.status-preview { color: var(--brand-soft); border-color: #4a3d24; background: #ecac2c12; }
+.status-limited { color: #cbb49f; border-color: #46392a; }
+.status-not-yet { color: var(--quiet); border-color: var(--line-soft); }
+@media (max-width: 760px) {
+  .status-key { grid-template-columns: 1fr 1fr; padding: 18px; }
+}
+@media (max-width: 520px) {
+  .status-key { grid-template-columns: 1fr; gap: 14px; }
+}
+
 .feature-band {
   position: relative;
   isolation: isolate;
@@ -470,6 +522,8 @@ section[id], article[id] { scroll-margin-top: 88px; }
 
 .download-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .download-card {
+  display: flex;
+  flex-direction: column;
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -496,7 +550,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
 }
 .download-card dt { color: var(--quiet); }
 .download-card dd { margin: 0; color: var(--text); }
-.download-card .button { width: 100%; justify-content: space-between; margin-top: 4px; }
+.download-card .button { width: 100%; justify-content: space-between; margin-top: auto; }
 .download-card .text-link { font-size: 13px; margin-top: 10px; }
 
 .bundle-row {
@@ -541,11 +595,9 @@ section[id], article[id] { scroll-margin-top: 88px; }
 .support-table thead th { background: var(--surface); font-weight: 600; }
 .support-table tbody th { font-weight: 600; }
 .support-table td { color: var(--muted); }
-.capability-table td:first-of-type { white-space: nowrap; width: 1%; }
 .table-scroll { overflow-x: auto; border: 1px solid var(--line-soft); border-radius: var(--radius); }
 .table-scroll:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .capability-table { min-width: 34rem; }
-.capability-table th[scope="row"] { overflow-wrap: normal; }
 .availability { color: var(--accent-strong); font-weight: 600; }
 
 .statement {
@@ -973,4 +1025,5 @@ section[id], article[id] { scroll-margin-top: 88px; }
   .wizard-glow,
   .wizard-spark { animation: none; }
   .wizard-particles { display: none; }
+  .button:hover, .button:active { transform: none; }
 }

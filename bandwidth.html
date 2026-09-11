@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0d12">
-  <meta name="fastcast-version" content="0.3.2-preview.2">
+  <meta name="fastcast-version" content="0.3.2-preview.3">
   <meta name="description" content="Estimate video payload at each end, and what a hypothetical relay would double.">
 
   <title>Bandwidth arithmetic — FastCast</title>
@@ -28,7 +28,7 @@
 </head>
 <body class="page-bandwidth">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Development preview</span><a href="releases.html">0.3.2 Preview 2 <span aria-hidden="true">↗</span></a></div></div>
+  <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Development preview</span><a href="releases.html">0.3.2 Preview 3 <span aria-hidden="true">↗</span></a></div></div>
   <header class="site-header wrap">
     <a class="brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="30" height="30" alt="">FastCast</a>
     <nav aria-label="Main"><a href="product.html">Product</a><a href="get-started.html">Get started</a><a href="help.html">Help</a><a href="https://github.com/antis0007/fastcast-downloads">GitHub</a></nav>
@@ -55,7 +55,7 @@
   </div>
 </section>
 <section class="wrap traffic-summary" aria-label="Where the estimated data goes">
-  <article><span>YOUR SENDER UPLOAD</span><strong data-payload>5.40 GB</strong><p>Video leaving the sharing PC.</p></article><article><span>YOUR VIEWER DOWNLOAD</span><strong data-payload>5.40 GB</strong><p>The same video arriving at the viewer.</p></article><article><span>FASTCAST RELAY TRAFFIC</span><strong>0 GB</strong><p>For a direct peer route; no FastCast relay is involved.</p></article>
+  <article><span>YOUR SENDER UPLOAD</span><strong data-payload>5.40 GB</strong><p>Video leaving the sharing PC.</p></article><article><span>YOUR VIEWER DOWNLOAD</span><strong data-payload>5.40 GB</strong><p>The same video arriving at the viewer.</p></article><article><span>FASTCAST RELAY TRAFFIC</span><strong>0 GB</strong><p>Zero for a direct peer route. A relayed session moves the same payload through the relay instead.</p></article>
 </section>
 <p class="wrap note" id="calculator-status" role="status" aria-live="polite"></p>
 <section class="section wrap"><div class="section-heading"><div><h2>A relay adds a server’s traffic.<br>It does not erase yours.</h2></div><p>Generic one-to-one relay model. This is not a measurement of Discord, Teams, or a particular hosting bill.</p></div><div class="relay-comparison"><article><span class="tag">DIRECT PEER ROUTE</span><h3>Sender → viewer</h3><p>Sender uploads <b data-payload>5.40 GB</b>. Viewer downloads that same payload. No central relay needs to receive and forward it.</p></article><article><span class="tag neutral">HYPOTHETICAL MEDIA RELAY</span><h3>Sender → relay → viewer</h3><p>The relay receives <b data-payload>5.40 GB</b> and sends <b data-payload>5.40 GB</b>: <b id="relay-total">10.80 GB</b> combined ingress and egress. Provider billing can count these differently.</p></article></div></section>
@@ -63,12 +63,12 @@
 <section class="closing-cta wrap"><div><h2>Run it locally.</h2><p>Matching Windows and Android builds.</p></div><a class="button primary" href="downloads.html">Download ↓</a></section>
 </main>
   <footer class="site-footer wrap">
-    <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="48" height="48" alt=""><span>FastCast</span></a><p>Your screen. Your connection.</p><p class="small-copy">No account. No subscription. Preview.</p><p class="small-copy">Native application source is maintained separately. This repository publishes the website and preview packages only.</p></div>
+    <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="48" height="48" alt=""><span>FastCast</span></a><p>Your screen. Your connection.</p><p class="small-copy">No account to share a screen. Friends and calls use a device-owned account. Preview.</p><p class="small-copy">Native application source is maintained separately. This repository publishes the website and preview packages only.</p></div>
     <nav aria-label="Product links"><h2>Product</h2><a href="product.html">Overview</a><a href="downloads.html">Downloads</a><a href="platforms.html">Platforms</a><a href="releases.html">Release notes</a></nav>
-    <nav aria-label="Resources"><h2>Resources</h2><a href="get-started.html">Setup</a><a href="help.html">Help</a><a href="community.html">Bugs</a><a href="privacy.html">Privacy</a></nav>
-    <nav aria-label="More"><h2>More</h2><a href="why-fastcast.html">Why FastCast</a><a href="how-it-works.html">How it works</a><a href="bandwidth.html" aria-current="page">Bandwidth calculator</a><a href="data-and-privacy.html">Data & privacy compared</a></nav>
+    <nav aria-label="Resources"><h2>Resources</h2><a href="get-started.html">Setup</a><a href="help.html">Help</a><a href="community.html">Bugs</a><a href="privacy.html">Privacy</a><a href="https://github.com/antis0007/fastcast-downloads/security/policy">Security</a></nav>
+    <nav aria-label="More"><h2>More</h2><a href="why-fastcast.html">Why FastCast</a><a href="how-it-works.html">How it works</a><a href="roadmap.html">Roadmap</a><a href="bandwidth.html" aria-current="page">Bandwidth calculator</a><a href="data-and-privacy.html">Data & privacy compared</a></nav>
     <div class="footer-bottom"><span>Windows sends · Windows or Android watches · Preview</span><a href="https://github.com/antis0007/fastcast-downloads">GitHub ↗</a><a href="https://github.com/antis0007/fastcast-downloads/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
   </footer>
-  <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>Windows Share from a September 7, 2026 development capture. The public download is 0.3.2 Preview 2. Not a live session.</p></dialog>
+  <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>Windows Share from a September 7, 2026 development capture. The public download is 0.3.2 Preview 3. Not a live session.</p></dialog>
 </body>
 </html>

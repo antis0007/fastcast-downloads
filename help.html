@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0d12">
-  <meta name="fastcast-version" content="0.3.2-preview.2">
+  <meta name="fastcast-version" content="0.3.2-preview.3">
   <meta name="description" content="Install fights, dead connections, audio, input. Search stays in your browser.">
 
   <title>Help — FastCast</title>
@@ -28,7 +28,7 @@
 </head>
 <body class="page-help">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Development preview</span><a href="releases.html">0.3.2 Preview 2 <span aria-hidden="true">↗</span></a></div></div>
+  <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Development preview</span><a href="releases.html">0.3.2 Preview 3 <span aria-hidden="true">↗</span></a></div></div>
   <header class="site-header wrap">
     <a class="brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="30" height="30" alt="">FastCast</a>
     <nav aria-label="Main"><a href="product.html">Product</a><a href="get-started.html">Get started</a><a href="help.html" aria-current="page">Help</a><a href="https://github.com/antis0007/fastcast-downloads">GitHub</a></nav>
@@ -41,17 +41,17 @@
 <details><summary>Is FastCast free? Are there subscriptions?</summary><p>Yes, for this preview: no subscriptions, no billing sign-up, no FastCast account. That is the current offer. It is not a lifetime contract.</p></details>
 <details><summary>Can I replace Discord or Microsoft Teams with it today?</summary><p>No. This is screen sharing. It is not their chat, meetings, or hosted community. If you need that, you already have it.</p></details>
 <details><summary>Can I use FastCast in a web browser, on a Mac, Linux, or an iPhone?</summary><p>The current downloads are Windows and Android. A Linux viewer is in application source and is not a public package on this tag. macOS, iOS, and browser clients are unavailable. <a href="platforms.html">See the platform table</a>.</p></details>
-<details><summary>Are the screenshots the same as the download?</summary><p>No. They are a later development UI (7 Sep 2026). Real captures, not mockups. 0.3.2 Preview 2 is what GitHub serves.</p></details>
+<details><summary>Are the screenshots the same as the download?</summary><p>No. They are a later development UI (7 Sep 2026). Real captures, not mockups. 0.3.2 Preview 3 is what GitHub serves.</p></details>
 </section>
 <section class="faq-group" id="install"><h2>Installation & updates</h2>
-<details><summary>Why does Windows show a publisher or SmartScreen warning?</summary><p>The preview installer is unsigned. Confirm its name and source against the <a href="https://github.com/antis0007/fastcast-downloads/releases/tag/v0.3.2-preview.2">official release</a>, and use the published <a href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.2/SHA256SUMS.txt">checksums</a> if you want to verify the file. Do not disable system protection globally.</p></details>
+<details><summary>Why does Windows show a publisher or SmartScreen warning?</summary><p>The preview installer is unsigned. Confirm its name and source against the <a href="https://github.com/antis0007/fastcast-downloads/releases/tag/v0.3.2-preview.3">official release</a>, and use the published <a href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.3/SHA256SUMS.txt">checksums</a> if you want to verify the file. Do not disable system protection globally.</p></details>
 <details><summary>Why won’t Android install the APK?</summary><p>Android may ask for permission to install from your browser or file manager. A signing-key mismatch with an existing installation can also prevent an update. Record the exact system error and app versions before reporting it; uninstalling can remove app data.</p></details>
 <details><summary>Which files should I use from the ZIP?</summary><p>Extract the archive. Keep FastCast.exe and cast-host.exe together for portable Windows use, or run Install FastCast.cmd. The APK in the same bundle is the matching Android viewer.</p></details>
 <details><summary>How do I update the current preview?</summary><p>Use the <a href="releases.html">release page</a> to get matching Windows and Android packages. Stop active sessions before installing. Do not assume a newer development screenshot means a newer public package is available.</p></details>
 </section>
 <section class="faq-group" id="connection"><h2>Connection & sharing</h2>
 <details><summary>The devices won’t connect. What should I check first?</summary><ol><li>Confirm both apps came from the same release.</li><li>Put both devices on the same LAN, avoiding isolated guest Wi-Fi.</li><li>Start receiving on the viewing device and create a fresh invitation.</li><li>Import that invitation on the sharing PC.</li><li>Review the specific firewall prompt or connection error. Allow only the required app on a trusted network.</li></ol><p>If it still fails, <a href="https://github.com/antis0007/fastcast-downloads/issues/new?template=bug_report.yml">report the exact error</a> without the invitation itself.</p></details>
-<details><summary>Can I connect across the internet?</summary><p>The public zip is still LAN-first. This source tree uses the FastCast helper at https://fastcastrelay.duckdns.org: leave Settings helper empty on both Windows PCs, copy a Receive invitation that includes helper=, and import it on Share. Direct UDP is preferred; the VPS relays encrypted packets only if punch fails. Do not use Tailscale. Rebuild both apps from this checkout. A 120-second unrelated-network pass is not recorded yet.</p></details>
+<details><summary>Can I connect across the internet?</summary><p>Not on its own. This download needs a reachable private-network route for devices on different networks — your own mesh or VPN, something you already run. STUN probing is implemented; automatic public internet traversal is not, and there is no FastCast-managed relay in this package. <a href="product.html#capabilities">What is and is not in this download</a>.</p><p>A helper-assisted route exists in the development source tree. It is not part of this public preview, it has no recorded unrelated-network pass, and nothing you download here will use it. Test on the same LAN first, so app setup and network reachability stay separate problems.</p></details>
 <details><summary>Where does the invitation come from?</summary><p>The viewing device creates it. On Android, choose Share invite. On a viewing PC, choose Receive, Start receiving, then Copy invitation. The sending PC imports it. <a href="get-started.html#invite">Follow the invitation steps</a>.</p></details>
 </section>
 <section class="faq-group" id="media"><h2>Audio, input & performance</h2>
@@ -64,12 +64,12 @@
 <section class="closing-cta wrap"><div><h2>Still broken?</h2><p>Version, two device names, the exact error. No invite paste.</p></div><a class="button" href="https://github.com/antis0007/fastcast-downloads/issues/new?template=bug_report.yml">Open a bug ↗</a></section>
 </main>
   <footer class="site-footer wrap">
-    <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="48" height="48" alt=""><span>FastCast</span></a><p>Your screen. Your connection.</p><p class="small-copy">No account. No subscription. Preview.</p><p class="small-copy">Native application source is maintained separately. This repository publishes the website and preview packages only.</p></div>
+    <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="48" height="48" alt=""><span>FastCast</span></a><p>Your screen. Your connection.</p><p class="small-copy">No account to share a screen. Friends and calls use a device-owned account. Preview.</p><p class="small-copy">Native application source is maintained separately. This repository publishes the website and preview packages only.</p></div>
     <nav aria-label="Product links"><h2>Product</h2><a href="product.html">Overview</a><a href="downloads.html">Downloads</a><a href="platforms.html">Platforms</a><a href="releases.html">Release notes</a></nav>
-    <nav aria-label="Resources"><h2>Resources</h2><a href="get-started.html">Setup</a><a href="help.html" aria-current="page">Help</a><a href="community.html">Bugs</a><a href="privacy.html">Privacy</a></nav>
-    <nav aria-label="More"><h2>More</h2><a href="why-fastcast.html">Why FastCast</a><a href="how-it-works.html">How it works</a><a href="bandwidth.html">Bandwidth calculator</a><a href="data-and-privacy.html">Data & privacy compared</a></nav>
+    <nav aria-label="Resources"><h2>Resources</h2><a href="get-started.html">Setup</a><a href="help.html" aria-current="page">Help</a><a href="community.html">Bugs</a><a href="privacy.html">Privacy</a><a href="https://github.com/antis0007/fastcast-downloads/security/policy">Security</a></nav>
+    <nav aria-label="More"><h2>More</h2><a href="why-fastcast.html">Why FastCast</a><a href="how-it-works.html">How it works</a><a href="roadmap.html">Roadmap</a><a href="bandwidth.html">Bandwidth calculator</a><a href="data-and-privacy.html">Data & privacy compared</a></nav>
     <div class="footer-bottom"><span>Windows sends · Windows or Android watches · Preview</span><a href="https://github.com/antis0007/fastcast-downloads">GitHub ↗</a><a href="https://github.com/antis0007/fastcast-downloads/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
   </footer>
-  <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>Windows Share from a September 7, 2026 development capture. The public download is 0.3.2 Preview 2. Not a live session.</p></dialog>
+  <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>Windows Share from a September 7, 2026 development capture. The public download is 0.3.2 Preview 3. Not a live session.</p></dialog>
 </body>
 </html>

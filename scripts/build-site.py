@@ -13,7 +13,7 @@ BASE = 'https://antis0007.github.io/fastcast-downloads/'
 REPO = 'https://github.com/antis0007/fastcast-downloads'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
-    'index': ('Your screen. Your connection.', 'A step away from platform dependence — share a Windows screen without a Discord-sized chat platform, a subscription, or a FastCast relay.'),
+    'index': ('Your screen. Your connection.', 'A step away from platform dependence — share a Windows screen without a Discord-sized chat platform, a subscription, or a store account.'),
     'product': ('The Windows app', 'Real screenshots, what the public build can do, and what it still cannot.'),
     'downloads': ('Download FastCast', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
     'get-started': ('Setup', 'Matching builds. Viewer writes the invite. Windows starts the share.'),
@@ -24,7 +24,7 @@ PAGES = {
     'releases': ('Release notes', 'Published FastCast preview, matching files, known holes, older tags.'),
     'privacy': ('Privacy', 'This site has no analytics. GitHub hosts the files. Keep invites private.'),
     '404': ('Nothing here', 'Downloads, setup, and help.'),
-    'why-fastcast': ('Why FastCast', 'Not another Discord — screen sharing without a chat empire, a store login, or a FastCast relay.'),
+    'why-fastcast': ('Why FastCast', 'Not another Discord — screen sharing without a chat empire or a store login.'),
     'how-it-works': ('How the packets move', 'Windows encodes, a viewer decodes, GitHub is not in the live path.'),
     'data-and-privacy': ('Data compared', 'What Discord documents, next to what this FastCast preview actually does.'),
     'bandwidth': ('Bandwidth arithmetic', 'Estimate video payload at each end, and what a hypothetical relay would double.'),
@@ -101,17 +101,18 @@ def capability_ledger():
         for item in group['items']:
             status = by_id[item['status']]
             rows.append(
-                f'\n<div class="capability-row">'
-                f'<dt>{escape(item["name"])}</dt>'
-                f'<dd class="status status-{status["id"]}"><span class="status-word">{escape(status["label"])}</span></dd>'
-                f'<dd class="capability-detail">{escape(fill(item["detail"]))}</dd>'
-                f'</div>'
+                f'<tr><th scope="row">{escape(item["name"])}</th>'
+                f'<td><span class="status status-{status["id"]}">{escape(status["label"])}</span></td>'
+                f'<td>{escape(fill(item["detail"]))}</td></tr>'
             )
         groups.append(
             f'<section class="capability-group" id="status-{group["id"]}" aria-labelledby="status-{group["id"]}-title">\n'
             f'<h3 id="status-{group["id"]}-title">{escape(group["title"])}</h3>\n'
             f'<p class="capability-intro">{escape(fill(group["intro"]))}</p>\n'
-            f'<dl class="capability-ledger">{"".join(rows)}</dl>\n'
+            '<div class="table-scroll" tabindex="0">'
+            '<table class="support-table capability-table">'
+            '<thead><tr><th scope="col">Capability</th><th scope="col">Status</th><th scope="col">What to expect</th></tr></thead>'
+            f'<tbody>{"".join(rows)}</tbody></table></div>\n'
             f'</section>'
         )
     return (
@@ -310,8 +311,8 @@ def render(slug, title, description):
   <footer class="site-footer wrap">
     <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="48" height="48" alt=""><span>FastCast</span></a><p>Your screen. Your connection.</p><p class="small-copy">{escape(release['offer'])}</p><p class="small-copy">{escape(release['application_source'])}</p></div>
     <nav aria-label="Product links"><h2>Product</h2>{link('product','Overview',slug)}{link('downloads','Downloads',slug)}{link('platforms','Platforms',slug)}{link('releases','Release notes',slug)}</nav>
-    <nav aria-label="Resources"><h2>Resources</h2>{link('get-started','Setup',slug)}{link('help','Help',slug)}{link('community','Bugs',slug)}{link('privacy','Privacy',slug)}</nav>
-    <nav aria-label="More"><h2>More</h2>{link('why-fastcast','Why FastCast',slug)}{link('how-it-works','How it works',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
+    <nav aria-label="Resources"><h2>Resources</h2>{link('get-started','Setup',slug)}{link('help','Help',slug)}{link('community','Bugs',slug)}{link('privacy','Privacy',slug)}{link('security','Security',slug,href=f'{REPO}/security/policy')}</nav>
+    <nav aria-label="More"><h2>More</h2>{link('why-fastcast','Why FastCast',slug)}{link('how-it-works','How it works',slug)}{link('roadmap','Roadmap',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
     <div class="footer-bottom"><span>Windows sends · Windows or Android watches · Preview</span><a href="{REPO}">GitHub ↗</a><a href="{REPO}/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
   </footer>
   <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>{tokens['DIALOG_CAPTION']}</p></dialog>
