@@ -5,6 +5,7 @@ discovers, promotes, or publishes an application release.
 """
 from pathlib import Path
 from html import escape
+from datetime import date
 import json
 import re
 
@@ -13,17 +14,18 @@ BASE = 'https://antis0007.github.io/fastcast-downloads/'
 REPO = 'https://github.com/antis0007/fastcast-downloads'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
-    'index': ('Your screen. Your connection.', 'Share a Windows screen to another PC or Android phone over a LAN or a private network you can already reach. No account. No FastCast relay.'),
+    'index': ('Your screen. Your connection.', 'A step away from platform dependence — share a Windows screen without a Discord-sized chat platform, a subscription, or a FastCast relay.'),
     'product': ('The Windows app', 'Real screenshots, what the public build can do, and what it still cannot.'),
     'downloads': ('Download FastCast', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
     'get-started': ('Setup', 'Matching builds. Viewer writes the invite. Windows starts the share.'),
-    'platforms': ('What runs', 'Windows x64 sends and watches. Android 8+ watches. Nothing else yet.'),
+    'platforms': ('What runs', 'Windows x64 sends and watches. Android 8+ watches. Linux receive is in source, not in this zip. No Mac, iOS, or browser app.'),
     'community': ('Bugs', 'Public GitHub issues for a screen-sharing preview. Do not paste invitations.'),
     'help': ('Help', 'Install fights, dead connections, audio, input. Search stays in your browser.'),
+    'roadmap': ('Roadmap', 'What is built, what is being qualified, and what is not started yet.'),
     'releases': ('Release notes', 'Published FastCast preview, matching files, known holes, older tags.'),
     'privacy': ('Privacy', 'This site has no analytics. GitHub hosts the files. Keep invites private.'),
     '404': ('Nothing here', 'Downloads, setup, and help.'),
-    'why-fastcast': ('Why FastCast', 'Screen sharing without a chat company, a store login, or a FastCast relay.'),
+    'why-fastcast': ('Why FastCast', 'Not another Discord — screen sharing without a chat empire, a store login, or a FastCast relay.'),
     'how-it-works': ('How the packets move', 'Windows encodes, a viewer decodes, GitHub is not in the live path.'),
     'data-and-privacy': ('Data compared', 'What Discord documents, next to what this FastCast preview actually does.'),
     'bandwidth': ('Bandwidth arithmetic', 'Estimate video payload at each end, and what a hypothetical relay would double.'),
@@ -74,6 +76,12 @@ def json_ld():
         },
     }
     return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>'
+
+
+def captured_display():
+    """Display date of the wide app capture, kept distinct from the release date."""
+    taken = date.fromisoformat(release['screenshots']['windows-share']['captured'])
+    return f'{taken:%B} {taken.day}, {taken.year}'
 
 
 def capability_ledger():
@@ -221,6 +229,7 @@ def render(slug, title, description):
         'RELEASE_URL': f"{REPO}/releases/tag/{release['tag']}",
         'REPO': REPO,
         'PUBLISHED': release['published_display'],
+        'CAPTURED': captured_display(),
         'NETWORK': release['network'],
         'STATUS': release['status'],
         'WINDOWS_URL': release['assets']['windows']['url'],
@@ -263,7 +272,7 @@ def render(slug, title, description):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0c0d0f">
+  <meta name="theme-color" content="#0b0d12">
   <meta name="fastcast-version" content="{escape(release['version'])}">
   <meta name="description" content="{escape(description)}">
   {robots}
@@ -299,7 +308,7 @@ def render(slug, title, description):
     <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="48" height="48" alt=""><span>FastCast</span></a><p>Your screen. Your connection.</p><p class="small-copy">{escape(release['offer'])}</p><p class="small-copy">{escape(release['application_source'])}</p></div>
     <nav aria-label="Product links"><h2>Product</h2>{link('product','Overview',slug)}{link('downloads','Downloads',slug)}{link('platforms','Platforms',slug)}{link('releases','Release notes',slug)}</nav>
     <nav aria-label="Resources"><h2>Resources</h2>{link('get-started','Setup',slug)}{link('help','Help',slug)}{link('community','Bugs',slug)}{link('privacy','Privacy',slug)}</nav>
-    <nav aria-label="More"><h2>More</h2>{link('why-fastcast','Why FastCast',slug)}{link('how-it-works','How it works',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
+    <nav aria-label="More"><h2>More</h2>{link('why-fastcast','Why FastCast',slug)}{link('how-it-works','How it works',slug)}{link('roadmap','Roadmap',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
     <div class="footer-bottom"><span>Windows sends · Windows or Android watches · Preview</span><a href="{REPO}">GitHub ↗</a><a href="{REPO}/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
   </footer>
   <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>{tokens['DIALOG_CAPTION']}</p></dialog>

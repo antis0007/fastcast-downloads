@@ -37,11 +37,11 @@ The website is static HTML, CSS, and optional JavaScript. Navigation, direct dow
 - Keep verified public release links in `src/release.json`. Do not point to an unpublished version.
 - Run `npm run build` with Python 3 installed and commit the generated root HTML, sitemap, and robots file alongside their sources. GitHub Pages serves those root files without a server build.
 - Development checks: `npm ci`, `npx playwright install chromium firefox webkit`, `npm run check`, `python scripts/check-links.py`, and `npm test`.
-- Browser checks cover all fourteen pages at four widths, enlarged text, image loading, no-JavaScript access, keyboard image dismissal, help search, Android download selection, calculator interactions, and automated accessibility. They do not qualify native streaming.
+- Browser checks cover all fifteen pages at four widths, enlarged text, image loading, no-JavaScript access, keyboard image dismissal, help search, Android download selection, calculator interactions, and automated accessibility. They do not qualify native streaming.
 
 ## Screenshots and claims
 
-The native Windows captures use the app's default Cyan theme and were taken from the September 7, 2026 appearance-review executable. They capture the client area directly, excluding the operating-system title bar. They are unchanged captures of a development interface newer than the public preview. The social preview card and header/footer artwork are generated brand graphics; they are not product screenshots.
+The native Windows captures use the app's default Cyan theme and were taken from the September 7, 2026 appearance-review executable. They capture the client area directly, excluding the operating-system title bar. They are unchanged captures of a development interface and do not match the public package pixel-for-pixel; see src/release.json for each capture date and its caveat. The social preview card and header/footer artwork are generated brand graphics; they are not product screenshots.
 
 Read DESIGN.md for the visual direction and pre-commit critical review. Future collaboration work is identified as future work. Do not fabricate conversations, metrics, testimonials, security guarantees, or feature parity with other communication apps.
 

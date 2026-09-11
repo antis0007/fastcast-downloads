@@ -361,6 +361,78 @@ figcaption { margin-top: 14px; font-size: 12px; color: var(--quiet); line-height
 .use-cases p { color: var(--muted); font-size: 14px; margin-top: 12px; line-height: 1.7; }
 .line-icon { display: inline-flex; align-items: center; height: 40px; margin-bottom: 14px; color: var(--brand); font-size: 26px; }
 
+/* Role picker — the visitor picks the machine they are sitting at, because the
+   viewer has to write the invitation before the sender can do anything. */
+.role-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.role-card {
+  display: block;
+  padding: 24px 24px 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  text-decoration: none;
+  transition: border-color .15s ease, background .15s ease;
+}
+.role-card:hover { border-color: var(--accent-dim); background: var(--surface-hover); color: inherit; }
+.role-card .eyebrow { display: block; margin-bottom: 12px; }
+.role-card h3 { font-size: 22px; letter-spacing: -.02em; }
+.role-card > p { color: var(--muted); font-size: 14px; line-height: 1.7; margin-top: 10px; }
+.role-card .role-order { color: var(--text); font-size: 13px; margin-top: 14px; }
+/* The card is the link, so the affordance has to follow the card's hover. */
+.role-card .text-link { margin-top: 16px; }
+.role-card:hover .text-link { color: var(--accent-strong); text-decoration: underline; }
+
+/* Capability ledger. Three columns: name, status word, the honest detail. */
+.status-key {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px 22px;
+  margin: 0 0 36px;
+  padding: 20px 22px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.status-key > div { margin: 0; }
+.status-key dt { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--brand-soft); }
+.status-key dd { margin: 8px 0 0; font-size: 12px; line-height: 1.65; color: var(--muted); }
+.capability-group + .capability-group { margin-top: 44px; }
+.capability-group h3 { font-size: 19px; letter-spacing: -.02em; }
+.capability-intro { margin-top: 10px; max-width: var(--measure); color: var(--muted); font-size: 14px; line-height: 1.7; }
+.capability-ledger { margin: 22px 0 0; border-top: 1px solid var(--line-soft); }
+.capability-row {
+  display: grid;
+  grid-template-columns: .8fr 132px 1.6fr;
+  gap: 10px 28px;
+  align-items: baseline;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.capability-row dt { font-size: 15px; font-weight: 600; }
+.capability-row dd { margin: 0; }
+.capability-detail { color: var(--muted); font-size: 14px; line-height: 1.7; }
+.capability-after { margin-top: 26px; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.status .status-word {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: .06em;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--muted);
+}
+.status-available .status-word { color: var(--accent-strong); border-color: #2f5f7d; background: #6bc9ff14; }
+.status-preview .status-word { color: var(--brand-soft); border-color: #4a3d24; background: #ecac2c12; }
+.status-limited .status-word { color: #cbb49f; border-color: #46392a; }
+.status-not-yet .status-word { color: var(--quiet); border-color: var(--line-soft); }
+
+/* Permission cards. Sound, voice, and control are three switches, not one. */
+.permission-cards article { display: flex; flex-direction: column; }
+.permission-cards .status { margin-top: auto; padding-top: 18px; }
+
 .feature-band {
   position: relative;
   isolation: isolate;
@@ -878,6 +950,10 @@ section[id], article[id] { scroll-margin-top: 88px; }
   .feature-band > :first-child, .feature-band > :last-child { grid-column: auto; }
   .feature-band, .free-band { padding: 24px; margin-top: 52px; }
   .use-cases { gap: 14px; }
+  .role-grid { grid-template-columns: 1fr; gap: 14px; }
+  .status-key { grid-template-columns: 1fr 1fr; padding: 18px; }
+  .capability-row { grid-template-columns: 1fr auto; gap: 10px 18px; }
+  .capability-detail { grid-column: 1/-1; }
   .resource-grid > a { padding-right: 16px; }
   .resource-grid > a + a { padding-left: 16px; }
   .scope-grid article + article { border-left: 0; border-top: 1px solid var(--line-soft); }
@@ -909,6 +985,9 @@ section[id], article[id] { scroll-margin-top: 88px; }
   .wrap { width: calc(100% - 24px); }
   .announcement { font-size: 11px; }
   .announcement .wrap { flex-wrap: wrap; gap: 2px 10px; }
+  .status-key { grid-template-columns: 1fr; gap: 14px; }
+  .capability-row { grid-template-columns: 1fr; }
+  .capability-row dd.status { justify-self: start; }
   .hero { padding-block: 34px 28px; gap: 24px; }
   .hero-wizard { width: min(160px, 52vw); }
   .wizard-stage { margin-inline: auto; }

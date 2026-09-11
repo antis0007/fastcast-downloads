@@ -35,7 +35,7 @@
     <a class="button small primary header-download" href="downloads.html">Download</a>
   </header>
   <main id="main" tabindex="-1"><section class="page-hero wrap"><h1>Share a Windows screen<br><span>to a PC or Android device.</span></h1><p class="lede">Windows sends. Windows or Android watches. Android does not send.</p><div class="actions"><a class="button primary" href="downloads.html">Download ↓</a><a class="text-link" href="get-started.html">Setup →</a></div></section>
-<nav class="section-nav wrap" aria-label="On this page"><a href="#screenshots">Interface</a><a href="#controls">Controls</a><a href="#capabilities">What's in, what's not</a></nav>
+<nav class="section-nav wrap" aria-label="On this page"><a href="#screenshots">Interface</a><a href="#controls">Controls</a><a href="#permissions">Permissions</a><a href="#capabilities">What's in, what's not</a></nav>
 <section class="section wrap" id="screenshots"><div class="section-heading"><div><h2>Windows Share</h2></div><p>A real capture, 7 Sep 2026. Development UI. Not a pixel-perfect 0.3.2 Preview 2 match. Not a live session.</p></div>
 <div class="app-shell">
   <div class="app-shell-rail" aria-hidden="true">
@@ -63,7 +63,31 @@
   </div>
 </div>
 </section>
-<section class="section wrap" id="controls"><div class="section-heading"><div><h2>Look before you share.</h2></div></div><div class="use-cases"><article><span class="step-number">01</span><h3>Pick the source</h3><p>Whole screen or one window. Whole screen includes your notifications.</p></article><article><span class="step-number">02</span><h3>Invite from the viewer</h3><p>The watching device writes the invite. The sending PC imports it. Do not paste that string in a public issue.</p></article><article><span class="step-number">03</span><h3>Audio and input are opt-in</h3><p>Leave them off unless you want them. Hardware and OS permissions still apply.</p></article></div></section>
+<section class="section wrap" id="controls"><div class="section-heading"><div><h2>Look before you share.</h2></div></div><div class="use-cases"><article><span class="step-number">01</span><h3>Pick the source</h3><p>Whole screen or one window. Whole screen includes your notifications.</p></article><article><span class="step-number">02</span><h3>Invite from the viewer</h3><p>The watching device writes the invite. The sending PC imports it. Do not paste that string in a public issue.</p></article><article><span class="step-number">03</span><h3>Sound and control are separate</h3><p>Three switches, not one. Leave the ones you do not need off. <a href="#permissions">What each one opens</a>.</p></article></div></section>
+<section class="section wrap" id="permissions">
+<div class="section-heading">
+<div><h2>Sharing a screen is not<br><span>blanket permission.</span></h2></div>
+<p>Sound, your voice, and control of the machine are three separate decisions made before the session starts. Two of the three have no physical proof behind them in 0.3.2 Preview 2.</p>
+</div>
+<div class="use-cases permission-cards">
+<article>
+<h3>Computer audio</h3>
+<p>The sending PC’s own sound travels with the picture. A Windows viewer decoded it in the LAN run; audible output on a phone was not independently confirmed.</p>
+<p class="status status-available"><span class="status-word">Available</span></p>
+</article>
+<article>
+<h3>Microphone voice</h3>
+<p>Your own voice, two ways. Sharing a screen never needs it. The code builds and passes its checks; nobody has done a physical round-trip or echo test.</p>
+<p class="status status-preview"><span class="status-word">Preview</span></p>
+</article>
+<article>
+<h3>Remote input</h3>
+<p>Permission for the watching device to drive the mouse and keyboard. That is no longer watching. Physical input, and behaviour inside native games, are unproven.</p>
+<p class="status status-preview"><span class="status-word">Preview</span></p>
+</article>
+</div>
+<p class="capability-after">Hardware and Windows permissions still apply on top of these switches. These statuses match the <a href="#capabilities">ledger below</a>, not a later git checkout.</p>
+</section>
 <section class="feature-band wrap"><div><h2>Smaller window.</h2><p>Open the image if you need to read the controls.</p></div><div><figure class="screenshot">
   <a class="image-open" href="assets/windows-compact.png" data-lightbox aria-label="Enlarge compact Windows screenshot">
     <img src="assets/windows-compact.png" width="998" height="764" alt="Windows Share in a smaller FastCast window, with the native scroll area visible." loading="lazy">
@@ -133,7 +157,7 @@
     <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="48" height="48" alt=""><span>FastCast</span></a><p>Your screen. Your connection.</p><p class="small-copy">No account. No subscription. Preview.</p><p class="small-copy">Native application source is maintained separately. This repository publishes the website and preview packages only.</p></div>
     <nav aria-label="Product links"><h2>Product</h2><a href="product.html" aria-current="page">Overview</a><a href="downloads.html">Downloads</a><a href="platforms.html">Platforms</a><a href="releases.html">Release notes</a></nav>
     <nav aria-label="Resources"><h2>Resources</h2><a href="get-started.html">Setup</a><a href="help.html">Help</a><a href="community.html">Bugs</a><a href="privacy.html">Privacy</a></nav>
-    <nav aria-label="More"><h2>More</h2><a href="why-fastcast.html">Why FastCast</a><a href="how-it-works.html">How it works</a><a href="bandwidth.html">Bandwidth calculator</a><a href="data-and-privacy.html">Data & privacy compared</a></nav>
+    <nav aria-label="More"><h2>More</h2><a href="why-fastcast.html">Why FastCast</a><a href="how-it-works.html">How it works</a><a href="roadmap.html">Roadmap</a><a href="bandwidth.html">Bandwidth calculator</a><a href="data-and-privacy.html">Data & privacy compared</a></nav>
     <div class="footer-bottom"><span>Windows sends · Windows or Android watches · Preview</span><a href="https://github.com/antis0007/fastcast-downloads">GitHub ↗</a><a href="https://github.com/antis0007/fastcast-downloads/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
   </footer>
   <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>Windows Share from a September 7, 2026 development capture. The public download is 0.3.2 Preview 2. Not a live session.</p></dialog>
