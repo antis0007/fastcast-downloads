@@ -185,77 +185,712 @@ h3 { font-size: 17px; line-height: 1.4; font-weight: 600; letter-spacing: -.02em
 .hero .lede { font-size: 17px; max-width: 34rem; }
 .hero .eyebrow { font-size: 10px; }
 .hero .small-copy { margin-top: 4px; }
-.hero .wizard-stage { margin-top: 28px; }
 
-.wizard-stage {
-  position: relative;
-  isolation: isolate;
-  width: fit-content;
-  max-width: min(280px, 72vw);
-  min-height: 200px;
-  padding: 24px;
-}
-.wizard-glow {
-  position: absolute;
-  inset: 10% 5%;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ecac2c33 0%, #6bc9ff18 55%, transparent 75%);
-  filter: blur(18px);
-  z-index: 0;
-  animation: glow-breathe 6s ease-in-out infinite alternate;
-}
-.wizard-ring {
-  position: absolute;
-  inset: 18% 10%;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-}
-.wizard-ring-a {
-  border: 1px solid #ecac2c99;
-  box-shadow: 0 0 24px #ecac2c44, 0 0 0 8px #ecac2c12;
-  animation: portal-spin 32s linear infinite;
-}
-.wizard-ring-b {
-  inset: 2% -4%;
-  border: 1px solid transparent;
-  border-top-color: #6bc9ff66;
-  border-right-color: #ecac2c44;
-  border-bottom-color: #6bc9ff33;
-  border-left-color: #ecac2c55;
-  animation: portal-spin 48s linear infinite reverse;
-}
-.wizard-particles {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-.hero-wizard {
-  position: relative;
-  z-index: 2;
-  display: block;
-  width: min(200px, 58vw);
-  height: auto;
-  filter: drop-shadow(0 12px 28px #00000066) drop-shadow(0 0 20px #ecac2c33);
-}
-.wizard-spark {
-  position: absolute;
-  z-index: 3;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: #fff9;
-  box-shadow: 0 0 6px #ecac2c;
-  pointer-events: none;
-}
-.wizard-spark:nth-of-type(1) { top: 12%; left: 22%; animation: spark-pulse 3s ease-in-out infinite; }
-.wizard-spark:nth-of-type(2) { top: 28%; right: 18%; animation: spark-pulse 4.5s ease-in-out 1s infinite; }
-.wizard-spark:nth-of-type(3) { bottom: 20%; left: 40%; animation: spark-pulse 5s ease-in-out 2s infinite; }
 @keyframes portal-spin { to { transform: rotate(360deg); } }
 @keyframes glow-breathe { from { opacity: .85; } to { opacity: 1; } }
 @keyframes spark-pulse { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
 
+/* Rune circle: a slow-turning summoning seal. The outer ring carries one and a
+   half passes of the Elder Futhark, the inner ring the full alphabet from a
+   different start index, so no rune ever appears twice at the same angle.
+   Radii and glyph size are custom properties so each breakpoint can resize or
+   thin the rings without touching the markup. */
+/* Radius and glyph size both scale from --unit, so a breakpoint can resize the
+   whole portal with one number. They are separate inputs otherwise: a rune's
+   size must not move it off its ring. */
+.rune-circle {
+  /* The size class (`rune-circle-lg` / `rune-circle-sm`) is the hook the
+     breakpoints use to thin one seal without touching the other. Base rules
+     describe the large seal. */
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 660px;
+  height: 660px;
+  margin: -330px 0 0 -330px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: .92;
+  /* Breakpoints resize the whole portal with one scale, so no child needs a
+     unit calculation and the rune positions stay plain pixel values. */
+  transform: scale(var(--unit, 1));
+  /* A warm wash lifts the runes off the ink without a per-glyph filter, which
+     would mean re-filtering five dozen little SVGs every animation frame. The
+     breathing light lives on .cast-scene::before instead, so nothing here
+     repaints per frame. */
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff5b2e33 0%, #f0a33c1f 46%, transparent 74%);
+}
+
+/* Each band is a group: two lane guides plus the runes that ride them. Grouping
+   is what lets a band fall as one piece -- the rails above and below the runes
+   contract with them instead of being left behind as empty circles. */
+.rune-band { position: absolute; inset: 0; }
+
+/* Bands fade in at the radius they belong to, hold long enough to be read, then
+   contract onto the centre and dissolve. The contraction is the tail of the
+   cycle, so most bands sit still and a couple are always mid-collapse: the seal
+   inhales continuously rather than blinking as one.
+   `scale` rather than `transform` because the ring inside owns `transform` for
+   its spin, and the two would otherwise overwrite each other. */
+.rune-band-fall {
+  animation: band-fall var(--fall, 24s) cubic-bezier(.5, 0, .85, .4) var(--fd, 0s) infinite;
+}
+
+/* One guide circle per rune band, struck at that band's exact radius so the
+   runes sit on a ring rather than floating. Opacity is per band, set inline. */
+.rune-guide {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--gr, 300px) * 2);
+  height: calc(var(--gr, 300px) * 2);
+  margin: calc(var(--gr, 300px) * -1) 0 0 calc(var(--gr, 300px) * -1);
+  border: 1px solid #ffc978;
+  border-radius: 50%;
+  opacity: var(--o, .24);
+  pointer-events: none;
+}
+
+/* Every circle in the seal carries runes: the ripples that used to sweep
+   through empty radii are gone, and the inward collapse now reads from the
+   falling bands and the halo instead. */
+.rune-ring {
+  position: absolute;
+  inset: 0;
+  /* Two animations per ring, not per rune: the seal still breathes, but with
+     seven animated layers instead of one per glyph. */
+  animation:
+    rune-spin var(--dur, 190s) linear infinite,
+    rune-lit var(--lit, 9s) ease-in-out infinite;
+  animation-direction: var(--dir, normal), normal;
+}
+
+/* Runes are SVG line work, not text: no installed font carries the Runic
+   block, so Unicode runes would render as empty boxes. Dividers are CSS strokes
+   rather than glyphs, but they ride the same box, angle and radius as the runes
+   so they stay set within the band as it turns and collapses. */
+.rune-ring i, .rune-ring .rune-part {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  margin: -.75em 0 0 -.75em;
+  display: grid;
+  place-items: center;
+  font-size: var(--sz, 18px);
+  transform: rotate(var(--a, 0deg)) translateY(var(--r, -218px));
+}
+
+/* The ÃƒÆ’Ã‚Â¦tt divider: one stroke set radially between two runes, the mark a
+   runestone uses to separate one word from the next. */
+.rune-part::before {
+  content: "";
+  width: 1.6px;
+  height: .82em;
+  border-radius: 1px;
+  background: currentColor;
+  opacity: .9;
+}
+
+.rune-ring .rune, .cloud-orbit .rune, .float-runes .rune {
+  display: block;
+  width: .8em;
+  height: 1.2em;
+  fill: none;
+  stroke: currentColor;
+  /* The rune glyphs span 10px to 26px across the bands. A scaling stroke made
+     the small inner runes dissolve into hairlines, so the sprite paths carry
+     `vector-effect="non-scaling-stroke"` and this is one optical weight
+     everywhere. */
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* The bands run cool gold at the rim to hot ember at the core, and each pulses
+   on its own cycle so the portal never brightens as one mass. Colour sits on the
+   ring so the runes and its dividers take the same value. */
+.rune-ring-0 { --lit: 9.6s; --c: #ffc98a; }
+
+.rune-ring-1 { --lit: 8.6s; --c: #ffc684; }
+
+.rune-ring-2 { --lit: 7.8s; --c: #ffbd78; }
+
+.rune-ring-3 { --lit: 7.1s; --c: #ffb46c; }
+
+.rune-ring-4 { --lit: 6.4s; --c: #ffa958; }
+
+.rune-ring-5 { --lit: 5.9s; --c: #ff9d4c; }
+
+.rune-ring-6 { --lit: 5.4s; --c: #ff8f40; }
+
+.rune-ring-7 { --lit: 6.8s; --c: #ff7f36; }
+
+.rune-ring-8 { --lit: 7.6s; --c: #ff7230; }
+
+.rune-ring { color: var(--c, #ffd08a); }
+
+/* A loose cloud of runes orbiting at independent speeds, in the spirit of an
+   enchanting table. Each rune has its own orbit wrapper so its speed, direction
+   and fade are all its own. */
+.rune-cloud { position: absolute; inset: 0; z-index: 3; pointer-events: none; transform: scale(var(--unit, 1)); }
+
+.cloud-orbit {
+  position: absolute;
+  inset: 0;
+  animation: rune-spin var(--dur, 30s) linear infinite;
+  animation-direction: var(--dir, normal);
+}
+
+.cloud-orbit i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  margin: -.75em 0 0 -.75em;
+  display: grid;
+  place-items: center;
+  color: #ffb877;
+  font-size: var(--sz, 13px);
+  transform: rotate(var(--a, 0deg)) translateY(var(--r, -120px));
+  animation: cloud-fade 9.5s ease-in-out var(--d, 0s) infinite;
+}
+
+/* A fainter seal behind the route diagram, so the motif recurs by default. */
+.rune-circle-sm {
+  width: 300px;
+  height: 300px;
+  margin: -150px 0 0 -150px;
+  opacity: .3;
+}
+
+/* Hero scene. The wizard stands inside the seal, with the traces running out
+   from the centre behind it. */
+.cast-scene { position: relative; display: grid; place-items: center; height: 620px; --unit: 1; }
+
+/* Ambient light behind the seal. This breathes with transform and opacity only.
+   It used to be a box-shadow keyframe on the portal itself, which repainted a
+   660px element on every frame for the whole life of the page.
+   The resting transform is written here rather than only inside the keyframes:
+   with animations off -- which is what reduced motion asks for -- a keyframe-only
+   transform disappears, and a 700px halo with no scale overflows a phone. */
+.cast-scene::before {
+  --halo: min(700px, 90vw);
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: var(--halo);
+  height: var(--halo);
+  margin: calc(var(--halo) / -2) 0 0 calc(var(--halo) / -2);
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff6a2e33 0%, #e0531f1c 48%, transparent 74%);
+  transform: scale(.92);
+  animation: halo-breathe 8s ease-in-out infinite;
+}
+
+/* The halo is its own layer rather than a filter on the image. Filtering the
+   artwork makes the browser rasterise and resample it, which is what softened
+   the mascot on large displays. */
+.cast-scene::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 500px;
+  margin: -250px 0 0 -250px;
+  z-index: 4;
+  pointer-events: none;
+  border-radius: 50%;
+  background:
+    /* Firelight pooling at the foot of the seal. This layer sits above the
+       portal, so the light falls on the runes rather than behind them. */
+    radial-gradient(ellipse 78% 42% at 50% 94%, #ff7a3a36 0%, #ff5b2e17 52%, transparent 80%),
+    radial-gradient(circle at 50% 56%, #ff6a3047 0%, #d63a1c2b 44%, transparent 72%),
+    radial-gradient(circle at 50% 78%, #00000059 0%, transparent 58%);
+  filter: blur(22px);
+  transform: scale(var(--unit, 1));
+  animation: firelight 5.3s ease-in-out infinite;
+}
+
+/* The figure, nudged up and right of the geometric centre: the portal's axis
+   sits above the scene's, and the artwork's visual weight is up and to the left.
+   `--gaze-x` and `--gaze-y` are written by site.js as the pointer moves across
+   the scene, in the range -1..1; at rest they are 0 and the pose is the plain
+   offset. Everything the figure does is one transform, so it costs one
+   composited layer and never touches layout. */
+.cast-figure {
+  position: relative;
+  z-index: 5;
+  display: block;
+  width: min(70%, 420px);
+  /* The sideways offset has to give way on a narrow canvas: the figure is
+     already nearly as wide as the scene there, and a fixed 38px would push it
+     past the viewport edge. */
+  --shift-x: min(38px, 5vw);
+  --shift-y: -24px;
+  --gaze-x: 0;
+  --gaze-y: 0;
+  /* Written by site.js while he is being dragged. */
+  --drag-x: 0px;
+  --drag-y: 0px;
+  --lift: 1;
+  /* The pointer lean is deliberately small. A larger one reads as the figure
+     bobbing about under the cursor rather than as a reaction to being handled. */
+  transform:
+    translate3d(
+      calc(var(--shift-x) + var(--gaze-x) * 4px + var(--drag-x)),
+      calc(var(--shift-y) + var(--gaze-y) * 3px + var(--drag-y)),
+      0)
+    scale(var(--lift));
+  transition: transform .3s cubic-bezier(.22, .61, .36, 1);
+}
+
+/* While he is in hand he tracks the pointer exactly; the transition comes back
+   on release, which is what springs him home. */
+.cast-figure.is-dragging { transition: none; }
+
+.cast-scene:hover .cast-figure { --lift: 1.025; }
+
+/* The wizard himself is a button. Everything he does -- the pointer lean, the
+   drag, the click bounce -- is a transform or a custom property on one of these
+   two elements, so he stays one composited layer and never touches layout. */
+.cast-body {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: grab;
+  /* Vertical swipes still scroll the page on a touch screen; a sideways drag is
+     ours. A mouse is unaffected either way. */
+  touch-action: pan-y;
+  transform-origin: 50% 88%;
+}
+
+.cast-body:active { cursor: grabbing; }
+
+.cast-body:focus-visible { outline: 3px solid var(--accent); outline-offset: 6px; border-radius: 12px; }
+
+.cast-wizard {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Belt and braces with the dragstart handler: no native image drag. */
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* The bounce and the flinch. On the inner element so they compose with the
+   figure's own transform instead of overwriting it, and mostly vertical: he has
+   very little sideways room on a phone and a wide pop pushes the page. */
+.cast-body.is-pleased { animation: wizard-pleased .52s cubic-bezier(.3, 1.5, .5, 1); }
+
+.cast-body.is-flinched { animation: wizard-flinch .42s cubic-bezier(.36, .07, .19, .97); }
+
+/* The speech bubble. Positioned against the figure rather than the scene, so it
+   follows him when he is dragged, and clamped so it cannot push the page wide. */
+.wizard-voice {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% - 6px);
+  z-index: 6;
+  width: max-content;
+  max-width: min(330px, 74vw);
+  margin: 0;
+  padding: 12px 15px;
+  border: 1px solid #6a5330;
+  border-radius: 14px;
+  background: #241f18f2;
+  box-shadow: 0 14px 34px #0b0805b8, inset 0 0 22px #ff8f3a1f;
+  color: var(--text);
+  font-size: 13.5px;
+  line-height: 1.55;
+  text-wrap: pretty;
+  /* He floats over the page, so the bubble will sometimes sit above other
+     content. It is information, not a control: never let it swallow a click. */
+  pointer-events: none;
+  transform: translateX(-50%);
+  animation: wizard-speak .26s cubic-bezier(.2, 1.4, .4, 1);
+}
+
+/* The tail, pointing down at the hat. */
+.wizard-voice::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 12px;
+  height: 12px;
+  margin: -7px 0 0 -6px;
+  border-right: 1px solid #6a5330;
+  border-bottom: 1px solid #6a5330;
+  background: #241f18;
+  transform: rotate(45deg);
+}
+
+/* Firelight on the figure. The seal is behind the wizard and below it, so the
+   light comes up from the feet and the upper body sits back into shade. The
+   gradient is masked with the artwork's own alpha, so it falls on the wizard
+   instead of washing the scene behind it, and it flickers on the same envelope
+   as the pool at the seal's foot -- the same flame, seen on two surfaces.
+   Hidden by default: without mask support the gradient would paint as a
+   rectangle over the hero, which is worse than no light at all. */
+.cast-firelight { display: none; }
+
+@supports (mask-image: url("")) or (-webkit-mask-image: url("")) {
+  .cast-firelight {
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      /* A shallow bounce at the feet, not a wash: the figure is backlit by the
+         seal, so it reads as a dark mass with warm edges rather than as a lit
+         object. */
+      linear-gradient(to top, #ff7a2e30 0%, #ff8f3a17 20%, transparent 48%),
+      linear-gradient(to top, transparent 16%, #150b0859 100%);
+    -webkit-mask-image: url(assets/fastcast-wizard.webp);
+    mask-image: url(assets/fastcast-wizard.webp);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    animation: firelight 5.3s ease-in-out infinite;
+  }
+}
+
+/* Traces running out from the centre of the seal. Each is drawn twice: a dim
+   solid line that holds the shape, and a dashed bright overlay whose dashes
+   travel inward, so the wheel reads as drawing power to the middle. */
+.circuit-traces {
+  /* Anchored exactly like .rune-circle, so the wheel and the rune rings share a
+     centre and a scale. Sized to the scene instead, the two centres drift apart
+     by a percentage of the scene height as the breakpoints change. */
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: 660px;
+  height: 660px;
+  margin: -330px 0 0 -330px;
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+  transform: scale(var(--unit, 1));
+}
+
+/* One animation per arm, on opacity alone, so the shimmer composites instead of
+   repainting the arm's paths. The old version also drifted the hue, which meant
+   repainting every stroke on every arm each frame for a change too slow to see. */
+.circuit-branch {
+  color: #f0a33c;
+  animation: trace-ripple 7.4s ease-in-out var(--d, 0s) infinite;
+}
+
+.trace, .trace-hub, .trace-node, .hex-pad, .trace-energy {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Dim base lines: present and legible, with the energy running over them
+   bright enough to read as the active part of the wheel. */
+.trace { stroke-width: 1.35; opacity: .4; }
+
+/* ÃƒÆ’Ã¢â‚¬Â gishjÃƒÆ’Ã‚Â¡lmur is an armed wheel inside drawn circles, so the hub is a pair of
+   circles rather than a dot. */
+.trace-hub { stroke-width: 2; opacity: .66; }
+
+.trace-hub + .trace-hub { stroke-width: 1.1; opacity: .34; }
+
+/* Where each arm meets the hub ring. */
+.trace-node { fill: currentColor; stroke: none; opacity: .8; }
+
+.hex-pad { stroke-width: 1.45; opacity: .68; }
+
+/* The travelling light. A comet rather than an even train: a small spark ahead
+   of a longer head, then a long quiet gap, so each pass reads as a pulse of
+   current arriving. The stroke is a gradient laid along the arm, hottest at the
+   tip, so the light cools as it converges on the hub. */
+.trace-energy {
+  stroke: url(#fc-spoke);
+  stroke-width: 2.2;
+  stroke-dasharray: 2 7 13 62;
+  animation: trace-flow var(--flow, 5.2s) linear var(--d, 0s) infinite;
+}
+
+/* Hex accents: a few large outlines turning slowly behind the portal. Static
+   per-element, one rotation each, so the motif costs almost nothing. */
+.hex-field { position: absolute; inset: 0; z-index: 1; pointer-events: none; transform: scale(var(--unit, 1)); }
+
+/* Position and spin ride the same transform. The resting offset is written here
+   as well as in the keyframes: with animations off, a keyframe-only transform
+   vanishes and every hexagon collapses onto the centre of the seal. */
+.hex-accent {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: var(--sz, 60px);
+  height: var(--sz, 60px);
+  margin-top: calc(var(--sz, 60px) / -2);
+  margin-left: calc(var(--sz, 60px) / -2);
+  color: #ffb066;
+  opacity: .16;
+  transform: translateY(var(--r, -120px));
+  animation: hex-turn var(--dur, 140s) linear var(--d, 0s) infinite;
+}
+
+.hex-glyph {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+}
+
+/* Embers riding the air over the frame.
+   Two animations per ember on two unrelated periods, so the climb and the sway
+   never lock into a single visible loop: `translate` carries the climb and the
+   sideways carry the ember is on, `transform` carries the sway and the flicker.
+   Both are transform-family and the fade is opacity, so the whole field
+   composites on the GPU without repainting. */
+.flame-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; transform: scale(var(--unit, 1)); }
+
+.flame-field i {
+  position: absolute;
+  left: var(--x, 50%);
+  bottom: var(--y, 8%);
+  width: var(--s, 4px);
+  height: calc(var(--s, 4px) * var(--h, 2.2));
+  /* A teardrop rather than a circle: wider at the base, tapering upward, with a
+     hot gold core so even the smallest embers still read as fire. */
+  border-radius: 50% 50% 44% 44%;
+  background: radial-gradient(ellipse at 50% 72%,
+      var(--hot, #ffe9b8) 0%, var(--mid, #ffc978) 30%,
+      var(--edge, #ff7a2e) 66%, #ff5b2e00 100%);
+  opacity: 0;
+  animation:
+    ember-climb var(--t, 12s) linear var(--d, 0s) infinite,
+    ember-sway var(--tw, 3.6s) ease-in-out var(--dw, 0s) infinite;
+}
+
+/* Every fifth ember is a coal on a ballistic arc rather than a spark riding the
+   draft. Matching the generator's `index % 5`. */
+.flame-field i:nth-child(5n+1) {
+  animation-name: ember-arc, ember-sway;
+}
+
+/* The glow is painted, not filtered: a blur costs a full-layer render pass per
+   ember, and a wide box-shadow the same. A gradient costs one fill and rides
+   along in each ember's existing layer. */
+.flame-field i::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--s, 4px) * 9);
+  height: calc(var(--s, 4px) * 9);
+  margin: calc(var(--s, 4px) * -4.5) 0 0 calc(var(--s, 4px) * -4.5);
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffb0664d 0%, #ff7a2e26 44%, transparent 74%);
+}
+
+/* Runes that stream inward along a band's lane: each rides between the two
+   guide circles of its band, from just outside to just inside. The start and
+   end radii are per rune, so one keyframe serves every lane. */
+.fall-field { position: absolute; inset: 0; z-index: 3; pointer-events: none; transform: scale(var(--unit, 1)); }
+
+.fall-rune {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  margin: -.75em 0 0 -.75em;
+  display: grid;
+  place-items: center;
+  color: #ff9d55;
+  font-size: var(--sz, 12px);
+  transform: rotate(var(--a, 0deg)) translateY(var(--rf, -300px));
+  animation: rune-fall var(--t, 6s) linear var(--d, 0s) infinite;
+}
+
+.fall-rune .rune {
+  display: block;
+  width: .8em;
+  height: 1.2em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes band-fall {
+  0% { scale: 1; opacity: 0; }
+  8% { scale: 1; opacity: 1; }
+  62% { scale: 1; opacity: 1; }
+  80% { scale: .66; opacity: .9; }
+  94% { scale: .3; opacity: .3; }
+  100% { scale: .22; opacity: 0; }
+}
+
+@keyframes rune-lit {
+  0%, 100% { opacity: .68; }
+  45% { opacity: 1; }
+}
+
+@keyframes rune-spin { to { transform: rotate(360deg); } }
+
+@keyframes cloud-fade {
+  0%, 100% { opacity: 0; }
+  26% { opacity: .95; }
+  68% { opacity: .5; }
+}
+
+@keyframes halo-breathe {
+  0%, 100% { transform: scale(.9); opacity: .6; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Fire does not hold a steady light. The envelope is deliberately uneven, so the
+   scene reads as lit by something burning rather than by a lamp. */
+@keyframes firelight {
+  0%, 100% { opacity: .74; }
+  9% { opacity: 1; }
+  21% { opacity: .7; }
+  33% { opacity: .94; }
+  45% { opacity: .73; }
+  57% { opacity: .88; }
+  69% { opacity: .68; }
+  81% { opacity: .97; }
+}
+
+@keyframes wizard-pleased {
+  0% { transform: scale(1) rotate(0deg); }
+  28% { transform: scale(1.035, .95) rotate(-.6deg); }
+  55% { transform: scale(.98, 1.03) rotate(.5deg); }
+  78% { transform: scale(1.012, .995) rotate(-.2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes wizard-flinch {
+  0% { transform: translateX(0) scale(1); }
+  18% { transform: translateX(-7px) scale(1.02); }
+  42% { transform: translateX(6px) scale(.99); }
+  66% { transform: translateX(-3px); }
+  100% { transform: translateX(0) scale(1); }
+}
+
+@keyframes wizard-speak {
+  from { opacity: 0; transform: translateX(-50%) translateY(6px) scale(.94); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+
+/* The dashes run toward the start of their paths, and every arm is drawn from
+   the hub outward -- so the light converges on the centre. The cycle covers two
+   full dash periods, so the loop is seamless. */
+@keyframes trace-flow {
+  from { stroke-dashoffset: -84; }
+  to { stroke-dashoffset: 84; }
+}
+
+/* A slow shimmer ring to ring so the wheel never sits completely still. */
+@keyframes trace-ripple {
+  0%, 100% { opacity: .4; }
+  42% { opacity: 1; }
+}
+
+/* Position and spin ride the same transform: the independent `rotate` property
+   composes after `transform`, which would swing the hexagon off its radius. */
+@keyframes hex-turn {
+  from { transform: translateY(var(--r, -120px)) rotate(360deg); }
+  to { transform: translateY(var(--r, -120px)) rotate(0deg); }
+}
+
+/* The climb. Eight stops rather than two, so the rise accelerates instead of
+   running at a constant speed: the share of total height gained per unit of time
+   climbs to a plateau around half way, then falls away as the ember cools. The
+   sideways carry is spent over the same stops, and the ember shrinks as it goes
+   out. */
+@keyframes ember-climb {
+  0% { translate: 0 0; scale: .5; opacity: 0; }
+  8% { translate: calc(var(--drift, 0px) * .03) calc(var(--rise, 300px) * -.03); scale: 1; opacity: var(--peak, .8); }
+  20% { translate: calc(var(--drift, 0px) * .13) calc(var(--rise, 300px) * -.13); scale: .99; opacity: var(--peak, .8); }
+  36% { translate: calc(var(--drift, 0px) * .29) calc(var(--rise, 300px) * -.29); scale: .95; opacity: calc(var(--peak, .8) * .93); }
+  54% { translate: calc(var(--drift, 0px) * .49) calc(var(--rise, 300px) * -.49); scale: .86; opacity: calc(var(--peak, .8) * .8); }
+  72% { translate: calc(var(--drift, 0px) * .7) calc(var(--rise, 300px) * -.7); scale: .72; opacity: calc(var(--peak, .8) * .6); }
+  88% { translate: calc(var(--drift, 0px) * .88) calc(var(--rise, 300px) * -.88); scale: .52; opacity: calc(var(--peak, .8) * .33); }
+  100% { translate: var(--drift, 0px) calc(var(--rise, 300px) * -1); scale: .28; opacity: 0; }
+}
+
+/* The heavier coals, thrown rather than carried. The rise decelerates into an
+   apex at two thirds of the life, then gravity takes it back down past where it
+   started, gaining speed the whole way. One ember in five. */
+@keyframes ember-arc {
+  0% { translate: 0 0; scale: .6; opacity: 0; }
+  9% { translate: calc(var(--drift, 0px) * .07) calc(var(--rise, 300px) * -.09); scale: 1; opacity: var(--peak, .8); }
+  22% { translate: calc(var(--drift, 0px) * .18) calc(var(--rise, 300px) * -.28); scale: 1.02; opacity: var(--peak, .8); }
+  38% { translate: calc(var(--drift, 0px) * .32) calc(var(--rise, 300px) * -.53); scale: 1; opacity: calc(var(--peak, .8) * .96); }
+  54% { translate: calc(var(--drift, 0px) * .48) calc(var(--rise, 300px) * -.76); scale: .94; opacity: calc(var(--peak, .8) * .86); }
+  66% { translate: calc(var(--drift, 0px) * .6) calc(var(--rise, 300px) * -.88); scale: .88; opacity: calc(var(--peak, .8) * .74); }
+  78% { translate: calc(var(--drift, 0px) * .74) calc(var(--rise, 300px) * -.74); scale: .78; opacity: calc(var(--peak, .8) * .56); }
+  90% { translate: calc(var(--drift, 0px) * .88) calc(var(--rise, 300px) * -.34); scale: .62; opacity: calc(var(--peak, .8) * .3); }
+  100% { translate: var(--drift, 0px) calc(var(--rise, 300px) * .14); scale: .45; opacity: 0; }
+}
+
+/* One lateral turn per iteration. The animation runs at the life divided by the
+   ember's own turn count, so sway and climb together trace a helix up the
+   column: slow, wide and uneven rather than a swing. */
+@keyframes ember-sway {
+  0% { transform: translate3d(var(--sway, 12px), 0, 0) scale(1); }
+  26% { transform: translate3d(calc(var(--sway, 12px) * -.55), 0, 0) scale(1.1); }
+  50% { transform: translate3d(calc(var(--sway, 12px) * -1), 0, 0) scale(.94); }
+  74% { transform: translate3d(calc(var(--sway, 12px) * .45), 0, 0) scale(1.06); }
+  100% { transform: translate3d(var(--sway, 12px), 0, 0) scale(1); }
+}
+
+@keyframes rune-fall {
+  0% { transform: rotate(var(--a, 0deg)) translateY(var(--rf, -300px)); opacity: 0; }
+  16% { opacity: .9; }
+  80% { opacity: .5; }
+  100% { transform: rotate(var(--a, 0deg)) translateY(var(--rt, -52px)); opacity: 0; }
+}
+
+/* The casting scene occupies the hero's visual column. Everything inside it is
+   decorative; the figure is the only interactive part, and the speech bubble is
+   positioned against the figure so it never covers the copy. */
+.cast-scene { height: 500px; --unit: 1; }
+.hero-visual { position: relative; min-width: 0; overflow-x: clip; }
+
+@media (max-width: 1050px) {
+  .cast-scene { height: 560px; --unit: 1; }
+}
+@media (max-width: 760px) {
+  .cast-scene { height: 440px; --unit: .8; }
+  .rune-ring i:nth-child(3n) { display: none; }
+  .float-runes i:nth-child(n+6) { display: none; }
+}
+@media (max-width: 520px) {
+  .cast-scene { height: 360px; --unit: .68; }
+  .wizard-voice { max-width: min(280px, 82vw); bottom: calc(100% - 12px); }
+  .rune-circle-lg > .rune-band:nth-last-child(-n+3) { display: none; }
+  .flame-field i:nth-child(n+13) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Embers and floating runes animate from a zero base opacity, so with motion
+     off they would sit invisible rather than still. */
+  .flame-field, .float-runes { display: none; }
+}
 .product-stage { position: relative; min-width: 0; }
 .image-label {
   display: flex;
@@ -962,10 +1597,6 @@ section[id], article[id] { scroll-margin-top: 88px; }
   .announcement { font-size: 11px; }
   .announcement .wrap { flex-wrap: wrap; gap: 2px 10px; }
   .hero { padding-block: 34px 28px; gap: 24px; }
-  .hero-wizard { width: min(160px, 52vw); }
-  .wizard-stage { margin-inline: auto; }
-  .wizard-ring-a, .wizard-ring-b, .wizard-glow, .wizard-spark { animation: none; }
-  .wizard-particles { display: none; }
   .brand-mark { width: 26px; height: 26px; }
   .brand-wordmark { height: 17px; }
   h1, .page-hero h1 { font-size: clamp(2.1rem, 9vw, 2.8rem); }
@@ -1019,11 +1650,6 @@ section[id], article[id] { scroll-margin-top: 88px; }
 
 @media (prefers-reduced-motion: reduce) {
   .signal-art i:nth-child(2),
-  .signal-art i:nth-child(3),
-  .wizard-ring-a,
-  .wizard-ring-b,
-  .wizard-glow,
-  .wizard-spark { animation: none; }
-  .wizard-particles { display: none; }
+  .signal-art i:nth-child(3) { animation: none; }
   .button:hover, .button:active { transform: none; }
 }
