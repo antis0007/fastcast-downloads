@@ -18,7 +18,7 @@
 FastCast is a free development-preview screen-sharing app. Matching Windows and Android packages are published here. There are no subscriptions in the current offer. This repository holds the public website and release assets, not the native application source.
 
 > [!IMPORTANT]
-> Use matching app versions. The supported testing path is a Windows sender and an Android or Windows receiver on the same LAN, or another reachable private network. Managed relay is not implemented. Windows installers are unsigned; Android packages are debug-signed.
+> Use matching app versions. The supported testing path is a Windows sender and an Android or Windows receiver on the same LAN, or another reachable private network. A FastCast relay is available as a fallback when no direct route works. Sharing a screen needs no account; friends and calls use an account the device owns. Windows installers are unsigned; Android packages are debug-signed.
 
 ## Install the preview
 
@@ -41,7 +41,7 @@ The website is static HTML, CSS, and optional JavaScript. Navigation, direct dow
 
 ## Screenshots and claims
 
-The native Windows captures use the app's default Cyan theme and were taken from the September 7, 2026 appearance-review executable. They capture the client area directly, excluding the operating-system title bar. They are unchanged captures of a development interface newer than the public preview. The social preview card and header/footer artwork are generated brand graphics; they are not product screenshots.
+The native Windows captures use the app's default Cyan theme and were taken from the September 7, 2026 appearance-review executable. They capture the client area directly, excluding the operating-system title bar. They are unchanged captures of that development interface, which predates the published preview; the interface has changed since they were taken. The social preview card and header/footer artwork are generated brand graphics; they are not product screenshots.
 
 Read DESIGN.md for the visual direction and pre-commit critical review. Future collaboration work is identified as future work. Do not fabricate conversations, metrics, testimonials, security guarantees, or feature parity with other communication apps.
 
