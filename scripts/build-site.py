@@ -601,7 +601,6 @@ WIZARD_LINES = {
         # fortune cookie, not a wizard. Every one of these is a specific joke
         # about a specific thing.
         "The great towers shall fall, as all towers do. I've seen it. It was a Tuesday.",
-        "Enshittification. The young mages' word. We called it a curse, and we lifted it.",
         "Every age builds the Torment Nexus, calls it a platform, and charges the tormented rent.",
         # The Towers. He is not neutral on the subject, and the definition is the
         # joke: Ser-Vur and Day-Tuh are the words he thinks he is quoting.
@@ -624,7 +623,6 @@ WIZARD_LINES = {
         # about something impossible; the self-awareness never becomes
         # self-pity, or it stops being funny.
         "Eleven spiders. Always eleven. Last week there were twelve. I didn't sleep.",
-        "I asked the eleven spiders in my spellbook to leave. Twelve voted against.",
         "My apprentice called me old. His boots are now two very surprised cows.",
         "The ring is cursed. Put it on. I want to hear the accent.",
         "Do not drink the green potion. It is bait for the red one.",
@@ -654,7 +652,6 @@ WIZARD_LINES = {
         "My rival demanded a duel at dawn. I have postponed the sun.",
         "I've cursed a rival's house to be uphill from itself.",
         "Somebody paid me in turnips. I have taught the turnips his name.",
-        "Do NOT touch my orb. I will know. I always know.",
         # Different engines deliberately: privacy, liability, academia,
         # bureaucracy, memory, economics. The previous batch was eighteen
         # versions of one joke and it stopped being funny after two.
@@ -673,19 +670,15 @@ WIZARD_LINES = {
         "The Tower bills per head. My hydra is furious.",
         "The Council asked me not to end meetings with Fireball. I now open with it.",
         "My apprentice says fire isn't sentient. I have told the fire.",
-        "I predate several laws of nature. I am exempt.",
-        "I enchanted the king's soup. The croutons will know when.",
         # Occasionally unstable.
         "Casting Fireball——— *the bubble flickers* ...Wrong direction. Your eyebrows were always a bit much.",
         "Klaatu, verata, nikto. ...Nikto. NIKTO. We may need to leave.",
         "Xyzzy! ...Nothing. It's never worked. I'll keep saying it.",
         "Don't touch the blue rune. Don't touch the — thank you.",
         "I once turned a man into a newt. He's a very good newt now. He knows what he did.",
-        "The beard's gone sentient again. Don't make eye contact.",
         "Telecommuniwhat-now? I've said *scrying* for six hundred years.",
         # :3
         "*blushes* ...That's not a spell. It's something I do now.",
-        ":3",
         "*head in hands* :3 ...Sorry. Sorry. It happens when I'm nervous.",
         # Warm, and genuinely on your side.
         # The product. Scrying is screen sharing: an orb at each end and nothing
@@ -696,7 +689,6 @@ WIZARD_LINES = {
         "I didn't do that. It was the orb. We're both lying.",
         "*scrolls your page back up* ...You weren't finished with that.",
         "You're about to flinch. *doesn't move* ...There.",
-        "*reclines* :3",
         "I saw your whole future once. It was fine. You're fine. Don't worry about it.",
         "Skill issue.",
         "*scrys* ...Yeah. Yeah, you're cooked.",
@@ -708,6 +700,27 @@ WIZARD_LINES = {
         "You're clicking me. I can feel it.",
         "Okay. Okay. We're being polite. Casting Fireball———",
         "It's a very old spell. I invented it last Tuesday.",
+        "My familiar has a familiar. I was not consulted.",
+        "I put a curse on my own left hand. It knows why.",
+        "I taught a rock to count. It has got to nine. It is very pleased.",
+        "My golem asked whether my bones were structural or decorative.",
+        "I keep a mimic as a footstool. We both think we're being patient.",
+        "My reflection is a minute ahead. I make him taste the soup.",
+        "I declined the throne. My newt accepted. He has flooded the ballroom.",
+        "I levitate the cheese. The mice have built a trebuchet.",
+        "I asked an ancient oak for wisdom. It wants a particular squirrel dead.",
+        "I mispronounce forbidden names until somebody corrects me.",
+        "I open presents with Mage Hand. My friends say it spoils the surprise.",
+        "My gargoyle wants a sea view. He has started moving the house.",
+        "I put a silence spell on my bedroom. The nightmares have to mime.",
+        "Enshittification. The young mages' word. We called it a curse, and we lifted it.",
+        "I asked the eleven spiders in my spellbook to leave. Twelve voted against.",
+        "Do NOT touch my orb. I will know. I always know.",
+        "I predate several laws of nature. I am exempt.",
+        "I enchanted the king's soup. The croutons will know when.",
+        "The beard's gone sentient again. Don't make eye contact.",
+        ":3",
+        "*reclines* :3",
         "I could turn you into a chair. I'm not going to. It worked once.",
         "I've already cast it. You'll notice in a minute.",
         "Don't look behind you. Nothing's there. I just like saying it.",
