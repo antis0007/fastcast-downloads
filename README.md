@@ -18,7 +18,7 @@
 FastCast is a free development-preview screen-sharing app. Matching Windows and Android packages are published here. There are no subscriptions in the current offer. This repository holds the public website and release assets, not the native application source.
 
 > [!IMPORTANT]
-> Use matching app versions. The supported testing path is a Windows sender and an Android or Windows receiver on the same LAN, or another reachable private network. Managed relay is not implemented. Windows installers are unsigned; Android packages are debug-signed.
+> Use matching app versions. The supported testing path is a Windows sender and an Android or Windows receiver on the same LAN, or another reachable private network. A FastCast relay is available as a fallback when no direct route works. Sharing a screen needs no account; friends and calls use an account the device owns. Windows installers are unsigned; Android packages are debug-signed.
 
 ## Install the preview
 

@@ -854,17 +854,18 @@ def capability_ledger():
         for item in group['items']:
             status = by_id[item['status']]
             rows.append(
-                f'\n<div class="capability-row">'
-                f'<dt>{escape(item["name"])}</dt>'
-                f'<dd class="status status-{status["id"]}"><span class="status-word">{escape(status["label"])}</span></dd>'
-                f'<dd class="capability-detail">{escape(fill(item["detail"]))}</dd>'
-                f'</div>'
+                f'<tr><th scope="row">{escape(item["name"])}</th>'
+                f'<td><span class="status status-{status["id"]}">{escape(status["label"])}</span></td>'
+                f'<td>{escape(fill(item["detail"]))}</td></tr>'
             )
         groups.append(
             f'<section class="capability-group" id="status-{group["id"]}" aria-labelledby="status-{group["id"]}-title">\n'
             f'<h3 id="status-{group["id"]}-title">{escape(group["title"])}</h3>\n'
             f'<p class="capability-intro">{escape(fill(group["intro"]))}</p>\n'
-            f'<dl class="capability-ledger">{"".join(rows)}</dl>\n'
+            '<div class="table-scroll" tabindex="0">'
+            '<table class="support-table capability-table">'
+            '<thead><tr><th scope="col">Capability</th><th scope="col">Status</th><th scope="col">What to expect</th></tr></thead>'
+            f'<tbody>{"".join(rows)}</tbody></table></div>\n'
             f'</section>'
         )
     return (

@@ -135,9 +135,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
 /* Logo lockup: the wizard mark sized by height so its 1.3:1 aspect is never
-   squashed, and the wordmark artwork beside it. */
-.brand-mark { display: block; width: auto; height: 34px; flex: none; }
-.brand-wordmark { display: block; width: auto; height: 19px; }
+   squashed, and the wordmark artwork beside it. Scaled to sit with the nav: at
+   19px the wordmark read as a caption next to 14px links, and the mark matched
+   neither the 44px row height nor the 52px lockup the footer already uses. 46px
+   and 28px fill the 77px header without growing it, since 46 plus the 16px
+   padding either side lands just inside. */
+.brand-mark { display: block; width: auto; height: 46px; flex: none; }
+.brand-wordmark { display: block; width: auto; height: 28px; }
 .site-header nav { display: flex; align-items: center; gap: 22px; }
 .site-header-inner > .brand { margin-right: auto; min-width: 0; }
 .site-header nav a {
@@ -165,7 +169,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
-  transition: background .15s ease, border-color .15s ease, color .15s ease;
+  transition: background .15s ease, border-color .15s ease, color .15s ease, transform .15s ease, box-shadow .15s ease;
 }
 .button:hover { color: var(--text); background: var(--surface-raised); border-color: var(--accent); }
 .button.primary {
@@ -1388,6 +1392,8 @@ section[id], article[id] { scroll-margin-top: 88px; }
 
 .download-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .download-card {
+  display: flex;
+  flex-direction: column;
   padding: 28px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
@@ -1414,7 +1420,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
 }
 .download-card dt { color: var(--quiet); }
 .download-card dd { margin: 0; color: var(--text); }
-.download-card .button { width: 100%; justify-content: space-between; margin-top: 4px; }
+.download-card .button { width: 100%; justify-content: space-between; margin-top: auto; }
 .download-card .text-link { font-size: 13px; margin-top: 10px; }
 
 .bundle-row {
