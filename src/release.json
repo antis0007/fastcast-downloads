@@ -1,9 +1,9 @@
 {
-    "version":  "0.3.2-preview.3",
-    "tag":  "v0.3.2-preview.3",
-    "label":  "0.3.2 Preview 3",
-    "published":  "2026-09-11",
-    "published_display":  "September 11, 2026",
+    "version":  "0.3.2-preview.4",
+    "tag":  "v0.3.2-preview.4",
+    "label":  "0.3.2 Preview 4",
+    "published":  "2026-09-12",
+    "published_display":  "September 12, 2026",
     "status":  "Development preview",
     "network":  "Direct peer route, with a FastCast relay fallback",
     "offer":  "No account to share a screen. Friends and calls use a device-owned account. Preview.",
@@ -28,38 +28,38 @@
                 },
     "assets":  {
                    "windows":  {
-                                   "filename":  "FastCast-0.3.2-preview.3-Setup.exe",
-                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.3/FastCast-0.3.2-preview.3-Setup.exe",
+                                   "filename":  "FastCast-0.3.2-preview.4-Setup.exe",
+                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.4/FastCast-0.3.2-preview.4-Setup.exe",
                                    "size":  "11.4 MB",
-                                   "bytes":  11965128,
-                                   "sha256":  "9e84a2ab88cc421a2eb1c66cc1be2a8b2f08bc8593fa0a8029690a0095aecbe4",
+                                   "bytes":  11999845,
+                                   "sha256":  "876510dc9a77d45ad5c249e143529486d8853426942afe01b1cdaf8eb622a23f",
                                    "role":  "Windows sender and receiver",
                                    "signing":  "Unsigned preview"
                                },
                    "android":  {
-                                   "filename":  "FastCast-0.3.2-preview.3-Android.apk",
-                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.3/FastCast-0.3.2-preview.3-Android.apk",
+                                   "filename":  "FastCast-0.3.2-preview.4-Android.apk",
+                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.4/FastCast-0.3.2-preview.4-Android.apk",
                                    "size":  "25.2 MB",
                                    "bytes":  26424462,
-                                   "sha256":  "cd85d6a68d121d92173d5f0d3a19ebad260080919df647a1dd2ad3ee3e3ce53d",
+                                   "sha256":  "7def77bc4e176b95c01de3b5cddc3aa8b2b43c76403b1453ad808903d36cbe44",
                                    "role":  "Android viewer",
                                    "signing":  "Debug-signed preview"
                                },
                    "bundle":  {
-                                  "filename":  "FastCast-0.3.2-preview.3-windows-android-x64.zip",
-                                  "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.3/FastCast-0.3.2-preview.3-windows-android-x64.zip",
-                                  "size":  "26.0 MB",
-                                  "bytes":  27290677,
-                                  "sha256":  "5477eca8f415e4184514aa53fd3fef91b5b31669a8d12e5436a7e04a722dc757",
+                                  "filename":  "FastCast-0.3.2-preview.4-windows-android-x64.zip",
+                                  "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.4/FastCast-0.3.2-preview.4-windows-android-x64.zip",
+                                  "size":  "26.1 MB",
+                                  "bytes":  27341937,
+                                  "sha256":  "0f20268841341b8fffd21fea55b852116c91de40326b0be2f9c99e6f67105915",
                                   "role":  "Portable Windows + Android bundle",
                                   "signing":  "Same unsigned Windows and debug-signed Android packages"
                               },
                    "checksums":  {
                                      "filename":  "SHA256SUMS.txt",
-                                     "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.3/SHA256SUMS.txt",
+                                     "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.4/SHA256SUMS.txt",
                                      "size":  "410 B",
                                      "bytes":  410,
-                                     "sha256":  "52008d9d716feac914932270a314049be14e6f3a0ecaab94b146d0d450f6dce0"
+                                     "sha256":  "c5af0341de45cac599ec06a7d76e2e3f3315dfc281befdaed3357897468de300"
                                  }
                },
     "screenshots":  {
@@ -161,7 +161,7 @@
                                                 {
                                                     "name":  "Computer audio",
                                                     "status":  "available",
-                                                    "detail":  "The sending PC’s audio travels with the screen. The receiver decoded computer audio in the LAN run with no reported underruns. Audible output on a phone was not independently confirmed."
+                                                    "detail":  "The sending PCâ€™s audio travels with the screen. The receiver decoded computer audio in the LAN run with no reported underruns. Audible output on a phone was not independently confirmed."
                                                 }
                                             ]
                               },
@@ -189,6 +189,16 @@
                                                     "name":  "Cursor appearance and effects",
                                                     "status":  "preview",
                                                     "detail":  "Desktop cursor styling with a local effects budget. The current build labels this preview only."
+                                                },
+                                                {
+                                                    "name":  "Several viewers on one share",
+                                                    "status":  "preview",
+                                                    "detail":  "One share can serve up to eight viewers from a single capture, each invited with its own pinned link and its own identity. The fan-out passes loopback tests; no two machines have exercised it."
+                                                },
+                                                {
+                                                    "name":  "Sharing a screen during a call",
+                                                    "status":  "preview",
+                                                    "detail":  "A call and a screen share can run together. On a call the Board is how you ask someone for their screen, because the Receive page still serves one session at a time."
                                                 }
                                             ]
                               },
@@ -220,11 +230,6 @@
                                                     "detail":  "Present in some development builds, not in this download. Update by installing a newer matching Windows and Android pair over the old one."
                                                 },
                                                 {
-                                                    "name":  "Multi-viewer rooms",
-                                                    "status":  "not-yet",
-                                                    "detail":  "A screen share is one sharer to one viewer. A second viewer is refused, and consenting rooms are not implemented."
-                                                },
-                                                {
                                                     "name":  "Linux desktop",
                                                     "status":  "not-yet",
                                                     "detail":  "Not in these public files. Application source has a Linux viewer (OpenH264, optional VA-API). Linux send is not a product."
@@ -250,10 +255,19 @@
                     ],
     "history":  [
                     {
+                        "version":  "0.3.2-preview.4",
+                        "tag":  "v0.3.2-preview.4",
+                        "published":  "2026-09-12",
+                        "current":  true,
+                        "label":  "0.3.2 Preview 4",
+                        "published_display":  "September 12, 2026",
+                        "summary":  "Multi-viewer screen sharing: one share now serves up to eight viewers from a single encode, each admitted with its own pinned invitation. A call and a screen share can run together, with the call keeping the microphone. Neither has been exercised across two machines."
+                    },
+                    {
                         "version":  "0.3.2-preview.3",
                         "tag":  "v0.3.2-preview.3",
                         "published":  "2026-09-11",
-                        "current":  true,
+                        "current":  false,
                         "label":  "0.3.2 Preview 3",
                         "published_display":  "September 11, 2026",
                         "summary":  "Calls now start: friend requests, signalled voice over the FastCast relay, self-hosted STUN, and relay media fan-out. Screen sharing is still one sharer to one viewer, and unrelated-network calls remain unmeasured."
