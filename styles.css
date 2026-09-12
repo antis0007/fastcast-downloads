@@ -1111,7 +1111,12 @@ figcaption { margin-top: 14px; font-size: 12px; color: var(--quiet); line-height
 .resource-grid b { position: absolute; bottom: 12px; right: 18px; font-weight: 500; color: var(--accent); }
 
 .page-hero { padding-block: 56px 32px; }
-.page-hero h1 { max-width: 14ch; font-size: clamp(2.2rem, 4vw, 3.5rem); }
+/* These headlines are two parts split by a <br>, the second being the accent
+   phrase. At 14ch (523px) the accent of four pages wrapped one word short,
+   stranding a single word on the last line -- "Windows and / Android.", "to a PC
+   or Android / device.". 18ch is 672px, past the widest accent at 56px (647px),
+   so both parts sit on their own line. */
+.page-hero h1 { max-width: 18ch; font-size: clamp(2.2rem, 4vw, 3.5rem); }
 .page-hero .lede { max-width: 40rem; font-size: 18px; }
 .page-hero .actions { margin-block: 26px 12px; }
 .page-downloads .page-hero { padding-block: 48px 24px; }
