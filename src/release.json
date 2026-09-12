@@ -1,7 +1,7 @@
 {
-    "version":  "0.3.2-preview.4",
-    "tag":  "v0.3.2-preview.4",
-    "label":  "0.3.2 Preview 4",
+    "version":  "0.3.2-preview.5",
+    "tag":  "v0.3.2-preview.5",
+    "label":  "0.3.2 Preview 5",
     "published":  "2026-09-12",
     "published_display":  "September 12, 2026",
     "status":  "Development preview",
@@ -28,38 +28,38 @@
                 },
     "assets":  {
                    "windows":  {
-                                   "filename":  "FastCast-0.3.2-preview.4-Setup.exe",
-                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.4/FastCast-0.3.2-preview.4-Setup.exe",
+                                   "filename":  "FastCast-0.3.2-preview.5-Setup.exe",
+                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.5/FastCast-0.3.2-preview.5-Setup.exe",
                                    "size":  "11.4 MB",
-                                   "bytes":  11999845,
-                                   "sha256":  "876510dc9a77d45ad5c249e143529486d8853426942afe01b1cdaf8eb622a23f",
+                                   "bytes":  11998254,
+                                   "sha256":  "8eea343d4eb6a3765d49981142b4c74701b230a6c7b84ff34653e775d3283f13",
                                    "role":  "Windows sender and receiver",
                                    "signing":  "Unsigned preview"
                                },
                    "android":  {
-                                   "filename":  "FastCast-0.3.2-preview.4-Android.apk",
-                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.4/FastCast-0.3.2-preview.4-Android.apk",
+                                   "filename":  "FastCast-0.3.2-preview.5-Android.apk",
+                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.5/FastCast-0.3.2-preview.5-Android.apk",
                                    "size":  "25.2 MB",
                                    "bytes":  26424462,
-                                   "sha256":  "7def77bc4e176b95c01de3b5cddc3aa8b2b43c76403b1453ad808903d36cbe44",
+                                   "sha256":  "4c9f238730da9199fe41d7645334424c98e76164997059436f583d93e9631fd5",
                                    "role":  "Android viewer",
                                    "signing":  "Debug-signed preview"
                                },
                    "bundle":  {
-                                  "filename":  "FastCast-0.3.2-preview.4-windows-android-x64.zip",
-                                  "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.4/FastCast-0.3.2-preview.4-windows-android-x64.zip",
+                                  "filename":  "FastCast-0.3.2-preview.5-windows-android-x64.zip",
+                                  "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.5/FastCast-0.3.2-preview.5-windows-android-x64.zip",
                                   "size":  "26.1 MB",
-                                  "bytes":  27341937,
-                                  "sha256":  "0f20268841341b8fffd21fea55b852116c91de40326b0be2f9c99e6f67105915",
+                                  "bytes":  27341104,
+                                  "sha256":  "b8b2c04bc50f762fcfe07d1fbf9747e50feba43d5c0839be5910af1c526fa658",
                                   "role":  "Portable Windows + Android bundle",
                                   "signing":  "Same unsigned Windows and debug-signed Android packages"
                               },
                    "checksums":  {
                                      "filename":  "SHA256SUMS.txt",
-                                     "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.4/SHA256SUMS.txt",
+                                     "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.5/SHA256SUMS.txt",
                                      "size":  "410 B",
                                      "bytes":  410,
-                                     "sha256":  "c5af0341de45cac599ec06a7d76e2e3f3315dfc281befdaed3357897468de300"
+                                     "sha256":  "f35b47e7aa4c6cd7173b3335ac46ccee2d968ad37b21fa6406692018f0fd5efc"
                                  }
                },
     "screenshots":  {
@@ -161,7 +161,7 @@
                                                 {
                                                     "name":  "Computer audio",
                                                     "status":  "available",
-                                                    "detail":  "The sending PCâ€™s audio travels with the screen. The receiver decoded computer audio in the LAN run with no reported underruns. Audible output on a phone was not independently confirmed."
+                                                    "detail":  "The sending PCÃ¢â‚¬â„¢s audio travels with the screen. The receiver decoded computer audio in the LAN run with no reported underruns. Audible output on a phone was not independently confirmed."
                                                 }
                                             ]
                               },
@@ -255,10 +255,19 @@
                     ],
     "history":  [
                     {
+                        "version":  "0.3.2-preview.5",
+                        "tag":  "v0.3.2-preview.5",
+                        "published":  "2026-09-12",
+                        "current":  true,
+                        "label":  "0.3.2 Preview 5",
+                        "published_display":  "September 12, 2026",
+                        "summary":  "Multi-viewer screen sharing, and screen sharing during a call. Preview 5 makes sharing during a call work both ways and stops a call and a share from ever sending the microphone twice."
+                    },
+                    {
                         "version":  "0.3.2-preview.4",
                         "tag":  "v0.3.2-preview.4",
                         "published":  "2026-09-12",
-                        "current":  true,
+                        "current":  false,
                         "label":  "0.3.2 Preview 4",
                         "published_display":  "September 12, 2026",
                         "summary":  "Multi-viewer screen sharing: one share now serves up to eight viewers from a single encode, each admitted with its own pinned invitation. A call and a screen share can run together, with the call keeping the microphone. Neither has been exercised across two machines."
