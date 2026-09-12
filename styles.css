@@ -90,8 +90,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
   backdrop-filter: blur(14px);
 }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
-.brand-mark { width: 30px; height: 30px; flex: none; }
-.brand-wordmark { display: block; height: 20px; width: auto; }
+/* The header lockup is an <img> plus plain text, not the classed pair below, so
+   the image is sized through its parent. At 30px with unstyled body text the
+   lockup read as a footnote beside the nav; 44px and a 21px wordmark make it a
+   brand mark without growing the 77px header. */
+.site-header > .brand img { width: 44px; height: 44px; flex: none; }
+.site-header > .brand {
+  margin-right: auto;
+  min-width: 0;
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  color: var(--text);
+}
+/* Leftover from the wordmark-image lockup; the current markup does not use these
+   classes, and the footer's text lockup carries its own rule. */
+.brand-mark { width: 44px; height: 44px; flex: none; }
+.brand-wordmark { display: block; height: 29px; width: auto; }
 .site-header nav { display: flex; align-items: center; gap: 22px; }
 .site-header > .brand { margin-right: auto; min-width: 0; }
 .site-header nav a {
