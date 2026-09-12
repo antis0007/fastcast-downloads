@@ -1031,6 +1031,14 @@ p { text-wrap: pretty; }
 }
 .light-panel .status-key dt { color: var(--copper); }
 .light-panel .status-key dd { color: var(--paper-muted); }
+/* Previews 3-5 added components whose colours assume a dark surface, and the
+   public pages render them inside the cream panels too. Scoped so the dark
+   surfaces keep the dark-panel treatment. */
+.light-panel .status { color: var(--paper-text); }
+.light-panel .status-available { color: #3f2c08; border-color: #7a5a22; background: #e8c98a; }
+.light-panel .status-preview { color: #5c3f10; border-color: #c9a86a; background: #f2e2c0; }
+.light-panel .status-limited { color: #4a4234; border-color: #b9b5a3; background: #e9e6da; }
+.light-panel .status-not-yet { color: #4c5344; border-color: #bcc0b0; background: #e5e7dc; }
 .light-panel .capability-ledger { border-top-color: #c9ccbc; }
 .light-panel .capability-row { border-bottom-color: var(--line-light, #d9dbcd); }
 .light-panel .capability-intro,
@@ -1208,6 +1216,10 @@ figcaption { margin-top: 14px; font-size: 12px; color: var(--quiet); line-height
 .status-key dt { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--brand-soft); }
 .status-key dd { margin: 8px 0 0; font-size: 12px; line-height: 1.65; color: var(--muted); }
 .capability-group + .capability-group { margin-top: 44px; }
+/* The capability table is drawn on the paper ground while its section sits on
+   the dark page, so its cells need the paper palette. Inheriting the dark
+   --muted put them at 1.77:1 against the cream. */
+.capability-table tbody td { color: var(--paper-muted); }
 .capability-group h3 { font-size: 19px; letter-spacing: -.02em; }
 .capability-intro { margin-top: 10px; max-width: var(--measure); color: var(--muted); font-size: 14px; line-height: 1.7; }
 .capability-ledger { margin: 22px 0 0; border-top: 1px solid var(--line-soft); }
@@ -1462,7 +1474,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
   font-size: 14px;
   overflow-wrap: anywhere;
 }
-.support-table thead th { background: var(--surface); font-weight: 600; }
+.support-table thead th { background: var(--surface); color: var(--text); font-weight: 600; }
 .support-table tbody th { font-weight: 600; }
 .support-table td { color: var(--muted); }
 .table-scroll { overflow-x: auto; border: 1px solid var(--line-soft); border-radius: var(--radius); }
