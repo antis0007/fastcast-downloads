@@ -724,11 +724,11 @@ WIZARD_LINES = {
         "I could turn you into a chair. I'm not going to. It worked once.",
         "I've already cast it. You'll notice in a minute.",
         "Don't look behind you. Nothing's there. I just like saying it.",
-        "Stop saying "indescribable horrors." Share your orb.",
+        "Stop saying \"indescribable horrors.\" Share your orb.",
         "I DID NOT LEARN CLAIRVOYANCE TO EXPLAIN THIS OVER TEXT.",
         "This is not a prophecy. This idiot is doing it right now.",
         "The prophecy is view-only. Stop trying to change your fate.",
-        "You can see every possible future and all your advice is "dodge."",
+        "You can see every possible future and all your advice is \"dodge.\"",
         "I cast Shared Vision. You are now also responsible for knowing this.",
         "I opened a window between realms",
         "I cast Shared Vision",
@@ -744,6 +744,8 @@ WIZARD_LINES = {
         "this guy thinks he can go back.",
         "my orb doesn't forget.",
         "he'll be back. he has to check on the orb.",
+        "I said behold. Not backseat.",
+        "bro is not pondering. bro is spectating.",
     ],
     # Ordered: a rising escalation as you keep clicking him, not a random draw.
     'poke': [
