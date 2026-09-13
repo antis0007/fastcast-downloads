@@ -173,6 +173,16 @@ async function checkJourneysAndAccessibility() {
     await assertNoOverflow(page, 'large wizard remark');
     await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Get started', exact: true }).click();
     await page.waitForURL('**/get-started.html');
+    for (const width of [320, 390, 1440]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.getByRole('navigation', { name: 'Setup steps' }).getByRole('link', { name: '2. Create an invitation', exact: true }).click();
+      const position = await page.evaluate(() => ({
+        section: document.querySelector('#invite').getBoundingClientRect().top,
+        header: document.querySelector('.site-header').getBoundingClientRect().bottom,
+      }));
+      assert.ok(position.section >= position.header, `setup anchor hidden by header at ${width}px`);
+    }
+    await page.setViewportSize({ width: 390, height: 900 });
     await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Help', exact: true }).click();
     await page.waitForURL('**/help.html');
     const search = page.getByRole('searchbox', { name: 'Search help' });

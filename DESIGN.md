@@ -1,5 +1,19 @@
 # FastCast website design and evidence
 
+## Setup and navigation — September 13, 2026
+
+The owner's next request rejects oversized text and clipped slogan-like phrases
+on the setup page. Use connected instructions with the actual application labels:
+install matching versions, create the invitation on the viewer, then import it
+on the sharing Windows PC. The guide uses a 32px title, 24px section headings and
+16px body text, with one contents navigation instead of duplicated step lists.
+Preserve all existing setup anchors. The shared main menu keeps visible links
+on mobile and marks the current page with both color and an underline.
+Mobile section links allow space for the two-row sticky header; the browser
+journey checks that an invitation heading remains visible after a contents jump.
+This is a focused guide and navigation change; the homepage repair below remains
+the approved baseline, including its full wizard and unchanged dialogue pool.
+
 ## Current direction — September 13, 2026, visual repair
 
 The owner asked to analyze the regressions, retain genuine improvements and

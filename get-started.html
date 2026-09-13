@@ -41,85 +41,81 @@
   </header>
   <main id="main" tabindex="-1"><section class="page-hero wrap">
   <p class="eyebrow">Setup</p>
-  <h1>Two devices.<br><span>One invitation.</span></h1>
-  <p class="lede">Start on the device that will watch. This guide uses its invitation to connect the sharing Windows PC. Install matching versions and try the first session on the same Wi-Fi or LAN.</p>
+  <h1>Set up your first screen share</h1>
+  <p class="lede">Install FastCast on both devices, then create an invitation on the device that will watch. The sharing Windows PC uses that invitation to connect and send the screen.</p>
   <p class="small-copy">0.3.2 Preview 5 · Windows x64 shares and watches · Android 8+ watches</p>
 </section>
-<nav class="section-nav wrap" aria-label="Setup steps">
-  <a href="#install">1. Install</a>
-  <a href="#invite">2. Get an invitation</a>
-  <a href="#share">3. Start sharing</a>
-  <a href="#portable">Portable & updates</a>
-</nav>
 <div class="wrap guide-layout">
   <aside class="guide-aside">
-    <p class="eyebrow">Before you begin</p>
-    <ul>
-      <li>Use matching app versions.</li>
-      <li>Start on the same Wi-Fi or LAN.</li>
-      <li>The watching device goes first. It writes the invitation.</li>
-      <li>Keep invitations private.</li>
-    </ul>
-    <a href="platforms.html">What runs →</a>
+    <nav class="guide-contents" aria-label="Setup steps">
+      <p class="eyebrow">On this page</p>
+      <a href="#install">1. Install on both devices</a>
+      <a href="#invite">2. Create an invitation</a>
+      <a href="#share">3. Share your screen</a>
+      <a href="#portable">Portable installs and updates</a>
+    </nav>
+    <p>For your first session, connect both devices to the same Wi-Fi or LAN. This makes it easier to check the setup before trying another network.</p>
+    <a href="platforms.html">Check platform support →</a>
   </aside>
   <div>
     <section class="guide-section" id="install">
       <span class="step-number">01 / INSTALL</span>
-      <h2>Same build on both ends.</h2>
+      <h2>Install FastCast on both devices</h2>
+      <p>Use the matching versions from the <a href="downloads.html">downloads page</a>. You need a Windows PC to share; the device watching can be another Windows PC or an Android device.</p>
       <article id="windows">
         <h3>On Windows</h3>
         <ol>
-          <li><a href="downloads.html#windows">Download the Windows installer</a> and open it.</li>
-          <li>The installer is unsigned. Confirm the file came from this downloads repo.</li>
-          <li>Finish install and open FastCast.</li>
+          <li><a href="downloads.html#windows">Download the Windows installer</a>.</li>
+          <li>The installer is unsigned, so check that you downloaded it from the FastCast release linked on our downloads page before running it.</li>
+          <li>Complete the installation and open FastCast.</li>
         </ol>
       </article>
       <article id="android">
         <h3>On Android</h3>
         <ol>
           <li><a href="downloads.html#android">Download the Android APK</a>.</li>
-          <li>If asked, allow install from the browser or file manager.</li>
-          <li>Open FastCast. You can revoke that install permission afterwards.</li>
+          <li>If Android asks, allow your browser or file manager to install the APK.</li>
+          <li>Open FastCast after installation. You can then revoke the browser or file manager's permission to install apps.</li>
         </ol>
       </article>
     </section>
     <section class="guide-section" id="invite">
       <span class="step-number">02 / CONNECT</span>
-      <h2>Invite comes from the viewer.</h2>
-      <p>The watching device writes it. The sending PC imports it.</p>
+      <h2>Create an invitation on the watching device</h2>
+      <p>Follow the instructions for your viewer below, then send its invitation privately to the person at the sharing Windows PC.</p>
       <div class="instruction-pair">
         <article>
           <h3>Android viewer</h3>
-          <p>Open FastCast and choose <strong>Share invite</strong>. Send the invitation privately to the person at the sharing Windows PC.</p>
+          <p>Open FastCast and choose <strong>Share invite</strong> to send the invitation to the sharing PC.</p>
         </article>
         <article>
           <h3>Windows viewer</h3>
           <p>Choose <strong>Receive</strong>, then <strong>Start receiving</strong>, then <strong>Copy invitation</strong>. Send the invitation privately to the sharing PC.</p>
         </article>
       </div>
-      <p class="note">Invites can contain connection material. Treat one as access to the session, not as a link to share. Do not paste them in public issues or screenshots.</p>
+      <p class="note">An invitation contains connection material that can grant access to the session. Keep it between the participants and remove it from screenshots or public bug reports.</p>
     </section>
     <section class="guide-section" id="share">
       <span class="step-number">03 / SHARE</span>
-      <h2>Pick the source. Start.</h2>
+      <h2>Start sharing from the Windows PC</h2>
       <ol>
         <li>On the sending PC, open <strong>Share</strong> and import the invite.</li>
         <li>Select the entire screen or one window as the capture source.</li>
-        <li>Computer audio, microphone voice, and remote input are three separate switches. Leave the ones you do not need off — <a href="product.html#permissions">what each one opens</a>.</li>
-        <li><strong>Start sharing</strong>. Look at the actual viewer, not only the sender UI.</li>
-        <li><strong>Stop sharing</strong> when you are done.</li>
+        <li>Choose whether to include computer audio, microphone voice, or remote input. Each has a separate switch; enable only what the session needs. <a href="product.html#permissions">Read about these permissions</a>.</li>
+        <li>Select <strong>Start sharing</strong> and check that the picture appears on the watching device. If you enabled audio, check that it can be heard there too.</li>
+        <li>Select <strong>Stop sharing</strong> when you are finished.</li>
       </ol>
-      <p>Nothing connects? <a href="help.html#connection">Connection checklist</a>.</p>
+      <p>If the devices do not connect, work through the <a href="help.html#connection">connection checklist</a> before changing networks or reinstalling.</p>
     </section>
     <section class="guide-section" id="portable">
       <span class="step-number">OTHER INSTALL OPTIONS</span>
-      <h2>Zip and USB.</h2>
+      <h2>Portable installs and updates</h2>
       <h3>Portable bundle</h3>
-      <p>Extract first. Keep <strong>FastCast.exe</strong> next to <strong>cast-host.exe</strong>. <strong>Install FastCast.cmd</strong> if you want the installed copy.</p>
+      <p>Extract the downloaded ZIP into a folder before running FastCast, and keep <strong>FastCast.exe</strong> and <strong>cast-host.exe</strong> together. To install a copy from the bundle, run <strong>Install FastCast.cmd</strong>.</p>
       <h3>USB updates for Android</h3>
-      <p>The zip has the matching APK and <strong>Update connected devices.cmd</strong> for phones that already have USB debugging authorized.</p>
+      <p>The ZIP includes the matching Android APK and <strong>Update connected devices.cmd</strong>. You can use that script to update a connected phone if USB debugging is already authorized; otherwise, install the APK using the Android steps above.</p>
       <h3>Updating</h3>
-      <p>Stop sessions. Install a matching Windows + Android pair. Keep the old zip if you need to go back.</p>
+      <p>Stop any active sessions before updating, then install matching versions on both devices. Keep the previous portable bundle if you may need to return to that version.</p>
     </section>
   </div>
 </div>

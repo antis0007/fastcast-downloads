@@ -153,6 +153,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
   text-decoration: none;
 }
 .site-header nav a:hover { color: var(--text); }
+.site-header nav a[aria-current="page"] { color: var(--text); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 8px; }
 [aria-current="page"] { color: var(--text); }
 
 .button {
@@ -1452,18 +1453,26 @@ section[id], article[id] { scroll-margin-top: 88px; }
 .bundle-row .button { flex-shrink: 0; }
 .download-meta { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 22px; font-size: 13px; }
 
-.guide-layout { display: grid; grid-template-columns: minmax(0, .55fr) minmax(0, 1.45fr); gap: 72px; padding-top: 40px; }
-.guide-aside { font-size: 13px; color: var(--muted); line-height: 1.7; }
-.guide-aside ul { padding-left: 18px; margin-bottom: 22px; }
+.page-get-started .page-hero { padding-block: 40px 28px; border-bottom: 1px solid var(--line-soft); }
+.page-get-started .page-hero h1 { max-width: 30ch; font-size: 2rem; line-height: 1.25; letter-spacing: -.025em; }
+.page-get-started .page-hero .lede { max-width: 70ch; font-size: 16px; line-height: 1.75; }
+.guide-layout { display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 720px); gap: 56px; padding-top: 32px; }
+.guide-aside { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.guide-aside > p { margin-block: 24px 16px; }
+.guide-contents { display: grid; gap: 4px; }
+.guide-contents a { display: flex; align-items: center; min-height: 44px; padding-block: 8px; text-decoration: none; color: var(--muted); }
+.guide-contents a:hover { color: var(--text); text-decoration: underline; text-underline-offset: 4px; }
 .guide-section { padding-bottom: 40px; margin-bottom: 36px; border-bottom: 1px solid var(--line-soft); }
 .step-number { display: block; color: var(--quiet); margin-bottom: 14px; }
-.guide-section h2 { margin-bottom: 22px; }
-.guide-section h3 { margin-block: 20px 12px; }
-.guide-section p, .guide-section li { color: var(--muted); font-size: 14px; line-height: 1.75; }
+.guide-section h2 { margin-bottom: 16px; font-size: 1.5rem; line-height: 1.35; letter-spacing: -.015em; }
+.guide-section h3 { margin-block: 24px 10px; font-size: 1.125rem; line-height: 1.4; }
+.guide-section p, .guide-section li { color: var(--muted); font-size: 16px; line-height: 1.75; }
 .guide-section li { margin-block: 10px; padding-left: 4px; }
 .guide-section ol { padding-left: 20px; }
 .guide-section strong { color: var(--text); font-weight: 600; }
 .instruction-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.page-get-started .instruction-pair { margin-block: 24px; border-block: 1px solid var(--line-soft); padding-block: 4px 20px; }
+.page-get-started .guide-section .note { font-size: 14px; }
 
 .support-table { width: 100%; border-collapse: collapse; }
 .support-table caption { text-align: left; color: var(--muted); font-size: 13px; padding-bottom: 18px; line-height: 1.6; }
@@ -2036,6 +2045,8 @@ section[id], article[id] { scroll-margin-top: 88px; }
 
 @media (max-width: 760px) {
   .wrap { width: calc(100% - 32px); }
+  /* The mobile menu occupies two rows, so section links need more clearance. */
+  section[id], article[id] { scroll-margin-top: 11rem; }
   .site-header-inner { display: grid; grid-template-columns: 1fr auto; gap: 14px; padding-block: 14px; }
   .site-header-inner > .brand { grid-column: 1; grid-row: 1; }
   .site-header-inner > .header-download { grid-column: 2; grid-row: 1; }
@@ -2047,7 +2058,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
     justify-content: space-between;
     gap: 4px 12px;
   }
-  .site-header nav a { font-size: 13px; }
+  .site-header nav a { font-size: 14px; }
   .site-header .button { padding-inline: 12px; }
   /* On small screens the wordmark is dropped and the wizard mark carries the
      brand on its own, which keeps the header row from crowding the download
