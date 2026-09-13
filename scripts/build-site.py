@@ -15,7 +15,7 @@ BASE = 'https://antis0007.github.io/fastcast-downloads/'
 REPO = 'https://github.com/antis0007/fastcast-downloads'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
-    'index': ('Your screen. Your connection.', 'Share a Windows screen or window with another PC or an Android device over a connection you already control. Free preview, no account, no subscription.'),
+    'index': ('The shortest path between your screen and theirs.', 'Share a Windows screen or window with another PC or an Android device. Direct connections with relay fallback. Free development preview; no account needed for screen sharing.'),
     'product': ('The Windows app', 'Real screenshots, what the public build can do, and what it still cannot.'),
     'downloads': ('Download FastCast', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
     'get-started': ('Setup', 'Matching builds. Viewer writes the invite. Windows starts the share.'),
@@ -26,10 +26,10 @@ PAGES = {
     'releases': ('Release notes', 'Published FastCast preview, matching files, known holes, older tags.'),
     'privacy': ('Privacy', 'This site has no analytics. GitHub hosts the files. Keep invites private.'),
     '404': ('Nothing here', 'Downloads, setup, and help.'),
-    'why-fastcast': ('Why FastCast', 'Not another Discord — screen sharing without a chat empire, a store login, or a FastCast relay.'),
-    'how-it-works': ('How the packets move', 'A Windows PC encodes, the viewer issues the invitation, and the media takes a direct route neither GitHub nor FastCast sits in.'),
+    'why-fastcast': ('Why FastCast', 'An independent screen-sharing tool alongside the conversations and communities you already have.'),
+    'how-it-works': ('How the packets move', 'Compare direct and relayed screen-sharing routes, discover who handles which data, and explore the native media stack.'),
     'data-and-privacy': ('Data compared', 'What Discord documents, next to what this FastCast preview actually does.'),
-    'bandwidth': ('Bandwidth arithmetic', 'Estimate video payload at each end, and what a hypothetical relay would double.'),
+    'bandwidth': ('Bandwidth arithmetic', 'Estimate video payload at each end and the server traffic added by a relayed route.'),
 }
 
 
@@ -968,7 +968,7 @@ def write_readme():
 def render(slug, title, description):
     canonical = BASE + ('' if slug == 'index' else slug + '.html')
     nav = (
-        link('product', 'Product', slug)
+        link('how-it-works', 'How it works', slug)
         + link('get-started', 'Get started', slug)
         + link('help', 'Help', slug)
         + link('github', 'GitHub', slug, href=REPO)
@@ -981,6 +981,9 @@ def render(slug, title, description):
         'PUBLISHED': release['published_display'],
         'CAPTURED': captured_display(),
         'NETWORK': release['network'],
+        'WINDOWS_PLATFORM': escape(release['platforms']['windows']['name']),
+        'ANDROID_PLATFORM': escape(release['platforms']['android']['name']),
+        'EVIDENCE_FRAMING': escape(release['evidence']['framing']),
         'STATUS': release['status'],
         'WINDOWS_URL': release['assets']['windows']['url'],
         'ANDROID_URL': release['assets']['android']['url'],

@@ -83,22 +83,45 @@ curious visitor hears treats their click as an arrival. `poke[0]` reads better a
 an opener. Either reorder `first` or write one line that acknowledges being
 clicked.
 
-### 3.3 Claims the site makes about itself disagree
+### 3.3 Connection explanation updated September 13, 2026
 
-`src/release.json` says the network is a "Direct peer route, with a FastCast relay
-fallback", and the transparency pages agree. Several marketing pages still say
-there is no relay at all. This is unresolved and needs a product decision, not a
-guess:
+The public release manifest describes direct media with a FastCast relay
+fallback. The separate native application's `v0.3.2-preview.5` source tag was
+also inspected: both receiver platforms call live pairing with relay allocation;
+the relay forwards the peer connection. The network copy now follows that
+manifest while keeping unrelated-network media explicitly unqualified. This is
+not a fresh verification of the published binaries or running relay service.
 
-- `platforms.html` — "does not include … a managed media relay"
-- `help.html` — "there is no FastCast-managed relay in this package"
-- `why-fastcast.html` — "No FastCast middlebox"
-- `how-it-works.html` — says "No FastCast media relay" while its own costs table
-  describes the relay forwarding media and admitting eight concurrent sessions
-- `bandwidth.html` — calls it "HYPOTHETICAL MEDIA RELAY"
+`how-it-works.html` now separates setup, media routes, participant visibility,
+the native technical stack, and costs. Its direct/relay comparison uses native
+radio controls and CSS; technical detail uses native disclosures. Both work
+without JavaScript. The homepage links into this explanation.
 
-**Do not fix these by choosing a side.** Confirm with the release owner which
-reflects the shipped package, then make every page agree with `release.json`.
+Contradictory relay-absence wording was reconciled in Home, Product, Platforms,
+Help, Why FastCast, Roadmap and the Bandwidth model label. The source manifest,
+generator, wizard pool and wizard behavior were not changed. The application
+repository's divergent site copy remains outside this change.
+
+The browser suite now tests keyboard selection of both routes and opening all
+five disclosures without JavaScript in every engine, plus accessibility with
+the details expanded. Keep these checks when changing the diagram.
+
+Validation on September 13: `python scripts/build-site.py` rendered 15 pages;
+`check-release.py`, `check-links.py` (including all four public downloads),
+`check-contrast.py`, `node tests/bandwidth.cjs` and `git diff --check` passed.
+`node tests/check-site.cjs` passed for all three browsers. After stacking the
+mobile data table, the suite was rerun separately with `chromium`, `firefox`
+and `webkit`; all passed at 320/390/768/1440 with enlarged text, no-JavaScript
+controls and axe at 390/1440. A final wording simplification in the relay table
+cell was rebuilt and diff-checked afterward. Desktop/mobile generated captures
+were inspected. Native network, binary provenance, live deployment and real
+screen-reader behavior were not requalified. No new dependencies or publication.
+
+The generator, release manifest and interaction script have no diff; the built
+pool remains 123 unique lines. `verify-cuts.py` output was inspected, not treated
+as an enforcing test: it reports findings without returning a failing exit code.
+Next: review the connection explanation, then publish through this repository's
+existing Pages workflow when authorized.
 
 ### 3.4 Smaller items
 
@@ -212,3 +235,45 @@ put it in the register document.
   first match.
 - Before declaring anything done: build, verify on the artefact, and run the
   suite. "It builds" is not evidence that it renders.
+
+## 7. Homepage follow-up — September 13, 2026
+
+The owner explicitly preferred the current redesign to the old contract, then
+rejected the small-wizard revision. The final direction restores the large hero
+wizard and gives the app a full-width section directly afterward. `DESIGN.md`
+records that correction above its historical entries.
+
+- The existing headline, amber identity and paper sections remain. The large
+  interactive wizard fills the hero illustration, and the real Windows capture
+  fills the next section. It retains its September 7 development-build disclosure and
+  working full-size link. No session video was available or fabricated.
+- Header artwork uses its natural aspect ratio at 64px high on desktop and
+  52px on phones, with a visible wordmark at both sizes.
+- The homepage has one viewer-first setup walkthrough, role entry points,
+  separate permissions and consolidated package/download blocks. Detailed test
+  qualifications sit in labelled disclosures beside the relevant content. Downloads
+  and getting started carry the same installation context. Existing URLs and
+  the expanded connection explanation remain intact.
+- The generator changed only for navigation, page metadata and release-backed
+  content tokens. The curated pool is still exactly **123 lines**, compared as
+  parsed values against HEAD and against the generated JSON island. This pass
+  neither restores nor removes dialogue.
+- A stale current-release limitation claimed one viewer while the same manifest
+  listed multi-viewer support. The tagged Preview 5 source has an eight-viewer
+  limit and loopback coverage. Current copy now distinguishes that experimental
+  support from unqualified physical multi-device sharing. Historical release
+  descriptions remain historical; no application code was changed.
+- A new keyboard check exposed an existing behavior: reduced motion disabled
+  speech along with pointer animation. Text activation now works independently;
+  pointer-follow and dragging retain the fine-pointer/motion gate. Keyboard
+  activation does not use artwork hit regions. The large scene retains its
+  original centered speech bubble; touch activation also has browser coverage.
+
+Verification: build 15 pages, release checks, contrast, bandwidth tests, full
+Playwright layouts in Chromium/Firefox/WebKit at 320/390/768/1440, enlarged text,
+no-JavaScript paths, keyboard/reduced-motion journeys and axe at 390/1440 passed.
+Local links, fragments, canonical URLs and four public downloads also passed.
+Homepage screenshots were visually reviewed. These are website checks, not new
+device, audio or Internet-stream acceptance evidence. After visual review and
+the final header wordmark size/spacing adjustment, the owner authorized
+publication to the existing GitHub Pages site.

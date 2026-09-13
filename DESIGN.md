@@ -1,5 +1,60 @@
 # FastCast website design and evidence
 
+## Current direction — September 13, 2026
+
+The owner retained the wizard redesign and explicitly rejected the pass that
+shrunk him beside a small app capture. Keep the large wizard as the hero's
+signature. Give the actual product a full-width section immediately afterward.
+This section governs the current pass; earlier entries below are history.
+
+- Keep the existing "The shortest path between your screen and theirs" headline,
+  warm charcoal/paper surfaces, amber identity, and optional interactive wizard.
+- The large wizard and animated rune scene sit beside the headline. Keep the
+  opening to a product sentence, downloads and concise installation context.
+  Preserve the exact curated dialogue pool and reduced-motion support.
+- The real Windows capture occupies the full content width in the next paper
+  section. It should be readable and inspectable, followed by three concise
+  explanations of capture scope, audio and input permissions.
+- Scale the header artwork by height with its natural aspect ratio. Use the
+  header row's vertical space and retain a legible wordmark on phones.
+  The wordmark's source includes empty lower padding: crop that padding in CSS
+  so the lettering fills the row. Let it shrink with the available phone width;
+  place navigation on a second row below 1050px so it never crowds the brand.
+- Show release/date, platform roles and signing beside downloads. Use the
+  reviewed release record for platform names, package facts and evidence labels.
+- Use one viewer-first setup explanation with separate watching/sharing entry
+  points. Keep detailed qualification notes in labelled disclosures beside the
+  relevant controls and downloads, with links to the complete evidence.
+- Explain feature inclusion separately from evidence. Multi-viewer support is
+  experimental and loopback-tested; physical multi-device sharing is unqualified.
+- Existing screenshots are September 7 development captures. No side-by-side
+  session video is published in this checkout; do not invent a play button or
+  label an interface screenshot as transmission-quality evidence.
+- Preserve the expanded connection page and its direct/relay comparison.
+  Downloads and getting started remain the first-session continuation.
+- Keep the static architecture, existing URLs, optional scripting and current
+  font assets. This pass adds no dependencies, generated artwork or app changes.
+
+Research inputs: the owner's supplied design plan; the direct product/download
+presentation on [Flow Launcher](https://www.flowlauncher.com/), the
+media-inspection emphasis on [Parsec](https://parsec.app/), the recognizable
+identity on [Charm](https://charm.land/), and the route/ownership explanation on
+[RustDesk](https://www.rustdesk.com/), reviewed September 13. These informed page
+priorities, not claims of feature or performance parity.
+
+The owner's competitor reviews also informed the revision: expressive scale
+from [Zen](https://zen-browser.app/), generous product presentation from
+[Screen Studio](https://screen.studio/), and recognizable product personality
+from [Transmit](https://panic.com/transmit/). Their current public pages were
+checked September 13. The resulting hierarchy is wizard → inspect the app →
+setup → connection → downloads → FAQ. Do not revert to the rejected small-wizard
+composition or add a standalone evidence essay ahead of the product.
+
+## Historical directions and validation
+
+The following entries are preserved as history. In particular, the earlier
+cyan-selection language is superseded by the current amber identity.
+
 ## Current direction — September 11, 2026
 
 The homepage is a single landing funnel (hero → roles → setup → the app → the route → what ships → help → download) rather than a numbered editorial scroll. Amber (`#efac4c`) is the only accent colour; the native app's Cyan stays inside the screenshots and is never reproduced as site chrome, so nothing competes with the product UI. Warm near-black (`#171815`) alternates with full-bleed warm-paper sections for the parts that show or inspect the product. The casting theme lives in the brand voice ("Screen sharing with a little magic and careful networking") and in the visuals — a wizard mascot standing inside a rune circle with rising embers and a starfield, and a direct-route diagram with an honest tower fallback — while every instruction stays in plain language (invitation, route, permission, relay, diagnostics).

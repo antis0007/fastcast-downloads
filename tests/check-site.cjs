@@ -54,6 +54,18 @@ async function checkLayouts(name, engine) {
       for (const file of pages) {
         await page.goto(base + file);
         assert.equal(await page.locator('h1').count(), 1, file);
+        if (file === 'index.html') {
+          const logo = await page.locator('.site-header .brand-mark').boundingBox();
+          const header = await page.locator('.site-header').boundingBox();
+          assert.ok(logo.height >= 48 && logo.y >= header.y && logo.y + logo.height <= header.y + header.height, 'brand mark fills the header row without clipping');
+          const capture = await page.locator('#interface [data-lightbox]').boundingBox();
+          const wizard = await page.locator('.hero .cast-wizard').boundingBox();
+          const scene = await page.locator('.hero .cast-scene').boundingBox();
+          const tour = await page.locator('#interface .wrap').boundingBox();
+          assert.ok(wizard.width >= scene.width * .7, 'the wizard fills the hero illustration');
+          if (width > 1050) assert.ok(wizard.width >= 420, 'the desktop wizard stays large');
+          assert.ok(capture.width > tour.width * .8, 'the app capture has the full content width');
+        }
         for (const image of await page.locator('main img').all()) {
           await image.scrollIntoViewIfNeeded();
           try {
@@ -64,6 +76,10 @@ async function checkLayouts(name, engine) {
         }
         await assertNoOverflow(page, `${name} ${width} ${file}`);
         if (name === 'chromium' && [390, 1440].includes(width)) {
+          await page.evaluate(() => window.scrollTo(0, 0));
+          if (file === 'index.html') {
+            await page.screenshot({ path: path.join(output, `homepage-hero-${width}.png`) });
+          }
           await page.screenshot({ path: path.join(output, `${file}-${width}.png`), fullPage: true });
         }
         await page.evaluate(() => document.documentElement.style.fontSize = '32px');
@@ -96,11 +112,39 @@ async function checkLayouts(name, engine) {
     assert.equal(await page.locator('#payload-value').textContent(), '5.40');
     assert.equal(await page.locator('#payload-table tr').count(), 5);
     assert.equal(await page.locator('#payload-chart').isVisible(), false);
+    await checkConnectionExplanation(page);
     await context.close();
     console.log(`${name}: no-JavaScript downloads, image and FAQ passed`);
   } finally {
     await browser.close();
   }
+}
+
+// Native controls must explain both routes even when scripts are unavailable.
+// Open every disclosure so overflow and accessibility cover the optional detail.
+async function checkConnectionExplanation(page) {
+  await page.goto(base + 'how-it-works.html');
+  const direct = page.getByRole('radio', { name: 'Direct connection Preferred', exact: true });
+  const relay = page.getByRole('radio', { name: 'Relay fallback When available', exact: true });
+  assert.ok(await direct.isChecked());
+  assert.ok(await page.locator('#direct-path').isVisible());
+  assert.equal(await page.locator('#relay-path-detail').isVisible(), false);
+  await direct.focus();
+  await page.keyboard.press('ArrowRight');
+  assert.ok(await relay.isChecked());
+  assert.ok(await page.locator('#relay-path-detail').isVisible());
+  assert.equal(await page.locator('#direct-path').isVisible(), false);
+  assert.match(await page.locator('#relay-path-detail').textContent(), /blocks UDP entirely/);
+  await assertNoOverflow(page, 'relayed connection diagram');
+  await page.keyboard.press('ArrowLeft');
+  assert.ok(await direct.isChecked());
+  assert.ok(await page.locator('#direct-path').isVisible());
+  for (const summary of await page.locator('.connection-detail summary').all()) {
+    await summary.focus();
+    await page.keyboard.press('Enter');
+  }
+  assert.equal(await page.locator('.connection-detail[open]').count(), 5);
+  await assertNoOverflow(page, 'expanded connection explanation');
 }
 
 async function checkJourneysAndAccessibility() {
@@ -119,6 +163,17 @@ async function checkJourneysAndAccessibility() {
     // probe: it stays visible with motion off, unlike the ember and floating-rune
     // layers, which are hidden outright and so have nothing to assert on.
     assert.equal(await page.locator('.rune-ring').first().evaluate(el => getComputedStyle(el).animationName), 'none');
+    await page.locator('.cast-body').focus();
+    await page.keyboard.press('Enter');
+    assert.ok(await page.locator('.wizard-voice').isVisible());
+    assert.ok((await page.locator('.wizard-voice').textContent()).trim().length > 0);
+    assert.equal(await page.locator('.wizard-voice').getAttribute('data-pool'), 'first');
+    assert.equal(await page.locator('.cast-body').evaluate(el => getComputedStyle(el).animationName), 'none');
+    await assertNoOverflow(page, 'large wizard remark');
+    for (const summary of await page.locator('.preview-notes summary').all()) {
+      await summary.click();
+    }
+    await assertNoOverflow(page, 'expanded homepage preview notes');
     await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Get started', exact: true }).click();
     await page.waitForURL('**/get-started.html');
     await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Help', exact: true }).click();
@@ -143,6 +198,9 @@ async function checkJourneysAndAccessibility() {
     }
     assert.equal(await page.getByText('The whole feature list').count(), 0);
     assert.equal(await page.getByText('Meet FastCast').count(), 0);
+    await checkConnectionExplanation(page);
+    const connectionA11y = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    assert.deepEqual(connectionA11y.violations.map(v => v.id), [], 'expanded connection explanation accessibility');
     await page.goto(base + 'privacy.html');
     assert.equal(await page.getByText('FASTCAST_DISCOVERY').count(), 0);
     assert.equal(await page.getByText('helper URL').count(), 0);
@@ -151,10 +209,14 @@ async function checkJourneysAndAccessibility() {
     await context.close();
     console.log('Screenshot close/focus, reduced motion, navigation and FAQ search passed');
 
-    const androidContext = await browser.newContext({ userAgent: 'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/120.0.0.0 Mobile Safari/537.36', viewport: { width: 390, height: 900 } });
+    const androidContext = await browser.newContext({ userAgent: 'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/120.0.0.0 Mobile Safari/537.36', viewport: { width: 390, height: 900 }, hasTouch: true });
     const androidPage = await androidContext.newPage();
     await androidPage.goto(base);
     assert.equal(await androidPage.locator('.hero .primary').getAttribute('data-download'), 'android');
+    await androidPage.locator('.cast-body').tap();
+    assert.ok(await androidPage.locator('.wizard-voice').isVisible(), 'touch activation produces a wizard remark');
+    assert.equal(await androidPage.locator('.cast-figure.is-dragging').count(), 0);
+    await assertNoOverflow(androidPage, 'touch wizard remark');
     await androidPage.goto(base + 'downloads.html');
     assert.ok(await androidPage.locator('[data-platform="android"] .recommendation').isVisible());
     await androidContext.close();
@@ -163,6 +225,8 @@ async function checkJourneysAndAccessibility() {
     const windowsPage = await windowsContext.newPage();
     await windowsPage.goto(base);
     assert.equal(await windowsPage.locator('.hero .primary').getAttribute('data-download'), 'windows');
+    await windowsPage.locator('.cast-wizard').evaluate(el => el.decode());
+    await windowsPage.screenshot({ path: path.join(output, 'homepage-motion-1440.png') });
     await windowsPage.goto(base + 'downloads.html');
     assert.ok(await windowsPage.locator('[data-platform="windows"] .recommendation').isVisible());
     await windowsContext.close();

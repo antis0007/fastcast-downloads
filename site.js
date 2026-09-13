@@ -65,10 +65,9 @@ if (platform) {
 /* The hero figure leans toward the pointer, and can be clicked, dragged and
    right-clicked. Everything visible is either a custom property or a transform
    on the figure, written inside a requestAnimationFrame, so the whole thing is
-   one composited layer and never triggers layout or paint. Skipped where there
-   is no fine pointer to follow or the visitor has asked for reduced motion, in
-   which case the figure simply rests -- and the wizard's lines stay unread,
-   because he is decoration and the page is fully usable without him. */
+   one composited layer and never triggers layout or paint. Pointer-follow and
+   dragging need a fine pointer and motion enabled; text responses remain
+   available to keyboard, touch and reduced-motion visitors. */
 const scene = document.querySelector('.cast-scene');
 const figure = scene?.querySelector('.cast-figure');
 const wizard = scene?.querySelector('.cast-body');
@@ -119,7 +118,7 @@ if (figure && canFollow) {
    each pool without repeating himself, the way a rotating message of the day
    does, so clicking again is always worth doing. */
 const wizardVoice = (() => {
-  if (!figure || !wizard || !bubble || !lineSource || !canFollow) return null;
+  if (!figure || !wizard || !bubble || !lineSource) return null;
   let lines;
   try {
     lines = JSON.parse(lineSource.textContent);
@@ -211,7 +210,7 @@ if (wizardVoice) {
   wizard.addEventListener('pointerdown', event => {
     // Left button only: the right button hurts him, and the middle one is not
     // ours to take.
-    if (event.button !== 0) return;
+    if (!canFollow || event.button !== 0) return;
     dragging = true;
     moved = false;
     complained = false;
@@ -276,6 +275,8 @@ if (wizardVoice) {
     { pool: 'orb', left: 0.58, right: 0.82, top: 0.40, bottom: 0.68 },
   ];
   const regionAt = event => {
+    // Keyboard activation has no position within the artwork.
+    if (event.detail === 0) return undefined;
     const box = wizard.getBoundingClientRect();
     const x = (event.clientX - box.left) / box.width;
     const y = (event.clientY - box.top) / box.height;

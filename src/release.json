@@ -246,7 +246,7 @@
                         "Windows binaries are unsigned; Android is debug-signed.",
                         "A direct connection needs a reachable route; the FastCast relay is the fallback and admits eight concurrent relayed sessions.",
                         "Automatic universal Internet traversal is not proven. Direct routes and the relay are the available paths.",
-                        "Screen sharing is one sharer to one viewer.",
+                        "Multi-viewer sharing supports up to eight viewers in code and loopback tests; physical multi-device sharing remains unqualified.",
                         "Windows-to-Windows calls have no software echo cancellation; use a headset.",
                         "Networks that block UDP have no media fallback: chat keeps working while media fails.",
                         "Android is a viewer in this public release, not a sender.",
