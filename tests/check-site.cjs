@@ -45,7 +45,7 @@ async function assertNoOverflow(page, label) {
 async function checkLayouts(name, engine) {
   const browser = await engine.launch();
   try {
-    for (const width of [320, 390, 768, 1440]) {
+    for (const width of [320, 390, 768, 1051, 1152, 1440]) {
       const context = await browser.newContext({ viewport: { width, height: 1000 }, reducedMotion: 'reduce' });
       const page = await context.newPage();
       const failures = [];
@@ -57,13 +57,14 @@ async function checkLayouts(name, engine) {
         if (file === 'index.html') {
           const logo = await page.locator('.site-header .brand-mark').boundingBox();
           const header = await page.locator('.site-header').boundingBox();
-          assert.ok(logo.height >= 48 && logo.y >= header.y && logo.y + logo.height <= header.y + header.height, 'brand mark fills the header row without clipping');
+          assert.ok(logo.y >= header.y && logo.y + logo.height <= header.y + header.height, 'brand mark stays inside the header');
           const capture = await page.locator('#interface [data-lightbox]').boundingBox();
           const wizard = await page.locator('.hero .cast-wizard').boundingBox();
-          const scene = await page.locator('.hero .cast-scene').boundingBox();
           const tour = await page.locator('#interface .wrap').boundingBox();
-          assert.ok(wizard.width >= scene.width * .7, 'the wizard fills the hero illustration');
-          if (width > 1050) assert.ok(wizard.width >= 420, 'the desktop wizard stays large');
+          assert.ok(wizard.width > 0, 'the original wizard remains visible');
+          const seal = await page.locator('.hero .rune-circle-lg').boundingBox();
+          assert.ok(seal.x >= 0 && seal.x + seal.width <= width, 'the full magic seal fits the viewport');
+          assert.equal(await page.locator('.hero-visual').evaluate(el => getComputedStyle(el).overflowX), 'visible', 'the aura is not cut at the hero column edges');
           assert.ok(capture.width > tour.width * .8, 'the app capture has the full content width');
         }
         for (const image of await page.locator('main img').all()) {
@@ -170,10 +171,6 @@ async function checkJourneysAndAccessibility() {
     assert.equal(await page.locator('.wizard-voice').getAttribute('data-pool'), 'first');
     assert.equal(await page.locator('.cast-body').evaluate(el => getComputedStyle(el).animationName), 'none');
     await assertNoOverflow(page, 'large wizard remark');
-    for (const summary of await page.locator('.preview-notes summary').all()) {
-      await summary.click();
-    }
-    await assertNoOverflow(page, 'expanded homepage preview notes');
     await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Get started', exact: true }).click();
     await page.waitForURL('**/get-started.html');
     await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Help', exact: true }).click();
@@ -227,6 +224,13 @@ async function checkJourneysAndAccessibility() {
     assert.equal(await windowsPage.locator('.hero .primary').getAttribute('data-download'), 'windows');
     await windowsPage.locator('.cast-wizard').evaluate(el => el.decode());
     await windowsPage.screenshot({ path: path.join(output, 'homepage-motion-1440.png') });
+    const wizardBox = await windowsPage.locator('.cast-body').boundingBox();
+    await windowsPage.mouse.move(wizardBox.x + wizardBox.width / 2, wizardBox.y + wizardBox.height / 2);
+    await windowsPage.mouse.down();
+    await windowsPage.mouse.move(1438, wizardBox.y + wizardBox.height / 2, { steps: 5 });
+    await windowsPage.evaluate(() => new Promise(requestAnimationFrame));
+    await assertNoOverflow(windowsPage, 'dragging the wizard to the viewport edge');
+    await windowsPage.mouse.up();
     await windowsPage.goto(base + 'downloads.html');
     assert.ok(await windowsPage.locator('[data-platform="windows"] .recommendation').isVisible());
     await windowsContext.close();

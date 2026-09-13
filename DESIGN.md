@@ -1,54 +1,47 @@
 # FastCast website design and evidence
 
-## Current direction — September 13, 2026
+## Current direction — September 13, 2026, visual repair
 
-The owner retained the wizard redesign and explicitly rejected the pass that
-shrunk him beside a small app capture. Keep the large wizard as the hero's
-signature. Give the actual product a full-width section immediately afterward.
-This section governs the current pass; earlier entries below are history.
+The owner asked to analyze the regressions, retain genuine improvements and
+otherwise return to the version before the homepage pass. The baseline is
+`28ffb7e`, before `226ab87`. This direction supersedes the intervening layouts.
 
-- Keep the existing "The shortest path between your screen and theirs" headline,
-  warm charcoal/paper surfaces, amber identity, and optional interactive wizard.
-- The large wizard and animated rune scene sit beside the headline. Keep the
-  opening to a product sentence, downloads and concise installation context.
-  Preserve the exact curated dialogue pool and reduced-motion support.
-- The real Windows capture occupies the full content width in the next paper
-  section. It should be readable and inspectable, followed by three concise
-  explanations of capture scope, audio and input permissions.
-- Scale the header artwork by height with its natural aspect ratio. Use the
-  header row's vertical space and retain a legible wordmark on phones.
-  The wordmark's source includes empty lower padding: crop that padding in CSS
-  so the lettering fills the row. Let it shrink with the available phone width;
-  place navigation on a second row below 1050px so it never crowds the brand.
-- Show release/date, platform roles and signing beside downloads. Use the
-  reviewed release record for platform names, package facts and evidence labels.
-- Use one viewer-first setup explanation with separate watching/sharing entry
-  points. Keep detailed qualification notes in labelled disclosures beside the
-  relevant controls and downloads, with links to the complete evidence.
-- Explain feature inclusion separately from evidence. Multi-viewer support is
-  experimental and loopback-tested; physical multi-device sharing is unqualified.
-- Existing screenshots are September 7 development captures. No side-by-side
-  session video is published in this checkout; do not invent a play button or
-  label an interface screenshot as transmission-quality evidence.
-- Preserve the expanded connection page and its direct/relay comparison.
-  Downloads and getting started remain the first-session continuation.
-- Keep the static architecture, existing URLs, optional scripting and current
-  font assets. This pass adds no dependencies, generated artwork or app changes.
+- Restore the original homepage section order, hero proportions, type scale,
+  class card, capability ledger and writing. Keep the full interactive wizard.
+- Retain the direct/relay explanation and factual corrections, rather than
+  restoring obsolete claims that the package contains no relay or multiple
+  viewers. Keep the detailed connection page and its accessible native controls.
+- Use modest live lettering in the header with the existing wizard mark. The
+  previous bitmap has dark edge artifacts; scaling and cropping it magnified
+  them, while its baked-in heavy lettering could not be made lighter with CSS.
+- Do not clip the illustration column to conceal overflow. Fit the actual seal
+  to the available space, including the intermediate desktop widths, and leave
+  room for the soft aura. Preserve the original narrow-screen scale rules.
+- Preserve the wizard pool exactly. Its 123 strings match the pre-pass baseline;
+  the homepage changes did not delete the earlier writing work. Keep the
+  keyboard, touch and reduced-motion interaction fixes.
+- Preserve real screenshot disclosures, package signing notes, release-backed
+  downloads and the current static architecture. No application claims should
+  be inferred from website tests.
 
-Research inputs: the owner's supplied design plan; the direct product/download
-presentation on [Flow Launcher](https://www.flowlauncher.com/), the
-media-inspection emphasis on [Parsec](https://parsec.app/), the recognizable
-identity on [Charm](https://charm.land/), and the route/ownership explanation on
-[RustDesk](https://www.rustdesk.com/), reviewed September 13. These informed page
-priorities, not claims of feature or performance parity.
+### What went wrong
 
-The owner's competitor reviews also informed the revision: expressive scale
-from [Zen](https://zen-browser.app/), generous product presentation from
-[Screen Studio](https://screen.studio/), and recognizable product personality
-from [Transmit](https://panic.com/transmit/). Their current public pages were
-checked September 13. The resulting hierarchy is wizard → inspect the app →
-setup → connection → downloads → FAQ. Do not revert to the rejected small-wizard
-composition or add a standalone evidence essay ahead of the product.
+The homepage pass added high-specificity rules at the end of the stylesheet.
+They narrowed the wizard column, enlarged the headline, and overrode the existing
+small-screen scene scaling. The fixed-size seal then exceeded the column, where
+`overflow-x: clip` sliced the aura. Document-overflow assertions still passed
+because clipping concealed that failure. Visual review should have rejected it.
+
+The header iterations enlarged the raster wordmark without resolving its edge
+pixels or heavy lettering. The writing pass also replaced distinctive existing
+copy with fragments such as "The drawing. The document." and rearranged sections
+without an established usability benefit. Those changes are reverted.
+
+The browser suite now checks the seal's bounds and the absence of column clipping,
+including 1051px and 1152px where the desktop layout is most constrained.
+An edge-drag check also reproduced a 1657px document in a 1440px viewport after
+clipping was removed. Horizontal drag is now bounded to the viewport with room
+for the existing lean/flinch; the gesture's dialogue still uses its full travel.
 
 ## Historical directions and validation
 

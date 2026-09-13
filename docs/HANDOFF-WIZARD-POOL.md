@@ -277,3 +277,26 @@ Homepage screenshots were visually reviewed. These are website checks, not new
 device, audio or Internet-stream acceptance evidence. After visual review and
 the final header wordmark size/spacing adjustment, the owner authorized
 publication to the existing GitHub Pages site.
+
+
+## 8. Visual repair after publication — September 13, 2026
+
+The owner rejected the homepage/wordmark regressions and explicitly requested
+the pre-pass version with genuine improvements retained. `DESIGN.md` now records
+the causes and the governing baseline (`28ffb7e`). Section 7 describes the earlier
+pass and is historical, not the current layout instruction.
+
+The homepage structure and most CSS return to that baseline. Direct/relay facts,
+the expanded technical page, download/install context and keyboard/touch fixes
+remain. Header lettering is now live text to avoid the raster's grey edge pixels
+and excessive weight. Aura clipping is removed and the constrained desktop seal
+is resized to fit; original phone scaling is restored. The test matrix includes
+1051px and 1152px and explicitly checks that the hero seal is not clipped.
+
+The dialogue pool remains identical to the pre-pass baseline: 123 exact strings.
+No lines are being restored, removed or rewritten as part of this repair.
+
+An edge-drag regression check reproduced horizontal page expansion after removing
+the clip. Rendering now bounds horizontal drag to the viewport while retaining
+gesture detection and the existing dialogue. Static layouts passed all three
+browsers at six widths, and Chromium additionally checks the drag boundary.

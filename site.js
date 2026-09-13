@@ -182,6 +182,8 @@ if (wizardVoice) {
   let originY = 0;
   let dragX = 0;
   let dragY = 0;
+  let minDragX = 0;
+  let maxDragX = 0;
   let queued = false;
   let holdTimer = 0;
   let said = false;
@@ -195,7 +197,10 @@ if (wizardVoice) {
 
   const paint = () => {
     queued = false;
-    figure.style.setProperty('--drag-x', `${dragX}px`);
+    // Leave room for the lean and flinch at the viewport edge. The aura is no
+    // longer clipped, so the figure itself must not widen the page when dragged.
+    const visibleDragX = Math.max(minDragX, Math.min(maxDragX, dragX));
+    figure.style.setProperty('--drag-x', `${visibleDragX}px`);
     figure.style.setProperty('--drag-y', `${dragY}px`);
   };
   const schedule = () => {
@@ -217,6 +222,9 @@ if (wizardVoice) {
     said = false;
     originX = event.clientX;
     originY = event.clientY;
+    const figureBox = figure.getBoundingClientRect();
+    minDragX = 16 - figureBox.left;
+    maxDragX = window.innerWidth - 16 - figureBox.right;
     // Offsets are relative to the resting pose, and the pointer starts on him,
     // so the drag begins from wherever he currently sits.
     figure.classList.add('is-dragging');
