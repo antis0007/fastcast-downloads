@@ -94,7 +94,7 @@
       <p class="tower-line">Pairing and discovery help the devices find each other. Those setup messages are separate from the screen and audio.</p>
       <aside class="release-caveat">
         <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
-        <div><strong>Start on your own network.</strong><p>Playback has been tested on a local network, but has not yet been verified between separate networks. Networks that block UDP have no media fallback.</p></div>
+        <div><strong>Start on your own network.</strong><p>Earlier builds were tested on a local network. This build still needs physical playback verification on local and separate networks. Networks that block UDP have no media fallback.</p></div>
       </aside>
       <a class="text-link connection-more" href="how-it-works.html">Explore the routes, data and technical stack →</a>
     </div>
@@ -138,14 +138,14 @@
       <tbody>
         <tr><th scope="row">Windows x64</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Share a screen or window, or receive from another Windows PC. Use matching builds.</td></tr>
         <tr><th scope="row">Android 8+</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Receives the stream. Android does not send, and device support varies.</td></tr>
-        <tr><th scope="row">System audio</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Audio was decoded in the local-network test, but audible output on a phone was not independently confirmed.</td></tr>
+        <tr><th scope="row">System audio</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>System audio is included. Audible output and extended playback remain unverified for this build.</td></tr>
         <tr><th scope="row">Microphone &amp; remote input</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>Included in the build, but voice, echo handling, and Android input have not yet been verified on real devices.</td></tr>
         <tr><th scope="row">Outside your local network</th><td><span class="status status-limited"><span class="status-word">Limited</span></span></td><td>Direct routes and relay fallback are included, but playback between separate networks has not yet been verified.</td></tr>
         <tr><th scope="row">Relay &amp; multiple viewers</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>A FastCast relay is included. Tests on one machine cover up to eight viewers; sharing with several physical devices still needs verification.</td></tr>
         <tr><th scope="row">Other platforms</th><td><span class="status status-not-yet"><span class="status-word">Not yet</span></span></td><td>No macOS, iPhone, iPad, or browser app. A Linux viewer is source-only.</td></tr>
       </tbody>
     </table>
-    <div class="ledger-footnote"><p>Playback depends on the devices and network. The recorded short test does not establish reliability over longer sessions.</p><a class="text-link" href="product.html#capabilities">Full capability notes →</a></div>
+    <div class="ledger-footnote"><p>Playback depends on the devices and network. This build has passed compilation and package checks; physical playback acceptance remains open.</p><a class="text-link" href="product.html#capabilities">Full capability notes →</a></div>
   </div>
 </section>
 

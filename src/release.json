@@ -1,321 +1,344 @@
 {
-    "version":  "0.3.2-preview.5",
-    "tag":  "v0.3.2-preview.5",
-    "label":  "0.3.2 Preview 5",
-    "published":  "2026-09-12",
-    "published_display":  "September 12, 2026",
-    "status":  "Development preview",
-    "network":  "Direct peer route, with a FastCast relay fallback",
-    "offer":  "Screen sharing does not require an account. Friends and calls use a device-owned account in this development preview.",
-    "application_source":  "Native application source is maintained separately. This repository publishes the website and preview packages only.",
-    "platforms":  {
-                      "windows":  {
-                                      "name":  "Windows x64",
-                                      "send":  "sender and receiver",
-                                      "receive":  true,
-                                      "role":  "Share a screen or window, or watch on a second PC"
-                                  },
-                      "android":  {
-                                      "name":  "Android 8+",
-                                      "send":  false,
-                                      "receive":  true,
-                                      "role":  "Viewer only in this public release"
-                                  }
-                  },
-    "signing":  {
-                    "windows":  "Unsigned preview",
-                    "android":  "Debug-signed preview"
+    "version": "0.3.2-preview.7",
+    "tag": "v0.3.2-preview.7",
+    "label": "0.3.2 Preview 7",
+    "published": "2026-09-14",
+    "published_display": "September 14, 2026",
+    "status": "Development preview",
+    "network": "Direct peer route, with a FastCast relay fallback",
+    "offer": "Screen sharing does not require an account. Friends and calls use a device-owned account in this development preview.",
+    "application_source": "Native application source is maintained separately. This repository publishes the website and preview packages only.",
+    "platforms": {
+        "windows": {
+            "name": "Windows x64",
+            "send": "sender and receiver",
+            "receive": true,
+            "role": "Share a screen or window, or watch on a second PC"
+        },
+        "android": {
+            "name": "Android 8+",
+            "send": false,
+            "receive": true,
+            "role": "Receive screens, join calls and use in-call chat; no screen broadcasting"
+        }
+    },
+    "signing": {
+        "windows": "Unsigned preview",
+        "android": "Debug-signed preview"
+    },
+    "assets": {
+        "windows": {
+            "filename": "FastCast-0.3.2-preview.7-Setup.exe",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.7/FastCast-0.3.2-preview.7-Setup.exe",
+            "size": "11.8 MB",
+            "bytes": 12355330,
+            "sha256": "fdc4f0e49a92988f15f0013e0c7d4f2666f87ec5b56a270a3bfc72ecf37cf44a",
+            "role": "Windows sender and receiver",
+            "signing": "Unsigned preview"
+        },
+        "android": {
+            "filename": "FastCast-0.3.2-preview.7-Android.apk",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.7/FastCast-0.3.2-preview.7-Android.apk",
+            "size": "26.1 MB",
+            "bytes": 27318650,
+            "sha256": "154e9fbbf05021f5d0830632065df9d86e1c9c58540da2c92f377587e503a1a4",
+            "role": "Android viewer",
+            "signing": "Debug-signed preview"
+        },
+        "bundle": {
+            "filename": "FastCast-0.3.2-preview.7-windows-android-x64.zip",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.7/FastCast-0.3.2-preview.7-windows-android-x64.zip",
+            "size": "27.0 MB",
+            "bytes": 28306783,
+            "sha256": "1aadce42e11c5800cf91a21cec8db6bc4a7457181f977e73401df29f65b9274c",
+            "role": "Portable Windows + Android bundle",
+            "signing": "Same unsigned Windows and debug-signed Android packages"
+        },
+        "checksums": {
+            "filename": "SHA256SUMS.txt",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.7/SHA256SUMS.txt",
+            "size": "410 B",
+            "bytes": 410,
+            "sha256": "0e5544ab855880d4d9d7cd1897a9cfcb7275f2826d9b9879345c4f82dd758104"
+        }
+    },
+    "screenshots": {
+        "windows-share": {
+            "width": 1770,
+            "height": 1170,
+            "label": "Windows Share screenshot",
+            "alt": "Windows Share in FastCast: screen and window selection, audio controls, and the receiving-device invitation.",
+            "caption": "Windows Share from a September 7, 2026 development capture. The public download is {{RELEASE_LABEL}}. Not a live session.",
+            "captured": "2026-09-07",
+            "capture_build": "appearance-review executable",
+            "theme": "Cyan compact controls, Economy effects",
+            "represents_public_release": false,
+            "note": "Unchanged client-area capture of a development interface. Some controls can differ from the public package. The app Cyan theme is the product UI, not the website brand color."
+        },
+        "windows-compact": {
+            "width": 998,
+            "height": 764,
+            "label": "compact Windows screenshot",
+            "alt": "Windows Share in a smaller FastCast window, with the native scroll area visible.",
+            "caption": "Share in a smaller window, September 7, 2026 development capture.",
+            "captured": "2026-09-07",
+            "capture_build": "appearance-review executable",
+            "theme": "Cyan compact controls, Economy effects",
+            "represents_public_release": false,
+            "note": "Unchanged client-area capture. The native scroll area is visible."
+        }
+    },
+    "evidence": {
+        "headline": "Preview 7 build and package checks",
+        "framing": "These are compilation and package-integrity checks. They do not establish visible playback, audible calls or daily-driver reliability.",
+        "scope": "Matching {{RELEASE_LABEL}} Windows and Android packages",
+        "items": [
+            "Windows desktop and capture host built in release mode.",
+            "Android ARM64 and x86-64 native libraries rebuilt; APK assembly and lint completed.",
+            "Package versions, Android signature, APK structure and updater manifest checked.",
+            "Installer, APK and portable bundle have published SHA-256 checksums."
+        ],
+        "caveats": [
+            "Interactive Board, profile-picture, audio and screen-sharing acceptance remains open.",
+            "Separate-network direct/relay sessions and extended physical-device use remain unverified for these packages.",
+            "Earlier LAN measurements are historical and are not measurements of preview 7."
+        ]
+    },
+    "status_legend": [
+        {
+            "id": "available",
+            "label": "Available",
+            "meaning": "Included in the published package; each feature lists its testing limitations."
+        },
+        {
+            "id": "preview",
+            "label": "Preview",
+            "meaning": "Included in the app, with physical-device validation outstanding."
+        },
+        {
+            "id": "limited",
+            "label": "Limited",
+            "meaning": "Available with the dependencies or restrictions listed for the feature."
+        },
+        {
+            "id": "not-yet",
+            "label": "Not yet",
+            "meaning": "Not included in the published package."
+        }
+    ],
+    "capability_groups": [
+        {
+            "id": "session",
+            "title": "Sending and watching",
+            "intro": "Included screen-sharing features, with device requirements and testing results.",
+            "items": [
+                {
+                    "name": "Screen and window capture",
+                    "status": "available",
+                    "detail": "Share an entire screen, or pick a single window, from a Windows x64 PC."
                 },
-    "assets":  {
-                   "windows":  {
-                                   "filename":  "FastCast-0.3.2-preview.5-Setup.exe",
-                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.5/FastCast-0.3.2-preview.5-Setup.exe",
-                                   "size":  "11.4 MB",
-                                   "bytes":  11998254,
-                                   "sha256":  "8eea343d4eb6a3765d49981142b4c74701b230a6c7b84ff34653e775d3283f13",
-                                   "role":  "Windows sender and receiver",
-                                   "signing":  "Unsigned preview"
-                               },
-                   "android":  {
-                                   "filename":  "FastCast-0.3.2-preview.5-Android.apk",
-                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.5/FastCast-0.3.2-preview.5-Android.apk",
-                                   "size":  "25.2 MB",
-                                   "bytes":  26424462,
-                                   "sha256":  "4c9f238730da9199fe41d7645334424c98e76164997059436f583d93e9631fd5",
-                                   "role":  "Android viewer",
-                                   "signing":  "Debug-signed preview"
-                               },
-                   "bundle":  {
-                                  "filename":  "FastCast-0.3.2-preview.5-windows-android-x64.zip",
-                                  "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.5/FastCast-0.3.2-preview.5-windows-android-x64.zip",
-                                  "size":  "26.1 MB",
-                                  "bytes":  27341104,
-                                  "sha256":  "b8b2c04bc50f762fcfe07d1fbf9747e50feba43d5c0839be5910af1c526fa658",
-                                  "role":  "Portable Windows + Android bundle",
-                                  "signing":  "Same unsigned Windows and debug-signed Android packages"
-                              },
-                   "checksums":  {
-                                     "filename":  "SHA256SUMS.txt",
-                                     "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.5/SHA256SUMS.txt",
-                                     "size":  "410 B",
-                                     "bytes":  410,
-                                     "sha256":  "f35b47e7aa4c6cd7173b3335ac46ccee2d968ad37b21fa6406692018f0fd5efc"
-                                 }
-               },
-    "screenshots":  {
-                        "windows-share":  {
-                                              "width":  1770,
-                                              "height":  1170,
-                                              "label":  "Windows Share screenshot",
-                                              "alt":  "Windows Share in FastCast: screen and window selection, audio controls, and the receiving-device invitation.",
-                                              "caption":  "Windows Share from a September 7, 2026 development capture. The public download is {{RELEASE_LABEL}}. Not a live session.",
-                                              "captured":  "2026-09-07",
-                                              "capture_build":  "appearance-review executable",
-                                              "theme":  "Cyan compact controls, Economy effects",
-                                              "represents_public_release":  false,
-                                              "note":  "Unchanged client-area capture of a development interface. Some controls can differ from the public package. The app Cyan theme is the product UI, not the website brand color."
-                                          },
-                        "windows-compact":  {
-                                                "width":  998,
-                                                "height":  764,
-                                                "label":  "compact Windows screenshot",
-                                                "alt":  "Windows Share in a smaller FastCast window, with the native scroll area visible.",
-                                                "caption":  "Share in a smaller window, September 7, 2026 development capture.",
-                                                "captured":  "2026-09-07",
-                                                "capture_build":  "appearance-review executable",
-                                                "theme":  "Cyan compact controls, Economy effects",
-                                                "represents_public_release":  false,
-                                                "note":  "Unchanged client-area capture. The native scroll area is visible."
-                                            }
-                    },
-    "evidence":  {
-                     "headline":  "Recorded Windows-to-Android LAN test",
-                     "framing":  "These results come from one physical Windows-to-Android LAN test and do not establish performance on other devices or networks.",
-                     "scope":  "Exact {{RELEASE_LABEL}} Windows host and Android APK",
-                     "items":  [
-                                   "120.032 seconds over LAN",
-                                   "5,925 encoded frames and 5,924 rendered frames",
-                                   "One video reassembly drop, recovered in 229 ms",
-                                   "Computer audio decoded with no reported underruns; audible output was not independently confirmed",
-                                   "Variable-cadence test source averaged 49.35 rendered fps"
-                               ],
-                     "caveats":  [
-                                     "This does not validate sustained smooth 60 fps.",
-                                     "Six capture recreations caused presentation gaps over 200 ms, longest 285 ms.",
-                                     "Audible playback, a 30-minute endurance run, physical remote input, and unrelated-network media remain unqualified."
-                                 ]
-                 },
-    "status_legend":  [
-                          {
-                              "id":  "available",
-                              "label":  "Available",
-                              "meaning":  "Included in the published package; each feature lists its testing limitations."
-                          },
-                          {
-                              "id":  "preview",
-                              "label":  "Preview",
-                              "meaning":  "Included in the app, with physical-device validation outstanding."
-                          },
-                          {
-                              "id":  "limited",
-                              "label":  "Limited",
-                              "meaning":  "Available with the dependencies or restrictions listed for the feature."
-                          },
-                          {
-                              "id":  "not-yet",
-                              "label":  "Not yet",
-                              "meaning":  "Not included in the published package."
-                          }
-                      ],
-    "capability_groups":  [
-                              {
-                                  "id":  "session",
-                                  "title":  "Sending and watching",
-                                  "intro":  "Included screen-sharing features, with device requirements and testing results.",
-                                  "items":  [
-                                                {
-                                                    "name":  "Screen and window capture",
-                                                    "status":  "available",
-                                                    "detail":  "Share an entire screen, or pick a single window, from a Windows x64 PC."
-                                                },
-                                                {
-                                                    "name":  "Video quality controls",
-                                                    "status":  "available",
-                                                    "detail":  "Choose 60 or 30 fps and adjust stream quality while a session is running. Those controls do not promise sustained 60 fps on every PC."
-                                                },
-                                                {
-                                                    "name":  "H.264 encoding",
-                                                    "status":  "available",
-                                                    "detail":  "NVIDIA NVENC is the validated path. Other PCs fall back to the built-in Windows CPU encoder, which costs processor time. Vendor hardware acceleration and physical Intel/AMD streaming tests are still pending."
-                                                },
-                                                {
-                                                    "name":  "Android receiving",
-                                                    "status":  "available",
-                                                    "detail":  "Android 8 or newer, decoding in hardware. Validated on one device in the public {{RELEASE_LABEL}} run."
-                                                },
-                                                {
-                                                    "name":  "Windows receiving",
-                                                    "status":  "available",
-                                                    "detail":  "A second Windows PC can receive the screen and system audio. Both ends need matching builds."
-                                                },
-                                                {
-                                                    "name":  "Computer audio",
-                                                    "status":  "available",
-                                                    "detail":  "The sending PC’s audio travels with the screen. The receiver decoded computer audio in the LAN run with no reported underruns. Audible output on a phone was not independently confirmed."
-                                                }
-                                            ]
-                              },
-                              {
-                                  "id":  "unproven",
-                                  "title":  "Features awaiting physical validation",
-                                  "intro":  "These features are included, but physical-device tests remain outstanding.",
-                                  "items":  [
-                                                {
-                                                    "name":  "Private session admission",
-                                                    "status":  "preview",
-                                                    "detail":  "The viewing device issues a private invitation that authorises the session over a pinned QUIC connection. Expiry, replay, and revocation pass loopback tests; physical regression testing is still open."
-                                                },
-                                                {
-                                                    "name":  "Two-way microphone voice",
-                                                    "status":  "preview",
-                                                    "detail":  "Automated checks pass; physical microphone round-trip and echo tests remain outstanding."
-                                                },
-                                                {
-                                                    "name":  "Remote control from Android",
-                                                    "status":  "preview",
-                                                    "detail":  "Automated checks pass; physical remote input and behaviour inside native games remain unverified."
-                                                },
-                                                {
-                                                    "name":  "Cursor appearance and effects",
-                                                    "status":  "preview",
-                                                    "detail":  "Desktop cursor styling with a local effects budget. The current build labels this preview only."
-                                                },
-                                                {
-                                                    "name":  "Several viewers on one share",
-                                                    "status":  "preview",
-                                                    "detail":  "One share can serve up to eight viewers from a single capture, each invited with its own pinned link and its own identity. Multi-viewer sharing passes loopback tests; testing across separate physical devices remains outstanding."
-                                                },
-                                                {
-                                                    "name":  "Sharing a screen during a call",
-                                                    "status":  "preview",
-                                                    "detail":  "A call and a screen share can run together. On a call the Board is how you ask someone for their screen, because the Receive page still serves one session at a time."
-                                                }
-                                            ]
-                              },
-                              {
-                                  "id":  "conditional",
-                                  "title":  "Features with additional limitations",
-                                  "intro":  "Internet playback remains unqualified, and accounts and contacts have local-storage limitations.",
-                                  "items":  [
-                                                {
-                                                    "name":  "Viewing outside your local network",
-                                                    "status":  "limited",
-                                                    "detail":  "Direct routes are tried first, with the FastCast relay as the fallback when both peers allocate one. Traversal across unrelated consumer networks has not been measured, so a route that already reaches your peer is still the dependable case."
-                                                },
-                                                {
-                                                    "name":  "Device-owned accounts and contacts",
-                                                    "status":  "limited",
-                                                    "detail":  "Held locally on Windows. Sync, recovery, and global handle claims are not implemented."
-                                                }
-                                            ]
-                              },
-                              {
-                                  "id":  "absent",
-                                  "title":  "Not in this download",
-                                  "intro":  "The following features are not included in {{RELEASE_LABEL}}.",
-                                  "items":  [
-                                                {
-                                                    "name":  "Automatic update checks",
-                                                    "status":  "not-yet",
-                                                    "detail":  "Present in some development builds, not in this download. Update by installing a newer matching Windows and Android pair over the old one."
-                                                },
-                                                {
-                                                    "name":  "Linux desktop",
-                                                    "status":  "not-yet",
-                                                    "detail":  "The application source includes a Linux viewer using OpenH264 with optional VA-API, but no Linux package is published here. Sending a screen from Linux is unavailable."
-                                                },
-                                                {
-                                                    "name":  "macOS, iPhone, and iPad",
-                                                    "status":  "not-yet",
-                                                    "detail":  "Not implemented. This preview download is Windows x64 and Android 8 or newer only. Android does not send."
-                                                }
-                                            ]
-                              }
-                          ],
-    "limitations":  [
-                        "Windows binaries are unsigned; Android is debug-signed.",
-                        "A direct connection needs a reachable route; the FastCast relay is the fallback and admits eight concurrent relayed sessions.",
-                        "Automatic universal Internet traversal is not proven. Direct routes and the relay are the available paths.",
-                        "Multi-viewer sharing supports up to eight viewers in code and loopback tests; physical multi-device sharing remains unqualified.",
-                        "Windows-to-Windows calls have no software echo cancellation; use a headset.",
-                        "Networks that block UDP have no media fallback: chat keeps working while media fails.",
-                        "Android is a viewer in this public release, not a sender.",
-                        "macOS, iPhone, iPad, and browser apps are not available.",
-                        "Linux is not in this public zip. Source has a viewer; Linux send is not a product."
-                    ],
-    "history":  [
-                    {
-                        "version":  "0.3.2-preview.5",
-                        "tag":  "v0.3.2-preview.5",
-                        "published":  "2026-09-12",
-                        "current":  true,
-                        "label":  "0.3.2 Preview 5",
-                        "published_display":  "September 12, 2026",
-                        "summary":  "Multi-viewer screen sharing, and screen sharing during a call. Preview 5 makes sharing during a call work both ways and stops a call and a share from ever sending the microphone twice."
-                    },
-                    {
-                        "version":  "0.3.2-preview.4",
-                        "tag":  "v0.3.2-preview.4",
-                        "published":  "2026-09-12",
-                        "current":  false,
-                        "label":  "0.3.2 Preview 4",
-                        "published_display":  "September 12, 2026",
-                        "summary":  "Multi-viewer screen sharing: one share now serves up to eight viewers from a single encode, each admitted with its own pinned invitation. A call and a screen share can run together, with the call keeping the microphone. Neither has been exercised across two machines."
-                    },
-                    {
-                        "version":  "0.3.2-preview.3",
-                        "tag":  "v0.3.2-preview.3",
-                        "published":  "2026-09-11",
-                        "current":  false,
-                        "label":  "0.3.2 Preview 3",
-                        "published_display":  "September 11, 2026",
-                        "summary":  "Calls now start: friend requests, signalled voice over the FastCast relay, self-hosted STUN, and relay media fan-out. Screen sharing is still one sharer to one viewer, and unrelated-network calls remain unmeasured."
-                    },
-                    {
-                        "version":  "0.3.2-preview.2",
-                        "tag":  "v0.3.2-preview.2",
-                        "published":  "2026-09-10",
-                        "current":  false,
-                        "label":  "0.3.2 Preview 2",
-                        "published_display":  "September 10, 2026",
-                        "summary":  "UX sheets, host-first Go live watch-place, rustls call-listen fix. Android still viewer-only for capture. Matching Win+Android preview packages."
-                    },
-                    {
-                        "version":  "0.3.2-preview.1",
-                        "tag":  "v0.3.2-preview.1",
-                        "published":  "2026-09-07",
-                        "current":  false,
-                        "label":  "0.3.2 Preview 1",
-                        "published_display":  "September 7, 2026",
-                        "summary":  "Matching Windows and Android builds. One physical Windows-to-Android LAN run on the published files."
-                    },
-                    {
-                        "version":  "0.3.1-preview.1",
-                        "tag":  "v0.3.1-preview.1",
-                        "published":  "2026-09-07",
-                        "current":  false,
-                        "label":  "0.3.1 Preview 1",
-                        "published_display":  "September 7, 2026",
-                        "summary":  "Earlier matching Windows and Android packages. Package integrity was checked; physical playback was not established by those publication checks."
-                    },
-                    {
-                        "version":  "0.3.0-preview.1",
-                        "tag":  "v0.3.0-preview.1",
-                        "published":  "2026-09-07",
-                        "current":  false,
-                        "label":  "0.3.0 Preview 1",
-                        "published_display":  "September 7, 2026",
-                        "summary":  "First published preview ZIP and APK for testing. Historical release; use the current preview unless you need to compare an older package."
-                    }
-                ]
+                {
+                    "name": "Video quality controls",
+                    "status": "available",
+                    "detail": "Choose 60 or 30 fps and adjust stream quality while a session is running. Those controls do not promise sustained 60 fps on every PC."
+                },
+                {
+                    "name": "H.264 encoding",
+                    "status": "preview",
+                    "detail": "Windows shares H.264 using the available encoder. Hardware support and CPU cost vary; this build has not been validated on every vendor."
+                },
+                {
+                    "name": "Android receiving",
+                    "status": "preview",
+                    "detail": "Android 8 or newer receives screens using its decoder. This release includes ARM64 and x86-64 native libraries; physical playback remains unverified for these packages."
+                },
+                {
+                    "name": "Windows receiving",
+                    "status": "available",
+                    "detail": "A second Windows PC can receive the screen and system audio. Both ends need matching builds."
+                },
+                {
+                    "name": "Computer audio",
+                    "status": "preview",
+                    "detail": "The sending PC can include system audio with its screen. Audible output and endurance remain unverified for this build."
+                }
+            ]
+        },
+        {
+            "id": "unproven",
+            "title": "Features awaiting physical validation",
+            "intro": "These features are included, but physical-device tests remain outstanding.",
+            "items": [
+                {
+                    "name": "Private session admission",
+                    "status": "preview",
+                    "detail": "The viewing device issues a private invitation that authorises the session over a pinned QUIC connection. Expiry, replay, and revocation pass loopback tests; physical regression testing is still open."
+                },
+                {
+                    "name": "Two-way microphone voice",
+                    "status": "preview",
+                    "detail": "One-to-one and group calls use direct peer paths with relay fallback. Physical microphone, echo and network-handoff checks remain outstanding."
+                },
+                {
+                    "name": "Remote control from Android",
+                    "status": "preview",
+                    "detail": "Android receives screens. It does not currently provide the account proof required by named-account remote-control grants, so those sessions remain view-only."
+                },
+                {
+                    "name": "Cursor appearance and effects",
+                    "status": "preview",
+                    "detail": "Desktop cursor styling with a local effects budget. The current build labels this preview only."
+                },
+                {
+                    "name": "Several viewers on one share",
+                    "status": "preview",
+                    "detail": "One Windows capture can serve up to eight independently admitted viewers. Windows Tables subscribe to up to four live friend screens and support late joins. Physical multi-device acceptance remains open."
+                },
+                {
+                    "name": "Sharing a screen during a call",
+                    "status": "preview",
+                    "detail": "A call and a screen share can run together. Accepted Windows friends discover live Table shares automatically after the sender explicitly starts sharing."
+                },
+                {
+                    "name": "Windows Table layout and fullscreen",
+                    "status": "preview",
+                    "detail": "Seats resize from every edge and corner. Settings are menus; fullscreen hides the surrounding UI. Interactive acceptance remains open."
+                },
+                {
+                    "name": "Profile pictures",
+                    "status": "preview",
+                    "detail": "Windows and Android support choosing, changing and removing profile pictures. Android uses explicit Save and Discard controls."
+                },
+                {
+                    "name": "In-call text and files",
+                    "status": "preview",
+                    "detail": "Windows and Android include session chat and consent-based file transfer. Files require a direct route; session chat is not a durable offline archive."
+                },
+                {
+                    "name": "Automatic update checks",
+                    "status": "preview",
+                    "detail": "These matched downloads include the update manifest used by the Windows and Android preview update channel. Installer/update lifecycle validation remains open."
+                }
+            ]
+        },
+        {
+            "id": "conditional",
+            "title": "Features with additional limitations",
+            "intro": "Internet playback remains unqualified, and accounts and contacts have local-storage limitations.",
+            "items": [
+                {
+                    "name": "Viewing outside your local network",
+                    "status": "preview",
+                    "detail": "Direct routes are preferred and the existing FastCast VPS provides relay fallback. This build includes negotiation and route-repair fixes, but unrelated-network physical acceptance remains open."
+                },
+                {
+                    "name": "Device-owned accounts and contacts",
+                    "status": "preview",
+                    "detail": "Device-held keys identify accounts. The coordination service supports profiles, friends and invitations; it is not a fully decentralized account service."
+                }
+            ]
+        },
+        {
+            "id": "absent",
+            "title": "Not in this download",
+            "intro": "The following features are not included in {{RELEASE_LABEL}}.",
+            "items": [
+                {
+                    "name": "Linux desktop",
+                    "status": "not-yet",
+                    "detail": "The application source includes a Linux viewer using OpenH264 with optional VA-API, but no Linux package is published here. Sending a screen from Linux is unavailable."
+                },
+                {
+                    "name": "macOS, iPhone, and iPad",
+                    "status": "not-yet",
+                    "detail": "Not implemented. This preview download is Windows x64 and Android 8 or newer only. Android does not send."
+                }
+            ]
+        }
+    ],
+    "limitations": [
+        "Windows binaries are unsigned; Android is debug-signed. Use matching versions.",
+        "Physical UI, audio, screen-sharing and unrelated-network acceptance remains open for these packages.",
+        "Direct connections minimize VPS media traffic; relay fallback still uses VPS bandwidth.",
+        "Bulk file transfers require a direct route and explicit acceptance; they do not use VPS fallback.",
+        "Networks blocking all UDP have no call/media fallback. Persistent room discussions use the coordination service.",
+        "Automatic Table viewing is view-only. Named-account remote control currently requires a compatible Windows viewer.",
+        "Android receives screens and supports calls/chat; Android screen broadcasting is not implemented.",
+        "No owner/process migration or durable offline peer chat is provided.",
+        "macOS, iPhone, iPad and browser apps are not available; Linux is not in this download."
+    ],
+    "history": [
+        {
+            "version": "0.3.2-preview.7",
+            "tag": "v0.3.2-preview.7",
+            "published": "2026-09-14",
+            "current": true,
+            "label": "0.3.2 Preview 7",
+            "published_display": "September 14, 2026",
+            "summary": "Combines the latest Table resizing, icons and fullscreen fixes with Android/Windows profile pictures, group route repair and loopback connection fixes. Matching Windows installer, Android APK, portable bundle and updater manifest. Physical acceptance remains open."
+        },
+        {
+            "version": "0.3.2-preview.5",
+            "tag": "v0.3.2-preview.5",
+            "published": "2026-09-12",
+            "current": false,
+            "label": "0.3.2 Preview 5",
+            "published_display": "September 12, 2026",
+            "summary": "Multi-viewer screen sharing, and screen sharing during a call. Preview 5 makes sharing during a call work both ways and stops a call and a share from ever sending the microphone twice."
+        },
+        {
+            "version": "0.3.2-preview.4",
+            "tag": "v0.3.2-preview.4",
+            "published": "2026-09-12",
+            "current": false,
+            "label": "0.3.2 Preview 4",
+            "published_display": "September 12, 2026",
+            "summary": "Multi-viewer screen sharing: one share now serves up to eight viewers from a single encode, each admitted with its own pinned invitation. A call and a screen share can run together, with the call keeping the microphone. Neither has been exercised across two machines."
+        },
+        {
+            "version": "0.3.2-preview.3",
+            "tag": "v0.3.2-preview.3",
+            "published": "2026-09-11",
+            "current": false,
+            "label": "0.3.2 Preview 3",
+            "published_display": "September 11, 2026",
+            "summary": "Calls now start: friend requests, signalled voice over the FastCast relay, self-hosted STUN, and relay media fan-out. Screen sharing is still one sharer to one viewer, and unrelated-network calls remain unmeasured."
+        },
+        {
+            "version": "0.3.2-preview.2",
+            "tag": "v0.3.2-preview.2",
+            "published": "2026-09-10",
+            "current": false,
+            "label": "0.3.2 Preview 2",
+            "published_display": "September 10, 2026",
+            "summary": "UX sheets, host-first Go live watch-place, rustls call-listen fix. Android still viewer-only for capture. Matching Win+Android preview packages."
+        },
+        {
+            "version": "0.3.2-preview.1",
+            "tag": "v0.3.2-preview.1",
+            "published": "2026-09-07",
+            "current": false,
+            "label": "0.3.2 Preview 1",
+            "published_display": "September 7, 2026",
+            "summary": "Matching Windows and Android builds. One physical Windows-to-Android LAN run on the published files."
+        },
+        {
+            "version": "0.3.1-preview.1",
+            "tag": "v0.3.1-preview.1",
+            "published": "2026-09-07",
+            "current": false,
+            "label": "0.3.1 Preview 1",
+            "published_display": "September 7, 2026",
+            "summary": "Earlier matching Windows and Android packages. Package integrity was checked; physical playback was not established by those publication checks."
+        },
+        {
+            "version": "0.3.0-preview.1",
+            "tag": "v0.3.0-preview.1",
+            "published": "2026-09-07",
+            "current": false,
+            "label": "0.3.0 Preview 1",
+            "published_display": "September 7, 2026",
+            "summary": "First published preview ZIP and APK for testing. Historical release; use the current preview unless you need to compare an older package."
+        }
+    ]
 }

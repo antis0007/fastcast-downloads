@@ -20,14 +20,14 @@ FastCast is a free development-preview screen-sharing app. Matching Windows and 
 > [!IMPORTANT]
 > Use matching app versions. The supported testing path is a Windows sender and an Android or Windows receiver on the same LAN, or another reachable private network. A FastCast relay is available as a fallback when no direct route works. Sharing a screen needs no account; friends and calls use an account the device owns. Windows installers are unsigned; Android packages are debug-signed.
 
-## Current release: 0.3.2 Preview 7
+## Current release: {{RELEASE_LABEL}}
 
-The reconciled Windows and Android build is available from [this release](https://github.com/antis0007/fastcast-downloads/releases/tag/v0.3.2-preview.7):
+The reconciled Windows and Android build is available from [this release]({{RELEASE_URL}}):
 
-- [Windows installer](https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.7/FastCast-0.3.2-preview.7-Setup.exe)
-- [Android APK](https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.7/FastCast-0.3.2-preview.7-Android.apk)
-- [Portable Windows + Android bundle](https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.7/FastCast-0.3.2-preview.7-windows-android-x64.zip)
-- [SHA-256 checksums](https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.7/SHA256SUMS.txt)
+- [Windows installer]({{WINDOWS_URL}})
+- [Android APK]({{ANDROID_URL}})
+- [Portable Windows + Android bundle]({{BUNDLE_URL}})
+- [SHA-256 checksums]({{CHECKSUMS_URL}})
 
 Windows shares and receives screens. Android receives screens and includes calls
 and in-call chat; Android screen broadcasting is not implemented. These remain
