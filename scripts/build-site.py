@@ -916,7 +916,7 @@ def render(slug, title, description):
   <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> {escape(release['status'])}</span><a href="releases.html">{escape(release['label'])} <span aria-hidden="true">↗</span></a></div></div>
   <header class="site-header">
     <div class="wrap site-header-inner">
-      <a class="brand" href="index.html" aria-label="FastCast home"><img class="brand-mark" src="assets/fastcast-wizard.webp" width="1203" height="926" alt=""><span class="brand-name" aria-hidden="true">FastCast</span></a>
+      <a class="brand" href="index.html" aria-label="FastCast home"><img class="brand-mark" src="assets/fastcast-wizard.webp" width="1203" height="926" alt=""><img class="brand-wordmark" src="assets/fastcast-wordmark.webp" width="1180" height="283" alt=""></a>
       <nav aria-label="Main">{nav}</nav>
       <a class="button small primary header-download{download_current}" href="downloads.html">Download</a>
     </div>

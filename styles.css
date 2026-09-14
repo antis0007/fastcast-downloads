@@ -1036,10 +1036,6 @@ p { text-wrap: pretty; }
    public pages render them inside the cream panels too. Scoped so the dark
    surfaces keep the dark-panel treatment. */
 .light-panel .status { color: var(--paper-text); }
-.light-panel .status-available { color: #3f2c08; border-color: #7a5a22; background: #e8c98a; }
-.light-panel .status-preview { color: #5c3f10; border-color: #c9a86a; background: #f2e2c0; }
-.light-panel .status-limited { color: #4a4234; border-color: #b9b5a3; background: #e9e6da; }
-.light-panel .status-not-yet { color: #4c5344; border-color: #bcc0b0; background: #e5e7dc; }
 .light-panel .capability-ledger { border-top-color: #c9ccbc; }
 .light-panel .capability-row { border-bottom-color: var(--line-light, #d9dbcd); }
 .light-panel .capability-intro,
@@ -1703,7 +1699,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
 .faq summary { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding-block: 20px; font-size: 15px; font-weight: 600; cursor: pointer; list-style: none; color: var(--paper-text); }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: "+"; font-family: var(--mono); color: var(--copper); }
-.faq[open] summary::after { content: "ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢"; }
+.faq[open] summary::after { content: "-"; }
 .faq p { color: var(--paper-muted); font-size: 14px; line-height: 1.7; padding-bottom: 22px; max-width: 620px; }
 .faq a { color: var(--paper-text); text-decoration: underline; }
 .help-grid > div:last-child > .text-link { margin-top: 20px; }
@@ -1750,7 +1746,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
 .about-ai summary { font-size: 13px; color: var(--quiet); cursor: pointer; }
 .about-ai summary::-webkit-details-marker { display: none; }
 .about-ai summary::before { content: "+"; display: inline-block; width: 16px; color: var(--brand-soft); font-family: var(--mono); }
-.about-ai[open] summary::before { content: "ÃƒÂ¢Ã‹â€ Ã¢â‚¬â„¢"; }
+.about-ai[open] summary::before { content: "-"; }
 .about-ai p { margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.75; max-width: var(--measure); }
 .about-ai p:first-of-type { margin-top: 16px; }
 .about-ai strong { color: var(--text); font-weight: 600; }
@@ -2271,9 +2267,8 @@ section[id], article[id] { scroll-margin-top: 88px; }
   .cast-scene { height: 260px; --unit: .44; }
 }
 
-/* Keep the pre-redesign header proportions. Live lettering avoids the dark
-   edge pixels and fixed weight baked into the old wordmark bitmap. */
-.brand-name { color: var(--accent-strong); font-size: 30px; font-weight: 500; font-style: italic; line-height: 1; letter-spacing: -.04em; }
+/* Keep the established wizard-and-wordmark lockup at its pre-redesign header
+   proportions. The wordmark asset carries the actual FastCast lettering. */
 .site-header .brand { gap: 14px; }
 /* At intermediate desktop widths the old fixed-size seal was wider than its
    column. Size the artwork to fit rather than clipping the aura at that edge. */
@@ -2282,7 +2277,6 @@ section[id], article[id] { scroll-margin-top: 88px; }
   .cast-scene::before { --halo: 560px; }
 }
 @media (max-width: 760px) {
-  .brand-name { font-size: 25px; }
   .site-header .brand { gap: 10px; }
 }
 

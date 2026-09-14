@@ -56,8 +56,11 @@ async function checkLayouts(name, engine) {
         assert.equal(await page.locator('h1').count(), 1, file);
         if (file === 'index.html') {
           const logo = await page.locator('.site-header .brand-mark').boundingBox();
+          const wordmark = page.locator('.site-header .brand-wordmark');
           const header = await page.locator('.site-header').boundingBox();
           assert.ok(logo.y >= header.y && logo.y + logo.height <= header.y + header.height, 'brand mark stays inside the header');
+          assert.equal(await wordmark.count(), 1, 'header uses the FastCast wordmark asset');
+          assert.equal(await wordmark.isVisible(), width > 760, 'wordmark visibility follows the compact-header breakpoint');
           const capture = await page.locator('#interface [data-lightbox]').boundingBox();
           const wizard = await page.locator('.hero .cast-wizard').boundingBox();
           const tour = await page.locator('#interface .wrap').boundingBox();
@@ -66,6 +69,12 @@ async function checkLayouts(name, engine) {
           assert.ok(seal.x >= 0 && seal.x + seal.width <= width, 'the full magic seal fits the viewport');
           assert.equal(await page.locator('.hero-visual').evaluate(el => getComputedStyle(el).overflowX), 'visible', 'the aura is not cut at the hero column edges');
           assert.ok(capture.width > tour.width * .8, 'the app capture has the full content width');
+          for (const state of ['available', 'preview']) {
+            const status = page.locator(`.light-panel .status-${state}`).first();
+            assert.equal(await status.evaluate(el => getComputedStyle(el).backgroundColor), 'rgba(0, 0, 0, 0)', `${state} status has no box behind its token`);
+          }
+          const openFaq = page.locator('.faq[open] summary').first();
+          assert.equal(await openFaq.evaluate(el => getComputedStyle(el, '::after').content), '"-"', 'open FAQ uses a readable collapse marker');
         }
         for (const image of await page.locator('main img').all()) {
           await image.scrollIntoViewIfNeeded();
@@ -106,6 +115,9 @@ async function checkLayouts(name, engine) {
     assert.equal(await page.locator('.help-search').isVisible(), false);
     await page.locator('summary').first().click();
     assert.ok(await page.locator('details').first().getAttribute('open') !== null);
+    const aidDisclosure = page.locator('.about-ai');
+    await aidDisclosure.locator('summary').click();
+    assert.equal(await aidDisclosure.locator('summary').evaluate(el => getComputedStyle(el, '::before').content), '"-"', 'open development disclosure uses a readable collapse marker');
     await page.goto(base + 'bandwidth.html');
     assert.ok(await page.locator('#bitrate').isDisabled());
     assert.ok(await page.locator('#duration').isDisabled());
