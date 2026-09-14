@@ -171,6 +171,17 @@ async function checkJourneysAndAccessibility() {
     assert.equal(await page.locator('.wizard-voice').getAttribute('data-pool'), 'first');
     assert.equal(await page.locator('.cast-body').evaluate(el => getComputedStyle(el).animationName), 'none');
     await assertNoOverflow(page, 'large wizard remark');
+    // Curated regions may have no dedicated dialogue. Clicking them must still
+    // activate the wizard, rather than swallowing the visitor's first click.
+    for (const [x, y] of [[.70, .54], [.34, .55], [.30, .17]]) {
+      await page.goto(base);
+      const body = page.locator('.cast-body');
+      await body.scrollIntoViewIfNeeded();
+      const box = await body.boundingBox();
+      await page.mouse.click(box.x + box.width * x, box.y + box.height * y);
+      assert.ok(await page.locator('.wizard-voice').isVisible());
+      assert.equal(await page.locator('.wizard-voice').getAttribute('data-pool'), 'first');
+    }
     await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Get started', exact: true }).click();
     await page.waitForURL('**/get-started.html');
     for (const width of [320, 390, 1440]) {

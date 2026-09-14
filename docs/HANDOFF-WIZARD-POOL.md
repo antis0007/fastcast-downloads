@@ -1,8 +1,12 @@
 # Handoff: FastCast site, wizard interaction, and line pool
 
-**Latest pool: 75 lines.** The owner requested cuts on September 13, then rejected
-the first pass as too permissive. A total of 48 lines were removed in two passes.
-[The deletion record](WIZARD-CUTS-2026-09-13.md) lists every removal and reason.
+**Latest pool: 21 lines.** After the earlier 123 → 75 curation, the owner rejected
+the attempted refinements and requested a harsher review of every surviving line.
+[The full review](WIZARD-FULL-REVIEW-2026-09-13.md) covers all 75, retaining 21
+unchanged lines and moving one ordinary poke response to the first-click pool.
+Empty orb, hat, and beard pools use ordinary click dialogue. None of the seven
+proposed rewrites was retained. [The earlier cuts](WIZARD-CUTS-2026-09-13.md)
+also remain intentional.
 These are intentional; older 123-line preservation notes below describe the
 preceding editorial pass and must not be used to restore the cuts.
 

@@ -140,11 +140,10 @@ const wizardVoice = (() => {
     return lines[pool][bag.pop()];
   };
 
-  // `step` asks for a specific line, which is how the ordered pools escalate:
-  // the sixth poke is the sixth line, not a lucky dip.
+  // Repeated gestures advance through an ordered pool and stay on its last line.
   const say = (pool, mood, step) => {
     const available = lines[pool];
-    if (!available?.length) return;
+    if (!available?.length) return false;
     bubble.textContent = Number.isInteger(step)
       ? available[Math.min(step, available.length - 1)]
       : next(pool);
@@ -156,6 +155,7 @@ const wizardVoice = (() => {
     wizard.classList.remove('is-pleased', 'is-flinched');
     void wizard.offsetWidth;
     wizard.classList.add(mood);
+    return true;
   };
 
   // The bounce is a one-shot: clear it so the next click can play it again.
@@ -300,10 +300,8 @@ if (wizardVoice) {
     // Holding on and letting go is not a click either; he already said his piece.
     if (said) { said = false; return; }
     const region = regionAt(event);
-    if (region) {
-      wizardVoice.say(region, 'is-pleased');
-      return;
-    }
+    // A region whose dialogue was cut still behaves like an ordinary click.
+    if (region && wizardVoice.say(region, 'is-pleased')) return;
     const now = performance.now();
     pokes = now - lastPoke < POKE_WINDOW ? pokes + 1 : 0;
     lastPoke = now;

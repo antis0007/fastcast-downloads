@@ -1,8 +1,9 @@
 # FastCast public copy
 
 **Subsequent wizard curation:** The owner separately authorized cutting the
-weakest wizard dialogue. The pool is now 75 lines; see
-[the 48 intentional removals](WIZARD-CUTS-2026-09-13.md). The unchanged 123-line
+weakest wizard dialogue, then demanded a harsher review of every remaining line.
+The pool is now 21 lines; see [the full review](WIZARD-FULL-REVIEW-2026-09-13.md)
+and [the preceding cuts](WIZARD-CUTS-2026-09-13.md). The unchanged 123-line
 pool described in this review record is the state before that later request.
 
 September 13, 2026. This records the owner's instruction to restore the editorial

@@ -570,112 +570,51 @@ def flame_field(count=52):
 # other pool is short and some are ordered, because they answer a specific
 # gesture: poke is an escalation as you keep clicking, rightclick as you keep
 # right-clicking, and the rest are one-shots for a gesture he notices.
-# September 13: 48 weak lines intentionally removed in two passes; 75 remain. See
-# docs/WIZARD-CUTS-2026-09-13.md before restoring any apparent omissions.
+# September 13: all 75 surviving lines were reviewed again; 21 remain. See
+# docs/WIZARD-FULL-REVIEW-2026-09-13.md before restoring intentional cuts.
+# Empty regional pools use the ordinary click response; do not fill them with
+# weaker lines merely to populate every interaction.
 WIZARD_LINES = {
-    # Played on the first click only. These cannot follow a poke, so they are
-    # kept out of the rotation rather than deleted.
     'first': [
-        "You are here about the scrying. Everyone is here about the scrying.",
-        "Harrumph! Come in, come in — mind the runes, they bite.",
-        "*taps orb* — hello. It works. Splendid.",
-        "Well met, apprentice. I was pondering my orb. It ponders back.",
+        "Yes. Yes. I heard you the first time.",
     ],
     'idle': [
-        "Six hundred years of scrying. Four hundred of them buffering.",
-        "I lit one candle for a man. He is fine. His eyebrows are not.",
-        "Tiny Hut. Eight hours. Nothing gets in. It is a *tent*.",
         "I use Mage Hand to turn my rival's pages before he's finished.",
-        "The Council is not a government. It is a queue with a hat.",
         "The Council revoked my title. I revoked their stairs.",
-        "My apprentice called me old. His boots are now two very surprised cows.",
-        "I've been pondering my orb for nine hours. It's mostly bad news and a man selling a sword.",
-        "I put a second moon up for my own use. Stop looking at it.",
-        "I gave the throne legs. It has chosen a different king.",
-        "The necromancer licks a finger to turn the page. I wish he would use his own.",
-        "Wizards who need both hands to cast have never had a decent sandwich.",
         "My medal for restraint was found three miles from the ceremony.",
-        "I taught my front door to recognise threats. It now opens before I reach it.",
         "I summoned a demon to hold my ladder. It offered me a kingdom. I pointed at the ladder.",
-        "Yes I could teleport. The horse needs the exercise.",
         "My rival demanded a duel at dawn. I have postponed the sun.",
-        "I've cursed a rival's house to be uphill from itself.",
-        "Somebody paid me in turnips. I have taught the turnips his name.",
-        "Six hundred years of scrying. What I've learned is that people are in the bath.",
-        "I'm not allowed within four hundred yards of a haystack. Any haystack.",
-        "I'm not immortal. I'm badly organised about dying.",
-        "My cat sleeps in the summoning circle. The demons have learned to arrive quietly.",
-        "I have outlived everyone who called this hat a phase.",
         "The Tower bills per head. My hydra is furious.",
         "The Council asked me not to end meetings with Fireball. I now open with it.",
-        "My apprentice says fire isn't sentient. I have told the fire.",
-        "Casting Fireball——— *the bubble flickers* ...Wrong direction. Your eyebrows were always a bit much.",
-        "Klaatu, verata, nikto. ...Nikto. NIKTO. We may need to leave.",
-        "Xyzzy! ...Nothing. It's never worked. I'll keep saying it.",
-        "Don't touch the blue rune. Don't touch the — thank you.",
-        "Telecommuniwhat-now? I've said *scrying* for six hundred years.",
-        "You're about to flinch. *doesn't move* ...There.",
-        "Okay. Okay. We're being polite. Casting Fireball———",
-        "I keep a mimic as a footstool. We both think we're being patient.",
         "My reflection is a minute ahead. I make him taste the soup.",
-        "I declined the throne. My newt accepted. He has flooded the ballroom.",
         "I levitate the cheese. The mice have built a trebuchet.",
         "I asked an ancient oak for wisdom. It wants a particular squirrel dead.",
         "I mispronounce forbidden names until somebody corrects me.",
-        "I open presents with Mage Hand. My friends say it spoils the surprise.",
-        "My gargoyle wants a sea view. He has started moving the house.",
-        "I put a silence spell on my bedroom. The nightmares have to mime.",
     ],
-    # Ordered: a rising escalation as you keep clicking him, not a random draw.
     'poke': [
-        "Stop that. I shall remember this when you have antennae.",
-        "Yes. Yes. I heard you the first time.",
-        "You are prodding a millennium-old mage like a suspicious melon.",
         "Poke me once more and I shall explain my knees to you. At length.",
-        "That is it. I am turning you into something with no thumbs.",
-        "Right. You are going on the shelf. Next to the newt. He will be thrilled.",
         "Keep poking. I know a spell that makes every sleeve damp.",
     ],
-    # Holding on without moving.
     'hold': [
         "Are you... holding my hand?",
         "*sighs* ...All right. Five more minutes.",
-        "Nobody has held on this long since the siege of the tower. Sit down, then.",
-        "If you are waiting for a prophecy, they are on Tuesdays.",
     ],
-    # Dragged a long way from where he was standing.
     'far': [
         "Put me back. PUT ME BACK.",
-        "That is far enough. I am a wizard, not luggage.",
     ],
-    # The scrying glass in his hands. Nothing marks it as clickable.
     'orb': [
-        "That is the scrying glass. It is not a toy, whatever it looks like.",
-        "You pressed the little triangle. Nothing is loaded. There is nothing *to* load.",
-        "Careful. That is where the picture lives.",
-        "It plays one thing: the thing you are looking at. I am very proud of it.",
-        "Do not shake the orb. The kingdom inside has only just rebuilt.",
     ],
-    # Ordered reactions to the browser's context-menu gesture.
     'rightclick': [
         "I see you've opened a menu. So have I. Mine has species.",
-        "Urngghhh... you stepped on my seals. Again.",
         "No, you may not 'Save wizard as...'. Find your own.",
     ],
-    # The hat and the beard are regions of the artwork, not gestures, so they
-    # only fire when the pointer is over those parts of him.
     'hat': [
-        "Hands off the hat. I have turned people into footnotes for less.",
     ],
     'beard': [
-        "Stop combing my beard. You're changing the weather in Denmark.",
     ],
     'drag': [
         "Whoa—! Put me down, I am *working*.",
-        "Fine. Fine! Drag me about. See if I care.",
-        "This is undignified and I will remember it.",
         "Mind the hat. MIND THE HAT.",
-        "Put me down. I am a ranged problem.",
     ],
 }
 
