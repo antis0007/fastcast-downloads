@@ -327,7 +327,7 @@ async function checkJourneysAndAccessibility() {
     assert.equal((await page.locator('#capabilities h2').textContent()).trim(), 'Features and limitations');
     assert.equal(await page.locator('.status-key dt').count(), 4);
     assert.equal(await page.locator('.capability-group').count(), 4);
-    assert.equal(await page.locator('.capability-table tbody tr').count(), 17);
+    assert.equal(await page.locator('.capability-table tbody tr').count(), 20);
     for (const word of ['Available', 'Preview', 'Limited', 'Not yet']) {
       assert.ok(await page.locator('.status', { hasText: word }).count());
     }
