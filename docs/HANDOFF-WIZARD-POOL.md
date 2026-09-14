@@ -1,5 +1,11 @@
 # Handoff: FastCast site, wizard interaction, and line pool
 
+**Latest pool: 75 lines.** The owner requested cuts on September 13, then rejected
+the first pass as too permissive. A total of 48 lines were removed in two passes.
+[The deletion record](WIZARD-CUTS-2026-09-13.md) lists every removal and reason.
+These are intentional; older 123-line preservation notes below describe the
+preceding editorial pass and must not be used to restore the cuts.
+
 For the next agent picking this up. Read this before touching anything, and trust
 the built page over any document, including this one.
 

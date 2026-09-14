@@ -570,6 +570,8 @@ def flame_field(count=52):
 # other pool is short and some are ordered, because they answer a specific
 # gesture: poke is an escalation as you keep clicking, rightclick as you keep
 # right-clicking, and the rest are one-shots for a gesture he notices.
+# September 13: 48 weak lines intentionally removed in two passes; 75 remain. See
+# docs/WIZARD-CUTS-2026-09-13.md before restoring any apparent omissions.
 WIZARD_LINES = {
     # Played on the first click only. These cannot follow a poke, so they are
     # kept out of the rotation rather than deleted.
@@ -580,123 +582,40 @@ WIZARD_LINES = {
         "Well met, apprentice. I was pondering my orb. It ponders back.",
     ],
     'idle': [
-        # The orb, and scrying. Two lines were cut from here -- "scrying is
-        # underrated" and the dusting one -- because both are statements rather
-        # than jokes, and the group already has better ones.
-        "I am one with the orb.",
-        "*pondering my orb* ...It says you should've written to me sooner.",
         "Six hundred years of scrying. Four hundred of them buffering.",
-        "*scrys intensely* ...Your screen. I didn't need to see that.",
-        # How the picture actually gets there. Real, and he is delighted by it.
-        "Your picture is a great many small numbers. I've met four of them.",
-        "Latency is the time a message spends being nowhere. I live there.",
-        "Your picture arrives as a rumour of itself.",
-        "No packet travels *a* road. It chooses. They reassemble like a very boring resurrection.",
-        # What this particular spell does. Accurate, or not said at all.
-        "No account. No subscription. No wizard between you and your reflection.",
-        "Windows sends. Android watches. Don't make it weird.",
-        "The Tower charges extra to show my beard. Apparently I count as a group call.",
-        # The industry, from a man who has watched a few empires. Note the
-        # absence of aphorisms: a wizard who talks in fortune cookies is a
-        # fortune cookie, not a wizard. Every one of these is a specific joke
-        # about a specific thing.
-        "The great towers shall fall, as all towers do. I've seen it. It was a Tuesday.",
-        "Every age builds the Torment Nexus, calls it a platform, and charges the tormented rent.",
-        # The Towers. He is not neutral on the subject, and the definition is the
-        # joke: Ser-Vur and Day-Tuh are the words he thinks he is quoting.
-        # Fire, which is the school he actually teaches. Every one of these is a
-        # real thing about how the spell works.
-        "Fire Bolt. Soup. Candles. Uninvited guests.",
         "I lit one candle for a man. He is fine. His eyebrows are not.",
-        # The rest of the trade, which has rules, and he has opinions about them.
         "Tiny Hut. Eight hours. Nothing gets in. It is a *tent*.",
-        "I prepare my spells each morning. Today: seven ways to leave a room. I'm not leaving.",
         "I use Mage Hand to turn my rival's pages before he's finished.",
-        # The Council, the apprentice, and everyone who solves things by
-        # hitting them. The rest of the wizardposting register.
         "The Council is not a government. It is a queue with a hat.",
         "The Council revoked my title. I revoked their stairs.",
-        # The man himself: revoked, unpaid, insured against the wrong
-        # things. Flat sentences about absurd facts, in the manner of
-        # Pratchett -- the specificity is the joke, not a punchline.
-        # Sardonic, and occasionally not all there. The madness is always calm
-        # about something impossible; the self-awareness never becomes
-        # self-pity, or it stops being funny.
-        "Eleven spiders. Always eleven. Last week there were twelve. I didn't sleep.",
         "My apprentice called me old. His boots are now two very surprised cows.",
-        "The ring is cursed. Put it on. I want to hear the accent.",
-        "Do not drink the green potion. It is bait for the red one.",
-        # Wizardposting: disproportionate revenge, collapsed boasting, the orb
-        # as a phone, fire on problems that did not need fire. Flat delivery,
-        # absurd content. The two are not the same thing and only one is funny.
         "I've been pondering my orb for nine hours. It's mostly bad news and a man selling a sword.",
-        # Powerful and silly, which is not the same as incompetent. He can do
-        # anything; he is doing this. The gap between the power and the
-        # concern is the joke, and there is no loss anywhere in these.
-        "I keep a comet in the cellar. It's not for anything. I just like it.",
         "I put a second moon up for my own use. Stop looking at it.",
         "I gave the throne legs. It has chosen a different king.",
         "The necromancer licks a finger to turn the page. I wish he would use his own.",
         "Wizards who need both hands to cast have never had a decent sandwich.",
         "My medal for restraint was found three miles from the ceremony.",
-        "My shadow has started carrying a staff. We have not discussed this.",
         "I taught my front door to recognise threats. It now opens before I reach it.",
-        "I put a truth spell on the kettle. It has stopped whistling and started naming names.",
         "I summoned a demon to hold my ladder. It offered me a kingdom. I pointed at the ladder.",
-        "I cast square fireballs. Corners have been getting away with things.",
-        # Short, reactive, unliterary. The wizard in this repo is a shitposter
-        # who can level a building, not a narrator with a punchline.
         "Yes I could teleport. The horse needs the exercise.",
         "My rival demanded a duel at dawn. I have postponed the sun.",
         "I've cursed a rival's house to be uphill from itself.",
         "Somebody paid me in turnips. I have taught the turnips his name.",
-        # Different engines deliberately: privacy, liability, academia,
-        # bureaucracy, memory, economics. The previous batch was eighteen
-        # versions of one joke and it stopped being funny after two.
         "Six hundred years of scrying. What I've learned is that people are in the bath.",
-        "Scrying's easy. The hard part is pretending you didn't see.",
         "I'm not allowed within four hundred yards of a haystack. Any haystack.",
         "I'm not immortal. I'm badly organised about dying.",
-        # Splash. Short, loud, and mostly nonsense, in the manner of a title
-        # screen. The long lines above are the lecture; these are the poster.
         "My cat sleeps in the summoning circle. The demons have learned to arrive quietly.",
         "I have outlived everyone who called this hat a phase.",
         "The Tower bills per head. My hydra is furious.",
         "The Council asked me not to end meetings with Fireball. I now open with it.",
         "My apprentice says fire isn't sentient. I have told the fire.",
-        # Occasionally unstable.
         "Casting Fireball——— *the bubble flickers* ...Wrong direction. Your eyebrows were always a bit much.",
         "Klaatu, verata, nikto. ...Nikto. NIKTO. We may need to leave.",
         "Xyzzy! ...Nothing. It's never worked. I'll keep saying it.",
         "Don't touch the blue rune. Don't touch the — thank you.",
-        "I once turned a man into a newt. He's a very good newt now. He knows what he did.",
         "Telecommuniwhat-now? I've said *scrying* for six hundred years.",
-        # :3
-        "*blushes* ...That's not a spell. It's something I do now.",
-        "*head in hands* :3 ...Sorry. Sorry. It happens when I'm nervous.",
-        # Warm, and genuinely on your side.
-        # The product. Scrying is screen sharing: an orb at each end and nothing
-        # in the middle. Short, because the pool is better short.
-        "Scrying's just watching someone else's screen.",
-        "I don't keep a copy. Nowhere in an orb to put one.",
-        "*the orb goes dark* ...I'm not watching. *the orb comes back on*",
-        "I didn't do that. It was the orb. We're both lying.",
-        "*scrolls your page back up* ...You weren't finished with that.",
         "You're about to flinch. *doesn't move* ...There.",
-        "I saw your whole future once. It was fine. You're fine. Don't worry about it.",
-        "*scrys* ...Yeah. Yeah, you're cooked.",
-        "He's fine now. I'm told. (He's not fine.)",
-        # Transitive, not decorative: he acts on the orb and something changes.
-        "*turns the orb around* ...There. Your side.",
-        "*the orb fills with static* ...That's not static. That's your wallpaper.",
-        "*the orb goes quiet* ...I've muted your end. You were humming.",
-        "You're clicking me. I can feel it.",
         "Okay. Okay. We're being polite. Casting Fireball———",
-        "It's a very old spell. I invented it last Tuesday.",
-        "My familiar has a familiar. I was not consulted.",
-        "I put a curse on my own left hand. It knows why.",
-        "I taught a rock to count. It has got to nine. It is very pleased.",
-        "My golem asked whether my bones were structural or decorative.",
         "I keep a mimic as a footstool. We both think we're being patient.",
         "My reflection is a minute ahead. I make him taste the soup.",
         "I declined the throne. My newt accepted. He has flooded the ballroom.",
@@ -706,7 +625,6 @@ WIZARD_LINES = {
         "I open presents with Mage Hand. My friends say it spoils the surprise.",
         "My gargoyle wants a sea view. He has started moving the house.",
         "I put a silence spell on my bedroom. The nightmares have to mime.",
-        "I said behold. Not backseat.",
     ],
     # Ordered: a rising escalation as you keep clicking him, not a random draw.
     'poke': [
@@ -714,7 +632,6 @@ WIZARD_LINES = {
         "Yes. Yes. I heard you the first time.",
         "You are prodding a millennium-old mage like a suspicious melon.",
         "Poke me once more and I shall explain my knees to you. At length.",
-        "If I were paid by the poke I would have two coins, which is not a living.",
         "That is it. I am turning you into something with no thumbs.",
         "Right. You are going on the shelf. Next to the newt. He will be thrilled.",
         "Keep poking. I know a spell that makes every sleeve damp.",
@@ -729,7 +646,6 @@ WIZARD_LINES = {
     # Dragged a long way from where he was standing.
     'far': [
         "Put me back. PUT ME BACK.",
-        "You have taken me out of my circle. Let us not find out what happens.",
         "That is far enough. I am a wizard, not luggage.",
     ],
     # The scrying glass in his hands. Nothing marks it as clickable.
@@ -740,13 +656,10 @@ WIZARD_LINES = {
         "It plays one thing: the thing you are looking at. I am very proud of it.",
         "Do not shake the orb. The kingdom inside has only just rebuilt.",
     ],
-    # Ordered as well: the injury escalates from a grunt to an incantation that
-    # nearly happens, then falls back to the grunts.
+    # Ordered reactions to the browser's context-menu gesture.
     'rightclick': [
         "I see you've opened a menu. So have I. Mine has species.",
         "Urngghhh... you stepped on my seals. Again.",
-        "What the Frick dude.",
-        "Ok that's it, ALAKA- kidding but you were almost vapour there for a sec",
         "No, you may not 'Save wizard as...'. Find your own.",
     ],
     # The hat and the beard are regions of the artwork, not gestures, so they
@@ -759,7 +672,6 @@ WIZARD_LINES = {
     ],
     'drag': [
         "Whoa—! Put me down, I am *working*.",
-        "You cannot simply *move* a wizard. There are runes. There are implications.",
         "Fine. Fine! Drag me about. See if I care.",
         "This is undignified and I will remember it.",
         "Mind the hat. MIND THE HAT.",
