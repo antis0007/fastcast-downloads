@@ -3,6 +3,14 @@
 For the next agent picking this up. Read this before touching anything, and trust
 the built page over any document, including this one.
 
+**September 13 editorial update:** Read [EDITORIAL-CONTRACT.md](EDITORIAL-CONTRACT.md)
+before changing public copy. The owner asked to remove slogans, rhetorical
+fragments, and repetition while preserving precise capabilities and limitations.
+The newer editorial pass supersedes historical instructions below to restore
+homepage wording verbatim. All 123 wizard lines remain unchanged. Visual choices
+from the selective rollback remain, with the duplicate homepage walkthrough
+removed and its anchors preserved.
+
 ## 0. The one rule that matters
 
 **Verify on the built page, not in the source.** The pool and the scene are

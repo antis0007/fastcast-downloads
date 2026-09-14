@@ -15,21 +15,21 @@ BASE = 'https://antis0007.github.io/fastcast-downloads/'
 REPO = 'https://github.com/antis0007/fastcast-downloads'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
-    'index': ('The shortest path between your screen and theirs.', 'Share a Windows screen or window with another PC or an Android device. Direct connections with relay fallback. Free development preview; no account needed for screen sharing.'),
-    'product': ('The Windows app', 'Real screenshots, what the public build can do, and what it still cannot.'),
+    'index': ('Screen sharing for Windows and Android', 'Share a Windows screen or window with another PC or an Android device. Direct connections with relay fallback. Free development preview; no account needed for screen sharing.'),
+    'product': ('Product overview', 'Windows and Android screen-sharing features, native interface captures, and release testing status.'),
     'downloads': ('Download FastCast', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
-    'get-started': ('Setup', 'Matching builds. Viewer writes the invite. Windows starts the share.'),
-    'platforms': ('What runs', 'Windows x64 sends and watches. Android 8+ watches. Linux receive is in source, not in this zip. No Mac, iOS, or browser app.'),
+    'get-started': ('Setup', 'Install matching versions, create an invitation on the viewing device, and start sharing from Windows.'),
+    'platforms': ('Supported platforms', 'Windows x64 sends and watches. Android 8+ watches. Linux receive is in source, not in this zip. No Mac, iOS, or browser app.'),
     'community': ('Bugs', 'Public GitHub issues for a screen-sharing preview. Do not paste invitations.'),
-    'help': ('Help', 'Install fights, dead connections, audio, input. Search stays in your browser.'),
+    'help': ('Help', 'Troubleshoot installation, connections, audio, and remote input. Help search runs in your browser.'),
     'roadmap': ('Roadmap', 'What is built, what is being qualified, and what is not started yet.'),
-    'releases': ('Release notes', 'Published FastCast preview, matching files, known holes, older tags.'),
+    'releases': ('Release notes', 'Download files, changes, and known limitations for published FastCast releases.'),
     'privacy': ('Privacy', 'This site has no analytics. GitHub hosts the files. Keep invites private.'),
-    '404': ('Nothing here', 'Downloads, setup, and help.'),
+    '404': ('Page not found', 'Find FastCast downloads, setup instructions, and help.'),
     'why-fastcast': ('Why FastCast', 'An independent screen-sharing tool alongside the conversations and communities you already have.'),
-    'how-it-works': ('How the packets move', 'Compare direct and relayed screen-sharing routes, discover who handles which data, and explore the native media stack.'),
+    'how-it-works': ('How FastCast connects', 'Compare direct and relayed screen-sharing routes, discover who handles which data, and explore the native media stack.'),
     'data-and-privacy': ('Data compared', 'What Discord documents, next to what this FastCast preview actually does.'),
-    'bandwidth': ('Bandwidth arithmetic', 'Estimate video payload at each end and the server traffic added by a relayed route.'),
+    'bandwidth': ('Bandwidth calculator', 'Estimate video payload at each end and the server traffic added by a relayed route.'),
 }
 
 
@@ -53,7 +53,7 @@ def screenshot(name, eager=False, explain_link=False):
     meta = release['screenshots'][name]
     loading = 'fetchpriority="high"' if eager else 'loading="lazy"'
     caption = fill(meta['caption'])
-    extra = f' <a href="product.html#screenshots">What’s on these images</a>.' if explain_link else ''
+    extra = f' <a href="product.html#screenshots">About these screenshots</a>.' if explain_link else ''
     return f'''<figure class="screenshot">
   <a class="image-open" href="assets/{name}.png" data-lightbox aria-label="Enlarge {escape(meta['label'])}">
     <img src="assets/{name}.png" width="{meta['width']}" height="{meta['height']}" alt="{escape(meta['alt'])}" {loading}>
@@ -895,16 +895,16 @@ def history_html():
             body = f'''<article>
   <h2>FastCast {escape(item['label'])}</h2>
   <p>{escape(item['summary'])}</p>
-  <h3>In these files</h3>
+  <h3>Included features</h3>
   <ul>
     <li>Windows sending and receiving, plus Android receiving.</li>
     <li>Session invitations and screen or window selection.</li>
     <li>Audio and remote-control controls exist in the UI. Physical remote input is unproven. Audible output was not independently confirmed.</li>
     <li>Matching bundle and USB update helpers.</li>
   </ul>
-  <h3>Holes</h3>
+  <h3>Known limitations</h3>
   <ul>{''.join(f'<li>{escape(limit)}</li>' for limit in release['limitations'])}</ul>
-  <p class="note">SHA-256 checked on the published files. That is not the same as “every phone, every NAT.”</p>
+  <p class="note">SHA-256 checks confirm the published files match their recorded hashes. Device and network compatibility require separate testing.</p>
   <div class="actions"><a class="button primary" href="{escape(release['assets']['windows']['url'])}">Download Windows app</a><a class="button" href="downloads.html">All packages</a><a class="text-link" href="{url}">Original release notes ↗</a></div>
 </article>'''
         else:

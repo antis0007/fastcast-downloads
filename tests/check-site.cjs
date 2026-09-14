@@ -196,7 +196,7 @@ async function checkJourneysAndAccessibility() {
     // sibling of the topic groups, not one of their answers.
     assert.equal(await page.locator('.faq-group details:visible').count(), 14);
     await page.goto(base + 'product.html');
-    assert.equal((await page.locator('#capabilities h2').textContent()).trim(), "What's in, what's not.");
+    assert.equal((await page.locator('#capabilities h2').textContent()).trim(), 'Features and limitations');
     assert.equal(await page.locator('.status-key dt').count(), 4);
     assert.equal(await page.locator('.capability-group').count(), 4);
     assert.equal(await page.locator('.capability-table tbody tr').count(), 17);

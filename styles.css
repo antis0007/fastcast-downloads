@@ -1669,13 +1669,6 @@ section[id], article[id] { scroll-margin-top: 88px; }
 }
 .class-body { position: relative; min-width: 0; }
 .class-lede { color: var(--muted); font-size: 15px; line-height: 1.7; margin-top: 18px; max-width: 60ch; }
-.class-features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 38px; margin: 30px 0 0; }
-.class-features > div { border-top: 1px solid var(--line-soft); padding-top: 14px; }
-.class-features dt { display: flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 600; color: var(--text); }
-.class-features dt .icon { color: var(--accent); }
-.class-features dd { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
-.class-features dd a { color: var(--accent-strong); }
-.class-note { margin-top: 26px; color: var(--quiet); font-size: 13px; font-style: italic; }
 /* Class portrait: the mascot alone. The scrying orb lives in the hero, well
    away from it. Purely decorative, so the figure is hidden from assistive
    technology. */
@@ -2138,7 +2131,6 @@ section[id], article[id] { scroll-margin-top: 88px; }
   .class-band { padding-block: var(--section-top) var(--section-bottom); }
   .class-card { grid-template-columns: 1fr; padding: 30px 24px; gap: 26px; }
   .class-figure { max-width: 210px; margin-inline: auto; }
-  .class-features { grid-template-columns: 1fr; gap: 16px; }
   /* Flames stay ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â they are the point of the hero ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â but the field thins so the
      scene does not turn into confetti on a phone. */
   .flame-field i:nth-child(n+13) { display: none; }

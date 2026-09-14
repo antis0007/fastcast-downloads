@@ -1,5 +1,14 @@
 # FastCast website design and evidence
 
+## Editorial repair — September 13, 2026
+
+The owner's current instruction is to remove the drift from the writing contract,
+not to imitate competitor slogans or redesign the page again. The local
+[editorial contract](docs/EDITORIAL-CONTRACT.md) records the applicable writing
+rules and this review's decisions. It supersedes the instruction below to
+restore the older homepage writing verbatim. The visual repair and wizard remain;
+the redundant second homepage walkthrough is removed with its anchors preserved.
+
 ## Setup and navigation — September 13, 2026
 
 The owner's next request rejects oversized text and clipped slogan-like phrases

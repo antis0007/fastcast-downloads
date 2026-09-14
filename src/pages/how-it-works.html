@@ -1,12 +1,12 @@
 <section class="page-hero wrap">
   <p class="eyebrow">Inside a screen share</p>
-  <h1>Your screen.<br><span>Two possible routes.</span></h1>
-  <p class="lede">Your PC makes the picture. The viewing device plays it. FastCast tries to connect them directly, with a relay available as a fallback. Finding the other device and carrying the picture are different jobs.</p>
+  <h1>How FastCast connects<br><span>your devices</span></h1>
+  <p class="lede">The sharing PC captures and encodes the screen, then sends it to the viewing device for playback. FastCast tries a direct connection first and can use a relay if that fails. Discovery and pairing exchange the information needed to establish the connection.</p>
 </section>
 <nav class="section-nav wrap" aria-label="How FastCast works"><a href="#route">Compare the routes</a><a href="#setup">How devices connect</a><a href="#data">Who sees what</a><a href="#stack">The technical stack</a><a href="#costs">Traffic & costs</a></nav>
 
 <section class="section wrap" id="route" aria-labelledby="route-title">
-  <div class="section-heading"><div><p class="eyebrow">Follow the picture</p><h2 id="route-title">Same screen.<br>A different way across.</h2></div><p>Choose a route to see what changes. This is an explanation of a one-to-one screen share, not a connection test or a live status display.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">Media routes</p><h2 id="route-title">Direct and relayed<br>connections</h2></div><p>Choose a route to see what changes. This is an explanation of a one-to-one screen share, not a connection test or a live status display.</p></div>
   <div class="connection-explorer">
     <fieldset class="route-choice"><legend>Compare media paths</legend>
       <label><input type="radio" name="media-route" id="route-direct" checked> Direct connection <span>Preferred</span></label>
@@ -28,7 +28,7 @@
         <li class="connection-middle"><svg class="icon" aria-hidden="true"><use href="#i-tower"/></svg><span class="path-label">FastCast media relay</span><h3>Receive & forward</h3><p>When a direct connection cannot be established and both peers obtain a relay allocation, packets travel through this service.</p><strong>The media connection remains encrypted between the devices.</strong></li>
         <li class="connection-device"><svg class="icon" aria-hidden="true"><use href="#i-devices"/></svg><span class="path-label">Windows or Android</span><h3>Decode & display</h3><p>The viewer is still the endpoint that decrypts and plays the stream. The relay sees traffic, not the decoded picture.</p></li>
       </ol>
-      <div class="path-explanation"><h3>An extra hop, with real limits.</h3><p>The relay uses server bandwidth and can add delay. Availability and capacity matter; it is not a guarantee that every network connects. This preview’s relay path also uses UDP, so it does not solve a network that blocks UDP entirely.</p></div>
+      <div class="path-explanation"><h3>Relay capacity and network limits</h3><p>The relay uses server bandwidth and can add delay. Availability and capacity matter; it is not a guarantee that every network connects. This preview’s relay path also uses UDP, so it does not solve a network that blocks UDP entirely.</p></div>
     </div>
     <p class="connection-return"><span aria-hidden="true">↶</span> <strong>Information travels back, too.</strong> Playback feedback and connection control return to the sender. Remote keyboard/mouse input and microphone audio are separate features with their own controls; the forward arrows above follow the screen.</p>
   </div>
@@ -36,9 +36,9 @@
 </section>
 
 <section class="section wrap" id="setup" aria-labelledby="setup-title">
-  <div class="section-heading"><div><p class="eyebrow">Before the first frame</p><h2 id="setup-title">Find. Connect.<br>Then share.</h2></div><p>An address says where a device might be reachable. An invitation carries the information needed to join it. The connection still has to succeed.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">Before the first frame</p><h2 id="setup-title">How a session<br>is established</h2></div><p>An address says where a device might be reachable. An invitation carries the information needed to join it. The connection still has to succeed.</p></div>
   <ol class="connection-steps">
-    <li><span class="path-label">01 / Invitation</span><h3>Choose the other device</h3><p>For the documented viewer-invite flow, the viewing device creates an invitation and the sending PC imports it. Share it privately: it includes connection and session credentials. Screen sharing does not require an account; friends and calls use a device-owned account.</p><a href="get-started.html#invite">Follow the setup steps →</a></li>
+    <li><span class="path-label">01 / Invitation</span><h3>Choose the other device</h3><p>To set up screen sharing, the viewing device creates an invitation and the sending PC imports it. Share it privately: it includes connection and session credentials. Screen sharing does not require an account; friends and calls use a device-owned account.</p><a href="get-started.html#invite">Follow the setup steps →</a></li>
     <li><span class="path-label">02 / Discovery</span><h3>Find possible routes</h3><p>The app gathers local addresses, asks a STUN service what public address it sees, and requests a temporary router port mapping where supported. A pairing service exchanges encrypted connection information between the peers.</p></li>
     <li><span class="path-label">03 / Connection</span><h3>Try the path & verify the peer</h3><p>The peers try to reach each other, including coordinated UDP connection attempts. The invitation’s certificate identity and session proof protect admission. If direct setup fails, an available relay offers another UDP path.</p></li>
     <li><span class="path-label">04 / Media</span><h3>Agree on playback</h3><p>The sender and viewer agree on a compatible video format. Capture, encoding, transmission and playback begin. A route can connect successfully yet perform poorly if the devices or network cannot keep up.</p></li>
@@ -60,7 +60,7 @@
 </section>
 
 <section class="section wrap" id="stack" aria-labelledby="stack-title">
-  <div class="section-heading"><div><p class="eyebrow">For the technically curious</p><h2 id="stack-title">From pixels<br>to packets. And back.</h2></div><p>A native media pipeline, with a different job at each stage. Open a section for the technologies involved and the tradeoffs you can actually notice.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">For the technically curious</p><h2 id="stack-title">Capture, transport,<br>and playback</h2></div><p>The sections below explain the technologies used at each stage and how they affect compatibility, resource use, and playback.</p></div>
   <ol class="media-pipeline" aria-label="Media processing stages"><li><span>01</span><strong>Capture</strong><small>Selected pixels</small></li><li><span>02</span><strong>Compress</strong><small>Video & audio</small></li><li><span>03</span><strong>Encrypt</strong><small>Peer connection</small></li><li><span>04</span><strong>Transport</strong><small>Direct or relay</small></li><li><span>05</span><strong>Play</strong><small>Decode & present</small></li></ol>
   <div class="connection-stack">
     <details class="connection-detail"><summary>Capture & compression <span>Windows Graphics Capture · NVENC · H.264 / HEVC / AV1 · Opus</span></summary><div><p><strong>Capture</strong> obtains frames from the screen or window you select through Windows Graphics Capture. <strong>Encoding</strong> compresses those frames before they leave the PC. NVIDIA NVENC is the hardware encoder path; a Windows CPU H.264 encoder provides a compatibility fallback at the cost of processor work.</p><p>H.264, HEVC and AV1 are video formats, not connection types. The automatic choice depends on both the sender’s available encoder and the receiver’s advertised decoding support. Windows receiving uses H.264; eligible Android hardware can negotiate HEVC or AV1. A newer format is useful only when both ends can run it well.</p><p>Computer audio uses <strong>Opus</strong>, an audio codec suited to interactive sound. Windows audio capture/playback uses WASAPI; Android playback uses AudioTrack. Microphone and remote-input controls remain separate from screen selection.</p><p>Higher resolution, frame rate or bitrate can demand more encoding work, network capacity and decoder capacity. An available codec is not a guarantee of a particular frame rate or visible quality.</p><p class="source-note">Technology references: <a href="https://learn.microsoft.com/en-us/windows/apps/develop/media-authoring-processing/screen-capture">Windows screen capture</a> · <a href="https://opus-codec.org/">Opus</a>.</p></div></details>
@@ -71,7 +71,7 @@
 </section>
 
 <section class="section wrap" id="costs">
-  <div class="section-heading"><div><p class="eyebrow">The resources behind the route</p><h2>Who pays<br>for what.</h2></div><p>The preview download is free. Your devices supply the processing; the chosen route determines whose networks carry the bytes.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">The resources behind the route</p><h2>Device, network,<br>and hosting costs</h2></div><p>The preview download is free. Your devices supply the processing; the chosen route determines whose networks carry the bytes.</p></div>
   <div class="cost-ledger"><div class="ledger-heading"><span>RESOURCE</span><span>WHO PROVIDES IT</span><span>WHAT THAT MEANS</span></div>
     <article><h3>App access</h3><p>FastCast</p><p>The current preview has no purchase or subscription charge.</p></article>
     <article><h3>Encoding & playback</h3><p>Your devices</p><p>CPU/GPU work, battery use and electricity remain real costs on either route.</p></article>
@@ -81,4 +81,4 @@
   </div>
   <div class="connection-example"><p class="path-label">A worked example / one hour</p><h3>12 Mbps of video → 5.40 GB of payload.</h3><p>The sender transfers 5.40 GB and the viewer receives 5.40 GB. On a relayed path, the relay also receives 5.40 GB and sends 5.40 GB: 10.80 GB combined server traffic. These are decimal units and exclude audio, packet overhead and recovery data.</p><a class="text-link" href="bandwidth.html">Change the bitrate and duration →</a></div>
 </section>
-<section class="section wrap split-section" id="outside"><div><h2>A route is only<br>part of the picture.</h2></div><div><p>Use a specific window when practical, review audio and input permissions, and share invitations through a channel you trust. Start with a matching Windows/Android release pair and a LAN test to separate setup problems from internet reachability.</p><p>The diagrams describe supported paths. The <a href="releases.html">release evidence</a> says which paths have actually been observed working.</p><a class="text-link" href="get-started.html">Set up your first session →</a></div></section>
+<section class="section wrap split-section" id="outside"><div><h2>Preparing your<br>first session</h2></div><div><p>Use a specific window when practical, review audio and input permissions, and share invitations through a channel you trust. Start with a matching Windows/Android release pair and a LAN test to separate setup problems from internet reachability.</p><p>The diagrams describe supported paths. The <a href="releases.html">release evidence</a> says which paths have actually been observed working.</p><a class="text-link" href="get-started.html">Set up your first session →</a></div></section>

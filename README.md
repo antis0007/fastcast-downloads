@@ -31,13 +31,16 @@ A portable ZIP with both apps is also published on each release.
 
 ## Website maintenance
 
+Read [the editorial contract](docs/EDITORIAL-CONTRACT.md) before changing public copy. It applies to page bodies, generated descriptions, metadata, and release display text. The wizard dialogue has a separate voice contract.
+
+
 The website is static HTML, CSS, and optional JavaScript. Navigation, direct downloads, screenshot links, and FAQs work without JavaScript. There are no runtime dependencies, analytics, external fonts, billing forms, or browser storage.
 
 - Edit page bodies in `src/pages/` and shared navigation, brand chrome, and metadata in `scripts/build-site.py`.
 - Keep verified public release links in `src/release.json`. Do not point to an unpublished version.
 - Run `npm run build` with Python 3 installed and commit the generated root HTML, sitemap, and robots file alongside their sources. GitHub Pages serves those root files without a server build.
 - Development checks: `npm ci`, `npx playwright install chromium firefox webkit`, `npm run check`, `python scripts/check-links.py`, and `npm test`.
-- Browser checks cover all fifteen pages at four widths, enlarged text, image loading, no-JavaScript access, keyboard image dismissal, help search, Android download selection, calculator interactions, and automated accessibility. They do not qualify native streaming.
+- Browser checks cover all fifteen pages at six widths, enlarged text, image loading, no-JavaScript access, keyboard image dismissal, help search, Android download selection, calculator interactions, and automated accessibility. They do not qualify native streaming.
 
 ## Screenshots and claims
 

@@ -6,7 +6,7 @@
     "published_display":  "September 12, 2026",
     "status":  "Development preview",
     "network":  "Direct peer route, with a FastCast relay fallback",
-    "offer":  "No account to share a screen. Friends and calls use a device-owned account. Preview.",
+    "offer":  "Screen sharing does not require an account. Friends and calls use a device-owned account in this development preview.",
     "application_source":  "Native application source is maintained separately. This repository publishes the website and preview packages only.",
     "platforms":  {
                       "windows":  {
@@ -89,8 +89,8 @@
                                             }
                     },
     "evidence":  {
-                     "headline":  "One LAN run on these files",
-                     "framing":  "Observed in one physical Windows-to-Android LAN run. Evidence, not a universal performance guarantee.",
+                     "headline":  "Recorded Windows-to-Android LAN test",
+                     "framing":  "These results come from one physical Windows-to-Android LAN test and do not establish performance on other devices or networks.",
                      "scope":  "Exact {{RELEASE_LABEL}} Windows host and Android APK",
                      "items":  [
                                    "120.032 seconds over LAN",
@@ -109,29 +109,29 @@
                           {
                               "id":  "available",
                               "label":  "Available",
-                              "meaning":  "In these files. The line says if a physical run is still missing."
+                              "meaning":  "Included in the published package; each feature lists its testing limitations."
                           },
                           {
                               "id":  "preview",
                               "label":  "Preview",
-                              "meaning":  "Code is in the app. No physical proof yet."
+                              "meaning":  "Included in the app, with physical-device validation outstanding."
                           },
                           {
                               "id":  "limited",
                               "label":  "Limited",
-                              "meaning":  "Works only if you already have the missing piece."
+                              "meaning":  "Available with the dependencies or restrictions listed for the feature."
                           },
                           {
                               "id":  "not-yet",
                               "label":  "Not yet",
-                              "meaning":  "Not in these files."
+                              "meaning":  "Not included in the published package."
                           }
                       ],
     "capability_groups":  [
                               {
                                   "id":  "session",
                                   "title":  "Sending and watching",
-                                  "intro":  "In the public Windows and Android builds. If a physical run is still missing, the same line says so.",
+                                  "intro":  "Included screen-sharing features, with device requirements and testing results.",
                                   "items":  [
                                                 {
                                                     "name":  "Screen and window capture",
@@ -161,14 +161,14 @@
                                                 {
                                                     "name":  "Computer audio",
                                                     "status":  "available",
-                                                    "detail":  "The sending PCÃ¢â‚¬â„¢s audio travels with the screen. The receiver decoded computer audio in the LAN run with no reported underruns. Audible output on a phone was not independently confirmed."
+                                                    "detail":  "The sending PC’s audio travels with the screen. The receiver decoded computer audio in the LAN run with no reported underruns. Audible output on a phone was not independently confirmed."
                                                 }
                                             ]
                               },
                               {
                                   "id":  "unproven",
-                                  "title":  "Ships. Unproven.",
-                                  "intro":  "The control is in the UI. Nobody has signed off a physical test. That is Preview, not Available.",
+                                  "title":  "Features awaiting physical validation",
+                                  "intro":  "These features are included, but physical-device tests remain outstanding.",
                                   "items":  [
                                                 {
                                                     "name":  "Private session admission",
@@ -178,12 +178,12 @@
                                                 {
                                                     "name":  "Two-way microphone voice",
                                                     "status":  "preview",
-                                                    "detail":  "Builds and passes its checks. Physical round-trip and echo testing have not been done."
+                                                    "detail":  "Automated checks pass; physical microphone round-trip and echo tests remain outstanding."
                                                 },
                                                 {
                                                     "name":  "Remote control from Android",
                                                     "status":  "preview",
-                                                    "detail":  "Builds and passes its checks. Physical input, and behaviour inside native games, are unproven."
+                                                    "detail":  "Automated checks pass; physical remote input and behaviour inside native games remain unverified."
                                                 },
                                                 {
                                                     "name":  "Cursor appearance and effects",
@@ -193,7 +193,7 @@
                                                 {
                                                     "name":  "Several viewers on one share",
                                                     "status":  "preview",
-                                                    "detail":  "One share can serve up to eight viewers from a single capture, each invited with its own pinned link and its own identity. The fan-out passes loopback tests; no two machines have exercised it."
+                                                    "detail":  "One share can serve up to eight viewers from a single capture, each invited with its own pinned link and its own identity. Multi-viewer sharing passes loopback tests; testing across separate physical devices remains outstanding."
                                                 },
                                                 {
                                                     "name":  "Sharing a screen during a call",
@@ -204,8 +204,8 @@
                               },
                               {
                                   "id":  "conditional",
-                                  "title":  "Needs something you already run",
-                                  "intro":  "We do not sell you a cloud for this. Off-LAN viewing needs a route you already have. Contacts stay on the PC.",
+                                  "title":  "Features with additional limitations",
+                                  "intro":  "Internet playback remains unqualified, and accounts and contacts have local-storage limitations.",
                                   "items":  [
                                                 {
                                                     "name":  "Viewing outside your local network",
@@ -222,7 +222,7 @@
                               {
                                   "id":  "absent",
                                   "title":  "Not in this download",
-                                  "intro":  "Do not look for these in {{RELEASE_LABEL}}.",
+                                  "intro":  "The following features are not included in {{RELEASE_LABEL}}.",
                                   "items":  [
                                                 {
                                                     "name":  "Automatic update checks",
@@ -232,7 +232,7 @@
                                                 {
                                                     "name":  "Linux desktop",
                                                     "status":  "not-yet",
-                                                    "detail":  "Not in these public files. Application source has a Linux viewer (OpenH264, optional VA-API). Linux send is not a product."
+                                                    "detail":  "The application source includes a Linux viewer using OpenH264 with optional VA-API, but no Linux package is published here. Sending a screen from Linux is unavailable."
                                                 },
                                                 {
                                                     "name":  "macOS, iPhone, and iPad",

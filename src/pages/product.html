@@ -1,13 +1,13 @@
-<section class="page-hero wrap"><h1>Share a Windows screen<br><span>to a PC or Android device.</span></h1><p class="lede">Pick a whole screen or a single window, then send it to a second Windows PC or an Android phone. Windows does the sending and can also watch; Android watches.</p><div class="actions"><a class="button primary" href="downloads.html">Download ↓</a><a class="text-link" href="get-started.html">Setup →</a></div></section>
-<nav class="section-nav wrap" aria-label="On this page"><a href="#screenshots">Interface</a><a href="#controls">Controls</a><a href="#permissions">Permissions</a><a href="#capabilities">What's in, what's not</a></nav>
-<section class="section wrap" id="screenshots"><div class="section-heading"><div><h2>The screen you send from.</h2></div><p>An unchanged capture of the Windows app from 7 Sep 2026. It shows the real interface; small details can differ from the {{RELEASE_LABEL}} package.</p></div>
+<section class="page-hero wrap"><h1>Screen sharing for<br><span>Windows and Android</span></h1><p class="lede">Pick a whole screen or a single window, then send it to a second Windows PC or an Android phone. Windows does the sending and can also watch; Android watches.</p><div class="actions"><a class="button primary" href="downloads.html">Download ↓</a><a class="text-link" href="get-started.html">Setup →</a></div></section>
+<nav class="section-nav wrap" aria-label="On this page"><a href="#screenshots">Interface</a><a href="#controls">Controls</a><a href="#permissions">Permissions</a><a href="#capabilities">Features and limitations</a></nav>
+<section class="section wrap" id="screenshots"><div class="section-heading"><div><h2>Windows Share interface</h2></div><p>An unchanged capture of the Windows app from 7 Sep 2026. It shows the real interface; small details can differ from the {{RELEASE_LABEL}} package.</p></div>
 {{SCREENSHOT_WIDE}}
 </section>
-<section class="section wrap" id="controls"><div class="section-heading"><div><h2>Look before you share.</h2></div></div><div class="use-cases"><article><span class="step-number">01</span><h3>Pick the source</h3><p>Whole screen or one window. Whole screen includes your notifications.</p></article><article><span class="step-number">02</span><h3>Invite from the viewer</h3><p>The watching device writes the invite. The sending PC imports it. Do not paste that string in a public issue.</p></article><article><span class="step-number">03</span><h3>Sound and control are separate</h3><p>Three switches, not one. Leave the ones you do not need off. <a href="#permissions">What each one opens</a>.</p></article></div></section>
+<section class="section wrap" id="controls"><div class="section-heading"><div><h2>Set up a screen share</h2></div></div><div class="use-cases"><article><span class="step-number">01</span><h3>Pick the source</h3><p>Choose an entire screen or a single window. Sharing an entire screen can expose notifications and other open applications.</p></article><article><span class="step-number">02</span><h3>Invite from the viewer</h3><p>Create the invitation on the watching device and send it privately to the sharing PC for import.</p></article><article><span class="step-number">03</span><h3>Sound and control are separate</h3><p>Computer audio, microphone, and remote input each have a separate switch. <a href="#permissions">Read about the permissions</a>.</p></article></div></section>
 <section class="section wrap" id="permissions">
 <div class="section-heading">
-<div><h2>Sharing a screen is not<br><span>blanket permission.</span></h2></div>
-<p>Sound, your voice, and control of the machine are three separate decisions, each made before the session starts. One of the three has a recorded LAN pass behind it; the other two are in the build but untested on hardware.</p>
+<div><h2>Audio and remote-input<br><span>permissions</span></h2></div>
+<p>Choose whether to share computer audio, enable your microphone, or allow mouse and keyboard control. Computer audio has a recorded LAN test; microphone and remote input still need physical-device testing.</p>
 </div>
 <div class="use-cases permission-cards">
 <article>
@@ -16,25 +16,25 @@
 </article>
 <article>
 <h3><svg class="icon icon-lg" aria-hidden="true"><use href="#i-mic"/></svg>Microphone voice <span class="status status-preview"><span class="status-word">Preview</span></span></h3>
-<p>Your own voice, two ways. Sharing a screen never needs it. The code builds and passes its checks; nobody has done a physical round-trip or echo test.</p>
+<p>Microphone voice is optional and supports two-way communication. Automated checks pass, but physical round-trip and echo testing remain outstanding.</p>
 </article>
 <article>
 <h3><svg class="icon icon-lg" aria-hidden="true"><use href="#i-input"/></svg>Remote input <span class="status status-preview"><span class="status-word">Preview</span></span></h3>
-<p>Permission for the watching device to drive the mouse and keyboard. That is no longer watching. Physical input, and behaviour inside native games, are unproven.</p>
+<p>Allow the watching device to control the mouse and keyboard. Physical input and behaviour inside native games remain unverified.</p>
 </article>
 </div>
-<p class="capability-after">Hardware and Windows permissions still apply on top of these switches. These statuses match the <a href="#capabilities">ledger below</a>, not a later git checkout.</p>
+<p class="capability-after">Hardware and Windows permissions still apply on top of these switches. See the <a href="#capabilities">capability table below</a> for the published release’s status.</p>
 </section>
-<section class="feature-band wrap"><div><h2>Smaller window.</h2><p>Open the image if you need to read the controls.</p></div><div>{{SCREENSHOT_COMPACT}}</div></section>
+<section class="feature-band wrap"><div><h2>Compact Windows interface</h2><p>Open the image if you need to read the controls.</p></div><div>{{SCREENSHOT_COMPACT}}</div></section>
 <section class="light-panel" id="capabilities">
 <span id="scope" hidden></span>
 <div class="wrap">
 <div class="section-heading">
 <div>
 <p class="eyebrow">{{RELEASE_LABEL}}</p>
-<h2>What's in, what's not.</h2>
+<h2>Features and limitations</h2>
 </div>
-<p>This is the public zip, not a later git checkout. <a href="releases.html">Release notes</a>.</p>
+<p>These statuses describe the published package. <a href="releases.html">Release notes</a>.</p>
 </div>
 {{CAPABILITY_LEDGER}}
 <aside class="statement" aria-labelledby="evidence-title">
@@ -46,4 +46,4 @@
 <p class="capability-after">Direct connections are preferred, with a FastCast relay fallback. Multi-viewer sharing is experimental and has loopback test coverage; physical multi-device sharing remains unqualified. Unrelated-network playback remains unqualified. <a href="how-it-works.html">Explore the connection design</a>. <a href="releases.html">Release notes</a> cover what each tag ships, and <a href="community.html">the issue tracker</a> is where gaps get reported.</p>
 </div>
 </section>
-<section class="closing-cta wrap"><div><h2>Get the files.</h2><p>Windows, Android, and the portable bundle. No account, no subscription.</p></div><a class="button primary" href="downloads.html">Download ↓</a></section>
+<section class="closing-cta wrap"><div><h2>Download FastCast</h2><p>Choose the Windows installer, Android viewer, or portable bundle.</p></div><a class="button primary" href="downloads.html">Download ↓</a></section>
