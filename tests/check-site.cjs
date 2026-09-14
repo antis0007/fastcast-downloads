@@ -69,6 +69,9 @@ async function checkLayouts(name, engine) {
           assert.ok(seal.x >= 0 && seal.x + seal.width <= width, 'the full magic seal fits the viewport');
           assert.equal(await page.locator('.hero-visual').evaluate(el => getComputedStyle(el).overflowX), 'visible', 'the aura is not cut at the hero column edges');
           assert.ok(capture.width > tour.width * .8, 'the app capture has the full content width');
+          const table = await page.locator('.ledger-table').boundingBox();
+          const caption = await page.locator('.ledger-table caption').boundingBox();
+          assert.ok(caption.width >= table.width * .9, 'capability caption uses the table width instead of wrapping word by word');
           for (const state of ['available', 'preview']) {
             const status = page.locator(`.light-panel .status-${state}`).first();
             assert.equal(await status.evaluate(el => getComputedStyle(el).backgroundColor), 'rgba(0, 0, 0, 0)', `${state} status has no box behind its token`);
@@ -158,6 +161,108 @@ async function checkConnectionExplanation(page) {
   }
   assert.equal(await page.locator('.connection-detail[open]').count(), 5);
   await assertNoOverflow(page, 'expanded connection explanation');
+}
+
+async function checkWizardInteractions(name, engine) {
+  const browser = await engine.launch();
+  try {
+    const context = await browser.newContext({ viewport: { width: 390, height: 900 }, reducedMotion: 'reduce' });
+    const page = await context.newPage();
+    await page.goto(base);
+    const body = page.locator('.cast-body');
+    const bubble = page.locator('.wizard-voice');
+    const tip = page.getByRole('button', { name: 'Ask for a tip', exact: true });
+    const pools = await page.locator('#wizard-voice-lines').evaluate(el => JSON.parse(el.textContent));
+    await body.focus();
+    await page.keyboard.press('Enter');
+    assert.equal(await bubble.textContent(), pools.first[0]);
+    await page.keyboard.press('Enter');
+    assert.equal(await bubble.textContent(), pools.first[0], 'double activation leaves the greeting readable');
+
+    const chat = [];
+    for (let i = 0; i <= pools.idle.length; i += 1) {
+      await page.waitForTimeout(1150);
+      await page.keyboard.press('Enter');
+      chat.push(await bubble.textContent());
+    }
+    assert.equal(new Set(chat.slice(0, -1)).size, pools.idle.length, 'conversation visits the whole pool');
+    assert.notEqual(chat.at(-1), chat.at(-2), 'new chat cycle does not immediately repeat');
+    await page.waitForTimeout(700);
+    await page.keyboard.press('Enter');
+    assert.equal(await bubble.getAttribute('data-pool'), 'poke');
+    await page.waitForTimeout(700);
+    const tips = [];
+    for (let i = 0; i <= pools.rightclick.length; i += 1) {
+      if (i) await page.waitForTimeout(700);
+      await body.click({ button: 'right' });
+      assert.equal(await bubble.getAttribute('data-pool'), 'rightclick');
+      tips.push(await bubble.textContent());
+      await assertNoOverflow(page, `${name} wizard tip`);
+    }
+    assert.equal(new Set(tips.slice(0, -1)).size, pools.rightclick.length, 'right clicks visit every tip instead of sticking');
+    assert.notEqual(tips.at(-1), tips.at(-2), 'tip shuffle boundary does not repeat');
+    assert.equal(await page.locator('.wizard-announcement').textContent(), tips.at(-1));
+    assert.equal(await body.evaluate(el => getComputedStyle(el).animationName), 'none', 'tips respect reduced motion');
+    await page.keyboard.press('Escape');
+    assert.ok(await bubble.isHidden());
+    await page.waitForTimeout(700);
+    await tip.focus();
+    await page.keyboard.press('Space');
+    assert.equal(await bubble.getAttribute('data-pool'), 'rightclick', 'keyboard has the same tips');
+    assert.ok(await bubble.isVisible());
+    const replyBox = await bubble.boundingBox();
+    const headerBox = await page.locator('.site-header').boundingBox();
+    assert.ok(replyBox.y >= headerBox.y + headerBox.height, 'sticky header does not cover the reply');
+    await page.screenshot({ path: path.join(output, `wizard-tip-${name}-390.png`) });
+    const axe = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    assert.deepEqual(axe.violations.map(v => v.id), [], 'visible wizard tip accessibility');
+    await page.locator('h1').click();
+    assert.ok(await bubble.isHidden(), 'clicking elsewhere dismisses the remark');
+    assert.equal(await body.evaluate(el => el.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, cancelable: true, shiftKey: true }))), true, 'shift context menu remains native');
+    assert.equal(await page.locator('h1').evaluate(el => el.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, cancelable: true }))), true, 'other context menus remain native');
+    for (const width of [320, 1440]) {
+      await page.setViewportSize({ width, height: 1000 });
+      await page.evaluate(() => { document.documentElement.style.fontSize = '130%'; });
+      for (let i = 0; i < pools.rightclick.length; i += 1) {
+        await page.waitForTimeout(700);
+        await tip.click();
+        await assertNoOverflow(page, `${name} tip at ${width} with enlarged text`);
+        const reply = await bubble.boundingBox();
+        const header = await page.locator('.site-header').boundingBox();
+        assert.ok(reply.y >= header.y + header.height, 'full reply clears sticky header');
+        assert.ok(reply.y + reply.height <= 1000, 'full reply stays in viewport');
+      }
+      await page.screenshot({ path: path.join(output, `wizard-tip-${name}-${width}.png`) });
+    }
+    await context.close();
+
+    const touch = await browser.newContext({ viewport: { width: 390, height: 900 }, hasTouch: true, reducedMotion: 'reduce' });
+    const touchPage = await touch.newPage();
+    await touchPage.goto(base);
+    await touchPage.getByRole('button', { name: 'Ask for a tip', exact: true }).tap();
+    assert.equal(await touchPage.locator('.wizard-voice').getAttribute('data-pool'), 'rightclick');
+    assert.ok(await touchPage.locator('.wizard-mouse-hint').isHidden());
+    await touch.close();
+
+    const fade = await browser.newContext({ viewport: { width: 390, height: 900 } });
+    const fadePage = await fade.newPage();
+    await fadePage.clock.install();
+    await fadePage.goto(base);
+    const fadeBubble = fadePage.locator('.wizard-voice');
+    await fadePage.getByRole('button', { name: 'Ask for a tip', exact: true }).click();
+    await fadePage.clock.fastForward(7999);
+    assert.ok(await fadeBubble.isVisible(), 'reply remains readable for the full dwell period');
+    await fadePage.clock.fastForward(1);
+    assert.ok(await fadeBubble.evaluate(el => el.classList.contains('is-fading')), 'reply fades after the dwell period');
+    assert.equal(await fadeBubble.evaluate(el => getComputedStyle(el).animationName), 'wizard-fade');
+    await fadePage.clock.fastForward(260);
+    assert.ok(await fadeBubble.isHidden(), 'reply is hidden after its fade');
+    assert.equal(await fadePage.locator('.wizard-announcement').textContent(), '', 'hidden reply is cleared from the live region');
+    await fade.close();
+    console.log(`${name}: wizard conversation, tip rotation, rapid clicks, keyboard, touch, timed fade, dismissal and accessibility passed`);
+  } finally {
+    await browser.close();
+  }
 }
 
 async function checkJourneysAndAccessibility() {
@@ -313,7 +418,10 @@ async function checkJourneysAndAccessibility() {
     const selected = process.argv[2];
     if (selected) assert.ok(selected in engines, 'Engine must be chromium, firefox or webkit');
     for (const [name, engine] of Object.entries(engines)) {
-      if (!selected || selected === name) await checkLayouts(name, engine);
+      if (!selected || selected === name) {
+        await checkLayouts(name, engine);
+        await checkWizardInteractions(name, engine);
+      }
     }
     await checkJourneysAndAccessibility();
   } finally {

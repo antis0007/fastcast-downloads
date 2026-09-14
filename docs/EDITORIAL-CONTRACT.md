@@ -1,5 +1,11 @@
 # FastCast public copy
 
+**Current mascot direction:** [WIZARD-INTERACTIONS.md](WIZARD-INTERACTIONS.md)
+records the owner's subsequent request for a welcoming official mascot with
+understandable wit. It replaces the earlier wizard voice and pool with 20 lines
+for conversation, practical tips and gesture feedback. The public-copy rules
+below still apply; the following curation counts are historical snapshots.
+
 **Subsequent wizard curation:** The owner separately authorized cutting the
 weakest wizard dialogue, then demanded a harsher review of every remaining line.
 The pool is now 21 lines; see [the full review](WIZARD-FULL-REVIEW-2026-09-13.md)

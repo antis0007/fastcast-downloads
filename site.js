@@ -73,6 +73,9 @@ const figure = scene?.querySelector('.cast-figure');
 const wizard = scene?.querySelector('.cast-body');
 const bubble = scene?.querySelector('.wizard-voice');
 const lineSource = document.querySelector('#wizard-voice-lines');
+const wizardControls = document.querySelector('.wizard-controls');
+const wizardTip = document.querySelector('.wizard-tip');
+const wizardAnnouncement = document.querySelector('.wizard-announcement');
 const canFollow = window.matchMedia('(hover: hover) and (pointer: fine)').matches
   && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -114,9 +117,8 @@ if (figure && canFollow) {
   window.addEventListener('scroll', invalidate, { passive: true });
 }
 
-/* The wizard's voice. He has a pool of lines per situation and works through
-   each pool without repeating himself, the way a rotating message of the day
-   does, so clicking again is always worth doing. */
+/* Each situation has a shuffle bag. Remember the last draw as well, so refilling
+   a bag cannot repeat the line the visitor has just read. */
 const wizardVoice = (() => {
   if (!figure || !wizard || !bubble || !lineSource) return null;
   let lines;
@@ -126,6 +128,12 @@ const wizardVoice = (() => {
     return null;
   }
   const order = {};
+  const previous = {};
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const VISIBLE_MS = 8000;
+  const FADE_MS = 260;
+  let dismissTimer = 0;
+  let hideTimer = 0;
 
   const next = pool => {
     const bag = order[pool] || (order[pool] = []);
@@ -136,34 +144,72 @@ const wizardVoice = (() => {
         const j = Math.floor(Math.random() * (i + 1));
         [bag[i], bag[j]] = [bag[j], bag[i]];
       }
+      if (bag.length > 1 && bag[bag.length - 1] === previous[pool]) {
+        [bag[0], bag[bag.length - 1]] = [bag[bag.length - 1], bag[0]];
+      }
     }
-    return lines[pool][bag.pop()];
+    previous[pool] = bag.pop();
+    return lines[pool][previous[pool]];
   };
 
-  // Repeated gestures advance through an ordered pool and stay on its last line.
-  const say = (pool, mood, step) => {
+  const dismiss = () => {
+    clearTimeout(dismissTimer);
+    clearTimeout(hideTimer);
+    bubble.classList.remove('is-fading');
+    bubble.hidden = true;
+    if (wizardAnnouncement) wizardAnnouncement.textContent = '';
+  };
+
+  const scheduleDismiss = () => {
+    clearTimeout(dismissTimer);
+    clearTimeout(hideTimer);
+    dismissTimer = setTimeout(() => {
+      if (reducedMotion) {
+        dismiss();
+        return;
+      }
+      bubble.classList.add('is-fading');
+      hideTimer = setTimeout(dismiss, FADE_MS);
+    }, VISIBLE_MS);
+  };
+
+  const say = (pool, mood) => {
     const available = lines[pool];
     if (!available?.length) return false;
-    bubble.textContent = Number.isInteger(step)
-      ? available[Math.min(step, available.length - 1)]
-      : next(pool);
+    clearTimeout(dismissTimer);
+    clearTimeout(hideTimer);
+    bubble.classList.remove('is-fading');
+    bubble.textContent = next(pool);
     // Which pool a line came from is otherwise invisible, and it is the only way
     // to tell a click line from a drag line once the text is on screen.
     bubble.dataset.pool = pool;
     bubble.hidden = false;
+    if (wizardAnnouncement) wizardAnnouncement.textContent = bubble.textContent;
     // Restarting the animation needs the class off for a frame.
-    wizard.classList.remove('is-pleased', 'is-flinched');
+    wizard.classList.remove('is-pleased', 'is-thoughtful');
     void wizard.offsetWidth;
     wizard.classList.add(mood);
+    // Focusing the artwork or tip button can leave the bubble behind the sticky
+    // header. Reveal the text only when necessary; never scroll during a drag.
+    if (!figure.classList.contains('is-dragging')) {
+      const headerBottom = document.querySelector('.site-header')?.getBoundingClientRect().bottom || 0;
+      const box = bubble.getBoundingClientRect();
+      if (box.top < headerBottom + 12) {
+        window.scrollBy({ top: box.top - headerBottom - 12, behavior: 'instant' });
+      } else if (box.bottom > window.innerHeight - 12) {
+        window.scrollBy({ top: box.bottom - window.innerHeight + 12, behavior: 'instant' });
+      }
+    }
+    scheduleDismiss();
     return true;
   };
 
   // The bounce is a one-shot: clear it so the next click can play it again.
   wizard.addEventListener('animationend', () => {
-    wizard.classList.remove('is-pleased', 'is-flinched');
+    wizard.classList.remove('is-pleased', 'is-thoughtful');
   });
 
-  return { say };
+  return { say, dismiss };
 })();
 
 if (wizardVoice) {
@@ -192,8 +238,14 @@ if (wizardVoice) {
   // -Infinity, not 0: on a fast page the first click can land within the poke
   // window of the clock's own zero and be miscounted as a second click.
   let lastPoke = -Infinity;
-  let rightclicks = 0;
-  let lastRightClick = -Infinity;
+  let lastActivation = -Infinity;
+  // Accidental double-clicks do not burn through the pool or flash new text.
+  const acceptActivation = () => {
+    const now = performance.now();
+    if (now - lastActivation < 650) return false;
+    lastActivation = now;
+    return true;
+  };
 
   const paint = () => {
     queued = false;
@@ -213,8 +265,7 @@ if (wizardVoice) {
   wizard.addEventListener('dragstart', event => event.preventDefault());
 
   wizard.addEventListener('pointerdown', event => {
-    // Left button only: the right button hurts him, and the middle one is not
-    // ours to take.
+    // Only a primary mouse/pen press starts a drag. Secondary clicks ask for tips.
     if (!canFollow || event.button !== 0) return;
     dragging = true;
     moved = false;
@@ -249,10 +300,10 @@ if (wizardVoice) {
       clearTimeout(holdTimer);
       wizardVoice.say('drag', 'is-pleased');
     }
-    // Carried far enough that he stops finding it funny. Once per drag.
+    // A gentle request to return home, once per drag.
     if (moved && !complained && travel > TOO_FAR) {
       complained = true;
-      wizardVoice.say('far', 'is-flinched');
+      wizardVoice.say('far', 'is-thoughtful');
     }
     schedule();
   });
@@ -261,6 +312,7 @@ if (wizardVoice) {
     if (!dragging) return;
     dragging = false;
     clearTimeout(holdTimer);
+    if (event.type !== 'pointerup') { moved = false; said = false; }
     // The flag lives on the figure, which is what the stylesheet reads.
     figure.classList.remove('is-dragging');
     if (wizard.hasPointerCapture?.(event.pointerId)) wizard.releasePointerCapture(event.pointerId);
@@ -271,8 +323,9 @@ if (wizardVoice) {
   };
   wizard.addEventListener('pointerup', release);
   wizard.addEventListener('pointercancel', release);
+  wizard.addEventListener('lostpointercapture', release);
 
-  // Four regions of the artwork, measured off a render of it as fractions of his
+  // Three regions of the artwork, measured off a render of it as fractions of his
   // own box -- guessed coordinates put the hat on empty background and the beard
   // on his face, which is why they are checked against a picture and not by eye.
   // Nothing marks any of them as targets: they are found by being curious rather
@@ -299,26 +352,40 @@ if (wizardVoice) {
     if (moved) { moved = false; return; }
     // Holding on and letting go is not a click either; he already said his piece.
     if (said) { said = false; return; }
+    if (!acceptActivation()) return;
+    if (!greeted) {
+      greeted = true;
+      lastPoke = performance.now();
+      wizardVoice.say('first', 'is-pleased');
+      return;
+    }
     const region = regionAt(event);
     // A region whose dialogue was cut still behaves like an ordinary click.
     if (region && wizardVoice.say(region, 'is-pleased')) return;
     const now = performance.now();
     pokes = now - lastPoke < POKE_WINDOW ? pokes + 1 : 0;
     lastPoke = now;
-    // 'first' is played once and never again: a slow click resets the counter,
-    // and without this flag the greeting would come back every time.
-    if (pokes > 0) wizardVoice.say('poke', 'is-pleased', pokes - 1);
-    else if (!greeted) { greeted = true; wizardVoice.say('first', 'is-pleased'); }
+    // A pause returns to conversation; continued pokes get a mild reaction.
+    if (pokes > 0) wizardVoice.say('poke', 'is-pleased');
     else wizardVoice.say('idle', 'is-pleased');
   });
 
-  // Right-click hurts. Suppressing the browser menu only over the wizard leaves
-  // the context menu everywhere else on the page alone.
+  const offerTip = () => {
+    if (acceptActivation()) wizardVoice.say('rightclick', 'is-thoughtful');
+  };
+  // Shift-right-click retains the browser menu. The visible button offers the
+  // same tips on touch screens and without requiring a keyboard shortcut.
   wizard.addEventListener('contextmenu', event => {
+    if (event.shiftKey) return;
     event.preventDefault();
-    const now = performance.now();
-    rightclicks = now - lastRightClick < POKE_WINDOW * 2 ? rightclicks + 1 : 0;
-    lastRightClick = now;
-    wizardVoice.say('rightclick', 'is-flinched', rightclicks);
+    offerTip();
+  });
+  wizardTip?.addEventListener('click', offerTip);
+  if (wizardControls) wizardControls.hidden = false;
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') wizardVoice.dismiss();
+  });
+  document.addEventListener('pointerdown', event => {
+    if (!figure.contains(event.target) && !wizardControls?.contains(event.target)) wizardVoice.dismiss();
   });
 }

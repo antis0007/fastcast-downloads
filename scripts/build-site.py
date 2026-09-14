@@ -490,131 +490,60 @@ def flame_field(count=52):
     return f'<div class="flame-field" aria-hidden="true">{"".join(parts)}</div>'
 
 
-# HE IS POWERFUL, KNOWLEDGEABLE, PETTY, AND ENTIRELY SERIOUS ABOUT UNREASONABLE
-# THINGS. His spells usually work. The comedy is what he chooses to do with them,
-# what other magical beings do in response, or what he regards as an acceptable
-# consequence. He does not accidentally swallow the dangerous crystal: he knows
-# exactly what it does and has found an objectionable use for it.
-#
-# So an ending has to add an action, a consequence, a revelation or a reversal.
-# An ending that announces the preceding material was funny is deleted, and so is
-# one that explains it. Do not mistake brevity for timing: "I pointed at the
-# ladder" stays, "which was faster and funnier" goes, and a second punchline is
-# not an explanation.
-#
-# Each randomly selected line supplies its own setup. An implied past is allowed
-# -- "They took the title. They let me keep the hat." stands alone -- but a line
-# must not require the reader to have met another line first.
-#
-# Give him particular grievances and particular spells. Avoid interchangeable
-# boasts, generic threats, phonetic technology jokes ("Ser-Vur", "Day-Tuh" spell
-# out an allegory the reader already understood), and repeated explanations that
-# wizardry is really paperwork: a rota, an audit, a committee, insurance and
-# underpayment in one rotation is one office joke wearing six robes.
-#
-# THE WORLD IS SMALL. The orb is the screen at each end and a pane of glass; a
-# Tower is the server in the middle; the Council is the licensing body that
-# revoked his title while he kept the hat; the visitor is a client who came about
-# the scrying, which is the one thing he sells, badly. Everything invented has to
-# be the product or the man, because a term that teaches the visitor nothing is
-# just spelling.
-#
-# HE IS A MENACE, AND HE IS ENJOYING THIS. The mischief is aimed at the visitor,
-# who is poking him and deserves it, and it costs them nothing: he winds them up,
-# he never blocks them, and there is no malice in it. Faces and slang are his own,
-# in moderation, and a straight face afterwards is what carries them. Preserve the
-# established age, revoked title, abilities and circumstances; new creatures,
-# possessions and incidents are proposed character details, not established facts.
-#
-# Register notes, because these are easy to get wrong:
-#
-#   * One or two lines each. This is a speech bubble, not a monologue.
-#   * He talks, so he contracts. "It's", "I've", "didn't", "you're", "don't",
-#     "there's", "won't", "can't", "he's", and "the devils'll" if that is how the
-#     sentence runs. A pool written without them reads like a memo: "I do not keep
-#     a copy. There is nowhere in an orb to put one." was one of these. The
-#     exception is a short line whose weight comes from the full form -- "I will
-#     know." is a threat, and threats sound better unclenched.
-#   * Short. Nothing explains the line it is in: if the last clause tells the
-#     reader why the rest was funny -- "which is faster and funnier", "That is why
-#     I do not let him out" -- the clause is the problem. A short trailing beat
-#     that *is* the joke ("...I have seen it. It was a Tuesday.") is the house
-#     style and stays; a trailing clause that only annotates the line does not.
-#   * He does not refer to earlier lines, and the audience is not following a
-#     series. The newt, the shelf and the goose each had three entries; the
-#     second and third only worked if you had read the first, and most visitors
-#     will not have.
-#   * Multiple lines may share a subject; they may not share an *engine*. Three
-#     batches were lost to writing one joke with new nouns in it.
-#   * He is being clicked. Every line has to survive arriving *after* a poke, so
-#     greetings live in 'first' (played once) and there are no farewells -- a
-#     goodbye cannot follow a click that just happened.
-#   * No aphorisms. A wizard who talks in fortune cookies is a fortune cookie.
-#     If a line would fit on a poster, it is not a joke.
-#   * Faces (":3", ":(", "\U0001f480") and modern slang ("Skill issue") are his own, delivered
-#     without comment, exactly like the blush. A line that explains the face is
-#     worse than no face. One in ten lines, not one in three: they stop being
-#     funny the moment they become his default, and he is six hundred years old,
-#     so the slang has to be the only modern thing in the sentence.
-#   * The jokes are about *the industry*, never about invented product facts.
-#     Anything he says about FastCast has to match release.json, and anything he
-#     says about anyone else has to be obviously a wizard's opinion rather than
-#     a claim of fact.
-#   * The Torment Nexus is Alex Blechman's 2021 joke: a cautionary tale that gets
-#     built anyway, by someone who read it as a blueprint. He references the joke,
-#     not a company.
-#   * He does not know modern technical words. He calls a server a Ser-Vur, so a
-#     line that puts "router" in his mouth is out of character.
-#
-# 'idle' is drawn at random, without repeats until the pool is exhausted. Every
-# other pool is short and some are ordered, because they answer a specific
-# gesture: poke is an escalation as you keep clicking, rightclick as you keep
-# right-clicking, and the rest are one-shots for a gesture he notices.
-# September 13: all 75 surviving lines were reviewed again; 21 remain. See
-# docs/WIZARD-FULL-REVIEW-2026-09-13.md before restoring intentional cuts.
-# Empty regional pools use the ordinary click response; do not fill them with
-# weaker lines merely to populate every interaction.
+# Official mascot voice: a welcoming, mildly vain wizard with practical wit.
+# Left-click is conversation; right-click offers a useful screen-sharing tip.
+# The visitor is a welcome guest, not a target for threats or humiliation.
+# Prefer recognisable behaviour and complete thoughts over arbitrary magical
+# incidents, withheld consequences, slogans, and explanations of the joke.
+# He can understand the product's vocabulary. Do not invent product guarantees
+# or pretend he can see the visitor's screen, hear them, or control their device.
+# A little wizardposting is welcome: recognisable situations, occasional slang,
+# and an intentional casting-screens callback. Do not bulk-import captions or
+# make every line a meme. This is the owner's later refinement of the voice.
+# Gesture feedback may simply acknowledge the gesture; it need not be a joke.
+# Pools rotate without immediate repeats. Empty artwork regions use normal chat.
+# This replaces the earlier menace/Ser-Vur direction at the owner's request.
+# See docs/WIZARD-INTERACTIONS.md; historical cuts remain archived, not restored.
 WIZARD_LINES = {
     'first': [
-        "Yes. Yes. I heard you the first time.",
+        "Hello. I was hoping someone would interrupt the posing.",
     ],
     'idle': [
         "I use Mage Hand to turn my rival's pages before he's finished.",
-        "The Council revoked my title. I revoked their stairs.",
-        "My medal for restraint was found three miles from the ceremony.",
         "I summoned a demon to hold my ladder. It offered me a kingdom. I pointed at the ladder.",
-        "My rival demanded a duel at dawn. I have postponed the sun.",
-        "The Tower bills per head. My hydra is furious.",
-        "The Council asked me not to end meetings with Fireball. I now open with it.",
-        "My reflection is a minute ahead. I make him taste the soup.",
-        "I levitate the cheese. The mice have built a trebuchet.",
-        "I asked an ancient oak for wisdom. It wants a particular squirrel dead.",
-        "I mispronounce forbidden names until somebody corrects me.",
+        "I told my apprentice to touch grass. He brought a sample back for identification.",
+        "My apprentice borrowed the orb for 'research'. He watched a man build a shed for six hours.",
+        "I showed my apprentice his future. He asked to reload an earlier save.",
+        "We love casting screens.",
     ],
     'poke': [
-        "Poke me once more and I shall explain my knees to you. At length.",
-        "Keep poking. I know a spell that makes every sleeve damp.",
+        "You needn't knock between every sentence.",
+        "You can stop checking. I haven't despawned.",
     ],
     'hold': [
         "Are you... holding my hand?",
-        "*sighs* ...All right. Five more minutes.",
+        "All right, we can ponder together.",
     ],
     'far': [
-        "Put me back. PUT ME BACK.",
+        "A little closer to the circle, please. I was just getting comfortable.",
     ],
     'orb': [
     ],
     'rightclick': [
-        "I see you've opened a menu. So have I. Mine has species.",
-        "No, you may not 'Save wizard as...'. Find your own.",
+        "Check which window you're sharing before you begin.",
+        "Point to what you're explaining. 'Over there' covers rather a lot of screen.",
+        "Before explaining the problem, check that your friend can see it.",
+        "When something goes wrong, say what you clicked. 'I angered it' leaves quite a lot to investigate.",
+        "Give your friend a moment to read before you change windows. They're watching, not speedrunning.",
+        "Ask whether your friend wants help or an audience. 'Behold' isn't always a request for backseating.",
     ],
     'hat': [
     ],
     'beard': [
     ],
     'drag': [
-        "Whoa—! Put me down, I am *working*.",
-        "Mind the hat. MIND THE HAT.",
+        "Oh, we're moving. Mind the hat, please.",
+        "I would have walked, but you've already got me.",
     ],
 }
 

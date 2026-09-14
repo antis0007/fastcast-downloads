@@ -606,24 +606,47 @@ p { text-wrap: pretty; }
   -webkit-user-drag: none;
   user-select: none;
 }
-/* The bounce and the flinch. On the inner element so they compose with the
+/* The bounce and the thoughtful tilt. On the inner element so they compose with the
    figure's own transform instead of overwriting it, and mostly vertical: he has
    very little sideways room on a phone and a wide pop pushes the page. */
 .cast-body.is-pleased { animation: wizard-pleased .52s cubic-bezier(.3, 1.5, .5, 1); }
-.cast-body.is-flinched { animation: wizard-flinch .42s cubic-bezier(.36, .07, .19, .97); }
+.cast-body.is-thoughtful { animation: wizard-thoughtful .6s ease-in-out; }
+@keyframes wizard-thoughtful {
+  0%, 100% { transform: rotate(0deg); }
+  45% { transform: rotate(-2deg); }
+}
+.wizard-controls {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.wizard-tip {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: #241f18;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.wizard-tip:hover { border-color: var(--accent); }
+.wizard-tip:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (hover: none), (pointer: coarse) {
+  .wizard-mouse-hint { display: none; }
+}
 @keyframes wizard-pleased {
   0% { transform: scale(1) rotate(0deg); }
   28% { transform: scale(1.035, .95) rotate(-.6deg); }
   55% { transform: scale(.98, 1.03) rotate(.5deg); }
   78% { transform: scale(1.012, .995) rotate(-.2deg); }
   100% { transform: scale(1) rotate(0deg); }
-}
-@keyframes wizard-flinch {
-  0% { transform: translateX(0) scale(1); }
-  18% { transform: translateX(-7px) scale(1.02); }
-  42% { transform: translateX(6px) scale(.99); }
-  66% { transform: translateX(-3px); }
-  100% { transform: translateX(0) scale(1); }
 }
 /* The speech bubble. Positioned against the figure rather than the scene, so it
    follows him when he is dragged, and clamped so it cannot push the page wide. */
@@ -664,9 +687,14 @@ p { text-wrap: pretty; }
   background: #241f18;
   transform: rotate(45deg);
 }
+.wizard-voice.is-fading { animation: wizard-fade .26s ease-in forwards; }
 @keyframes wizard-speak {
   from { opacity: 0; transform: translateX(-50%) translateY(6px) scale(.94); }
   to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+@keyframes wizard-fade {
+  from { opacity: 1; transform: translateX(-50%); }
+  to { opacity: 0; transform: translateX(-50%) translateY(-4px); }
 }
 /* Firelight on the figure. The seal is behind the wizard and below it, so the
    light comes up from the feet and the upper body sits back into shade. The
@@ -2141,6 +2169,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
   .help-grid { grid-template-columns: 1fr; gap: 30px; }
   .ledger-table thead { display: none; }
   .ledger-table, .ledger-table tbody, .ledger-table tr { display: block; }
+  .ledger-table caption { display: block; width: 100%; }
   .ledger-table tr { border-top: 1px solid var(--line-light); padding-block: 16px; }
   .ledger-table tbody th, .ledger-table td { display: block; width: auto !important; padding: 0; border: 0; }
   .ledger-table tbody th { margin-bottom: 8px; }

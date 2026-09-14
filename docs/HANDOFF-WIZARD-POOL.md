@@ -1,5 +1,13 @@
 # Handoff: FastCast site, wizard interaction, and line pool
 
+**Current interaction update — 13 September 2026:** The owner requested an official,
+welcoming mascot with understandable wit. The pool is now **20 lines**: left-click
+conversation and right-click practical tips, also accessible through **Ask for a
+tip**. See [WIZARD-INTERACTIONS.md](WIZARD-INTERACTIONS.md) for all wording, behaviour
+and verification boundaries. This supersedes the menace, technical-word ban,
+ordered-last-line and pool-size instructions below. All following snapshots are
+historical. Do not restore their removed dialogue.
+
 **Latest pool: 21 lines.** After the earlier 123 → 75 curation, the owner rejected
 the attempted refinements and requested a harsher review of every surviving line.
 [The full review](WIZARD-FULL-REVIEW-2026-09-13.md) covers all 75, retaining 21

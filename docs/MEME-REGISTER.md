@@ -1,5 +1,13 @@
 # FastCast meme register — Ponder the Orb / wizardposting captions
 
+**Later owner direction — 13 September 2026:** A limited amount of dank-meme and
+wizardposting humour is now explicitly wanted in the mascot's speech. See
+[WIZARD-INTERACTIONS.md](WIZARD-INTERACTIONS.md) for the current 20-line pool.
+Recognisable situations, occasional gaming slang and a casting-screens callback
+are allowed. The absolute register separation and modern-vocabulary ban below
+are historical, superseded guidance. This does not authorise bulk restoration
+of these captions: a line still needs to make sense from this speaker on this page.
+
 Status: proposed. Nothing here is in the shipped site. The live product surfaces
 are the speech-bubble pools in `scripts/build-site.py`; this document covers
 **social captions and meme compositions**, which are a different surface with a

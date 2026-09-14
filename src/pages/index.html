@@ -28,18 +28,36 @@
           <span class="cast-firelight" aria-hidden="true"></span>
           <span class="sr-only">The FastCast wizard. Activate for a word from him.</span>
         </button>
-        <p class="wizard-voice" aria-live="polite" hidden></p>
+        <p class="wizard-voice" hidden></p>
       </span>
     </div>
+    <div class="wizard-controls" hidden>
+      <span>Click the wizard to chat.</span>
+      <button class="wizard-tip" type="button">Ask for a tip</button>
+      <span class="wizard-mouse-hint">or right-click him</span>
+    </div>
+    <p class="wizard-announcement sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
     <script type="application/json" id="wizard-voice-lines">{{WIZARD_VOICE}}</script>
   </div>
 </section>
 
-<div class="platform-strip wrap" aria-label="Platform summary">
-  <p><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg><span>Pricing</span>Free preview. No subscription.</p>
-  <p><svg class="icon" aria-hidden="true"><use href="#i-windows"/></svg><span>Sender</span>Windows x64 — a full screen or one window.</p>
-  <p><svg class="icon" aria-hidden="true"><use href="#i-devices"/></svg><span>Viewer</span>A second Windows PC, or Android 8 and newer.</p>
-</div>
+<section class="light-panel light-panel-2" id="interface">
+  <div class="wrap" data-reveal>
+    <div class="section-heading">
+      <div><p class="eyebrow">Windows interface</p><h2>Screen selection<br>and session controls</h2></div>
+      <p>The Share view contains the capture source, invitation, and session settings. Select Start sharing when these are ready.</p>
+    </div>
+    {{SCREENSHOT_WIDE}}
+    <div class="permissions">
+      <div class="permissions-heading"><h3>Audio and<br>remote control</h3><p>Computer audio, microphone, and remote input each have a separate switch.</p></div>
+      <div class="permission-list" data-snap role="group" aria-label="Permissions you can grant separately" tabindex="0">
+        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-volume"/></svg><div><h4>System audio</h4><p>Computer audio is included. Audible playback on a phone has not yet been confirmed.</p></div><span class="status status-available"><span class="status-word">Available</span></span></article>
+        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-mic"/></svg><div><h4>Microphone</h4><p>Enable the microphone if you want to speak during the session.</p></div><span class="status status-preview"><span class="status-word">Preview</span></span></article>
+        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-input"/></svg><div><h4>Remote input</h4><p>Lets the other device drive your mouse and keyboard.</p></div><span class="status status-preview"><span class="status-word">Preview</span></span></article>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section wrap" id="setup" aria-labelledby="role-title" data-reveal>
   <div class="section-heading">
@@ -64,24 +82,6 @@
   </div>
 </section>
 
-<section class="light-panel light-panel-2" id="interface">
-  <div class="wrap" data-reveal>
-    <div class="section-heading">
-      <div><p class="eyebrow">Windows interface</p><h2>Screen selection<br>and session controls</h2></div>
-      <p>The Share view contains the capture source, invitation, and session settings. Select Start sharing when these are ready.</p>
-    </div>
-    {{SCREENSHOT_WIDE}}
-    <div class="permissions">
-      <div class="permissions-heading"><h3>Audio and<br>remote control</h3><p>Computer audio, microphone, and remote input each have a separate switch.</p></div>
-      <div class="permission-list" data-snap role="group" aria-label="Permissions you can grant separately" tabindex="0">
-        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-volume"/></svg><div><h4>System audio</h4><p>The sending PC's sound travels with the picture.</p></div><span class="status status-available"><span class="status-word">Available</span></span></article>
-        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-mic"/></svg><div><h4>Microphone</h4><p>Enable the microphone if you want to speak during the session.</p></div><span class="status status-preview"><span class="status-word">Preview</span></span></article>
-        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-input"/></svg><div><h4>Remote input</h4><p>Lets the other device drive your mouse and keyboard.</p></div><span class="status status-preview"><span class="status-word">Preview</span></span></article>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section wrap network" id="route" data-reveal>
   <div class="section-heading">
     <div><p class="eyebrow">Connections</p><h2>Direct connections<br>and relay fallback</h2></div>
@@ -94,7 +94,7 @@
       <p class="tower-line">Pairing and discovery help the devices find each other. Those setup messages are separate from the screen and audio.</p>
       <aside class="release-caveat">
         <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
-        <div><strong>Start on your own network.</strong><p>The recorded media test used LAN. Internet playback remains unqualified; networks that block UDP have no media fallback.</p></div>
+        <div><strong>Start on your own network.</strong><p>Playback has been tested on a local network, but has not yet been verified between separate networks. Networks that block UDP have no media fallback.</p></div>
       </aside>
       <a class="text-link connection-more" href="how-it-works.html">Explore the routes, data and technical stack →</a>
     </div>
@@ -117,8 +117,7 @@
     <div class="class-body">
       <p class="eyebrow">Why FastCast</p>
       <h2 id="class-title">A separate app<br><span>for screen sharing</span></h2>
-      <p class="class-lede">Use FastCast for the screen share while keeping your conversations in the chat app you already use. You do not need to move your contacts or community to try it.</p>
-      <p class="class-lede">This preview focuses on sharing a Windows screen with another PC or Android device. It does not provide a complete replacement for messaging, meetings, or hosted communities.</p>
+      <p class="class-lede">Show a Windows application to someone on another PC or Android device while keeping the conversation in your usual chat app. FastCast handles the screen share, so your contacts and community can stay where they are.</p>
       <p class="class-lede"><a class="text-link" href="why-fastcast.html">Why FastCast is a separate tool →</a></p>
     </div>
     <div class="class-figure" aria-hidden="true">
@@ -131,18 +130,18 @@
   <div class="wrap" data-reveal>
     <div class="section-heading">
       <div><p class="eyebrow">Current release</p><h2>Features and limitations</h2></div>
-      <p>{{RELEASE_LABEL}} · published {{PUBLISHED}}. Included features and their testing status are listed below.</p>
+      <p>{{RELEASE_LABEL}} · published {{PUBLISHED}}.</p>
     </div>
     <table class="ledger-table">
-      <caption>Public-build support, from the published release and capability notes.</caption>
+      <caption>Available means included in the download; testing limits are listed alongside each feature.</caption>
       <thead><tr><th scope="col">Capability</th><th scope="col">Status</th><th scope="col">What to expect</th></tr></thead>
       <tbody>
         <tr><th scope="row">Windows x64</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Share a screen or window, or receive from another Windows PC. Use matching builds.</td></tr>
         <tr><th scope="row">Android 8+</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Receives the stream. Android does not send, and device support varies.</td></tr>
-        <tr><th scope="row">System audio</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Decoded in the LAN run. Audible output on a phone was not independently confirmed.</td></tr>
-        <tr><th scope="row">Microphone &amp; remote input</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>In the build. Physical voice, echo, and Android input are still unqualified.</td></tr>
-        <tr><th scope="row">Outside your local network</th><td><span class="status status-limited"><span class="status-word">Limited</span></span></td><td>Direct routes and relay fallback are available; unrelated-network playback remains unqualified.</td></tr>
-        <tr><th scope="row">Relay &amp; multiple viewers</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>A FastCast relay is included. Up to eight viewers have loopback coverage; physical multi-device sharing remains unqualified.</td></tr>
+        <tr><th scope="row">System audio</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Audio was decoded in the local-network test, but audible output on a phone was not independently confirmed.</td></tr>
+        <tr><th scope="row">Microphone &amp; remote input</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>Included in the build, but voice, echo handling, and Android input have not yet been verified on real devices.</td></tr>
+        <tr><th scope="row">Outside your local network</th><td><span class="status status-limited"><span class="status-word">Limited</span></span></td><td>Direct routes and relay fallback are included, but playback between separate networks has not yet been verified.</td></tr>
+        <tr><th scope="row">Relay &amp; multiple viewers</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>A FastCast relay is included. Tests on one machine cover up to eight viewers; sharing with several physical devices still needs verification.</td></tr>
         <tr><th scope="row">Other platforms</th><td><span class="status status-not-yet"><span class="status-word">Not yet</span></span></td><td>No macOS, iPhone, iPad, or browser app. A Linux viewer is source-only.</td></tr>
       </tbody>
     </table>
