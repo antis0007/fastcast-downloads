@@ -1,7 +1,7 @@
 {
-    "version": "0.3.2-preview.7",
-    "tag": "v0.3.2-preview.7",
-    "label": "0.3.2 Preview 7",
+    "version": "0.3.2-preview.8",
+    "tag": "v0.3.2-preview.8",
+    "label": "0.3.2 Preview 8",
     "published": "2026-09-14",
     "published_display": "September 14, 2026",
     "status": "Development preview",
@@ -28,38 +28,38 @@
     },
     "assets": {
         "windows": {
-            "filename": "FastCast-0.3.2-preview.7-Setup.exe",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.7/FastCast-0.3.2-preview.7-Setup.exe",
+            "filename": "FastCast-0.3.2-preview.8-Setup.exe",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.8/FastCast-0.3.2-preview.8-Setup.exe",
             "size": "11.8 MB",
-            "bytes": 12355330,
-            "sha256": "fdc4f0e49a92988f15f0013e0c7d4f2666f87ec5b56a270a3bfc72ecf37cf44a",
+            "bytes": 12361231,
+            "sha256": "3bd01e2bd94556cb45175679025839276acfde582788aa83a7a48722cc36d6b7",
             "role": "Windows sender and receiver",
             "signing": "Unsigned preview"
         },
         "android": {
-            "filename": "FastCast-0.3.2-preview.7-Android.apk",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.7/FastCast-0.3.2-preview.7-Android.apk",
+            "filename": "FastCast-0.3.2-preview.8-Android.apk",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.8/FastCast-0.3.2-preview.8-Android.apk",
             "size": "26.1 MB",
             "bytes": 27318650,
-            "sha256": "154e9fbbf05021f5d0830632065df9d86e1c9c58540da2c92f377587e503a1a4",
+            "sha256": "50fab12194b625815baf377d9806077ec7521652e21c23f7b7dd18f6588e58eb",
             "role": "Android viewer",
             "signing": "Debug-signed preview"
         },
         "bundle": {
-            "filename": "FastCast-0.3.2-preview.7-windows-android-x64.zip",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.7/FastCast-0.3.2-preview.7-windows-android-x64.zip",
+            "filename": "FastCast-0.3.2-preview.8-windows-android-x64.zip",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.8/FastCast-0.3.2-preview.8-windows-android-x64.zip",
             "size": "27.0 MB",
-            "bytes": 28306783,
-            "sha256": "1aadce42e11c5800cf91a21cec8db6bc4a7457181f977e73401df29f65b9274c",
+            "bytes": 28321286,
+            "sha256": "d483da54f73370e3a118110c582ff460a8fc9beb95b24ffe5ac81485162a5640",
             "role": "Portable Windows + Android bundle",
             "signing": "Same unsigned Windows and debug-signed Android packages"
         },
         "checksums": {
             "filename": "SHA256SUMS.txt",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.7/SHA256SUMS.txt",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.8/SHA256SUMS.txt",
             "size": "410 B",
             "bytes": 410,
-            "sha256": "0e5544ab855880d4d9d7cd1897a9cfcb7275f2826d9b9879345c4f82dd758104"
+            "sha256": "d5b11c2e4549ab38de7c60786c738105a35a4841a5d321aff5cad6dd62e5433d"
         }
     },
     "screenshots": {
@@ -89,7 +89,7 @@
         }
     },
     "evidence": {
-        "headline": "Preview 7 build and package checks",
+        "headline": "Preview 8 build and package checks",
         "framing": "These are compilation and package-integrity checks. They do not establish visible playback, audible calls or daily-driver reliability.",
         "scope": "Matching {{RELEASE_LABEL}} Windows and Android packages",
         "items": [
@@ -99,9 +99,9 @@
             "Installer, APK and portable bundle have published SHA-256 checksums."
         ],
         "caveats": [
-            "Interactive Board, profile-picture, audio and screen-sharing acceptance remains open.",
+            "Interactive resize/reconnect, selected-resolution display, audio and screen-sharing acceptance remains open.",
             "Separate-network direct/relay sessions and extended physical-device use remain unverified for these packages.",
-            "Earlier LAN measurements are historical and are not measurements of preview 7."
+            "A two-client automated public-relay run exceeded 30 seconds; it is not physical-device acceptance."
         ]
     },
     "status_legend": [
@@ -140,7 +140,7 @@
                 {
                     "name": "Video quality controls",
                     "status": "available",
-                    "detail": "Choose 60 or 30 fps and adjust stream quality while a session is running. Those controls do not promise sustained 60 fps on every PC."
+                    "detail": "Before sharing, choose 60 or 30 fps, 50–100% resolution, and 5–50 Mb/s picture detail. Reduced resolution uses CPU encoding in this preview; sustained 60 fps is not promised on every PC."
                 },
                 {
                     "name": "H.264 encoding",
@@ -269,10 +269,19 @@
     ],
     "history": [
         {
+            "version": "0.3.2-preview.8",
+            "tag": "v0.3.2-preview.8",
+            "published": "2026-09-14",
+            "current": true,
+            "label": "0.3.2 Preview 8",
+            "published_display": "September 14, 2026",
+            "summary": "Screen sharing now stays alive across Board navigation and reconnects after route loss or window resize, with resolution and bitrate controls."
+        },
+        {
             "version": "0.3.2-preview.7",
             "tag": "v0.3.2-preview.7",
             "published": "2026-09-14",
-            "current": true,
+            "current": false,
             "label": "0.3.2 Preview 7",
             "published_display": "September 14, 2026",
             "summary": "Combines the latest Table resizing, icons and fullscreen fixes with Android/Windows profile pictures, group route repair and loopback connection fixes. Matching Windows installer, Android APK, portable bundle and updater manifest. Physical acceptance remains open."
