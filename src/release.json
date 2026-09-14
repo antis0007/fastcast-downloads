@@ -1,7 +1,7 @@
 {
-    "version": "0.3.2-preview.8",
-    "tag": "v0.3.2-preview.8",
-    "label": "0.3.2 Preview 8",
+    "version": "0.3.2-preview.9",
+    "tag": "v0.3.2-preview.9",
+    "label": "0.3.2 Preview 9",
     "published": "2026-09-14",
     "published_display": "September 14, 2026",
     "status": "Development preview",
@@ -28,38 +28,38 @@
     },
     "assets": {
         "windows": {
-            "filename": "FastCast-0.3.2-preview.8-Setup.exe",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.8/FastCast-0.3.2-preview.8-Setup.exe",
+            "filename": "FastCast-0.3.2-preview.9-Setup.exe",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.9/FastCast-0.3.2-preview.9-Setup.exe",
             "size": "11.8 MB",
-            "bytes": 12361231,
-            "sha256": "3bd01e2bd94556cb45175679025839276acfde582788aa83a7a48722cc36d6b7",
+            "bytes": 12361957,
+            "sha256": "3ac79b0cd241defa76c1f0320b3fdfa4d64f9439580ba184875bc57585f0b584",
             "role": "Windows sender and receiver",
             "signing": "Unsigned preview"
         },
         "android": {
-            "filename": "FastCast-0.3.2-preview.8-Android.apk",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.8/FastCast-0.3.2-preview.8-Android.apk",
+            "filename": "FastCast-0.3.2-preview.9-Android.apk",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.9/FastCast-0.3.2-preview.9-Android.apk",
             "size": "26.1 MB",
             "bytes": 27318650,
-            "sha256": "50fab12194b625815baf377d9806077ec7521652e21c23f7b7dd18f6588e58eb",
+            "sha256": "ce04f3422dbf996a6bdf8d150661198efa6181dcf13156bc867cad64221e5a99",
             "role": "Android viewer",
             "signing": "Debug-signed preview"
         },
         "bundle": {
-            "filename": "FastCast-0.3.2-preview.8-windows-android-x64.zip",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.8/FastCast-0.3.2-preview.8-windows-android-x64.zip",
+            "filename": "FastCast-0.3.2-preview.9-windows-android-x64.zip",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.9/FastCast-0.3.2-preview.9-windows-android-x64.zip",
             "size": "27.0 MB",
-            "bytes": 28321286,
-            "sha256": "d483da54f73370e3a118110c582ff460a8fc9beb95b24ffe5ac81485162a5640",
+            "bytes": 28322115,
+            "sha256": "dc71fdd462c053a91318a480a873914d8e5ad6639b11920583a696c37d859d1c",
             "role": "Portable Windows + Android bundle",
             "signing": "Same unsigned Windows and debug-signed Android packages"
         },
         "checksums": {
             "filename": "SHA256SUMS.txt",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.8/SHA256SUMS.txt",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.9/SHA256SUMS.txt",
             "size": "410 B",
             "bytes": 410,
-            "sha256": "d5b11c2e4549ab38de7c60786c738105a35a4841a5d321aff5cad6dd62e5433d"
+            "sha256": "9c43712e18a0f0502aa2af4b912ba10c79895b9486f3e604f476889ed86a9611"
         }
     },
     "screenshots": {
@@ -89,7 +89,7 @@
         }
     },
     "evidence": {
-        "headline": "Preview 8 build and package checks",
+        "headline": "Preview 9 build and package checks",
         "framing": "These are compilation and package-integrity checks. They do not establish visible playback, audible calls or daily-driver reliability.",
         "scope": "Matching {{RELEASE_LABEL}} Windows and Android packages",
         "items": [
@@ -269,10 +269,19 @@
     ],
     "history": [
         {
+            "version": "0.3.2-preview.9",
+            "tag": "v0.3.2-preview.9",
+            "published": "2026-09-14",
+            "current": true,
+            "label": "0.3.2 Preview 9",
+            "published_display": "September 14, 2026",
+            "summary": "Playback exhaustion now reconnects friend live shares, with detailed fresh-frame and terminal recovery diagnostics."
+        },
+        {
             "version": "0.3.2-preview.8",
             "tag": "v0.3.2-preview.8",
             "published": "2026-09-14",
-            "current": true,
+            "current": false,
             "label": "0.3.2 Preview 8",
             "published_display": "September 14, 2026",
             "summary": "Screen sharing now stays alive across Board navigation and reconnects after route loss or window resize, with resolution and bitrate controls."
