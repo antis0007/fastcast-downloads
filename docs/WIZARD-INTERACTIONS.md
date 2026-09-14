@@ -9,7 +9,7 @@ direction to make the visitor the target of a menacing wizard.
 - The first left-click welcomes the visitor. Subsequent deliberate clicks rotate
   through six conversational remarks. Closely spaced clicks use two mild poke
   responses. Activations less than 650 ms apart leave the current line readable.
-- Right-click rotates through six practical screen-sharing tips and gives the
+- Right-click rotates through four practical screen-sharing tips and gives the
   wizard a small thoughtful tilt. It no longer represents pain or threatens a
   transformation. Rotation continues after a pause and after exhausting the pool.
 - **Ask for a tip** is a visible button with the same behaviour for keyboard and
@@ -38,7 +38,7 @@ capabilities, or insults aimed at a visitor who accepted our invitation to click
 Modern product vocabulary is allowed. Useful gesture feedback need not pretend
 to be a joke. Do not restore the old “Ser-Vur” vocabulary or threat pool.
 
-There are **20 lines** after the owner's wizardposting refinement. Occasional
+There are **18 lines** after the light tip edit. Occasional
 slang and a casting-screens callback are now intentional. Each new joke supplies
 its own situation: grass collected as a specimen, research that turns into shed
 videos, and wanting to reload a foretold future. These are individual additions, not a restoration of the caption archive.
@@ -59,21 +59,26 @@ videos, and wanting to reload a foretold future. These are individual additions,
 | Far drag | A little closer to the circle, please. I was just getting comfortable. |
 | Right-click / tip button | Check which window you're sharing before you begin. |
 | Right-click / tip button | Point to what you're explaining. 'Over there' covers rather a lot of screen. |
-| Right-click / tip button | Before explaining the problem, check that your friend can see it. |
-| Right-click / tip button | When something goes wrong, say what you clicked. 'I angered it' leaves quite a lot to investigate. |
-| Right-click / tip button | Give your friend a moment to read before you change windows. They're watching, not speedrunning. |
-| Right-click / tip button | Ask whether your friend wants help or an audience. 'Behold' isn't always a request for backseating. |
+| Right-click / tip button | When something goes wrong, say what you clicked and what happened. 'I angered it' is a little vague. |
+| Right-click / tip button | Give your friend a moment to read before you switch windows. |
 | Drag | Oh, we're moving. Mind the hat, please. |
 | Drag | I would have walked, but you've already got me. |
 
 The tips have a literal purpose: avoid accidental disclosure, point clearly,
-confirm a shared view, describe a reproducible problem, allow time to read, and
-ask before offering advice.
+describe a reproducible problem, and allow time to read.
 They make no promises about encryption, routes, performance, or platform support.
 The two retained magic stories give the spells a practical or recognisably petty use. None of this is
 an objective claim that the jokes are funny; editorial taste remains a judgement.
 
 ## Implementation and verification
+
+14 September 2026 UTC: light tip wording pass. Removed the repeated shared-view
+check and the strained backseating line; shortened the reading reminder and
+asked for both the action and result in the troubleshooting tip. Conversation
+and gesture responses are unchanged. Build, syntax/release/contrast checks and
+the complete Chromium, Firefox and WebKit suite passed, including tip rotation,
+keyboard/touch, enlarged text and accessibility. Only this document, the text
+generator and generated homepage changed. No application release was promoted.
 
 `scripts/build-site.py` owns the text and emits the JSON island in `index.html`.
 `src/pages/index.html` owns the controls and announcement region; `site.js` owns

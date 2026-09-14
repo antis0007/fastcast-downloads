@@ -532,10 +532,8 @@ WIZARD_LINES = {
     'rightclick': [
         "Check which window you're sharing before you begin.",
         "Point to what you're explaining. 'Over there' covers rather a lot of screen.",
-        "Before explaining the problem, check that your friend can see it.",
-        "When something goes wrong, say what you clicked. 'I angered it' leaves quite a lot to investigate.",
-        "Give your friend a moment to read before you change windows. They're watching, not speedrunning.",
-        "Ask whether your friend wants help or an audience. 'Behold' isn't always a request for backseating.",
+        "When something goes wrong, say what you clicked and what happened. 'I angered it' is a little vague.",
+        "Give your friend a moment to read before you switch windows.",
     ],
     'hat': [
     ],
