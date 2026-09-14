@@ -327,9 +327,14 @@ async function checkJourneysAndAccessibility() {
     assert.equal((await page.locator('#capabilities h2').textContent()).trim(), 'Features and limitations');
     assert.equal(await page.locator('.status-key dt').count(), 4);
     assert.equal(await page.locator('.capability-group').count(), 4);
-    assert.equal(await page.locator('.capability-table tbody tr').count(), 20);
-    for (const word of ['Available', 'Preview', 'Limited', 'Not yet']) {
-      assert.ok(await page.locator('.status', { hasText: word }).count());
+    const release = JSON.parse(fs.readFileSync(path.join(root, 'src/release.json'), 'utf8'));
+    const capabilities = release.capability_groups.flatMap(group => group.items);
+    const rows = page.locator('.capability-table tbody tr');
+    assert.equal(await rows.count(), capabilities.length);
+    for (const [index, capability] of capabilities.entries()) {
+      const row = rows.nth(index);
+      assert.equal((await row.locator('th').textContent()).trim(), capability.name);
+      assert.equal(await row.locator(`.status-${capability.status}`).count(), 1);
     }
     assert.equal(await page.getByText('The whole feature list').count(), 0);
     assert.equal(await page.getByText('Meet FastCast').count(), 0);

@@ -80,7 +80,8 @@ the complete Chromium, Firefox and WebKit suite passed, including tip rotation,
 keyboard/touch, enlarged text and accessibility. Only this document, the text
 generator and generated homepage changed in the copy pass. Rebasing onto the
 completed preview 7 website publication also required updating the feature-row
-test from 17 to 20 to match its three added rows. No application release was
+test to compare names and statuses against the release manifest, which now has
+20 rows and no Limited entries. No application release was
 promoted by this wording change.
 
 `scripts/build-site.py` owns the text and emits the JSON island in `index.html`.
