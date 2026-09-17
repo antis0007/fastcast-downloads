@@ -2,7 +2,7 @@
 
 Show the implemented app. The former community concept, fictional conversations, simulated calls, and illustrative performance graphs have been removed.
 
-The screenshots are unaltered native Windows appearance-review captures from September 7, 2026. Their captions distinguish this development interface from the downloadable 0.3.1 preview. Screenshots establish appearance, not streaming reliability.
+The screenshots are unaltered native Windows appearance-review captures from September 7, 2026. The page targets matching 0.3.2-preview.1 downloads; its captions identify the development interface capture without claiming release or streaming validation. Screenshots establish appearance, not streaming reliability.
 
 Use the native app's dark surfaces, square controls, restrained cyan accent, and visible navigation. Downloads and setup work without JavaScript. Keep platform availability and release limitations beside downloads. Do not advertise planned collaboration features or use fabricated metrics.
 
