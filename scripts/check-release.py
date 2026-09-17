@@ -57,11 +57,11 @@ def main():
         if STALE.search(text):
             fail(f'stale current-release wording in {path.name}')
         if path.suffix == '.html':
-            meta = re.search(r'name="fastcast-version" content="([^"]+)"', text)
+            meta = re.search(r'name="pyrenet-version" content="([^"]+)"', text)
             if not meta or meta.group(1) != version:
                 fail(f'{path.name} version meta does not match {version}')
             if f'releases/download/{tag}/' not in text and path.name not in {
-                'why-fastcast.html', 'how-it-works.html', 'data-and-privacy.html',
+                'why-pyrenet.html', 'why-fastcast.html', 'how-it-works.html', 'data-and-privacy.html',
                 'bandwidth.html', 'community.html', 'privacy.html', 'help.html',
                 'platforms.html', 'get-started.html', '404.html', 'product.html',
             }:

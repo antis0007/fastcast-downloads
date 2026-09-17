@@ -7,7 +7,10 @@ const assert = require('node:assert/strict');
 
 const root = path.resolve(__dirname, '..');
 const output = path.join(root, 'test-results');
-const pages = fs.readdirSync(root).filter(name => name.endsWith('.html'));
+// Redirect stubs for former URLs are checked separately; a meta refresh would
+// navigate the crawl away mid-assertion.
+const redirects = { 'why-fastcast.html': 'why-pyrenet.html' };
+const pages = fs.readdirSync(root).filter(name => name.endsWith('.html') && !(name in redirects));
 const publicBase = 'https://antis0007.github.io/fastcast-downloads/';
 const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.png': 'image/png', '.svg': 'image/svg+xml', '.woff2': 'font/woff2' };
 fs.mkdirSync(output, { recursive: true });
@@ -59,7 +62,7 @@ async function checkLayouts(name, engine) {
           const wordmark = page.locator('.site-header .brand-wordmark');
           const header = await page.locator('.site-header').boundingBox();
           assert.ok(logo.y >= header.y && logo.y + logo.height <= header.y + header.height, 'brand mark stays inside the header');
-          assert.equal(await wordmark.count(), 1, 'header uses the FastCast wordmark asset');
+          assert.equal((await wordmark.textContent()).trim(), 'Pyrenet', 'header wordmark carries the product name');
           assert.equal(await wordmark.isVisible(), width > 760, 'wordmark visibility follows the compact-header breakpoint');
           const capture = await page.locator('#interface [data-lightbox]').boundingBox();
           const wizard = await page.locator('.hero .cast-wizard').boundingBox();
@@ -346,8 +349,13 @@ async function checkJourneysAndAccessibility() {
     assert.equal(await page.getByText('helper URL').count(), 0);
     await page.goto(base + 'downloads.html');
     assert.equal(await page.locator('code.hash').count(), 3);
+    for (const [from, to] of Object.entries(redirects)) {
+      await page.goto(base + from);
+      await page.waitForURL(base + to);
+      assert.equal(await page.locator('h1').count(), 1, `${from} redirects to a real page`);
+    }
     await context.close();
-    console.log('Screenshot close/focus, reduced motion, navigation and FAQ search passed');
+    console.log('Screenshot close/focus, reduced motion, navigation, FAQ search and legacy redirects passed');
 
     const androidContext = await browser.newContext({ userAgent: 'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/120.0.0.0 Mobile Safari/537.36', viewport: { width: 390, height: 900 }, hasTouch: true });
     const androidPage = await androidContext.newPage();

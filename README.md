@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://antis0007.github.io/fastcast-downloads/">
-    <img src="assets/og.png" alt="FastCast. Your screen. Your connection. Screen sharing for Windows and Android. Free development preview." width="100%" />
+    <img src="assets/og.png" alt="Pyrenet. Your screen. Your connection. Screen sharing for Windows and Android. Free development preview." width="100%" />
   </a>
 
   <p><strong>Screen sharing for Windows and Android.</strong><br />
@@ -15,10 +15,10 @@
   </p>
 </div>
 
-FastCast is a free development-preview screen-sharing app. Matching Windows and Android packages are published here. There are no subscriptions in the current offer. This repository holds the public website and release assets, not the native application source.
+Pyrenet is a free development-preview screen-sharing app. Matching Windows and Android packages are published here. There are no subscriptions in the current offer. This repository holds the public website and release assets, not the native application source.
 
 > [!IMPORTANT]
-> Use matching app versions. The supported testing path is a Windows sender and an Android or Windows receiver on the same LAN, or another reachable private network. A FastCast relay is available as a fallback when no direct route works. Sharing a screen needs no account; friends and calls use an account the device owns. Windows installers are unsigned; Android packages are debug-signed.
+> Use matching app versions. The supported testing path is a Windows sender and an Android or Windows receiver on the same LAN, or another reachable private network. A Pyrenet relay is available as a fallback when no direct route works. Sharing a screen needs no account; friends and calls use an account the device owns. Windows installers are unsigned; Android packages are debug-signed.
 
 ## Current release: 0.3.3 Preview 1
 

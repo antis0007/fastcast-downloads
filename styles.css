@@ -141,7 +141,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
    and 28px fill the 77px header without growing it, since 46 plus the 16px
    padding either side lands just inside. */
 .brand-mark { display: block; width: auto; height: 46px; flex: none; }
-.brand-wordmark { display: block; width: auto; height: 28px; }
+/* Text wordmark. Set in the display face with the same tight tracking as h1 so
+   it reads as a mark, not a nav link; the amber matches the raster mark's
+   highlights. Height rules below keep the old lockup proportions. */
+.brand-wordmark {
+  display: block;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -.04em;
+  color: var(--brand);
+  white-space: nowrap;
+}
 .site-header nav { display: flex; align-items: center; gap: 22px; }
 .site-header-inner > .brand { margin-right: auto; min-width: 0; }
 .site-header nav a {
@@ -1809,7 +1820,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
 .footer-intro { min-width: 0; }
 .footer-brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
 .footer-brand .brand-mark { height: 52px; }
-.footer-brand .brand-wordmark { height: 24px; }
+.footer-brand .brand-wordmark { font-size: 24px; }
 .footer-intro p { color: var(--muted); margin-top: 14px; font-size: 14px; line-height: 1.7; }
 .footer-intro .small-copy { max-width: 260px; font-size: 12px; color: var(--quiet); }
 .site-footer nav { display: flex; flex-direction: column; align-items: flex-start; }
@@ -2179,7 +2190,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
   /* Height only: the mark is 1203x926, so pinning a square 26px stretches it
      ~30% horizontally. Every other rule sizes it by height for this reason. */
   .brand-mark { height: 26px; }
-  .brand-wordmark { height: 17px; }
+  .brand-wordmark { font-size: 17px; }
   h1, .page-hero h1 { font-size: clamp(2.1rem, 9vw, 2.8rem); }
   .hero .lede, .lede { font-size: 16px; }
   .hero .eyebrow { font-size: 9px; }

@@ -13,30 +13,69 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://antis0007.github.io/fastcast-downloads/'
 REPO = 'https://github.com/antis0007/fastcast-downloads'
+# Public product name. Page bodies use {{PRODUCT}}; published asset filenames,
+# download URLs and release history keep the name they shipped under.
+PRODUCT = 'Pyrenet'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
     'index': ('Screen sharing for Windows and Android', 'Share a Windows screen or window with another PC or an Android device. Direct device-to-device connection with encrypted relay fallback. Free preview; no account needed to share a screen.'),
     'product': ('Product overview', 'Windows and Android screen-sharing features, native interface captures, and release testing status.'),
-    'downloads': ('Download FastCast', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
+    'downloads': (f'Download {PRODUCT}', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
     'get-started': ('Setup', 'Install matching versions, create an invitation on the viewing device, and start sharing from Windows.'),
     'platforms': ('Supported platforms', 'Windows x64 sends and watches. Android 8+ watches. Linux receive is in source, not in this zip. No Mac, iOS, or browser app.'),
     'community': ('Bugs', 'Public GitHub issues for a screen-sharing preview. Do not paste invitations.'),
     'help': ('Help', 'Troubleshoot installation, connections, audio, and remote input. Help search runs in your browser.'),
     'roadmap': ('Roadmap', 'What is built, what is being qualified, and what is not started yet.'),
-    'releases': ('Release notes', 'Download files, changes, and known limitations for published FastCast releases.'),
+    'releases': ('Release notes', f'Download files, changes, and known limitations for published {PRODUCT} releases.'),
     'privacy': ('Privacy', 'This site has no analytics. GitHub hosts the files. Keep invites private.'),
-    '404': ('Page not found', 'Find FastCast downloads, setup instructions, and help.'),
-    'why-fastcast': ('Why FastCast', 'An independent screen-sharing tool alongside the conversations and communities you already have.'),
-    'how-it-works': ('How FastCast connects', 'Compare direct and relayed screen-sharing routes, discover who handles which data, and explore the native media stack.'),
-    'data-and-privacy': ('Data compared', 'What Discord documents, next to what this FastCast preview actually does.'),
+    '404': ('Page not found', f'Find {PRODUCT} downloads, setup instructions, and help.'),
+    'why-pyrenet': (f'Why {PRODUCT}', 'An independent screen-sharing tool alongside the conversations and communities you already have.'),
+    'how-it-works': (f'How {PRODUCT} connects', 'Compare direct and relayed screen-sharing routes, discover who handles which data, and explore the native media stack.'),
+    'data-and-privacy': ('Data compared', f'What Discord documents, next to what this {PRODUCT} preview actually does.'),
     'bandwidth': ('Bandwidth calculator', 'Estimate video payload at each end and the server traffic added by a relayed route.'),
 }
+# Former page URLs that still receive traffic. Each renders a redirect stub.
+REDIRECTS = {'why-fastcast': 'why-pyrenet'}
 
 
 def link(slug, label, current, href=None):
     target = href or f'{slug}.html'
     active = ' aria-current="page"' if href is None and current == slug else ''
     return f'<a href="{target}"{active}>{label}</a>'
+
+
+def brand(classes):
+    """Logo lockup: the wizard mark plus a text wordmark, so the name is set once."""
+    return (
+        f'<a class="{classes}" href="index.html" aria-label="{PRODUCT} home">'
+        '<img class="brand-mark" src="assets/fastcast-wizard.webp" width="1203" height="926" alt="">'
+        f'<span class="brand-wordmark">{PRODUCT}</span></a>'
+    )
+
+
+def write_redirect(old_slug, new_slug):
+    """A former URL keeps working: meta refresh plus a visible link, noindex.
+
+    The stub still carries the version meta, one h1 and a self canonical so the
+    release and link gates treat it like every other generated page.
+    """
+    target = BASE + new_slug + '.html'
+    (ROOT / f'{old_slug}.html').write_text(f'''<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="pyrenet-version" content="{escape(release['version'])}">
+  <meta http-equiv="refresh" content="0; url={target}">
+  <link rel="canonical" href="{BASE}{old_slug}.html">
+  <title>Page moved — {PRODUCT}</title>
+</head>
+<body>
+  <main><h1>This page moved</h1><p>Continue to <a href="{target}">{target}</a>.</p></main>
+</body>
+</html>
+''', encoding='utf-8')
 
 
 def fill(text):
@@ -505,7 +544,7 @@ def flame_field(count=52):
 # This replaces the earlier menace/Ser-Vur direction at the owner's request.
 # See docs/WIZARD-INTERACTIONS.md; historical cuts remain archived, not restored.
 # Voice: a deadpan archmage who treats screen sharing as humble craft. Every
-# joke is a true fact about FastCast in a robe; never a generic fantasy quip.
+# joke is a true fact about the product in a robe; never a generic fantasy quip.
 WIZARD_LINES = {
     'first': [
         "Hello. The download is free. I came with it.",
@@ -593,7 +632,7 @@ def json_ld():
     data = {
         '@context': 'https://schema.org',
         '@type': 'SoftwareApplication',
-        'name': 'FastCast',
+        'name': PRODUCT,
         'applicationCategory': 'MultimediaApplication',
         'operatingSystem': 'Windows (send and receive); Android 8+ (receive only)',
         'softwareVersion': release['version'],
@@ -677,7 +716,7 @@ def history_html():
         url = f"{REPO}/releases/tag/{item['tag']}"
         if item.get('current'):
             body = f'''<article>
-  <h2>FastCast {escape(item['label'])}</h2>
+  <h2>{PRODUCT} {escape(item['label'])}</h2>
   <p>{escape(item['summary'])}</p>
   <h3>Included features</h3>
   <ul>
@@ -692,6 +731,7 @@ def history_html():
   <div class="actions"><a class="button primary" href="{escape(release['assets']['windows']['url'])}">Download Windows app</a><a class="button" href="downloads.html">All packages</a><a class="text-link" href="{url}">Original release notes ↗</a></div>
 </article>'''
         else:
+            # Archived builds were published under the previous name.
             body = f'''<article>
   <h2>FastCast {escape(item['label'])}</h2>
   <p>{escape(item['summary'])}</p>
@@ -717,7 +757,7 @@ Both `windows-share.png` and `windows-compact.png` are unchanged client-area cap
 - These images {('represent the public ' + release['label'] + ' package.') if wide['represents_public_release'] else 'do not represent the public package pixel-for-pixel: ' + wide['note']}
 - Neither image depicts a connected media session or establishes streaming performance.
 - Website image frames, labels, and zoom controls are HTML/CSS outside the screenshots.
-- `og.png` is the FastCast logo lockup on the warm ink ground, generated for social previews; not a screenshot.
+- `og.png` is the logo lockup on the warm ink ground, generated for social previews; not a screenshot.
 '''
     (ROOT / 'assets/SCREENSHOTS.md').write_text(text, encoding='utf-8')
 
@@ -725,6 +765,7 @@ Both `windows-share.png` and `windows-compact.png` are unchanged client-area cap
 def write_readme():
     template = (ROOT / 'src/README.md').read_text(encoding='utf-8')
     tokens = {
+        'PRODUCT': PRODUCT,
         'VERSION': release['version'],
         'RELEASE_LABEL': release['label'],
         'TAG': release['tag'],
@@ -758,6 +799,7 @@ def render(slug, title, description):
         + link('github', 'GitHub', slug, href=REPO)
     )
     tokens = {
+        'PRODUCT': PRODUCT,
         'VERSION': release['version'],
         'RELEASE_LABEL': release['label'],
         'RELEASE_URL': f"{REPO}/releases/tag/{release['tag']}",
@@ -826,24 +868,24 @@ def render(slug, title, description):
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0d12">
-  <meta name="fastcast-version" content="{escape(release['version'])}">
+  <meta name="pyrenet-version" content="{escape(release['version'])}">
   <meta name="description" content="{escape(description)}">
   {robots}
-  <title>{escape(title)} — FastCast</title>
+  <title>{escape(title)} — {PRODUCT}</title>
   <link rel="canonical" href="{canonical}">
   <link rel="icon" href="assets/favicon.png" sizes="64x64" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
   {preload}
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="FastCast">
-  <meta property="og:title" content="{escape(title)} — FastCast">
+  <meta property="og:site_name" content="{PRODUCT}">
+  <meta property="og:title" content="{escape(title)} — {PRODUCT}">
   <meta property="og:description" content="{escape(description)}">
   <meta property="og:url" content="{canonical}">
   <meta property="og:image" content="{BASE}assets/og.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="640">
-  <meta property="og:image:alt" content="FastCast. Screen sharing with a little magic and careful networking. Windows sender and Android viewer development preview.">
+  <meta property="og:image:alt" content="{PRODUCT}. Screen sharing with a little magic and careful networking. Windows sender and Android viewer development preview.">
   <meta name="twitter:card" content="summary_large_image">
   {structured}
   <script src="site.js" defer></script>
@@ -856,17 +898,17 @@ def render(slug, title, description):
   <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> {escape(release['status'])}</span><a href="releases.html">{escape(release['label'])} <span aria-hidden="true">↗</span></a></div></div>
   <header class="site-header">
     <div class="wrap site-header-inner">
-      <a class="brand" href="index.html" aria-label="FastCast home"><img class="brand-mark" src="assets/fastcast-wizard.webp" width="1203" height="926" alt=""><img class="brand-wordmark" src="assets/fastcast-wordmark.webp" width="1180" height="283" alt=""></a>
+      {brand('brand')}
       <nav aria-label="Main">{nav}</nav>
       <a class="button small primary header-download{download_current}" href="downloads.html">Download</a>
     </div>
   </header>
   <main id="main" tabindex="-1">{body}</main>
   <footer class="site-footer wrap">
-    <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="FastCast home"><img class="brand-mark" src="assets/fastcast-wizard.webp" width="1203" height="926" alt=""><img class="brand-wordmark" src="assets/fastcast-wordmark.webp" width="1180" height="283" alt=""></a><p>Screen sharing with a little magic and careful networking.</p><p class="small-copy">{escape(release['offer'])}</p><p class="small-copy">{escape(release['application_source'])}</p></div>
+    <div class="footer-intro">{brand('brand footer-brand')}<p>Screen sharing with a little magic and careful networking.</p><p class="small-copy">{escape(release['offer'])}</p><p class="small-copy">{escape(release['application_source'])}</p></div>
     <nav aria-label="Product links"><h2>Product</h2>{link('product','Overview',slug)}{link('downloads','Downloads',slug)}{link('platforms','Platforms',slug)}{link('releases','Release notes',slug)}</nav>
     <nav aria-label="Resources"><h2>Resources</h2>{link('get-started','Setup',slug)}{link('help','Help',slug)}{link('community','Bugs',slug)}{link('privacy','Privacy',slug)}</nav>
-    <nav aria-label="More"><h2>More</h2>{link('why-fastcast','Why FastCast',slug)}{link('how-it-works','How it works',slug)}{link('roadmap','Roadmap',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
+    <nav aria-label="More"><h2>More</h2>{link('why-pyrenet',f'Why {PRODUCT}',slug)}{link('how-it-works','How it works',slug)}{link('roadmap','Roadmap',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
     <div class="footer-bottom"><span>Windows sends · Windows or Android watches · Preview</span><a href="{REPO}">GitHub ↗</a><a href="{REPO}/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
   </footer>
   <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>{tokens['DIALOG_CAPTION']}</p></dialog>
@@ -882,6 +924,8 @@ def render(slug, title, description):
 
 for slug, (title, description) in PAGES.items():
     render(slug, title, description)
+for old_slug, new_slug in REDIRECTS.items():
+    write_redirect(old_slug, new_slug)
 write_screenshots_doc()
 if (ROOT / 'src/README.md').exists():
     write_readme()
