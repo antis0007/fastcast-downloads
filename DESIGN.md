@@ -1,5 +1,27 @@
 # FastCast website
 
+## Current copy direction — September 7, 2026
+
+Position FastCast as **Screen sharing for Windows and Android**. The home headline
+is **Share your screen with another device**. Explain the Windows source and
+Windows/Android viewers before describing future group communication. Use direct
+page headings such as Release notes, Download FastCast and Help & troubleshooting.
+Keep the near-black/Phosphor visual direction and native screenshots. Remove vague
+social slogans, rhythmic filler and self-congratulation about product honesty.
+The preview is free; price should support the product explanation rather than
+dominate it. Metadata, social artwork and README copy follow the same direction.
+
+Research reviewed September 7: [Moonlight](https://moonlight-stream.org/) leads
+with game streaming, [Parsec](https://parsec.app/) with remote desktop and
+performance, and [RustDesk](https://rustdesk.com/) with remote desktop and hosting
+options. Our recommendation is a product-fit judgment, not a tested conversion
+result. An unrelated [FastCast](https://www.fastcast.cn/) already offers screen
+mirroring under this name; evaluate a distinctive name before wider marketing.
+That is a search-discoverability finding, not a legal clearance result.
+
+The historical reviews below record prior decisions; this section controls
+current public wording.
+
 Show the implemented app. The former community concept, fictional conversations, simulated calls, and illustrative performance graphs have been removed.
 
 The screenshots are unaltered native Windows appearance-review captures from September 7, 2026. Their captions distinguish this development interface from the downloadable 0.3.1 preview. Screenshots establish appearance, not streaming reliability.

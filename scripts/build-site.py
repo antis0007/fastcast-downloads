@@ -14,11 +14,11 @@ REPO = 'https://github.com/antis0007/fastcast-downloads'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
     'index': ('Free screen sharing for Windows and Android', 'Share a Windows screen or window with another PC or Android device. FastCast is free, with no subscriptions in the current preview.'),
-    'product': ('Meet FastCast', 'Explore the native FastCast interface, screen-sharing controls, and the current product scope.'),
+    'product': ('Screen-sharing features', 'Explore the native FastCast interface, screen-sharing controls, and the current product scope.'),
     'downloads': ('Download FastCast', 'Free Windows installer, Android APK, and matching portable bundle. Direct downloads and clear install requirements.'),
     'get-started': ('Get started', 'Install matching FastCast apps, connect your receiving device, and start your first screen-sharing session.'),
     'platforms': ('Platforms and requirements', 'Check Windows and Android support, hardware requirements, and network compatibility before installing FastCast.'),
-    'community': ('Community', 'Help shape FastCast for smaller groups. Share feedback, report issues, and follow the project.'),
+    'community': ('Community', 'Report a FastCast issue, request a feature, and follow development through the public GitHub tracker.'),
     'help': ('Help and frequently asked questions', 'Find answers about FastCast pricing, installation, connections, audio, input, and current limitations.'),
     'releases': ('Release notes', 'Find the published FastCast preview, matching downloads, known limitations, and previous releases.'),
     'privacy': ('Privacy and sharing', 'Understand what this website collects, where downloads are hosted, and how to share screens and invitations carefully.'),
@@ -84,20 +84,20 @@ def render(slug, title, description):
   <meta property="og:description" content="{escape(description)}">
   <meta property="og:url" content="{canonical}">
   <meta property="og:image" content="{BASE}assets/og.png">
-  <meta property="og:image:alt" content="FastCast. Something worth sharing. Free. No subscriptions. Windows and Android development preview.">
+  <meta property="og:image:alt" content="FastCast. Windows screen sharing. Windows &amp; Android. Free development preview.">
   <meta name="twitter:card" content="summary_large_image">
   <script src="site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Free. No subscriptions.</span><a href="releases.html">{release['label']} <span aria-hidden="true">↗</span></a></div></div>
+  <div class="announcement"><div class="wrap"><span><span class="status-dot" aria-hidden="true"></span> Free development preview</span><a href="releases.html">{release['label']} <span aria-hidden="true">↗</span></a></div></div>
   <header class="site-header wrap">
     <a class="brand" href="index.html" aria-label="FastCast home"><img src="assets/mark.svg" width="30" height="30" alt="">FastCast</a>
     <nav aria-label="Main">{nav}</nav><a class="button small header-download {'current' if slug == 'downloads' else ''}" href="downloads.html">Download <span aria-hidden="true">↓</span></a>
   </header>
   <main id="main" tabindex="-1">{body}</main>
   <footer class="site-footer wrap">
-    <div class="footer-intro"><a class="brand" href="index.html">FastCast</a><p>Something worth sharing.</p><p class="small-copy">Free to use. No subscriptions in the current preview.</p></div>
+    <div class="footer-intro"><a class="brand" href="index.html">FastCast</a><p>Screen sharing for Windows and Android.</p><p class="small-copy">Free to use. No subscriptions in the current preview.</p></div>
     <nav aria-label="Product links"><h2>Product</h2>{link('product','Overview',slug)}{link('downloads','Downloads',slug)}{link('platforms','Platforms',slug)}{link('releases','Release notes',slug)}</nav>
     <nav aria-label="Resources"><h2>Resources</h2>{link('get-started','Getting started',slug)}{link('help','Help & FAQ',slug)}{link('community','Community',slug)}{link('privacy','Privacy & sharing',slug)}</nav>
     <div class="footer-bottom"><span>Windows + Android · Development preview</span><a href="{REPO}">GitHub ↗</a><a href="{REPO}/blob/main/LICENSE">License ↗</a></div>
