@@ -1,9 +1,9 @@
 {
-    "version": "0.3.2-preview.9",
-    "tag": "v0.3.2-preview.9",
-    "label": "0.3.2 Preview 9",
-    "published": "2026-09-14",
-    "published_display": "September 14, 2026",
+    "version": "0.3.3-preview.1",
+    "tag": "v0.3.3-preview.1",
+    "label": "0.3.3 Preview 1",
+    "published": "2026-09-17",
+    "published_display": "September 17, 2026",
     "status": "Development preview",
     "network": "Direct peer route, with a FastCast relay fallback",
     "offer": "Screen sharing does not require an account. Friends and calls use a device-owned account in this development preview.",
@@ -28,38 +28,38 @@
     },
     "assets": {
         "windows": {
-            "filename": "FastCast-0.3.2-preview.9-Setup.exe",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.9/FastCast-0.3.2-preview.9-Setup.exe",
+            "filename": "FastCast-0.3.3-preview.1-Setup.exe",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.1/FastCast-0.3.3-preview.1-Setup.exe",
             "size": "11.8 MB",
-            "bytes": 12361957,
-            "sha256": "3ac79b0cd241defa76c1f0320b3fdfa4d64f9439580ba184875bc57585f0b584",
+            "bytes": 12376803,
+            "sha256": "8f172add36e6106c21779abeaec97fc5de77033cc541875d1f940836198c60be",
             "role": "Windows sender and receiver",
             "signing": "Unsigned preview"
         },
         "android": {
-            "filename": "FastCast-0.3.2-preview.9-Android.apk",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.9/FastCast-0.3.2-preview.9-Android.apk",
+            "filename": "FastCast-0.3.3-preview.1-Android.apk",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.1/FastCast-0.3.3-preview.1-Android.apk",
             "size": "26.1 MB",
-            "bytes": 27318650,
-            "sha256": "ce04f3422dbf996a6bdf8d150661198efa6181dcf13156bc867cad64221e5a99",
+            "bytes": 27372494,
+            "sha256": "778d5f7777960477ec54208737726ab0249fd7e335dc7e548a035f28b016ae8a",
             "role": "Android viewer",
             "signing": "Debug-signed preview"
         },
         "bundle": {
-            "filename": "FastCast-0.3.2-preview.9-windows-android-x64.zip",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.9/FastCast-0.3.2-preview.9-windows-android-x64.zip",
+            "filename": "FastCast-0.3.3-preview.1-windows-android-x64.zip",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.1/FastCast-0.3.3-preview.1-windows-android-x64.zip",
             "size": "27.0 MB",
-            "bytes": 28322115,
-            "sha256": "dc71fdd462c053a91318a480a873914d8e5ad6639b11920583a696c37d859d1c",
+            "bytes": 28361002,
+            "sha256": "ba30456a09e914464f8ff0ea7f30183a6a4f9615865b077c049768efe9d5c125",
             "role": "Portable Windows + Android bundle",
             "signing": "Same unsigned Windows and debug-signed Android packages"
         },
         "checksums": {
             "filename": "SHA256SUMS.txt",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.2-preview.9/SHA256SUMS.txt",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.1/SHA256SUMS.txt",
             "size": "410 B",
             "bytes": 410,
-            "sha256": "9c43712e18a0f0502aa2af4b912ba10c79895b9486f3e604f476889ed86a9611"
+            "sha256": "976cf51c4dc3f5e1becbcdde8eefae44ba61ffec09e98cec00dfbfb80c3376d1"
         }
     },
     "screenshots": {
@@ -269,10 +269,19 @@
     ],
     "history": [
         {
+            "version": "0.3.3-preview.1",
+            "tag": "v0.3.3-preview.1",
+            "published": "2026-09-17",
+            "current": true,
+            "label": "0.3.3 Preview 1",
+            "published_display": "September 17, 2026",
+            "summary": "Chat modernization with room naming, renaming and multi-device account linking, receiver and voice cleanup, and a tiered orbit-particle hero on the website."
+        },
+        {
             "version": "0.3.2-preview.9",
             "tag": "v0.3.2-preview.9",
             "published": "2026-09-14",
-            "current": true,
+            "current": false,
             "label": "0.3.2 Preview 9",
             "published_display": "September 14, 2026",
             "summary": "Playback exhaustion now reconnects friend live shares, with detailed fresh-frame and terminal recovery diagnostics."
