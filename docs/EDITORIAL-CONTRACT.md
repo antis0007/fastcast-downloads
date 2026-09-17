@@ -12,6 +12,18 @@ The pool is now 21 lines; see [the full review](WIZARD-FULL-REVIEW-2026-09-13.md
 and [the preceding cuts](WIZARD-CUTS-2026-09-13.md). The unchanged 123-line
 pool described in this review record is the state before that later request.
 
+September 17, 2026. The owner requested a launch-quality copy pass on the
+public site ("text is still not upgraded compared to other product launches").
+The rules below are unchanged: the pass sharpens concrete facts, outcomes, and
+instructions (hero lede, hero facts, section introductions on the home page)
+without adding slogans, unverifiable claims, or dropping required caveats.
+
+September 17, 2026. The owner requested a launch-quality copy pass on the
+public site ("text is still not upgraded compared to other product launches").
+The rules below are unchanged: the pass sharpens concrete facts, outcomes, and
+instructions (hero lede, hero facts, section introductions on the home page)
+without adding slogans, unverifiable claims, or dropping required caveats.
+
 September 13, 2026. This records the owner's instruction to restore the editorial
 standards of `C:\AI\fastcast\docs\BRAND_IDENTITY.md` and
 `C:\AI\fastcast\docs\WEBSITE_DESIGN_CONTRACT.md` within the published-site repo.
