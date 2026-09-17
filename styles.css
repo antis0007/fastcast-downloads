@@ -2412,3 +2412,43 @@ section[id], article[id] { scroll-margin-top: 88px; }
      outright states that rather than leaving it to the cascade. */
   .flame-field, .float-runes { display: none; }
 }
+
+/* Orbiting cast motes, populated by wizard-fx.js (ported from the fastcast
+   repo). One element each, animated on transform only, so the field composites
+   off the main thread. Count is tiered in the script, not here, and stays low
+   enough to keep the hero's total animated-node budget at 20. */
+.wizard-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.orbit-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px #f0a33c88;
+  opacity: 0.75;
+  animation: orbit-travel var(--d, 22s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+.wizard-particles .orbit-dot:nth-child(even) {
+  background: var(--ember);
+  box-shadow: 0 0 6px #ff5b2e88;
+}
+@keyframes orbit-travel {
+  from { transform: rotate(var(--a, 0deg)) translateX(var(--r, 72px)) scaleY(0.62); }
+  to { transform: rotate(calc(var(--a, 0deg) + 360deg)) translateX(var(--r, 72px)) scaleY(0.62); }
+}
+/* Page Visibility: a backgrounded tab stops compositing rather than spinning.
+   The JS also drops every dot on the low tier, so reduced motion leaves the
+   container genuinely empty rather than merely paused. */
+.cast-scene[data-paused] .orbit-dot { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .orbit-dot { display: none; }
+}

@@ -803,7 +803,14 @@ def render(slug, title, description):
     if re.search(r'\{\{\w+\}\}', body):
         raise ValueError(f'Unresolved template value in {slug}')
     robots = '<meta name="robots" content="noindex">' if slug == '404' else ''
-    page_script = '<script src="bandwidth.js" defer></script>' if slug == 'bandwidth' else ''
+    if slug == 'bandwidth':
+        page_script = '<script src="bandwidth.js" defer></script>'
+    elif slug == 'index':
+        # Home only: the wizard exists nowhere else, and the downloads page is
+        # kept deliberately light (visual ideation §5.5).
+        page_script = '<script src="wizard-fx.js" defer></script>'
+    else:
+        page_script = ''
     preload = '<link rel="preload" href="assets/windows-share.png" as="image">' if slug in {'index', 'product'} else ''
     structured = json_ld() if slug in {'index', 'downloads'} else ''
     download_current = ' current' if slug == 'downloads' else ''
