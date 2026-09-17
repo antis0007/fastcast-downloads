@@ -13,7 +13,7 @@
     document.getElementById("relay-total").textContent = `${gigabytes} GB`;
     document.getElementById("graph-max").textContent = `${Number(gigabytes)} GB`;
     document.getElementById("graph-time").textContent = `${minutes} min`;
-    document.getElementById("graph-description").textContent = `At ${rate} megabits per second, a ${minutes} minute session transfers an estimated ${gigabytes} gigabytes of video payload. This is a calculation, not a benchmark.`;
+    document.getElementById("graph-description").textContent = `At ${rate} megabits per second, a ${minutes} minute session transfers an estimated ${gigabytes} gigabytes of video data. This is a calculation, not a benchmark.`;
   }
   bitrate.addEventListener("input", updateGraphs);
   duration.addEventListener("input", updateGraphs);
