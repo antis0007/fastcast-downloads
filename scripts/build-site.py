@@ -15,7 +15,7 @@ BASE = 'https://antis0007.github.io/fastcast-downloads/'
 REPO = 'https://github.com/antis0007/fastcast-downloads'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
-    'index': ('Screen sharing for Windows and Android', 'Share a Windows screen or window with another PC or an Android device. Direct connections with relay fallback. Free development preview; no account needed for screen sharing.'),
+    'index': ('Screen sharing for Windows and Android', 'Share a Windows screen or window with another PC or an Android device. Direct device-to-device connection with encrypted relay fallback. Free preview; no account needed to share a screen.'),
     'product': ('Product overview', 'Windows and Android screen-sharing features, native interface captures, and release testing status.'),
     'downloads': ('Download FastCast', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
     'get-started': ('Setup', 'Install matching versions, create an invitation on the viewing device, and start sharing from Windows.'),
@@ -504,35 +504,41 @@ def flame_field(count=52):
 # Pools rotate without immediate repeats. Empty artwork regions use normal chat.
 # This replaces the earlier menace/Ser-Vur direction at the owner's request.
 # See docs/WIZARD-INTERACTIONS.md; historical cuts remain archived, not restored.
+# Voice: a deadpan archmage who treats screen sharing as humble craft. Every
+# joke is a true fact about FastCast in a robe; never a generic fantasy quip.
 WIZARD_LINES = {
     'first': [
-        "Hello. I was hoping someone would interrupt the posing.",
+        "Hello. The download is free. I came with it.",
     ],
     'idle': [
-        "I use Mage Hand to turn my rival's pages before he's finished.",
-        "I summoned a demon to hold my ladder. It offered me a kingdom. I pointed at the ladder.",
-        "I told my apprentice to touch grass. He brought a sample back for identification.",
-        "My apprentice borrowed the orb for 'research'. He watched a man build a shed for six hours.",
-        "I showed my apprentice his future. He asked to reload an earlier save.",
-        "We love casting screens.",
+        "I do not host your screen. I merely point at it.",
+        "No account. My circle requires only two devices and one invitation.",
+        "The relay is a last resort. Even portents need a backup plan.",
+        "I have read the terms of service. There were none to read.",
+        "The installer is unsigned. Verify the checksum; trust is a spell with components.",
+        "Windows casts, Android watches. Neither asks me who you are.",
+        "Your group can stay in its own tavern. I only carry the picture.",
+        "I encrypt everything. Not from paranoia. From habit.",
     ],
     'poke': [
-        "You needn't knock between every sentence.",
-        "You can stop checking. I haven't despawned.",
+        "Once is a summons. Six times is a denial of service.",
+        "Still here. Nothing in this preview despawns.",
     ],
     'hold': [
-        "Are you... holding my hand?",
-        "All right, we can ponder together.",
+        "You are holding down a wizard. The stream, at least, holds on its own.",
+        "Very well. We ponder together.",
     ],
     'far': [
-        "A little closer to the circle, please. I was just getting comfortable.",
+        "Any farther and even I would need the relay.",
     ],
     'orb': [
     ],
     'rightclick': [
-        "Check which window you're sharing before you begin.",
-        "Point to what you're explaining. 'Over there' covers rather a lot of screen.",
-        "When something goes wrong, say what you clicked and what happened. 'I angered it' is a little vague.",
+        "Check which window you're sharing before you begin. Full screen shares everything.",
+        "Same version on both devices. Mismatched builds are the most common curse.",
+        "Guest Wi-Fi often isolates devices that share a name. Try your own network first.",
+        "Point at what you mean. 'Over there' is a large part of a screen.",
+        "When reporting a bug, say what you clicked and what happened. 'It broke' is not a spell.",
         "Give your friend a moment to read before you switch windows.",
     ],
     'hat': [
@@ -540,8 +546,8 @@ WIZARD_LINES = {
     'beard': [
     ],
     'drag': [
-        "Oh, we're moving. Mind the hat, please.",
-        "I would have walked, but you've already got me.",
+        "Moving me does not move the stream. Mind the hat.",
+        "I would have teleported, but you've already got me.",
     ],
 }
 

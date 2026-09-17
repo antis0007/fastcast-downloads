@@ -247,10 +247,10 @@ p { text-wrap: pretty; }
   grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
   gap: 40px;
   align-items: center;
-  padding-block: 80px 64px;
+  padding-block: 88px 72px;
 }
-.hero .lede { font-size: 18px; max-width: 34rem; }
-.hero .eyebrow { font-size: 10px; }
+.hero .lede { font-size: 19px; line-height: 1.6; max-width: 34rem; }
+.hero .eyebrow { font-size: 10px; margin-bottom: 20px; }
 .hero .small-copy { margin-top: 0; }
 .hero .actions { margin-block: 26px 22px; }
 /* Scannable feature summary. Distinct from .small-copy, which stays the

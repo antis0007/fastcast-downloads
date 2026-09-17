@@ -38,37 +38,43 @@ capabilities, or insults aimed at a visitor who accepted our invitation to click
 Modern product vocabulary is allowed. Useful gesture feedback need not pretend
 to be a joke. Do not restore the old “Ser-Vur” vocabulary or threat pool.
 
-There are **18 lines** after the light tip edit. Occasional
-slang and a casting-screens callback are now intentional. Each new joke supplies
-its own situation: grass collected as a specimen, research that turns into shed
-videos, and wanting to reload a foretold future. These are individual additions, not a restoration of the caption archive.
+17 September 2026 (per [AGENT-BRIEF-site-modernization.md](AGENT-BRIEF-site-modernization.md)):
+the wizard is now a deadpan archmage who treats screen sharing as humble craft.
+Every joke is a true fact about FastCast in a robe (no hosting, no account,
+relay as fallback, unsigned installer, encryption, no platform switch). The
+banned register ('tis, behold, mortal, generic fantasy quips) is not used.
+There are **22 lines**.
 
 | Interaction | Exact wording |
 | --- | --- |
-| First click | Hello. I was hoping someone would interrupt the posing. |
-| Conversation | I use Mage Hand to turn my rival's pages before he's finished. |
-| Conversation | I summoned a demon to hold my ladder. It offered me a kingdom. I pointed at the ladder. |
-| Conversation | I told my apprentice to touch grass. He brought a sample back for identification. |
-| Conversation | My apprentice borrowed the orb for 'research'. He watched a man build a shed for six hours. |
-| Conversation | I showed my apprentice his future. He asked to reload an earlier save. |
-| Conversation | We love casting screens. |
-| Repeated clicks | You needn't knock between every sentence. |
-| Repeated clicks | You can stop checking. I haven't despawned. |
-| Hold | Are you... holding my hand? |
-| Hold | All right, we can ponder together. |
-| Far drag | A little closer to the circle, please. I was just getting comfortable. |
-| Right-click / tip button | Check which window you're sharing before you begin. |
-| Right-click / tip button | Point to what you're explaining. 'Over there' covers rather a lot of screen. |
-| Right-click / tip button | When something goes wrong, say what you clicked and what happened. 'I angered it' is a little vague. |
+| First click | Hello. The download is free. I came with it. |
+| Conversation | I do not host your screen. I merely point at it. |
+| Conversation | No account. My circle requires only two devices and one invitation. |
+| Conversation | The relay is a last resort. Even portents need a backup plan. |
+| Conversation | I have read the terms of service. There were none to read. |
+| Conversation | The installer is unsigned. Verify the checksum; trust is a spell with components. |
+| Conversation | Windows casts, Android watches. Neither asks me who you are. |
+| Conversation | Your group can stay in its own tavern. I only carry the picture. |
+| Conversation | I encrypt everything. Not from paranoia. From habit. |
+| Repeated clicks | Once is a summons. Six times is a denial of service. |
+| Repeated clicks | Still here. Nothing in this preview despawns. |
+| Hold | You are holding down a wizard. The stream, at least, holds on its own. |
+| Hold | Very well. We ponder together. |
+| Far drag | Any farther and even I would need the relay. |
+| Right-click / tip button | Check which window you're sharing before you begin. Full screen shares everything. |
+| Right-click / tip button | Same version on both devices. Mismatched builds are the most common curse. |
+| Right-click / tip button | Guest Wi-Fi often isolates devices that share a name. Try your own network first. |
+| Right-click / tip button | Point at what you mean. 'Over there' is a large part of a screen. |
+| Right-click / tip button | When reporting a bug, say what you clicked and what happened. 'It broke' is not a spell. |
 | Right-click / tip button | Give your friend a moment to read before you switch windows. |
-| Drag | Oh, we're moving. Mind the hat, please. |
-| Drag | I would have walked, but you've already got me. |
+| Drag | Moving me does not move the stream. Mind the hat. |
+| Drag | I would have teleported, but you've already got me. |
 
-The tips have a literal purpose: avoid accidental disclosure, point clearly,
-describe a reproducible problem, and allow time to read.
-They make no promises about encryption, routes, performance, or platform support.
-The two retained magic stories give the spells a practical or recognisably petty use. None of this is
-an objective claim that the jokes are funny; editorial taste remains a judgement.
+The tips restate the home page's own troubleshooting: avoid accidental
+disclosure, match versions, avoid guest-Wi-Fi isolation, point clearly, report
+reproducibly, allow time to read. Conversation lines state only facts the site
+already documents; none promises performance or platform support beyond that.
+The earlier 18-line pool is recorded in git history (`e6630bf`).
 
 ## Implementation and verification
 
