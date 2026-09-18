@@ -18,7 +18,7 @@ REPO = 'https://github.com/antis0007/fastcast-downloads'
 PRODUCT = 'Pyrenet'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
-    'index': ('Screen sharing for Windows and Android', 'Share a Windows screen or window with another PC or an Android device. Direct device-to-device connection with encrypted relay fallback. Free preview; no account needed to share a screen.'),
+    'index': ('Screen sharing without the meeting', 'Pick a window or your whole screen on Windows and it shows up on another PC or an Android phone. Direct encrypted connection with relay fallback. Free preview; no account needed to share a screen.'),
     'product': ('Product overview', 'Windows and Android screen-sharing features, native interface captures, and release testing status.'),
     'downloads': (f'Download {PRODUCT}', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
     'get-started': ('Setup', 'Install matching versions, create an invitation on the viewing device, and start sharing from Windows.'),
@@ -827,6 +827,7 @@ def render(slug, title, description):
         'WINDOWS_SIGNING': release['signing']['windows'],
         'ANDROID_SIGNING': release['signing']['android'],
         'SCREENSHOT_WIDE': screenshot('windows-share', slug in ['index', 'product'], explain_link=slug == 'index'),
+        'SCREENSHOT_HERO': screenshot('windows-compact', slug == 'index'),
         'SCREENSHOT_COMPACT': screenshot('windows-compact'),
         'SHA_ROWS': sha_rows(),
         'EVIDENCE': evidence_list(),

@@ -1,53 +1,29 @@
 <section class="hero wrap" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <p class="eyebrow">Free preview · Windows shares · Windows and Android watch</p>
-    <h1 id="hero-title">Share your screen<br><span>with another device.</span></h1>
-    <p class="lede">Pick a window on your Windows PC and it shows up on a friend's PC or Android phone. They install {{PRODUCT}}, send you an invitation, and you start sharing. There is no account to make and no server to join.</p>
+    <p class="eyebrow">Free preview · No account · No meeting link</p>
+    <h1 id="hero-title">Share a window,<br><span>not a meeting.</span></h1>
+    <p class="lede">Pick any window or screen on your Windows PC and it appears on a friend's PC or Android phone. The picture travels device to device over an encrypted connection, and your group keeps talking wherever it already does.</p>
     <div class="actions">
       <a class="button primary" data-download="windows" href="{{WINDOWS_URL}}">Download for Windows <span aria-hidden="true">↓</span></a>
       <a class="button" data-download="android" href="{{ANDROID_URL}}">Get the Android viewer <span aria-hidden="true">↓</span></a>
     </div>
     <p class="small-copy">{{RELEASE_LABEL}} · Source on <a href="{{REPO}}">GitHub</a> under MIT or Apache-2.0</p>
     <ul class="hero-facts">
-      <li>Share the whole screen or a single window</li>
-      <li>Up to eight people can watch the same screen</li>
-      <li>Talk, write and send files in the same session</li>
+      <li>Whole screen or a single window</li>
+      <li>Up to eight people watch one session</li>
+      <li>Voice, chat and files ride along</li>
     </ul>
   </div>
   <div class="hero-visual">
-    <div class="cast-scene" data-fx="wizard-orbit">
-      <div class="wizard-particles" aria-hidden="true"></div>
-      {{FLAME_FIELD}}
-      {{HEX_ACCENTS}}
-      {{RUNE_CIRCLE}}
-      {{FALL_RUNES}}
-      {{RUNE_CLOUD}}
-      {{CIRCUIT_TRACES}}
-      {{FLOATING_RUNES}}
-      <span class="cast-figure">
-        <button class="cast-body" type="button">
-          <img class="cast-wizard" src="assets/fastcast-wizard.webp" width="1203" height="926" alt="" draggable="false">
-          <span class="cast-firelight" aria-hidden="true"></span>
-          <span class="sr-only">The {{PRODUCT}} wizard. Activate for a word from him.</span>
-        </button>
-        <p class="wizard-voice" hidden></p>
-      </span>
-    </div>
-    <div class="wizard-controls" hidden>
-      <span>Click the wizard to chat.</span>
-      <button class="wizard-tip" type="button">Ask for a tip</button>
-      <span class="wizard-mouse-hint">or right-click him</span>
-    </div>
-    <p class="wizard-announcement sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
-    <script type="application/json" id="wizard-voice-lines">{{WIZARD_VOICE}}</script>
+    {{SCREENSHOT_HERO}}
   </div>
 </section>
 
 <section class="light-panel light-panel-2" id="interface">
   <div class="wrap" data-reveal>
     <div class="section-heading">
-      <div><p class="eyebrow">Windows interface</p><h2>Choosing what<br>to share</h2></div>
-      <p>Everything for a session is in one window. You import the invitation from whoever is watching, choose a screen or a single window, and decide whether to send audio or allow remote input. Then click Start sharing.</p>
+      <div><p class="eyebrow">Windows interface</p><h2>Choose exactly<br>what they see</h2></div>
+      <p>Everything for a session lives in one window. Import the invitation from whoever is watching, pick a screen or a single window, set audio and remote input, then click Start sharing.</p>
     </div>
     {{SCREENSHOT_WIDE}}
     <div class="permissions">
@@ -64,7 +40,7 @@
 <section class="section wrap" id="setup" aria-labelledby="role-title" data-reveal>
   <div class="section-heading">
     <div><p class="eyebrow">Setup</p><h2 id="role-title">Two devices,<br>one invitation</h2></div>
-    <p>The person watching makes the invitation and the sharing PC imports it, so start on whichever device is going to watch.</p>
+    <p>Start on the device that will watch. It makes the invitation, and the sharing PC imports it.</p>
   </div>
   <div class="role-grid">
     <a class="role-card" id="receive-setup" href="get-started.html#invite">
@@ -86,13 +62,13 @@
 
 <section class="section wrap network" id="route" data-reveal>
   <div class="section-heading">
-    <div><p class="eyebrow">Connections</p><h2>Direct connections<br>and relay fallback</h2></div>
-    <p>Your screen goes straight to the other device whenever the two can reach each other. If they can't, the encrypted video goes through a relay instead.</p>
+    <div><p class="eyebrow">Connections</p><h2>Direct when devices<br>reach each other</h2></div>
+    <p>Your screen goes straight to the other device whenever the two can reach each other. If they can't, the encrypted picture takes the relay instead.</p>
   </div>
   <div class="network-grid">
     <div class="network-copy">
       {{SCRYING_ORB}}
-      <p>Your PC encodes the picture and the watching device decodes it. A relay only forwards packets; it never opens or re-encodes them.</p>
+      <p>Your PC encodes the picture; the watching device decodes it. Nobody in between can read it.</p>
       <p class="tower-line">Pairing and discovery messages help the two devices find each other. They travel separately from the screen and audio.</p>
       <aside class="release-caveat">
         <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
@@ -119,8 +95,8 @@
     <div class="class-body">
       <p class="eyebrow">Why {{PRODUCT}}</p>
       <h2 id="class-title">Screen sharing<br><span>without a new platform</span></h2>
-      <p class="class-lede">Your group already has somewhere to talk, and we are not asking anyone to move. Open {{PRODUCT}} for the screen and leave the conversation where it is. When the direct route works, the video goes between your two devices and nowhere else.</p>
-      <p class="class-lede">If you would rather keep everything in one place, there are voice calls, text rooms and file sending inside the session too. They are newer than the screen sharing, and their limits are listed on their own page.</p>
+      <p class="class-lede">Your group already has somewhere to talk, and we are not asking anyone to move. Open {{PRODUCT}} for the screen and leave the conversation where it lives. When the direct route works, the video passes between your two devices and nowhere else.</p>
+      <p class="class-lede">If you would rather keep everything in one place, voice calls, text rooms and file sending live in the session too. They are newer than the screen sharing, and their limits are stated on their own page.</p>
       <p class="class-lede"><a class="text-link" href="calls-and-rooms.html">What calls and rooms do today →</a> <a class="text-link" href="why-pyrenet.html">Why {{PRODUCT}} is a separate tool →</a></p>
     </div>
     <div class="class-figure" aria-hidden="true">

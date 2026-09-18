@@ -65,11 +65,10 @@ async function checkLayouts(name, engine) {
           assert.equal((await wordmark.textContent()).trim(), 'Pyrenet', 'header wordmark carries the product name');
           assert.equal(await wordmark.isVisible(), width > 760, 'wordmark visibility follows the compact-header breakpoint');
           const capture = await page.locator('#interface [data-lightbox]').boundingBox();
-          const wizard = await page.locator('.hero .cast-wizard').boundingBox();
           const tour = await page.locator('#interface .wrap').boundingBox();
-          assert.ok(wizard.width > 0, 'the original wizard remains visible');
-          const seal = await page.locator('.hero .rune-circle-lg').boundingBox();
-          assert.ok(seal.x >= 0 && seal.x + seal.width <= width, 'the full magic seal fits the viewport');
+          const heroCapture = await page.locator('.hero-visual [data-lightbox]').boundingBox();
+          assert.ok(heroCapture && heroCapture.width > 0, 'the hero leads with the product capture');
+          assert.ok(heroCapture.x >= 0 && heroCapture.x + heroCapture.width <= width, 'the hero capture fits the viewport');
           assert.equal(await page.locator('.hero-visual').evaluate(el => getComputedStyle(el).overflowX), 'visible', 'the aura is not cut at the hero column edges');
           assert.ok(capture.width > tour.width * .8, 'the app capture has the full content width');
           const table = await page.locator('.ledger-table').boundingBox();
@@ -172,6 +171,10 @@ async function checkWizardInteractions(name, engine) {
     const context = await browser.newContext({ viewport: { width: 390, height: 900 }, reducedMotion: 'reduce' });
     const page = await context.newPage();
     await page.goto(base);
+    if ((await page.locator('.cast-scene').count()) === 0) {
+      console.log(`${name}: homepage has no wizard stage; wizard interactions are not applicable`);
+      return;
+    }
     const body = page.locator('.cast-body');
     const bubble = page.locator('.wizard-voice');
     const tip = page.getByRole('button', { name: 'Ask for a tip', exact: true });
@@ -280,27 +283,29 @@ async function checkJourneysAndAccessibility() {
     await page.keyboard.press('Escape');
     assert.equal(await page.locator('dialog').isVisible(), false);
     assert.ok(await screenshot.evaluate(el => el === document.activeElement));
-    // Reduced motion must stop the decorative animation. The seal is the right
-    // probe: it stays visible with motion off, unlike the ember and floating-rune
-    // layers, which are hidden outright and so have nothing to assert on.
-    assert.equal(await page.locator('.rune-ring').first().evaluate(el => getComputedStyle(el).animationName), 'none');
-    await page.locator('.cast-body').focus();
-    await page.keyboard.press('Enter');
-    assert.ok(await page.locator('.wizard-voice').isVisible());
-    assert.ok((await page.locator('.wizard-voice').textContent()).trim().length > 0);
-    assert.equal(await page.locator('.wizard-voice').getAttribute('data-pool'), 'first');
-    assert.equal(await page.locator('.cast-body').evaluate(el => getComputedStyle(el).animationName), 'none');
-    await assertNoOverflow(page, 'large wizard remark');
-    // Curated regions may have no dedicated dialogue. Clicking them must still
-    // activate the wizard, rather than swallowing the visitor's first click.
-    for (const [x, y] of [[.70, .54], [.34, .55], [.30, .17]]) {
-      await page.goto(base);
-      const body = page.locator('.cast-body');
-      await body.scrollIntoViewIfNeeded();
-      const box = await body.boundingBox();
-      await page.mouse.click(box.x + box.width * x, box.y + box.height * y);
+    if ((await page.locator('.cast-scene').count()) > 0) {
+      // Reduced motion must stop the decorative animation. The seal is the right
+      // probe: it stays visible with motion off, unlike the ember and floating-rune
+      // layers, which are hidden outright and so have nothing to assert on.
+      assert.equal(await page.locator('.rune-ring').first().evaluate(el => getComputedStyle(el).animationName), 'none');
+      await page.locator('.cast-body').focus();
+      await page.keyboard.press('Enter');
       assert.ok(await page.locator('.wizard-voice').isVisible());
+      assert.ok((await page.locator('.wizard-voice').textContent()).trim().length > 0);
       assert.equal(await page.locator('.wizard-voice').getAttribute('data-pool'), 'first');
+      assert.equal(await page.locator('.cast-body').evaluate(el => getComputedStyle(el).animationName), 'none');
+      await assertNoOverflow(page, 'large wizard remark');
+      // Curated regions may have no dedicated dialogue. Clicking them must still
+      // activate the wizard, rather than swallowing the visitor's first click.
+      for (const [x, y] of [[.70, .54], [.34, .55], [.30, .17]]) {
+        await page.goto(base);
+        const body = page.locator('.cast-body');
+        await body.scrollIntoViewIfNeeded();
+        const box = await body.boundingBox();
+        await page.mouse.click(box.x + box.width * x, box.y + box.height * y);
+        assert.ok(await page.locator('.wizard-voice').isVisible());
+        assert.equal(await page.locator('.wizard-voice').getAttribute('data-pool'), 'first');
+      }
     }
     await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Get started', exact: true }).click();
     await page.waitForURL('**/get-started.html');
