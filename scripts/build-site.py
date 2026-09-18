@@ -22,6 +22,7 @@ PAGES = {
     'product': ('Product overview', 'Windows and Android screen-sharing features, native interface captures, and release testing status.'),
     'downloads': (f'Download {PRODUCT}', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
     'get-started': ('Setup', 'Install matching versions, create an invitation on the viewing device, and start sharing from Windows.'),
+    'calls-and-rooms': ('Calls, rooms & files', f'Voice calls, multi-screen Tables, room discussions and consent-based file transfer in the {PRODUCT} preview, with the remaining gaps stated.'),
     'platforms': ('Supported platforms', 'Windows x64 sends and watches. Android 8+ watches. Linux receive is in source, not in this zip. No Mac, iOS, or browser app.'),
     'community': ('Bugs', 'Public GitHub issues for a screen-sharing preview. Do not paste invitations.'),
     'help': ('Help', 'Troubleshoot installation, connections, audio, and remote input. Help search runs in your browser.'),
@@ -908,7 +909,7 @@ def render(slug, title, description):
     <div class="footer-intro">{brand('brand footer-brand')}<p>Screen sharing with a little magic and careful networking.</p><p class="small-copy">{escape(release['offer'])}</p><p class="small-copy">{escape(release['application_source'])}</p></div>
     <nav aria-label="Product links"><h2>Product</h2>{link('product','Overview',slug)}{link('downloads','Downloads',slug)}{link('platforms','Platforms',slug)}{link('releases','Release notes',slug)}</nav>
     <nav aria-label="Resources"><h2>Resources</h2>{link('get-started','Setup',slug)}{link('help','Help',slug)}{link('community','Bugs',slug)}{link('privacy','Privacy',slug)}</nav>
-    <nav aria-label="More"><h2>More</h2>{link('why-pyrenet',f'Why {PRODUCT}',slug)}{link('how-it-works','How it works',slug)}{link('roadmap','Roadmap',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
+    <nav aria-label="More"><h2>More</h2>{link('why-pyrenet',f'Why {PRODUCT}',slug)}{link('calls-and-rooms','Calls & rooms',slug)}{link('how-it-works','How it works',slug)}{link('roadmap','Roadmap',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
     <div class="footer-bottom"><span>Windows sends · Windows or Android watches · Preview</span><a href="{REPO}">GitHub ↗</a><a href="{REPO}/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
   </footer>
   <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>{tokens['DIALOG_CAPTION']}</p></dialog>
