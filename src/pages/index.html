@@ -1,16 +1,16 @@
 <section class="hero wrap" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <p class="eyebrow">Free preview · Windows sends · Windows and Android watch</p>
+    <p class="eyebrow">Free preview · Windows shares · Windows and Android watch</p>
     <h1 id="hero-title">Share your screen<br><span>with another device.</span></h1>
-    <p class="lede">Pick a window on your Windows PC and it shows up on a friend's PC or Android phone. The video goes straight between your devices over your own network; an encrypted relay steps in only if the direct route fails. No account needed to share a screen, and nobody has to move to a new platform to watch.</p>
+    <p class="lede">Pick a window on your Windows PC and it appears on a friend's PC or Android phone. Nobody signs up, and nobody moves to a new platform to watch — they install {{PRODUCT}}, send you an invitation, and you start sharing.</p>
     <div class="actions">
       <a class="button primary" data-download="windows" href="{{WINDOWS_URL}}">Download for Windows <span aria-hidden="true">↓</span></a>
       <a class="button" data-download="android" href="{{ANDROID_URL}}">Get the Android viewer <span aria-hidden="true">↓</span></a>
     </div>
     <ul class="hero-facts">
-      <li>Share a full screen or a single window</li>
-      <li>Watch on Windows x64 or Android 8+, with calls and in-call chat</li>
-      <li>Direct connection first, encrypted relay as fallback</li>
+      <li>Share the whole screen or a single window</li>
+      <li>Up to eight people can watch the same screen</li>
+      <li>Talk, write and send files in the same session</li>
     </ul>
   </div>
   <div class="hero-visual">
@@ -45,15 +45,15 @@
 <section class="light-panel light-panel-2" id="interface">
   <div class="wrap" data-reveal>
     <div class="section-heading">
-      <div><p class="eyebrow">Windows interface</p><h2>Screen selection<br>and session controls</h2></div>
-      <p>Everything a session needs fits in one window: the capture source, the invitation from the other device, and the audio and input switches. Set them, then select Start sharing.</p>
+      <div><p class="eyebrow">Windows interface</p><h2>Choosing what<br>to share</h2></div>
+      <p>One window holds the whole session: the screen or window you are sending, the invitation that came from the other device, and the switches for audio and remote input. Set those, then click Start sharing.</p>
     </div>
     {{SCREENSHOT_WIDE}}
     <div class="permissions">
-      <div class="permissions-heading"><h3>Audio and<br>remote control</h3><p>Computer audio, microphone, and remote input are separate switches, so you share exactly what you intend to.</p></div>
+      <div class="permissions-heading"><h3>Audio and<br>remote control</h3><p>Computer audio, your microphone and remote input are three separate switches. Nothing goes across until you turn it on.</p></div>
       <div class="permission-list" data-snap role="group" aria-label="Permissions you can grant separately" tabindex="0">
-        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-volume"/></svg><div><h4>System audio</h4><p>Computer audio is included. Audible playback on a phone has not yet been confirmed.</p></div><span class="status status-available"><span class="status-word">Available</span></span></article>
-        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-mic"/></svg><div><h4>Microphone</h4><p>Enable the microphone if you want to speak during the session.</p></div><span class="status status-preview"><span class="status-word">Preview</span></span></article>
+        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-volume"/></svg><div><h4>System audio</h4><p>Sound from the PC travels with the picture. Whether a phone plays it audibly is still unconfirmed.</p></div><span class="status status-available"><span class="status-word">Available</span></span></article>
+        <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-mic"/></svg><div><h4>Microphone</h4><p>Turn it on when you want to talk during the session.</p></div><span class="status status-preview"><span class="status-word">Preview</span></span></article>
         <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-input"/></svg><div><h4>Remote input</h4><p>Lets the other device drive your mouse and keyboard.</p></div><span class="status status-preview"><span class="status-word">Preview</span></span></article>
       </div>
     </div>
@@ -62,21 +62,21 @@
 
 <section class="section wrap" id="setup" aria-labelledby="role-title" data-reveal>
   <div class="section-heading">
-    <div><p class="eyebrow">Setup</p><h2 id="role-title">Set up the viewing<br>and sharing devices</h2></div>
-    <p>Two devices, one invitation. The device that will watch creates the invitation; the Windows PC that shares imports it. Start with the viewer.</p>
+    <div><p class="eyebrow">Setup</p><h2 id="role-title">Set up both<br>devices</h2></div>
+    <p>Two devices, one invitation. Whoever is watching creates it, and the Windows PC that shares imports it. Start with the viewer.</p>
   </div>
   <div class="role-grid">
     <a class="role-card" id="receive-setup" href="get-started.html#invite">
-      <span class="eyebrow">Step 1 · A second PC or an Android device</span>
+      <span class="eyebrow">Step 1 · The PC or phone that watches</span>
       <h3>I want to watch</h3>
-      <p>Install {{PRODUCT}}, create an invitation, and send it to whoever is sharing. The invitation is the key to the session, so send it privately.</p>
+      <p>Install {{PRODUCT}}, choose Receive, and copy the invitation it gives you. Send it privately: the invitation is what admits someone to the session.</p>
       <p class="role-order">Start here</p>
       <span class="text-link">Viewer setup →</span>
     </a>
     <a class="role-card" href="get-started.html#share">
       <span class="eyebrow">Step 2 · The Windows PC with the screen</span>
       <h3>I want to share</h3>
-      <p>Import the invitation, pick a full screen or a single window, set audio and input, and select Start sharing.</p>
+      <p>Open Share, import the invitation, pick a screen or a single window, set the audio and input switches, then click Start sharing.</p>
       <p class="role-order">Finish here</p>
       <span class="text-link">Sender setup →</span>
     </a>
@@ -86,16 +86,16 @@
 <section class="section wrap network" id="route" data-reveal>
   <div class="section-heading">
     <div><p class="eyebrow">Connections</p><h2>Direct connections<br>and relay fallback</h2></div>
-    <p>{{PRODUCT}} sends your screen straight to the viewing device whenever it can. If that route fails, the encrypted media goes through a relay instead.</p>
+    <p>Your screen goes straight to the other device whenever the two can reach each other. When they cannot, the encrypted video travels through a relay instead.</p>
   </div>
   <div class="network-grid">
     <div class="network-copy">
       {{SCRYING_ORB}}
-      <p>Your Windows PC encodes the picture and the viewing device decodes it. When the relay is used, it forwards encrypted packets; it never plays or re-encodes them.</p>
+      <p>Your PC encodes the picture and the watching device decodes it. A relay only forwards the packets it is given; it never opens, plays or re-encodes them.</p>
       <p class="tower-line">Pairing and discovery messages help the two devices find each other. They travel separately from the screen and audio.</p>
       <aside class="release-caveat">
         <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
-        <div><strong>Start on your own network.</strong><p>Earlier builds were tested on a local network. This build still needs physical playback verification on local and separate networks. Networks that block UDP have no media fallback.</p></div>
+        <div><strong>Start on your own network.</strong><p>Earlier builds were tested on one local network. This build still needs playback confirmed on real hardware, locally and across networks. Where UDP is blocked outright there is no media fallback.</p></div>
       </aside>
       <a class="text-link connection-more" href="how-it-works.html">Explore the routes, data and technical stack →</a>
     </div>
@@ -108,7 +108,7 @@
         <div class="route-end"><svg class="icon" aria-hidden="true"><use href="#i-devices"/></svg><span>Viewing device</span></div>
         <div class="relay-path" aria-hidden="true"><div class="tower-node"><svg class="icon" aria-hidden="true"><use href="#i-tower"/></svg><span>RELAY / FALLBACK</span></div></div>
       </div>
-      <figcaption class="design-caption">When a direct route is available, media travels between your devices; otherwise, the relay forwards it. <a href="how-it-works.html#route">Compare both paths.</a></figcaption>
+      <figcaption class="design-caption">Both paths, side by side. <a href="how-it-works.html#route">What each one carries.</a></figcaption>
     </figure>
   </div>
 </section>
@@ -118,8 +118,9 @@
     <div class="class-body">
       <p class="eyebrow">Why {{PRODUCT}}</p>
       <h2 id="class-title">Screen sharing<br><span>without a new platform</span></h2>
-      <p class="class-lede">Keep talking in the chat app your group already uses and open {{PRODUCT}} only for the screen. Nobody creates an account or joins a new server to watch, and when the direct route works the video passes between your two devices and nowhere else.</p>
-      <p class="class-lede"><a class="text-link" href="why-pyrenet.html">Why {{PRODUCT}} is a separate tool →</a></p>
+      <p class="class-lede">Your group already has somewhere to talk, and {{PRODUCT}} does not ask anyone to leave it. Open it for the screen, keep the conversation where it is, and when the direct route works the video passes between your two devices and nowhere else.</p>
+      <p class="class-lede">When you would rather stay in one place, the session also carries voice calls, rooms for written conversation, and file transfer the other side accepts by hand. All three are preview work, and what they cannot do yet is written down rather than left out.</p>
+      <p class="class-lede"><a class="text-link" href="calls-and-rooms.html">What calls and rooms do today →</a> <a class="text-link" href="why-pyrenet.html">Why {{PRODUCT}} is a separate tool →</a></p>
     </div>
     <div class="class-figure" aria-hidden="true">
       <img src="assets/fastcast-wizard.webp" width="1203" height="926" alt="">
@@ -131,40 +132,41 @@
   <div class="wrap" data-reveal>
     <div class="section-heading">
       <div><p class="eyebrow">Current release</p><h2>Features and limitations</h2></div>
-      <p>{{RELEASE_LABEL}}, published {{PUBLISHED}}. Each status records what is in the download and how far it has been tested on real devices.</p>
+      <p>{{RELEASE_LABEL}}, published {{PUBLISHED}}. Each row says what is in the download and how far it has been tested on real devices.</p>
     </div>
     <table class="ledger-table">
       <caption>Available means included in the download; testing limits are listed alongside each feature.</caption>
       <thead><tr><th scope="col">Capability</th><th scope="col">Status</th><th scope="col">What to expect</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Windows x64</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Share a screen or window, or receive from another Windows PC. Use matching builds.</td></tr>
-        <tr><th scope="row">Android 8+</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Receives the stream. Android does not send, and device support varies.</td></tr>
-        <tr><th scope="row">System audio</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>System audio is included. Audible output and extended playback remain unverified for this build.</td></tr>
-        <tr><th scope="row">Microphone &amp; remote input</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>Included in the build, but voice, echo handling, and Android input have not yet been verified on real devices.</td></tr>
-        <tr><th scope="row">Outside your local network</th><td><span class="status status-limited"><span class="status-word">Limited</span></span></td><td>Direct routes and relay fallback are included, but playback between separate networks has not yet been verified.</td></tr>
-        <tr><th scope="row">Relay &amp; multiple viewers</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>A {{PRODUCT}} relay is included. Tests on one machine cover up to eight viewers; sharing with several physical devices still needs verification.</td></tr>
-        <tr><th scope="row">Other platforms</th><td><span class="status status-not-yet"><span class="status-word">Not yet</span></span></td><td>No macOS, iPhone, iPad, or browser app. A Linux viewer is source-only.</td></tr>
+        <tr><th scope="row">Windows x64</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Shares a screen or a window, and can watch one coming from another PC. Both ends need the same version.</td></tr>
+        <tr><th scope="row">Android 8+</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Watches, and joins calls and rooms. It cannot share its own screen, and decoder behaviour differs between devices.</td></tr>
+        <tr><th scope="row">System audio</th><td><span class="status status-available"><span class="status-word">Available</span></span></td><td>Sound from the sharing PC is included. Audible output at the far end, and long sessions, are unconfirmed.</td></tr>
+        <tr><th scope="row">Microphone &amp; remote input</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>Both ship in the build. Voice, echo handling and Android input have not been through physical testing.</td></tr>
+        <tr><th scope="row">Calls, rooms &amp; files</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>Voice calls, room discussions, and file transfer the receiver accepts. No reactions, editing or unread counts, and files need a direct route. <a href="calls-and-rooms.html">What they do today</a>.</td></tr>
+        <tr><th scope="row">Outside your local network</th><td><span class="status status-limited"><span class="status-word">Limited</span></span></td><td>Direct routes and relay fallback are built in, but playback between separate networks has not been confirmed on real machines.</td></tr>
+        <tr><th scope="row">Relay &amp; multiple viewers</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>Up to eight viewers on one share, exercised on a single machine. Several physical devices at once remains untested.</td></tr>
+        <tr><th scope="row">Other platforms</th><td><span class="status status-not-yet"><span class="status-word">Not yet</span></span></td><td>No macOS, iPhone, iPad or browser app. A Linux viewer exists in source only.</td></tr>
       </tbody>
     </table>
-    <div class="ledger-footnote"><p>Playback depends on the devices and network. This build has passed compilation and package checks; physical playback acceptance remains open.</p><a class="text-link" href="product.html#capabilities">Full capability notes →</a></div>
+    <div class="ledger-footnote"><p>Playback depends on the devices and the network between them. This build passes compilation and package checks; acceptance on physical hardware is still open.</p><a class="text-link" href="product.html#capabilities">Full capability notes →</a></div>
   </div>
 </section>
 
 <section class="light-panel light-panel-2" id="help">
   <div class="wrap help-grid" data-reveal>
-    <div class="help-heading"><p class="eyebrow">Help</p><h2>Common setup<br>questions</h2><p>Most first-session failures come down to mismatched versions, guest Wi-Fi isolating the devices, or a stale invitation. Check those three before filing a bug.</p></div>
+    <div class="help-heading"><p class="eyebrow">Help</p><h2>Common setup<br>questions</h2><p>First sessions usually fail for one of three reasons: the two builds are different versions, guest Wi-Fi is keeping the devices apart, or the invitation has already been used. Check those before filing a bug.</p></div>
     <div>
       <details class="faq" open>
         <summary>The devices won't connect.</summary>
-        <p>Use matching versions on both devices and check that they can reach each other. Guest Wi-Fi can isolate devices even when they share a network name. Make a fresh invitation on the viewer and import it on the sharing PC. <a href="help.html#connection">Connection checklist.</a></p>
+        <p>Check that both are on the same version and can actually reach each other — guest Wi-Fi often isolates devices that share a network name. Then create a fresh invitation on the watching device and import it again. <a href="help.html#connection">Connection checklist.</a></p>
       </details>
       <details class="faq">
         <summary>Is this remote control, or watching?</summary>
-        <p>Screen sharing works with remote input disabled. Remote input is an experimental option for mouse and keyboard control; responsiveness in games has not been established.</p>
+        <p>Watching, unless you turn remote input on. That switch is experimental, and nobody has measured whether it keeps up well enough for games.</p>
       </details>
       <details class="faq">
         <summary>What do I need before installing?</summary>
-        <p>Windows x64 to send, and a second Windows PC or Android 8+ to watch. The Windows installer is unsigned and the APK is debug-signed, so check the published checksum. <a href="downloads.html">Install notes.</a></p>
+        <p>A Windows x64 PC to send, and a second Windows PC or an Android 8+ device to watch. The Windows installer is unsigned and the APK is debug-signed, so compare the published checksum before you run either. <a href="downloads.html">Install notes.</a></p>
       </details>
       <a class="text-link" href="help.html">Open full help →</a>
     </div>
@@ -174,21 +176,21 @@
 <section class="downloads wrap" id="downloads" data-reveal>
   <div class="download-heading">
     <div><p class="eyebrow">Downloads</p><h2>Download {{PRODUCT}}</h2></div>
-    <p>Install the same version on both devices, exchange the invitation, and run your first session on your own network.</p>
+    <p>Install the same version on both devices, swap an invitation, and try the first session on your own network.</p>
   </div>
   <div class="download-grid">
     <article class="download-card">
-      <div class="card-top"><div><h3>Windows</h3><p>Share a screen, or watch one.</p></div><svg class="icon" aria-hidden="true"><use href="#i-windows"/></svg></div>
+      <div class="card-top"><div><h3>Windows</h3><p>Shares a screen, or watches one.</p></div><svg class="icon" aria-hidden="true"><use href="#i-windows"/></svg></div>
       <dl><div><dt>Platform</dt><dd>Windows x64</dd></div><div><dt>Package</dt><dd>EXE installer · {{WINDOWS_SIZE}}</dd></div><div><dt>Signing</dt><dd>{{WINDOWS_SIGNING}}</dd></div></dl>
       <a class="button primary" href="{{WINDOWS_URL}}">Download for Windows ↓</a>
       <a class="text-link" href="get-started.html#windows">Install notes →</a>
     </article>
     <article class="download-card">
-      <div class="card-top"><div><h3>Android viewer</h3><p>Watch on a phone or tablet.</p></div><svg class="icon" aria-hidden="true"><use href="#i-android"/></svg></div>
+      <div class="card-top"><div><h3>Android viewer</h3><p>Watches on a phone or tablet.</p></div><svg class="icon" aria-hidden="true"><use href="#i-android"/></svg></div>
       <dl><div><dt>Platform</dt><dd>Android 8 or newer</dd></div><div><dt>Package</dt><dd>APK · {{ANDROID_SIZE}}</dd></div><div><dt>Signing</dt><dd>{{ANDROID_SIGNING}}</dd></div></dl>
       <a class="button" href="{{ANDROID_URL}}">Get the viewer ↓</a>
       <a class="text-link" href="get-started.html#android">Install notes →</a>
     </article>
   </div>
-  <div class="download-footer"><p class="free-note">The preview is free. Device power use and any network charges remain your responsibility.</p><div class="download-links"><a href="{{BUNDLE_URL}}">Portable bundle</a><a href="{{CHECKSUMS_URL}}">Checksums ↗</a><a href="releases.html">Release notes</a></div></div>
+  <div class="download-footer"><p class="free-note">The preview is free. The power your devices use and any network charges are yours.</p><div class="download-links"><a href="{{BUNDLE_URL}}">Portable bundle</a><a href="{{CHECKSUMS_URL}}">Checksums ↗</a><a href="releases.html">Release notes</a></div></div>
 </section>
