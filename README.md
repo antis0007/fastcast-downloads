@@ -20,14 +20,14 @@ Pyrenet is a free development-preview screen-sharing app. Matching Windows and A
 > [!IMPORTANT]
 > Use matching app versions. The supported testing path is a Windows sender and an Android or Windows receiver on the same LAN, or another reachable private network. A Pyrenet relay is available as a fallback when no direct route works. Sharing a screen needs no account; friends and calls use an account the device owns. Windows installers are unsigned; Android packages are debug-signed.
 
-## Current release: 0.3.3 Preview 1
+## Current release: 0.3.3 Preview 2
 
-The reconciled Windows and Android build is available from [this release](https://github.com/antis0007/fastcast-downloads/releases/tag/v0.3.3-preview.1):
+The reconciled Windows and Android build is available from [this release](https://github.com/antis0007/fastcast-downloads/releases/tag/v0.3.3-preview.2):
 
-- [Windows installer](https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.1/FastCast-0.3.3-preview.1-Setup.exe)
-- [Android APK](https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.1/FastCast-0.3.3-preview.1-Android.apk)
-- [Portable Windows + Android bundle](https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.1/FastCast-0.3.3-preview.1-windows-android-x64.zip)
-- [SHA-256 checksums](https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.1/SHA256SUMS.txt)
+- [Windows installer](https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/Pyrenet-0.3.3-preview.2-Setup.exe)
+- [Android APK](https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/Pyrenet-0.3.3-preview.2-Android.apk)
+- [Portable Windows + Android bundle](https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/Pyrenet-0.3.3-preview.2-windows-android-x64.zip)
+- [SHA-256 checksums](https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/SHA256SUMS.txt)
 
 Windows shares and receives screens. Android receives screens and includes calls
 and in-call chat; Android screen broadcasting is not implemented. These remain

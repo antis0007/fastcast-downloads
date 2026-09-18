@@ -751,7 +751,7 @@ def write_screenshots_doc():
     compact = shots['windows-compact']
     text = f'''# Native screenshot provenance
 
-Both `windows-share.png` and `windows-compact.png` are unchanged client-area captures of the native FastCast Windows {wide['capture_build']}, taken {wide['captured']}. An isolated preferences file selected its default {wide['theme']}. Windows captured only the client area, so the operating-system title bar and its sample-application title are absent. No screenshot colours, controls, text, conversations, or session state were painted or generated.
+Both `windows-share.png` and `windows-compact.png` are unchanged client-area captures of the Cast Windows {wide['capture_build']}, taken {wide['captured']}. An isolated preferences file selected its default {wide['theme']}. Windows captured only the client area, so the operating-system title bar and its sample-application title are absent. No screenshot colours, controls, text, conversations, or session state were painted or generated.
 
 - Wide capture: {wide['width']} × {wide['height']} pixels.
 - Smaller window: {compact['width']} × {compact['height']} pixels. {compact['note']}

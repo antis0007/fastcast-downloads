@@ -1,6 +1,6 @@
 # Native screenshot provenance
 
-Both `windows-share.png` and `windows-compact.png` are unchanged client-area captures of the native FastCast Windows cast-desktop release build from main with the shared palette synced to the public site, taken 2026-09-18. An isolated preferences file selected its default Gold (Amber) theme, default controls, palette matched to the website. Windows captured only the client area, so the operating-system title bar and its sample-application title are absent. No screenshot colours, controls, text, conversations, or session state were painted or generated.
+Both `windows-share.png` and `windows-compact.png` are unchanged client-area captures of the Cast Windows cast-desktop release build from main with the shared palette synced to the public site, taken 2026-09-18. An isolated preferences file selected its default Gold (Amber) theme, default controls, palette matched to the website. Windows captured only the client area, so the operating-system title bar and its sample-application title are absent. No screenshot colours, controls, text, conversations, or session state were painted or generated.
 
 - Wide capture: 1770 × 1170 pixels.
 - Smaller window: 998 × 764 pixels. Unchanged full-window capture at a smaller window size. The native scroll area is visible.
