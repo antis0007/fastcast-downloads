@@ -1510,6 +1510,8 @@ section[id], article[id] { scroll-margin-top: 88px; }
 .page-get-started .guide-section .note { font-size: 14px; }
 
 .support-table { width: 100%; border-collapse: collapse; }
+/* Five columns do not fit a phone; the .table-scroll wrapper scrolls instead of overflowing the page. */
+.platform-matrix { min-width: 40rem; }
 .support-table caption { text-align: left; color: var(--muted); font-size: 13px; padding-bottom: 18px; line-height: 1.6; }
 .support-table th, .support-table td {
   text-align: left;
