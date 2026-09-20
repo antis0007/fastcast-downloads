@@ -887,7 +887,7 @@ def render(slug, title, description):
   <meta property="og:image" content="{BASE}assets/og.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="640">
-  <meta property="og:image:alt" content="{PRODUCT}. Screen sharing with a little magic and careful networking. Windows sender and Android viewer development preview.">
+  <meta property="og:image:alt" content="{PRODUCT}. Voice, chat, and screen sharing. Windows and Android preview.">
   <meta name="twitter:card" content="summary_large_image">
   {structured}
   <script src="site.js" defer></script>
