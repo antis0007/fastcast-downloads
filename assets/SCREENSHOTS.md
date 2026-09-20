@@ -1,10 +1,10 @@
 # Native screenshot provenance
 
-Both `windows-share.png` and `windows-compact.png` are unchanged client-area captures of the Cast Windows cast-desktop release build from main with the shared palette synced to the public site, taken 2026-09-18. An isolated preferences file selected its default Gold (Amber) theme, default controls, palette matched to the website. Windows captured only the client area, so the operating-system title bar and its sample-application title are absent. No screenshot colours, controls, text, conversations, or session state were painted or generated.
+Both `windows-share.png` and `windows-compact.png` are unchanged client-area captures from the native appearance_review harness using production DesktopApp at app commit cc326f1, taken 2026-09-20. The app used its default Amber theme with an isolated profile. The native renderer captured the client area directly; the operating-system title bar is not part of that output. No screenshot colours, controls, text, conversations, or session state were painted or generated.
 
 - Wide capture: 1770 × 1170 pixels.
-- Smaller window: 998 × 764 pixels. Unchanged full-window capture at a smaller window size. The native scroll area is visible.
-- These images do not represent the public package pixel-for-pixel: Unchanged full-window capture of a development interface. Some controls can differ from the public package. The app palette is synced with the website; published packages pick the sync up from the next release.
+- Smaller window: 1230 × 1170 pixels. Unmodified renderer capture of the upcoming Share interface, with no active screen share or call.
+- These images do not represent the public package pixel-for-pixel: Unmodified renderer capture of the upcoming Share interface, with no active screen share or call.
 - Neither image depicts a connected media session or establishes streaming performance.
 - Website image frames, labels, and zoom controls are HTML/CSS outside the screenshots.
 - `og.png` is the logo lockup on the warm ink ground, generated for social previews; not a screenshot.

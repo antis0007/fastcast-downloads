@@ -63,7 +63,7 @@ async function checkLayouts(name, engine) {
           const header = await page.locator('.site-header').boundingBox();
           assert.ok(logo.y >= header.y && logo.y + logo.height <= header.y + header.height, 'brand mark stays inside the header');
           assert.equal((await wordmark.textContent()).trim(), 'Pyrenet', 'header wordmark carries the product name');
-          assert.equal(await wordmark.isVisible(), width > 760, 'wordmark visibility follows the compact-header breakpoint');
+          assert.equal(await wordmark.isVisible(), true, 'product name remains visible at every viewport width');
           const capture = await page.locator('#interface [data-lightbox]').boundingBox();
           const tour = await page.locator('#interface .wrap').boundingBox();
           const heroCapture = await page.locator('.hero-visual [data-lightbox]').boundingBox();
@@ -322,15 +322,16 @@ async function checkJourneysAndAccessibility() {
     await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Help', exact: true }).click();
     await page.waitForURL('**/help.html');
     const search = page.getByRole('searchbox', { name: 'Search help' });
+    const unfilteredAnswers = await page.locator('.faq-group details:visible').count();
+    assert.ok(unfilteredAnswers > 0, 'help initially shows answers');
     await search.fill('subscriptions');
     assert.equal(await page.locator('.faq-group details:visible').count(), 1);
     await search.fill('no-such-answer-8294');
     assert.ok(await page.locator('#no-results').isVisible());
     await page.getByRole('link', { name: 'Connection & diagnostics', exact: true }).click();
     assert.equal(await search.inputValue(), '');
-    // Fourteen: the standalone "about development and AI assistance" note is a
-    // sibling of the topic groups, not one of their answers.
-    assert.equal(await page.locator('.faq-group details:visible').count(), 14);
+    assert.equal(await page.locator('.faq-group details:visible').count(), unfilteredAnswers,
+      'selecting a topic clears the search and restores all answers');
     await page.goto(base + 'product.html');
     assert.equal((await page.locator('#capabilities h2').textContent()).trim(), 'Features and limitations');
     assert.equal(await page.locator('.status-key dt').count(), 4);
@@ -366,10 +367,9 @@ async function checkJourneysAndAccessibility() {
     const androidPage = await androidContext.newPage();
     await androidPage.goto(base);
     assert.equal(await androidPage.locator('.hero .primary').getAttribute('data-download'), 'android');
-    await androidPage.locator('.cast-body').tap();
-    assert.ok(await androidPage.locator('.wizard-voice').isVisible(), 'touch activation produces a wizard remark');
-    assert.equal(await androidPage.locator('.cast-figure.is-dragging').count(), 0);
-    await assertNoOverflow(androidPage, 'touch wizard remark');
+    await androidPage.locator('.hero-visual [data-lightbox]').tap();
+    assert.ok(await androidPage.locator('dialog').isVisible(), 'touch opens the product screenshot');
+    await assertNoOverflow(androidPage, 'touch screenshot dialog');
     await androidPage.goto(base + 'downloads.html');
     assert.ok(await androidPage.locator('[data-platform="android"] .recommendation').isVisible());
     await androidContext.close();
@@ -378,15 +378,11 @@ async function checkJourneysAndAccessibility() {
     const windowsPage = await windowsContext.newPage();
     await windowsPage.goto(base);
     assert.equal(await windowsPage.locator('.hero .primary').getAttribute('data-download'), 'windows');
-    await windowsPage.locator('.cast-wizard').evaluate(el => el.decode());
+    await windowsPage.locator('.hero-visual img').evaluate(el => el.decode());
     await windowsPage.screenshot({ path: path.join(output, 'homepage-motion-1440.png') });
-    const wizardBox = await windowsPage.locator('.cast-body').boundingBox();
-    await windowsPage.mouse.move(wizardBox.x + wizardBox.width / 2, wizardBox.y + wizardBox.height / 2);
-    await windowsPage.mouse.down();
-    await windowsPage.mouse.move(1438, wizardBox.y + wizardBox.height / 2, { steps: 5 });
-    await windowsPage.evaluate(() => new Promise(requestAnimationFrame));
-    await assertNoOverflow(windowsPage, 'dragging the wizard to the viewport edge');
-    await windowsPage.mouse.up();
+    await windowsPage.locator('.hero-visual [data-lightbox]').click();
+    assert.ok(await windowsPage.locator('dialog').isVisible(), 'mouse opens the product screenshot');
+    await assertNoOverflow(windowsPage, 'desktop screenshot dialog');
     await windowsPage.goto(base + 'downloads.html');
     assert.ok(await windowsPage.locator('[data-platform="windows"] .recommendation').isVisible());
     await windowsContext.close();

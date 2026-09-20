@@ -1,0 +1,51 @@
+name: Website quality
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: website-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Source, links, browsers and accessibility
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Check committed output matches source
+        run: python scripts/check-source.py
+      - name: Check release, links, contrast and calculator
+        run: |
+          python scripts/check-release.py
+          python scripts/check-links.py
+          python scripts/check-contrast.py
+          node tests/bandwidth.cjs
+      - name: Install browsers
+        run: npx playwright install --with-deps
+      - name: Check layouts, interactions and accessibility
+        run: node tests/check-site.cjs
+      - name: Save review screenshots
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-screenshots
+          path: test-results/*.png
+          if-no-files-found: ignore
+          retention-days: 14
