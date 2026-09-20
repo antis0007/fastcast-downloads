@@ -6,7 +6,7 @@
   "published_display": "September 20, 2026",
   "status": "Development preview",
   "network": "Direct peer route, with a Pyrenet relay fallback",
-  "offer": "Screen sharing does not require an account. Friends, calls, rooms and files use a device-owned account in this development preview. Cast supplies the live-media layer inside the broader Pyrenet ecosystem.",
+  "offer": "Screen sharing does not require an account. Friends, calls, rooms and files use a device-owned account in this preview.",
   "application_source": "Native application source is maintained separately. This repository publishes the website and preview packages only.",
   "branding_note": "The app is now named Pyrenet. Download filenames and installation identifiers retain FastCast for update compatibility.",
   "platforms": {

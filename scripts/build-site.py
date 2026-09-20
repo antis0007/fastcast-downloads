@@ -18,7 +18,7 @@ REPO = 'https://github.com/antis0007/fastcast-downloads'
 PRODUCT = 'Pyrenet'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
-    'index': ('Voice, chat, and screen sharing', 'Talk with your group, share a window from Windows, and watch on Windows or Android. Explore the free Pyrenet preview and its current limitations.'),
+    'index': ('Voice, chat, and screen sharing', 'Start a call, share a window, and talk through what’s on screen. Share from Windows. Watch on Windows or Android. Explore the Pyrenet preview.'),
     'product': ('Product overview', 'Windows and Android screen-sharing features, native interface captures, and release testing status.'),
     'downloads': (f'Download {PRODUCT}', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
     'get-started': ('Setup', 'Install matching versions, create an invitation on the viewing device, and start sharing from Windows.'),
