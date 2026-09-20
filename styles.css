@@ -59,10 +59,7 @@
 * { box-sizing: border-box; }
 body, figure, h1, h2, h3, p { margin: 0; }
 body {
-  background:
-    radial-gradient(ellipse 72% 46% at 50% -10%, #2c2317 0, transparent 62%),
-    radial-gradient(ellipse 50% 34% at 78% 4%, #ff5b2e14 0, transparent 70%),
-    var(--bg);
+  background: var(--bg);
   -webkit-font-smoothing: antialiased;
 }
 img { display: block; max-width: 100%; height: auto; }
@@ -225,17 +222,6 @@ h1 {
 }
 .page-index .hero h1 { max-width: 17ch; }
 h1 span { color: var(--accent-strong); }
-/* The headline runs the same gold-to-ember ramp as the rune light. A solid
-   colour is set first so the text stays readable if background-clip is
-   unavailable, and only then is the gradient clipped to the glyphs. */
-@supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  h1 span {
-    background: linear-gradient(96deg, #ffdc9b 0%, #f5a63f 46%, #ff6a30 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-}
 h1, h2 { overflow-wrap: anywhere; }
 h2 {
   font-size: clamp(1.8rem, 2.9vw, 2.6rem);
@@ -299,22 +285,6 @@ p { text-wrap: pretty; }
    aria-hidden under the parent's role="img" label, and everything in it moves
    ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â there are no static particles. */
 .hero-visual { position: relative; min-width: 0; overflow: visible; }
-.hero-visual::before {
-  content: "";
-  position: absolute;
-  /* Vertical bleed only. The eight-percent horizontal bleed used to push this
-     glow 8% past the viewport on both sides, which gave every page narrower
-     than the hero a horizontal scrollbar; the gradient is an ellipse centred in
-     the box, so the sideways bleed was buying nothing. */
-  inset: -12% 0 6%;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse at 50% 40%, #f5a63f5c 0%, #f5a63f24 40%, transparent 70%),
-    radial-gradient(ellipse at 50% 64%, #ff5b2e3d 0%, transparent 60%),
-    radial-gradient(ellipse at 50% 88%, #d63a1c2e 0%, transparent 56%);
-  filter: blur(14px);
-}
 .hero-visual > * { position: relative; z-index: 1; }
 
 /* Rune circle: a slow-turning summoning seal. The outer ring carries one and a
@@ -1686,25 +1656,21 @@ section[id], article[id] { scroll-margin-top: 88px; }
 .class-band { position: relative; padding-block: var(--section-top) var(--section-bottom); }
 .class-card {
   position: relative;
-  max-width: 1040px;
+  max-width: 1160px;
   margin-inline: auto;
-  padding: 42px 46px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, #23251e 0%, #1d1f1a 60%, #1a1c17 100%);
+  padding: 42px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 232px;
-  gap: 36px;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 64px;
   align-items: center;
 }
-.class-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse at 88% 12%, #efac4c22 0%, transparent 55%);
-}
+.conversation-summary { display: grid; gap: 24px; min-width: 0; }
+.conversation-summary > div + div { border-top: 1px solid var(--line); padding-top: 24px; }
+.conversation-summary h3 { font-size: 20px; }
+.conversation-summary p { color: var(--muted); font-size: 15px; margin-top: 8px; }
 .class-body { position: relative; min-width: 0; }
 .class-lede { color: var(--muted); font-size: 15px; line-height: 1.7; margin-top: 18px; max-width: 60ch; }
 /* Class portrait: the mascot alone. The scrying orb lives in the hero, well

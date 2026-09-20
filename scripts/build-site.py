@@ -30,7 +30,7 @@ PAGES = {
     'releases': ('Release notes', f'Download files, changes, and known limitations for published {PRODUCT} releases.'),
     'privacy': ('Privacy', 'This site has no analytics. GitHub hosts the files. Keep invites private.'),
     '404': ('Page not found', f'Find {PRODUCT} downloads, setup instructions, and help.'),
-    'why-pyrenet': (f'Why {PRODUCT}', 'An independent screen-sharing tool alongside the conversations and communities you already have.'),
+    'why-pyrenet': (f'Why {PRODUCT}', 'Choose what to share, talk through the details, and control access to your screen. Explore the free Windows and Android preview.'),
     'how-it-works': (f'How {PRODUCT} connects', 'Compare direct and relayed screen-sharing routes, discover who handles which data, and explore the native media stack.'),
     'data-and-privacy': ('Data compared', f'What Discord documents, next to what this {PRODUCT} preview actually does.'),
     'bandwidth': ('Bandwidth calculator', 'Estimate video payload at each end and the server traffic added by a relayed route.'),
