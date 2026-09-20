@@ -1,0 +1,213 @@
+{
+  "original_matrix_commit": "d8e723fe372bdc0c5f319c91039ceee3cd9a0237",
+  "families": [
+    {
+      "family": "JetBrains Mono",
+      "slug": "jetbrains-mono",
+      "source": "https://fonts.googleapis.com/css2?family=JetBrains%20Mono:wght@400;700&display=swap",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Fira Code",
+      "slug": "fira-code",
+      "source": "https://fonts.googleapis.com/css2?family=Fira%20Code:wght@400;700&display=swap",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "IBM Plex Mono",
+      "slug": "ibm-plex-mono",
+      "source": "https://fonts.googleapis.com/css2?family=IBM%20Plex%20Mono:wght@400;700&display=swap",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Space Mono",
+      "slug": "space-mono",
+      "source": "https://fonts.googleapis.com/css2?family=Space%20Mono:wght@400;700&display=swap",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Roboto Mono",
+      "slug": "roboto-mono",
+      "source": "https://fonts.googleapis.com/css2?family=Roboto%20Mono:wght@400;700&display=swap",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Source Code Pro",
+      "slug": "source-code-pro",
+      "source": "https://fonts.googleapis.com/css2?family=Source%20Code%20Pro:wght@400;700&display=swap",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Ubuntu Mono",
+      "slug": "ubuntu-mono",
+      "source": "https://fonts.googleapis.com/css2?family=Ubuntu%20Mono:wght@400;700&display=swap",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Hack",
+      "slug": "hack",
+      "source": "https://github.com/source-foundry/Hack",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Red Hat Mono",
+      "slug": "red-hat-mono",
+      "source": "https://fonts.googleapis.com/css2?family=Red%20Hat%20Mono:wght@400;700&display=swap",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Monofett",
+      "slug": "monofett",
+      "source": "https://fonts.googleapis.com/css2?family=Monofett:wght@400&display=swap",
+      "weights": [
+        400
+      ]
+    },
+    {
+      "family": "Major Mono Display",
+      "slug": "major-mono-display",
+      "source": "https://fonts.googleapis.com/css2?family=Major%20Mono%20Display:wght@400&display=swap",
+      "weights": [
+        400
+      ]
+    },
+    {
+      "family": "Share Tech Mono",
+      "slug": "share-tech-mono",
+      "source": "https://fonts.googleapis.com/css2?family=Share%20Tech%20Mono:wght@400&display=swap",
+      "weights": [
+        400
+      ]
+    },
+    {
+      "family": "Orbitron",
+      "slug": "orbitron",
+      "source": "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Audiowide",
+      "slug": "audiowide",
+      "source": "https://fonts.googleapis.com/css2?family=Audiowide:wght@400&display=swap",
+      "weights": [
+        400
+      ]
+    },
+    {
+      "family": "Chakra Petch",
+      "slug": "chakra-petch",
+      "source": "https://fonts.googleapis.com/css2?family=Chakra%20Petch:wght@400;700&display=swap",
+      "weights": [
+        400,
+        700
+      ]
+    },
+    {
+      "family": "Rajdhani",
+      "slug": "rajdhani",
+      "source": "https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap",
+      "weights": [
+        400,
+        700
+      ]
+    }
+  ],
+  "licenses": [
+    {
+      "family": "JetBrains Mono",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/jetbrainsmono/OFL.txt"
+    },
+    {
+      "family": "Fira Code",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/firacode/OFL.txt"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/OFL.txt"
+    },
+    {
+      "family": "Space Mono",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/spacemono/OFL.txt"
+    },
+    {
+      "family": "Roboto Mono",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/robotomono/OFL.txt"
+    },
+    {
+      "family": "Source Code Pro",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/sourcecodepro/OFL.txt"
+    },
+    {
+      "family": "Ubuntu Mono",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ufl/ubuntumono/UFL.txt"
+    },
+    {
+      "family": "Hack",
+      "url": "https://raw.githubusercontent.com/source-foundry/Hack/master/LICENSE.md"
+    },
+    {
+      "family": "Red Hat Mono",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/redhatmono/OFL.txt"
+    },
+    {
+      "family": "Monofett",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/monofett/OFL.txt"
+    },
+    {
+      "family": "Major Mono Display",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/majormonodisplay/OFL.txt"
+    },
+    {
+      "family": "Share Tech Mono",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/sharetechmono/OFL.txt"
+    },
+    {
+      "family": "Orbitron",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/orbitron/OFL.txt"
+    },
+    {
+      "family": "Audiowide",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/audiowide/OFL.txt"
+    },
+    {
+      "family": "Chakra Petch",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/chakrapetch/OFL.txt"
+    },
+    {
+      "family": "Rajdhani",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/rajdhani/OFL.txt"
+    }
+  ],
+  "selection": "JetBrains Mono",
+  "reviewed": "2026-09-20"
+}

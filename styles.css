@@ -1,7 +1,9 @@
 /* Pyrenet public website: neutral surfaces, amber actions, readable type. */
 @font-face {
-  font-family: Inter;
-  src: url(assets/inter-latin.woff2) format("woff2");
+  font-family: "JetBrains Mono";
+  src: url(assets/jetbrains-mono-latin.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
   font-display: swap;
 }
 
@@ -43,8 +45,8 @@
      gap between any two blocks is the same wherever you are on the page. */
   --section-top: 112px;
   --section-bottom: 44px;
-  --mono: ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
-  font: 16px/1.65 Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+  font: 16px/1.65 var(--mono);
   color: var(--text);
   background: var(--bg);
 }
@@ -136,7 +138,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
    highlights. Height rules below keep the old lockup proportions. */
 .brand-wordmark {
   display: block;
-  font-family: Inter, "Segoe UI", sans-serif;
+  font-family: var(--mono);
   font-size: 28px;
   line-height: 1;
   font-weight: 600;

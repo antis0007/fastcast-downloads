@@ -24,7 +24,42 @@ that a setup screen conveys functionality more strongly than a shared activity.
 The image is an actual native capture and explicitly identifies the upcoming
 interface; fabricated conversations or released-feature claims would be worse
 evidence. The current design uses neutral charcoal, restrained amber, and locally
-hosted Inter. Pyrenet remains visible beside the logo on narrow screens.
+hosted JetBrains Mono after recovering and reviewing the earlier font matrix.
+Pyrenet remains visible beside the logo on narrow screens.
+
+## Recovered font comparison
+
+The previous agent's 16-font matrix generator and JetBrains Mono switching scripts
+were recovered from commit `d8e723f`. The generator named fonts without loading
+most of them; comparisons could therefore silently show fallback faces. The
+[restored matrix](font-review/index.html) bundles the actual 16 families, their
+licenses and source URLs, plus Inter as a baseline. Its load indicator verifies
+that each named family is available. No external font request is needed.
+
+All 17 samples were reviewed with the same current headline, supporting sentence,
+wordmark and download label. Inter, JetBrains Mono, IBM Plex Mono and Source Code
+Pro were also compared on the actual homepage at 1440 and 390 pixels.
+
+- **JetBrains Mono:** selected. It preserves the deliberately monospaced direction,
+  has clear small text and distinct letterforms, and gives the wordmark a more
+  recognizable technical character. Use regular body text and semibold branding.
+- **IBM Plex Mono:** strongest alternative; more editorial character, but the
+  serif-like details give this particular hero a busier texture.
+- **Fira Code, Roboto Mono, Source Code Pro, Hack, Red Hat Mono:** credible readable
+  alternatives, without enough advantage here to abandon the earlier choice.
+- **Ubuntu Mono:** compact but optically smaller at matched body sizes.
+- **Space Mono:** distinctive but more retro in this composition.
+- **Monofett and Major Mono Display:** decorative letterforms unsuitable for body
+  copy and navigation. **Orbitron and Audiowide** push the page toward a game UI.
+- **Share Tech Mono, Chakra Petch and Rajdhani:** narrower, stylized alternatives;
+  less suitable for the requested restrained, readable product site.
+- **Inter:** efficient and readable, but replacing the earlier mono choice without
+  recovering its rationale was a regression in design continuity.
+
+The production page loads one local variable JetBrains Mono file (400–700), not
+the entire comparison collection. The matrix remains a review artifact and is
+not included in homepage requests. Monospaced text needs more width; preserve
+responsive wrapping and recheck narrow/enlarged-text layouts when editing copy.
 
 ## Existing wording and the fresh selection
 
