@@ -41,12 +41,12 @@
   </header>
   <main id="main" tabindex="-1"><section class="page-hero wrap">
   <p class="eyebrow">Calls, rooms &amp; files</p>
-  <h1>Talking while<br><span>you share</span></h1>
-  <p class="lede">A Pyrenet session is not only a picture. Two people, or a small group, can talk over the same connection, keep a written room alongside it, and hand each other a file. Every part of this is preview work, and this page states what each one still cannot do.</p>
+  <h1>Talk, share,<br><span>and follow along.</span></h1>
+  <p class="lede">Start a voice call, use room chat, or send a file during a screen-sharing session. These features are in preview; availability and current limitations are listed below.</p>
 </section>
 <nav class="section-nav wrap" aria-label="Calls, rooms and files"><a href="#calls">Voice calls</a><a href="#table">Several screens</a><a href="#rooms">Room discussions</a><a href="#files">File transfer</a><a href="#limits">What is missing</a></nav>
 <section class="section wrap" id="calls">
-  <div class="section-heading"><div><p class="eyebrow">Voice</p><h2>Microphone audio on the same route</h2></div><p>Calls take the same path as screen video: a direct peer route where one exists, a Pyrenet relay only when it does not.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">Voice</p><h2>Talk while you share.</h2></div><p>Make a one-to-one or small-group voice call. You can start sharing your screen during the call.</p></div>
   <div class="annotation-grid">
     <p><b>One-to-one and small groups.</b> Both use direct peer paths with relay fallback. No call is placed through a hosted meeting service.</p>
     <p><b>A call and a share run together.</b> You can start a screen share during a call, and accepted Windows friends discover the live share once you explicitly start it. Nothing is shared before that moment.</p>
@@ -55,7 +55,7 @@
   <a class="text-link" href="platforms.html">Which devices can do what →</a>
 </section>
 <section class="section wrap" id="table">
-  <div class="section-heading"><div><p class="eyebrow">Tables</p><h2>Watching more than one screen</h2></div><p>A Windows Table holds several live screens at once, each admitted individually.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">Shared screens</p><h2>See more than one screen.</h2></div><p>Use Table in the Windows app to arrange multiple shared screens. Each connection requires its own permission.</p></div>
   <div class="use-cases">
     <article><span class="step-number">One share, many viewers</span><h3>Up to eight</h3><p>A single Windows capture serves up to eight separately admitted viewers. Each is admitted by invitation; there is no open link anyone can follow.</p></article>
     <article><span class="step-number">One Table, many shares</span><h3>Up to four screens</h3><p>A Windows Table subscribes to as many as four live friend screens, and someone joining late still receives the picture.</p></article>
@@ -64,7 +64,7 @@
   <p class="note">Multi-device acceptance remains open. This has been exercised in development, not across a room of unrelated physical machines.</p>
 </section>
 <section class="section wrap" id="rooms">
-  <div class="section-heading"><div><p class="eyebrow">Rooms</p><h2>Written conversation beside the session</h2></div><p>Room discussions run through the coordination service, so a room outlives any single call.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">Room chat</p><h2>Keep the details in the conversation.</h2></div><p>Use text rooms alongside your calls. Room messages use the coordination service; they are separate from the chat attached to a screen-sharing session.</p></div>
   <div class="annotation-grid">
     <p><b>Three columns.</b> Rooms on the left, the conversation in the middle, who is present on the right. Both side rails fold away on a narrow window so the conversation keeps the space.</p>
     <p><b>Built to be read.</b> Messages from one person within five minutes group under a single header. A line marks where you left off and holds its position while you read it, and “Jump to latest” appears once you scroll back.</p>
@@ -72,14 +72,14 @@
   </div>
   <p class="note">The three-column discussion layout is in development and is not part of the published download. <a href="releases.html">See the release notes</a>.</p>
 </section>
-<section class="section wrap split-section" id="files"><div><p class="eyebrow">Files</p><h2>Handing over a file</h2></div><div>
+<section class="section wrap split-section" id="files"><div><p class="eyebrow">Files</p><h2>Send the file, too.</h2></div><div>
   <p>Windows and Android can send each other a file during a session. The receiving side accepts it explicitly, so nothing arrives unannounced, and the transfer requires a direct route between the two devices.</p>
   <p>There is no relay fallback for files. Where only a relayed route exists, the transfer does not start rather than quietly consuming relay bandwidth.</p>
   <p>Session chat and transfers are not an archive. Pyrenet is not holding your conversation on a server for you to return to.</p>
   <a class="text-link" href="data-and-privacy.html">What this preview keeps →</a>
 </div></section>
 <section class="section wrap" id="limits">
-  <div class="section-heading"><div><p class="eyebrow">Gaps</p><h2>What is missing</h2></div><p>Stated here so you meet it now rather than mid-session.</p></div>
+  <div class="section-heading"><div><p class="eyebrow">Preview</p><h2>Current limitations</h2></div><p>Check these before choosing this preview for your group.</p></div>
   <div class="annotation-grid">
     <p><b>No reactions, editing or deleting messages.</b> The coordination service has no operation for them, so the app does not present controls that would do nothing.</p>
     <p><b>No unread counts</b> on rooms you are not currently reading, for the same reason.</p>
