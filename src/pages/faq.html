@@ -1,0 +1,29 @@
+<section class="page-hero wrap"><p class="eyebrow">FAQ</p><h1>Short answers to<br><span>common questions</span></h1><p class="lede">Use the search box on the Help page to filter answers on this page.</p></section>
+<div class="wrap faq-list" data-reveal>
+  <section class="faq-group" id="get">
+    <h2>Getting started</h2>
+    <details><summary>Is Pyrenet free?</summary><p>The public preview packages are free, with no subscription and no account required for screen sharing. Friends, calls, rooms, and files use a device-owned account that never uploads a contact list to a cloud server.</p></details>
+    <details><summary>Can I replace Discord or Teams with Pyrenet today?</summary><p>No. The preview adds voice, chat, and file transfer, but without history, moderation, or public room links. It is built for people who already know each other, not for open communities.</p></details>
+    <details><summary>What platforms are supported?</summary><p>Windows x64 sends and watches. Android 8+ watches. A Linux viewer exists in source only. macOS, iOS, and browsers are not available. <a href="platforms.html">Full platform table</a>.</p></details>
+    <details><summary>How do I update from an older preview?</summary><p>Stop any active session, then install the matching Windows and Android packages over the old install. Do not assume a newer screenshot means a new public package is ready.</p></details>
+  </section>
+  <section class="faq-group" id="install">
+    <h2>Installation</h2>
+    <details><summary>Windows shows a SmartScreen warning.</summary><p>The preview installer is unsigned. Compare the filename and SHA-256 checksum against this release before proceeding. Do not disable SmartScreen globally.</p></details>
+    <details><summary>Android blocks the APK install.</summary><p>Android may ask for permission to install from your browser or file manager. A signing-key mismatch with an existing install can also block updates. Record the exact error before uninstalling.</p></details>
+    <details><summary>Do I need the same version on both devices?</summary><p>Yes. Mismatched builds are the most common failure. The invitation flow will not complete if the versions differ.</p></details>
+  </section>
+  <section class="faq-group" id="connect">
+    <h2>Connections</h2>
+    <details><summary>The devices won’t connect.</summary><p>Check four things, in order: same release, same LAN, no isolated guest Wi-Fi, and a freshly created invitation. <a href="help.html#connection">Full connection checklist</a>.</p></details>
+    <details><summary>Can I share over the internet?</summary><p>Direct routes work on any reachable network. Unrelated-network playback is not yet qualified, and networks that block UDP have no media fallback. A relay fallback exists but is not a managed service.</p></details>
+    <details><summary>What does the relay do?</summary><p>When two devices cannot reach each other directly, Cast forwards encrypted media through a relay node. The relay reads no payload and keeps no state.</p></details>
+  </section>
+</div>
+<section class="section wrap" data-reveal>
+  <div class="section-heading"><div><h2>Still stuck?</h2></div><p>Search the full Help page or browse the issue tracker.</p></div>
+  <div class="actions" style="margin-top:24px">
+    <a class="button primary" href="help.html">Open full Help →</a>
+    <a class="button" href="https://github.com/antis0007/fastcast/issues/new/choose">Report a bug ↗</a>
+  </div>
+</section>

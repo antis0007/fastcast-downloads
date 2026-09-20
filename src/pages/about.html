@@ -1,0 +1,46 @@
+<section class="page-hero wrap"><p class="eyebrow">About</p><h1>Who builds Pyrenet,<br><span>and how it is put together</span></h1><p class="lede">Pyrenet is private small-group communication and shared computing. This page covers who maintains it, what runs where, and which claims on this site are tested rather than intended.</p></section>
+<section class="wrap about-grid" data-reveal>
+  <article class="about-card">
+    <h2>What we build</h2>
+    <p>Pyrenet is the private small-group communications and shared-computing fabric. Cast is its live-media layer: screen sharing, video, voice, rooms, and file transfer.</p>
+    <p>Screen and camera media travel directly between your devices when a direct route works, and fall back to a relay that forwards them encrypted when it does not. Screen sharing needs no account at all.</p><p>Friends, calls, rooms and file offers pass through a coordination service, which holds your profile, your friend list and your room discussions. Discussion text is readable by that service over authenticated TLS. It is not a hosted archive you can scroll back through, and nothing about your conversations is sold or fed to analytics. <a href="data-and-privacy.html">What the service holds</a>.</p>
+  </article>
+  <article class="about-card">
+    <h2>Why we build it</h2>
+    <p>Current tools ask you to choose between privacy and convenience. Slack, Discord, Zoom, and Teams host your data on their servers. Self-hosted alternatives are powerful but complex.</p>
+    <p>Pyrenet takes a third path: a direct route where the network allows one, a relay when it does not, and a free preview with no subscription. The trade-off is stated rather than hidden — the coordination service sees who you talk to and what you type in a room, and the media does not pass through it.</p>
+  </article>
+  <article class="about-card">
+    <h2>Open source</h2>
+    <p>The native app is dual-licensed under MIT or Apache-2.0. You can read the code, build it, ship modified versions, or just audit the security boundary.</p>
+    <p>This repository holds the public website and preview packages. Native application source and issue tracking live in the main app repository.</p>
+  </article>
+</section>
+<section class="section wrap split-section" data-reveal>
+  <div><h2>Design principles</h2></div>
+  <div>
+    <p><strong>No accounts by default.</strong> Screen sharing works without any identity. Friends, calls, and rooms use a device-owned keypair that never leaves your hardware.</p>
+    <p><strong>Encrypted in transit.</strong> Media is encrypted on the wire, and a relay forwards ciphertext rather than pictures it can read. End-to-end encryption covers call invitations, not discussion text: the coordination service can read what you type in a room.</p>
+    <p><strong>Progressive disclosure.</strong> The site prefers plain language — invitation, route, permission — over jargon. Technical depth lives behind links, not in the critical path.</p>
+    <p><strong>Tested before claimed.</strong> Every capability has a status word. "Preview" means automated checks pass and hardware testing is still outstanding. "Available" means both.</p>
+  </div>
+</section>
+<section class="section wrap" data-reveal>
+  <div class="section-heading"><div><h2>Team &amp; contact</h2></div><p>Reach the maintainers through the issue tracker or the public discussions.</p></div>
+  <div class="use-cases">
+    <article class="contact-card">
+      <h3>Maintainers</h3>
+      <p>A single principal developer with AI-assisted review cycles. Human review focuses on networking, permissions, resource lifetimes, security boundaries, and recovery behaviour.</p>
+    </article>
+    <article class="contact-card">
+      <h3>Community</h3>
+      <p>Bugs, feature requests, and design discussion happen in the open. The issue tracker is the primary channel; pull requests are welcome against the app repository.</p>
+      <a class="text-link" href="https://github.com/antis0007/fastcast-downloads">View on GitHub ↗</a>
+    </article>
+    <article class="contact-card">
+      <h3>Colophon</h3>
+      <p>This site is built with static HTML, modern CSS, and a small Python renderer. No analytics, no trackers, no third-party scripts.</p>
+    </article>
+  </div>
+</section>
+<section class="closing-cta wrap" data-reveal><div><h2>See what&#8217;s included</h2><p>Browse the current preview&#8217;s capabilities and known limits.</p></div><a class="button primary" href="product.html">Capabilities →</a></section>

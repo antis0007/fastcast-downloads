@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+
 /* FastCast public site styles ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â governed by docs/WEBSITE_DESIGN_CONTRACT.md */
 @font-face {
   font-family: Inter;
@@ -50,8 +52,8 @@
      gap between any two blocks is the same wherever you are on the page. */
   --section-top: 112px;
   --section-bottom: 44px;
-  --mono: ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
-  font: 16px/1.65 Inter, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
+  font: 16px/1.65 "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
   color: var(--text);
   background: var(--bg);
 }
@@ -727,8 +729,8 @@ p { text-wrap: pretty; }
          object. */
       linear-gradient(to top, #ff7a2e30 0%, #ff8f3a17 20%, transparent 48%),
       linear-gradient(to top, transparent 16%, #150b0859 100%);
-    -webkit-mask-image: url(assets/fastcast-wizard.webp);
-    mask-image: url(assets/fastcast-wizard.webp);
+    -webkit-mask-image: url(assets/pyrenet-wizard.webp);
+    mask-image: url(assets/pyrenet-wizard.webp);
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat;
@@ -2464,4 +2466,117 @@ section[id], article[id] { scroll-margin-top: 88px; }
 .cast-scene[data-paused] .orbit-dot { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) {
   .orbit-dot { display: none; }
+}
+
+/* ===================================================================
+   NEW PAGE COMPONENTS — Discord/Slack-quality cards and layouts
+   =================================================================== */
+
+/* About / Join / Contact cards */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-top: 10px;
+}
+.about-card {
+  padding: 26px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color .15s ease, background .15s ease;
+}
+.about-card h2 { font-size: 19px; margin-bottom: 14px; }
+.about-card p, .about-card li { color: var(--muted); font-size: 14px; line-height: 1.7; }
+.about-card .button { margin-top: 18px; }
+
+/* Blog list */
+.blog-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 10px;
+}
+.blog-post {
+  padding: 22px 24px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color .15s ease, background .15s ease;
+}
+.blog-post time {
+  font-size: 11px;
+  color: var(--quiet);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.blog-post h2 { font-size: 20px; margin: 8px 0 10px; letter-spacing: -.02em; }
+.blog-post p { color: var(--muted); font-size: 14px; line-height: 1.7; max-width: 860px; }
+
+/* Contact/action cards (reusable for about+join) */
+.contact-card {
+  padding: 24px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color .15s ease, background .15s ease;
+}
+.contact-card h3 { font-size: 17px; margin-bottom: 12px; }
+.contact-card p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+.contact-card .text-link { margin-top: 10px; }
+
+/* Discord/Slack-quality FAQ accordion */
+.faq-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 10px;
+}
+.faq-group h2 {
+  font-size: 17px;
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.faq-group details {
+  padding: 18px 20px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  transition: border-color .15s ease, background .15s ease;
+}
+.faq-group details + details { margin-top: 12px; }
+.faq-group details[open] {
+  border-color: var(--accent);
+  background: var(--surface-raised);
+}
+.faq-group summary {
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  list-style: none;
+}
+.faq-group summary::-webkit-details-marker { display: none; }
+.faq-group summary::after {
+  content: "+";
+  float: right;
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+.faq-group details[open] summary::after { content: "−"; }
+.faq-group details p { color: var(--muted); font-size: 14px; line-height: 1.7; margin-top: 12px; }
+.faq-group details a { color: var(--accent); }
+.faq-group details a:hover { color: var(--accent-strong); }
+
+/* Enhanced section layout for new pages */
+.page-about .page-hero,
+.page-join .page-hero,
+.page-faq .page-hero,
+.page-blog .page-hero {
+  padding-block: 64px 36px;
+}
+
+@media (max-width: 760px) {
+  .faq-list { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
 }

@@ -1,13 +1,14 @@
 {
-    "version": "0.3.3-preview.2",
-    "tag": "v0.3.3-preview.2",
-    "label": "0.3.3 Preview 2",
-    "published": "2026-09-18",
-    "published_display": "September 18, 2026",
+    "version": "0.3.3-preview.1",
+    "tag": "v0.3.3-preview.1",
+    "label": "0.3.3 Preview 1",
+    "published": "2026-09-17",
+    "published_display": "September 17, 2026",
     "status": "Development preview",
     "network": "Direct peer route, with a Pyrenet relay fallback",
     "offer": "Screen sharing does not require an account. Friends, calls, rooms and files use a device-owned account in this development preview. Cast supplies the live-media layer inside the broader Pyrenet ecosystem.",
     "application_source": "Native application source is maintained separately. This repository publishes the website and preview packages only.",
+    "branding_note": "Asset filenames carry the FastCast product name from their original release. The Pyrenet/Cast rebrand will apply to future packaged releases.",
     "platforms": {
         "windows": {
             "name": "Windows x64",
@@ -28,8 +29,8 @@
     },
     "assets": {
         "windows": {
-            "filename": "Pyrenet-0.3.3-preview.2-Setup.exe",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/Pyrenet-0.3.3-preview.2-Setup.exe",
+            "filename": "FastCast-0.3.3-preview.1-Setup.exe",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.1/FastCast-0.3.3-preview.1-Setup.exe",
             "size": "11.8 MB",
             "bytes": 12376803,
             "sha256": "8f172add36e6106c21779abeaec97fc5de77033cc541875d1f940836198c60be",
@@ -37,8 +38,8 @@
             "signing": "Unsigned preview"
         },
         "android": {
-            "filename": "Pyrenet-0.3.3-preview.2-Android.apk",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/Pyrenet-0.3.3-preview.2-Android.apk",
+            "filename": "FastCast-0.3.3-preview.1-Android.apk",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.1/FastCast-0.3.3-preview.1-Android.apk",
             "size": "26.1 MB",
             "bytes": 27372494,
             "sha256": "778d5f7777960477ec54208737726ab0249fd7e335dc7e548a035f28b016ae8a",
@@ -46,8 +47,8 @@
             "signing": "Debug-signed preview"
         },
         "bundle": {
-            "filename": "Pyrenet-0.3.3-preview.2-windows-android-x64.zip",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/Pyrenet-0.3.3-preview.2-windows-android-x64.zip",
+            "filename": "FastCast-0.3.3-preview.1-windows-android-x64.zip",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.1/FastCast-0.3.3-preview.1-windows-android-x64.zip",
             "size": "27.0 MB",
             "bytes": 28361002,
             "sha256": "ba30456a09e914464f8ff0ea7f30183a6a4f9615865b077c049768efe9d5c125",
@@ -56,7 +57,7 @@
         },
         "checksums": {
             "filename": "SHA256SUMS.txt",
-            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/SHA256SUMS.txt",
+            "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.1/SHA256SUMS.txt",
             "size": "410 B",
             "bytes": 410,
             "sha256": "976cf51c4dc3f5e1becbcdde8eefae44ba61ffec09e98cec00dfbfb80c3376d1"
@@ -269,22 +270,22 @@
     ],
     "history": [
         {
-            "version": "0.3.3-preview.2",
-            "tag": "v0.3.3-preview.2",
-            "published": "2026-09-18",
-            "current": true,
-            "label": "0.3.3 Preview 2",
-            "published_display": "September 18, 2026",
-            "summary": "Branding realignment: Pyrenet becomes the shared ecosystem name, and Cast becomes the live-media subsystem. Website copy, release filenames and relay references updated. Screen-sharing features remain in preview."
-        },
-        {
             "version": "0.3.3-preview.1",
             "tag": "v0.3.3-preview.1",
             "published": "2026-09-17",
-            "current": false,
+            "current": true,
             "label": "0.3.3 Preview 1",
             "published_display": "September 17, 2026",
             "summary": "Chat modernization with room naming, renaming and multi-device account linking, receiver and voice cleanup, and a tiered orbit-particle hero on the website."
+        },
+        {
+            "version": "0.3.3-preview.2",
+            "tag": "v0.3.3-preview.2",
+            "published": "2026-09-18",
+            "current": false,
+            "label": "0.3.3 Preview 2",
+            "published_display": "September 18, 2026",
+            "summary": "Prepared for release. Packaging and checksum updates pending public asset publication."
         },
         {
             "version": "0.3.2-preview.9",

@@ -54,7 +54,7 @@ python ..\fc-checks\verify-cuts.py            # reads the JSON island off the bu
 | Interaction layer (lightbox, FAQ, wizard) | `site.js` |
 | Browser acceptance suite | `tests/check-site.cjs` |
 | Rune artwork sprite, referenced as `<use href="#i-...">` | emitted by `icon_sprite()` |
-| Wizard artwork | `assets/fastcast-wizard.webp` |
+| Wizard artwork | `assets/pyrenet-wizard.webp` |
 | Meme/social register — **separate from the bubble pool** | `docs/MEME-REGISTER.md` |
 
 ### The generator's shape
@@ -254,7 +254,7 @@ put it in the register document.
 - After any pool edit, confirm the file still **parses** (`python -c "import ast;
   ast.parse(open('scripts/build-site.py', encoding='utf-8').read())"`). A line
   merged in with unescaped quotes made the whole site unbuildable for a period.
-- `assets/fastcast-wizard.webp` is the artwork the regions in `site.js` are
+- `assets/pyrenet-wizard.webp` is the artwork the regions in `site.js` are
   measured against. If the art is replaced, **re-measure the three region
   rectangles** and re-check which pool each resolves to. The regions are
   fractions of his own box; they must not overlap, because the lookup takes the

@@ -34,6 +34,10 @@ PAGES = {
     'how-it-works': (f'How {PRODUCT} connects', 'Compare direct and relayed screen-sharing routes, discover who handles which data, and explore the native media stack.'),
     'data-and-privacy': ('Data compared', f'What Discord documents, next to what this {PRODUCT} preview actually does.'),
     'bandwidth': ('Bandwidth calculator', 'Estimate video payload at each end and the server traffic added by a relayed route.'),
+    'about': (f'About {PRODUCT}', 'The team, the license, and how the project is maintained.'),
+    'join': ('Join', 'Become a tester, report bugs, or contribute code. Open source under MIT or Apache-2.0.'),
+    'faq': ('FAQ', 'Answers to the most common questions about downloads, setup, and privacy.'),
+    'blog': ('Blog', 'Release notes, engineering deep-dives, and behind-the-scenes from the Pyrenet team.'),
 }
 # Former page URLs that still receive traffic. Each renders a redirect stub.
 REDIRECTS = {'why-fastcast': 'why-pyrenet'}
@@ -49,7 +53,7 @@ def brand(classes):
     """Logo lockup: the wizard mark plus a text wordmark, so the name is set once."""
     return (
         f'<a class="{classes}" href="index.html" aria-label="{PRODUCT} home">'
-        '<img class="brand-mark" src="assets/fastcast-wizard.webp" width="1203" height="926" alt="">'
+        '<img class="brand-mark" src="assets/pyrenet-wizard.webp" width="1203" height="926" alt="">'
         f'<span class="brand-wordmark">{PRODUCT}</span></a>'
     )
 
@@ -909,8 +913,8 @@ def render(slug, title, description):
   <footer class="site-footer wrap">
     <div class="footer-intro">{brand('brand footer-brand')}<p>Screen sharing with a little magic and careful networking.</p><p class="small-copy">{escape(release['offer'])}</p><p class="small-copy">{escape(release['application_source'])}</p></div>
     <nav aria-label="Product links"><h2>Product</h2>{link('product','Overview',slug)}{link('downloads','Downloads',slug)}{link('platforms','Platforms',slug)}{link('releases','Release notes',slug)}</nav>
-    <nav aria-label="Resources"><h2>Resources</h2>{link('get-started','Setup',slug)}{link('help','Help',slug)}{link('community','Bugs',slug)}{link('privacy','Privacy',slug)}</nav>
-    <nav aria-label="More"><h2>More</h2>{link('why-pyrenet',f'Why {PRODUCT}',slug)}{link('calls-and-rooms','Calls & rooms',slug)}{link('how-it-works','How it works',slug)}{link('roadmap','Roadmap',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
+    <nav aria-label="Resources"><h2>Resources</h2>{link('get-started','Setup',slug)}{link('help','Help',slug)}{link('faq','FAQ',slug)}{link('join','Join',slug)}{link('privacy','Privacy',slug)}</nav>
+    <nav aria-label="More"><h2>More</h2>{link('about',f'About',slug)}{link('why-pyrenet',f'Why {PRODUCT}',slug)}{link('calls-and-rooms','Calls & rooms',slug)}{link('how-it-works','How it works',slug)}{link('blog','Blog',slug)}{link('roadmap','Roadmap',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
     <div class="footer-bottom"><span>Windows sends · Windows or Android watches · Preview</span><a href="{REPO}">GitHub ↗</a><a href="{REPO}/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
   </footer>
   <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>{tokens['DIALOG_CAPTION']}</p></dialog>
