@@ -216,7 +216,7 @@ h1 {
   text-wrap: balance;
 }
 .page-index .hero h1 { max-width: 17ch; }
-h1 span { color: var(--accent-strong); }
+h1 span { color: inherit; }
 h1, h2 { overflow-wrap: anywhere; }
 h2 {
   font-size: clamp(1.8rem, 2.9vw, 2.6rem);

@@ -80,13 +80,13 @@ homepage alternatives were compared as follows:
 | Share your screen. Keep talking. | Useful feature heading. Avoid implying proven uninterrupted call continuity. |
 | Voice, chat, and screen sharing. | Selected for immediate product clarity. Its weakness is sameness; supporting copy and product evidence must add the distinction. |
 
-Selected composition:
+Initial published composition, superseded by the follow-up below:
 
 > **Voice, chat, and screen sharing.**
 >
 > Start a call, share a window, and talk through what's on screen.
 
-The supporting sentence replaces the vague “follow along” with an action and a
+That supporting sentence replaced the vague “follow along” with an action and a
 reason to share. Platform scope remains beside the download decision: share from
 Windows; watch on Windows or Android. Download buttons name the platform. Preview
 status and limitations remain visible, while implementation explanations move to
@@ -110,3 +110,23 @@ checks passing. Review the rendered page when changing typography, spacing or
 copy length. These checks catch breakage; they do not decide whether wording is
 good. Preserve the rationale above as review history, and rewrite it when the
 user chooses a different direction.
+
+## Follow-up: broader peer-to-peer media positioning
+
+The user found the feature-list headline clunky, asked to include file sharing
+and the peer-to-peer media ecosystem, and rejected the unexplained two-color
+headline treatment. The current composition is:
+
+> **Talk, share, and stream.**
+>
+> A peer-to-peer media app for voice, chat, file sharing, and live screens.
+
+The headline now leads with three natural actions. The supporting sentence names
+the complete scope without extending the headline into a longer list. Headings
+use one text color; amber remains an action/brand accent. The social card, page
+metadata and footer use the same positioning. The connection section still
+explains relay fallback, and file-transfer details still state the direct-path
+requirement. “Peer to peer” does not mean signaling or relay services are absent.
+
+The font matrix retains the wording used during its comparison so the typography
+evidence remains reproducible. JetBrains Mono remains the selected font.
