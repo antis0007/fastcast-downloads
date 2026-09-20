@@ -17,6 +17,10 @@ folder is historical; do not copy it here as an update.
 - `src/release.json` describes published files. Do not promote it until assets
   exist, their bytes and hashes match, and direct download URLs work.
 - A push to main publishes the site. Push experiments to their own branches.
+- Website quality runs on pull requests and main. Keep generated-source,
+  release, link, browser, and accessibility checks passing; review the uploaded
+  screenshots for visual changes. Automated layout checks do not select copy
+  or establish that a design meets the user's preferences.
 
 On 20 September 2026 the first facelift direction was rejected. It is preserved
 locally under `draft/website-review-20260920`; do not promote it as accepted work.
