@@ -68,25 +68,25 @@
       "width": 1770,
       "height": 1170,
       "label": "Windows Share screenshot",
-      "alt": "Windows Share in Pyrenet: screen or window selection, frame rate and picture detail, audio controls, and Start sharing.",
-      "caption": "Windows Share from a September 18, 2026 development capture. The public download is {{RELEASE_LABEL}}. Not a live session.",
-      "captured": "2026-09-18",
-      "capture_build": "cast-desktop release build from main with the shared palette synced to the public site",
-      "theme": "Gold (Amber) theme, default controls, palette matched to the website",
+      "alt": "Upcoming Pyrenet Windows interface: Share screen, Watch and People navigation; screen selection, audio controls and Start sharing.",
+      "caption": "Upcoming Windows interface, September 20, 2026. Not yet included in the downloadable Preview 2.",
+      "captured": "2026-09-20",
+      "capture_build": "native appearance_review harness using production DesktopApp at app commit cc326f1",
+      "theme": "default Amber theme with an isolated profile",
       "represents_public_release": false,
-      "note": "Unchanged full-window capture of a development interface. Some controls can differ from the public package. The app palette is synced with the website; published packages pick the sync up from the next release."
+      "note": "Unmodified renderer capture of the upcoming Share interface, with no active screen share or call."
     },
     "windows-compact": {
-      "width": 998,
-      "height": 764,
+      "width": 1230,
+      "height": 1170,
       "label": "compact Windows screenshot",
-      "alt": "Windows Share in a smaller Pyrenet window, with the native scroll area visible.",
-      "caption": "Share in a smaller window, September 18, 2026 development capture.",
-      "captured": "2026-09-18",
-      "capture_build": "cast-desktop release build from main with the shared palette synced to the public site",
-      "theme": "Gold (Amber) theme, default controls, palette matched to the website",
+      "alt": "Upcoming Pyrenet Windows interface: Share screen, Watch and People navigation; screen selection, audio controls and Start sharing.",
+      "caption": "Upcoming Windows interface, September 20, 2026. Not yet included in the downloadable Preview 2.",
+      "captured": "2026-09-20",
+      "capture_build": "native appearance_review harness using production DesktopApp at app commit cc326f1",
+      "theme": "default Amber theme with an isolated profile",
       "represents_public_release": false,
-      "note": "Unchanged full-window capture at a smaller window size. The native scroll area is visible."
+      "note": "Unmodified renderer capture of the upcoming Share interface, with no active screen share or call."
     }
   },
   "evidence": {

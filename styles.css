@@ -1,4 +1,4 @@
-/* FastCast public site styles ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â governed by docs/WEBSITE_DESIGN_CONTRACT.md */
+/* Pyrenet public website: neutral surfaces, amber actions, readable type. */
 @font-face {
   font-family: Inter;
   src: url(assets/inter-latin.woff2) format("woff2");
@@ -7,36 +7,29 @@
 
 :root {
   color-scheme: dark;
-  /* One fire family, three temperatures. Amber carries the brand and every
-     interactive accent; ember carries heat in the rune light, the roaming
-     sparks and the halos. The native app's Cyan stays inside the screenshots
-     and is never reproduced as site chrome. */
-  --bg: #17140f;
-  --surface: #201c16;
-  --surface-raised: #2a251d;
-  --surface-hover: #332d24;
-  --line: #3c352a;
-  --line-soft: #2c261e;
-  /* Measured at 3.45:1 on the page ground and 3.18:1 on raised surfaces, so
-     control boundaries meet WCAG 1.4.11. Decorative dividers keep --line and
-     --line-soft; only things you can click or type into use this. */
-  --line-strong: #7b7160;
+  --bg: #141416;
+  --surface: #1c1c1f;
+  --surface-raised: #252529;
+  --surface-hover: #303035;
+  --line: #3b3b42;
+  --line-soft: #2b2b30;
+  /* Control boundaries are checked separately from decorative dividers. */
+  --line-strong: #787880;
   --accent: #f0a33c;
   --accent-strong: #ffc46b;
   --ember: #ff5b2e;
   --brand: #f0a33c;
   --brand-soft: #f2b263;
-  --text: #f8f5ee;
-  --muted: #bdb6a9;
-  --quiet: #8f877a;
-  /* Warm paper used for panels that show or inspect the product: the app
-     screenshots and the capability table. */
-  --paper: #f4f0e8;
-  --paper-2: #ebe5d9;
-  --paper-text: #1a1611;
-  --paper-muted: #5f584c;
-  --line-light: #dbd4c6;
-  --line-control-light: #83816d;
+  --text: #f6f6f7;
+  --muted: #bcbcc4;
+  --quiet: #93939d;
+  /* Light surfaces give product sections a clear change in hierarchy. */
+  --paper: #f5f5f4;
+  --paper-2: #eaeaea;
+  --paper-text: #19191d;
+  --paper-muted: #56565f;
+  --line-light: #d6d6da;
+  --line-control-light: #7d7d84;
   --copper: #a04a12;
   --radius: 10px;
   --radius-sm: 6px;
@@ -94,7 +87,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 
 .announcement {
   border-bottom: 1px solid var(--line-soft);
-  background: #1b1c17cc;
+  background: #1c1c1fcc;
   backdrop-filter: blur(10px);
   font-size: 12px;
 }
@@ -120,7 +113,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--line-soft);
-  background: #171815d9;
+  background: #141416ed;
   backdrop-filter: blur(14px);
 }
 .site-header-inner {
@@ -613,7 +606,7 @@ p { text-wrap: pretty; }
   padding: 8px 12px;
   border: 1px solid var(--line-strong);
   border-radius: 6px;
-  background: #241f18;
+  background: #252529;
   color: var(--text);
   font: inherit;
   cursor: pointer;
@@ -643,7 +636,7 @@ p { text-wrap: pretty; }
   padding: 12px 15px;
   border: 1px solid #6a5330;
   border-radius: 14px;
-  background: #241f18f2;
+  background: #252529f2;
   box-shadow: 0 14px 34px #0b0805b8, inset 0 0 22px #ff8f3a1f;
   color: var(--text);
   font-size: 13.5px;
@@ -666,7 +659,7 @@ p { text-wrap: pretty; }
   margin: -7px 0 0 -6px;
   border-right: 1px solid #6a5330;
   border-bottom: 1px solid #6a5330;
-  background: #241f18;
+  background: #252529;
   transform: rotate(45deg);
 }
 .wizard-voice.is-fading { animation: wizard-fade .26s ease-in forwards; }
@@ -1128,7 +1121,7 @@ figcaption { margin-top: 14px; font-size: 12px; color: var(--quiet); line-height
   padding: 18px 20px;
   border: 1px solid var(--line-soft);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, #23251e 0%, #1d1f1a 100%);
+  background: linear-gradient(180deg, #252529 0%, #1c1c1f 100%);
 }
 .fact-card span {
   display: block;
@@ -1288,7 +1281,7 @@ figcaption { margin-top: 14px; font-size: 12px; color: var(--quiet); line-height
   inset: 0;
   border: 1px solid var(--line-soft);
   border-radius: calc(var(--radius) + 4px);
-  background: linear-gradient(135deg, #23251e, #1d1f1a);
+  background: linear-gradient(135deg, #252529, #1c1c1f);
   z-index: -1;
 }
 @media (min-width: 1240px) {
@@ -1311,7 +1304,7 @@ figcaption { margin-top: 14px; font-size: 12px; color: var(--quiet); line-height
   padding: 34px 36px;
   border: 1px solid var(--line);
   border-radius: calc(var(--radius) + 2px);
-  background: linear-gradient(135deg, #23251e 0%, #1f211b 55%, #1d2019 100%);
+  background: linear-gradient(135deg, #252529 0%, #222226 55%, #1c1c1f 100%);
 }
 /* The closing band gets a faint upright shimmer rather than drifting embers:
    it is a call to action, so the motion stays out of the way of the button. */
@@ -1353,7 +1346,7 @@ figcaption { margin-top: 14px; font-size: 12px; color: var(--quiet); line-height
   border-radius: var(--radius-sm);
 }
 .resource-grid > a + a { padding-left: 28px; border-left: 1px solid var(--line-soft); }
-.resource-grid > a:hover { background: #23251e; color: var(--text); }
+.resource-grid > a:hover { background: #252529; color: var(--text); }
 .resource-grid span { font-size: 10px; letter-spacing: .08em; color: var(--quiet); text-transform: uppercase; }
 .resource-grid h3 { margin-block: 16px 10px; }
 .resource-grid p { color: var(--muted); font-size: 13px; line-height: 1.65; }
@@ -1629,7 +1622,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
   padding: 20px 22px;
   border: 1px solid #625438;
   border-radius: var(--radius-sm);
-  background: #2b281e;
+  background: #252529;
   margin-top: 28px;
   color: #dfd1b7;
 }
@@ -1637,7 +1630,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
 .release-caveat strong { color: #f2d6a9; font-size: 13px; }
 .release-caveat p { color: #d8cbb0; font-size: 12px; line-height: 1.7; margin-top: 4px; }
 .release-caveat a { color: var(--accent-strong); }
-.route-card { position: relative; border: 1px solid var(--line); border-radius: var(--radius); background: #1e211a; padding: 28px; }
+.route-card { position: relative; border: 1px solid var(--line); border-radius: var(--radius); background: #1c1c1f; padding: 28px; }
 .diagram-label { font: 9px/1.5 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--quiet); margin-bottom: 28px; }
 .route-diagram { display: grid; grid-template-columns: 78px minmax(0, 1fr) 78px; grid-template-rows: 48px 70px; align-items: center; }
 .route-end { text-align: center; align-self: start; color: #d8dfcb; }
@@ -1646,7 +1639,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
 .direct-line { height: 1px; background: var(--accent); position: relative; margin: 0 6px; align-self: start; top: 16px; box-shadow: 0 0 12px #efac4c88; }
 .direct-line span { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); white-space: nowrap; font: 9px/1.5 var(--mono); color: var(--accent-strong); }
 .relay-path { grid-column: 1 / 4; grid-row: 2; margin-inline: 40px; height: 62px; border: 1px dashed #606653; border-top: 0; border-radius: 0 0 10px 10px; position: relative; }
-.tower-node { display: flex; flex-direction: column; align-items: center; gap: 5px; position: absolute; left: 50%; bottom: -17px; transform: translateX(-50%); background: #1e211a; padding-inline: 14px; max-width: 90%; }
+.tower-node { display: flex; flex-direction: column; align-items: center; gap: 5px; position: absolute; left: 50%; bottom: -17px; transform: translateX(-50%); background: #1c1c1f; padding-inline: 14px; max-width: 90%; }
 .tower-node .icon { width: 26px; height: 26px; color: #c0c9ad; }
 .tower-node span { font: 8.5px/1.4 var(--mono); white-space: nowrap; color: #c5cdb8; letter-spacing: .04em; }
 .design-caption { font-size: 10px; color: var(--quiet); margin-top: 40px; line-height: 1.6; }
