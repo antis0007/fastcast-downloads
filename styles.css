@@ -146,10 +146,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
    highlights. Height rules below keep the old lockup proportions. */
 .brand-wordmark {
   display: block;
+  font-family: Inter, "Segoe UI", sans-serif;
   font-size: 28px;
   line-height: 1;
-  font-weight: 700;
-  letter-spacing: -.04em;
+  font-weight: 600;
+  letter-spacing: -.025em;
   color: var(--brand);
   white-space: nowrap;
 }
@@ -2090,12 +2091,10 @@ section[id], article[id] { scroll-margin-top: 88px; }
   }
   .site-header nav a { font-size: 14px; }
   .site-header .button { padding-inline: 12px; }
-  /* On small screens the wordmark is dropped and the wizard mark carries the
-     brand on its own, which keeps the header row from crowding the download
-     button. */
-  .brand-wordmark { display: none; }
+  /* Keep the product name visible alongside its mark on small screens. */
+  .brand-wordmark { display: block; font-size: 20px; }
   .brand-mark { height: 30px; }
-  .brand { gap: 0; }
+  .brand { gap: 8px; }
   .cast-scene { height: 360px; --unit: .68; }
   .cast-figure { width: min(84%, 360px); }
   /* Density steps down with the canvas: every third rune of each ring drops, so

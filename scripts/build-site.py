@@ -18,7 +18,7 @@ REPO = 'https://github.com/antis0007/fastcast-downloads'
 PRODUCT = 'Pyrenet'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
-    'index': ('Screen sharing without the meeting', 'Pick a window or your whole screen on Windows and it shows up on another PC or an Android phone. Direct encrypted connection with relay fallback. Free preview; no account needed to share a screen.'),
+    'index': ('Voice, chat, and screen sharing', 'Talk with your group, share a window from Windows, and watch on Windows or Android. Explore the free Pyrenet preview and its current limitations.'),
     'product': ('Product overview', 'Windows and Android screen-sharing features, native interface captures, and release testing status.'),
     'downloads': (f'Download {PRODUCT}', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
     'get-started': ('Setup', 'Install matching versions, create an invitation on the viewing device, and start sharing from Windows.'),
@@ -907,7 +907,7 @@ def render(slug, title, description):
   </header>
   <main id="main" tabindex="-1">{body}</main>
   <footer class="site-footer wrap">
-    <div class="footer-intro">{brand('brand footer-brand')}<p>Screen sharing with a little magic and careful networking.</p><p class="small-copy">{escape(release['offer'])}</p><p class="small-copy">{escape(release['application_source'])}</p></div>
+    <div class="footer-intro">{brand('brand footer-brand')}<p>Voice, chat, and screen sharing.</p><p class="small-copy">{escape(release['offer'])}</p><p class="small-copy">{escape(release['application_source'])}</p></div>
     <nav aria-label="Product links"><h2>Product</h2>{link('product','Overview',slug)}{link('downloads','Downloads',slug)}{link('platforms','Platforms',slug)}{link('releases','Release notes',slug)}</nav>
     <nav aria-label="Resources"><h2>Resources</h2>{link('get-started','Setup',slug)}{link('help','Help',slug)}{link('community','Bugs',slug)}{link('privacy','Privacy',slug)}</nav>
     <nav aria-label="More"><h2>More</h2>{link('why-pyrenet',f'Why {PRODUCT}',slug)}{link('calls-and-rooms','Calls & rooms',slug)}{link('how-it-works','How it works',slug)}{link('roadmap','Roadmap',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>

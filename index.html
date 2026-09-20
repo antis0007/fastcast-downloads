@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b0d12">
   <meta name="pyrenet-version" content="0.3.3-preview.2">
-  <meta name="description" content="Pick a window or your whole screen on Windows and it shows up on another PC or an Android phone. Direct encrypted connection with relay fallback. Free preview; no account needed to share a screen.">
+  <meta name="description" content="Talk with your group, share a window from Windows, and watch on Windows or Android. Explore the free Pyrenet preview and its current limitations.">
 
-  <title>Screen sharing without the meeting — Pyrenet</title>
+  <title>Voice, chat, and screen sharing — Pyrenet</title>
   <link rel="canonical" href="https://antis0007.github.io/fastcast-downloads/">
   <link rel="icon" href="assets/favicon.png" sizes="64x64" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -15,15 +15,15 @@
   <link rel="preload" href="assets/windows-share.png" as="image">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Pyrenet">
-  <meta property="og:title" content="Screen sharing without the meeting — Pyrenet">
-  <meta property="og:description" content="Pick a window or your whole screen on Windows and it shows up on another PC or an Android phone. Direct encrypted connection with relay fallback. Free preview; no account needed to share a screen.">
+  <meta property="og:title" content="Voice, chat, and screen sharing — Pyrenet">
+  <meta property="og:description" content="Talk with your group, share a window from Windows, and watch on Windows or Android. Explore the free Pyrenet preview and its current limitations.">
   <meta property="og:url" content="https://antis0007.github.io/fastcast-downloads/">
   <meta property="og:image" content="https://antis0007.github.io/fastcast-downloads/assets/og.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="640">
   <meta property="og:image:alt" content="Pyrenet. Screen sharing with a little magic and careful networking. Windows sender and Android viewer development preview.">
   <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pyrenet", "applicationCategory": "MultimediaApplication", "operatingSystem": "Windows (send and receive); Android 8+ (receive only)", "softwareVersion": "0.3.3-preview.2", "url": "https://antis0007.github.io/fastcast-downloads/", "downloadUrl": "https://antis0007.github.io/fastcast-downloads/downloads.html", "image": "https://antis0007.github.io/fastcast-downloads/assets/og.png", "description": "Pick a window or your whole screen on Windows and it shows up on another PC or an Android phone. Direct encrypted connection with relay fallback. Free preview; no account needed to share a screen.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Screen sharing does not require an account. Friends, calls, rooms and files use a device-owned account in this development preview. Cast supplies the live-media layer inside the broader Pyrenet ecosystem."}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Pyrenet", "applicationCategory": "MultimediaApplication", "operatingSystem": "Windows (send and receive); Android 8+ (receive only)", "softwareVersion": "0.3.3-preview.2", "url": "https://antis0007.github.io/fastcast-downloads/", "downloadUrl": "https://antis0007.github.io/fastcast-downloads/downloads.html", "image": "https://antis0007.github.io/fastcast-downloads/assets/og.png", "description": "Talk with your group, share a window from Windows, and watch on Windows or Android. Explore the free Pyrenet preview and its current limitations.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Screen sharing does not require an account. Friends, calls, rooms and files use a device-owned account in this development preview. Cast supplies the live-media layer inside the broader Pyrenet ecosystem."}}</script>
   <script src="site.js" defer></script>
   <script src="wizard-fx.js" defer></script>
 </head>
@@ -41,18 +41,18 @@
   </header>
   <main id="main" tabindex="-1"><section class="hero wrap" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <p class="eyebrow">Free preview · No account · No meeting link</p>
-    <h1 id="hero-title">Share a window,<br><span>not a meeting.</span></h1>
-    <p class="lede">Pyrenet is the private small-group communications and shared-computing fabric. Cast is its live-media layer: pick any window or screen on your Windows PC and it appears on a friend's PC or Android phone over an encrypted connection.</p>
+    <p class="eyebrow">Windows &amp; Android · Free preview</p>
+    <h1 id="hero-title">Voice, chat,<br><span>and screen sharing.</span></h1>
+    <p class="lede">Talk with your group, share a window, and follow along on Windows or Android.</p>
     <div class="actions">
       <a class="button primary" data-download="windows" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/FastCast-0.3.3-preview.2-Setup.exe">Download for Windows <span aria-hidden="true">↓</span></a>
-      <a class="button" data-download="android" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/FastCast-0.3.3-preview.2-Android.apk">Get the Android viewer <span aria-hidden="true">↓</span></a>
+      <a class="button" data-download="android" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/FastCast-0.3.3-preview.2-Android.apk">Get the Android app <span aria-hidden="true">↓</span></a>
     </div>
     <p class="small-copy">0.3.3 Preview 2 · Source on <a href="https://github.com/antis0007/fastcast-downloads">GitHub</a> under MIT or Apache-2.0</p>
     <ul class="hero-facts">
-      <li>Whole screen or a single window</li>
-      <li>Up to eight people watch one session</li>
-      <li>Voice, chat and files ride along the same fabric</li>
+      <li>Share a screen or window from Windows</li>
+      <li>Watch on Windows or Android</li>
+      <li>In development: <a href="#capabilities">features and known limitations</a></li>
     </ul>
   </div>
   <div class="hero-visual">
@@ -69,8 +69,8 @@
 <section class="light-panel light-panel-2" id="interface">
   <div class="wrap" data-reveal>
     <div class="section-heading">
-      <div><p class="eyebrow">Windows interface</p><h2>Choose exactly<br>what they see</h2></div>
-      <p>Cast lives inside Pyrenet. Import the invitation from whoever is watching, pick a screen or a single window, set audio and remote input, then click Start sharing.</p>
+      <div><p class="eyebrow">Screen sharing</p><h2>Show exactly<br>what you mean.</h2></div>
+      <p>Share a window or your entire screen from your Windows PC. Choose whether to include sound or allow remote control before you start.</p>
     </div>
     <figure class="screenshot">
   <a class="image-open" href="assets/windows-share.png" data-lightbox aria-label="Enlarge Windows Share screenshot">
@@ -147,10 +147,10 @@
   <div class="class-card">
     <div class="class-body">
       <p class="eyebrow">Why Pyrenet</p>
-      <h2 id="class-title">Screen sharing<br><span>without a new platform</span></h2>
-      <p class="class-lede">Your group already has somewhere to talk, and we are not asking anyone to move. Open Pyrenet for the screen and leave the conversation where it lives. When the direct route works, the video passes between your two devices and nowhere else.</p>
-      <p class="class-lede">If you would rather keep everything in one place, voice calls, text rooms and file sending live in the session too. They are newer than the screen sharing, and their limits are stated on their own page.</p>
-      <p class="class-lede"><a class="text-link" href="calls-and-rooms.html">What calls and rooms do today →</a> <a class="text-link" href="why-pyrenet.html">Why Pyrenet is a separate tool →</a></p>
+      <h2 id="class-title">Talk while<br><span>you share.</span></h2>
+      <p class="class-lede">Start a voice call alongside a screen share. Use text chat for the details, or send a file for the other person to accept.</p>
+      <p class="class-lede">Calls and chat are preview features. File transfers need a direct connection. Check the current limitations before relying on Pyrenet for a call.</p>
+      <p class="class-lede"><a class="text-link" href="calls-and-rooms.html">Explore calls, chat and files →</a></p>
     </div>
     <div class="class-figure" aria-hidden="true">
       <img src="assets/fastcast-wizard.webp" width="1203" height="926" alt="">
@@ -184,7 +184,7 @@
 
 <section class="light-panel light-panel-2" id="help">
   <div class="wrap help-grid" data-reveal>
-    <div class="help-heading"><p class="eyebrow">Help</p><h2>Common setup<br>questions</h2><p>Most first sessions fail because the two builds are different versions, or because guest Wi-Fi is keeping the devices apart. Check both before filing a bug.</p></div>
+    <div class="help-heading"><p class="eyebrow">Help</p><h2>Getting started</h2><p>Use the same version on both devices. If they cannot connect, check whether your network allows devices to communicate with each other.</p></div>
     <div>
       <details class="faq" open>
         <summary>The devices won't connect.</summary>
@@ -222,11 +222,11 @@
       <a class="text-link" href="get-started.html#android">Install notes →</a>
     </article>
   </div>
-  <div class="download-footer"><p class="free-note">The preview is free. Your devices still use power, and your network charges are your own.</p><div class="download-links"><a href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/FastCast-0.3.3-preview.2-windows-android-x64.zip">Portable bundle</a><a href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/SHA256SUMS.txt">Checksums ↗</a><a href="releases.html">Release notes</a></div></div>
+  <div class="download-footer"><p class="free-note">Free preview for Windows and Android.</p><div class="download-links"><a href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/FastCast-0.3.3-preview.2-windows-android-x64.zip">Portable bundle</a><a href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/SHA256SUMS.txt">Checksums ↗</a><a href="releases.html">Release notes</a></div></div>
 </section>
 </main>
   <footer class="site-footer wrap">
-    <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="Pyrenet home"><img class="brand-mark" src="assets/fastcast-wizard.webp" width="1203" height="926" alt=""><span class="brand-wordmark">Pyrenet</span></a><p>Screen sharing with a little magic and careful networking.</p><p class="small-copy">Screen sharing does not require an account. Friends, calls, rooms and files use a device-owned account in this development preview. Cast supplies the live-media layer inside the broader Pyrenet ecosystem.</p><p class="small-copy">Native application source is maintained separately. This repository publishes the website and preview packages only.</p></div>
+    <div class="footer-intro"><a class="brand footer-brand" href="index.html" aria-label="Pyrenet home"><img class="brand-mark" src="assets/fastcast-wizard.webp" width="1203" height="926" alt=""><span class="brand-wordmark">Pyrenet</span></a><p>Voice, chat, and screen sharing.</p><p class="small-copy">Screen sharing does not require an account. Friends, calls, rooms and files use a device-owned account in this development preview. Cast supplies the live-media layer inside the broader Pyrenet ecosystem.</p><p class="small-copy">Native application source is maintained separately. This repository publishes the website and preview packages only.</p></div>
     <nav aria-label="Product links"><h2>Product</h2><a href="product.html">Overview</a><a href="downloads.html">Downloads</a><a href="platforms.html">Platforms</a><a href="releases.html">Release notes</a></nav>
     <nav aria-label="Resources"><h2>Resources</h2><a href="get-started.html">Setup</a><a href="help.html">Help</a><a href="community.html">Bugs</a><a href="privacy.html">Privacy</a></nav>
     <nav aria-label="More"><h2>More</h2><a href="why-pyrenet.html">Why Pyrenet</a><a href="calls-and-rooms.html">Calls & rooms</a><a href="how-it-works.html">How it works</a><a href="roadmap.html">Roadmap</a><a href="bandwidth.html">Bandwidth calculator</a><a href="data-and-privacy.html">Data & privacy compared</a></nav>
