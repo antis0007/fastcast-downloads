@@ -1,17 +1,17 @@
 <section class="hero wrap" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <p class="eyebrow">Free preview · No account · No meeting link</p>
-    <h1 id="hero-title">Share a window,<br><span>not a meeting.</span></h1>
-    <p class="lede">Pyrenet is the private small-group communications and shared-computing fabric. Cast is its live-media layer: pick any window or screen on your Windows PC and it appears on a friend's PC or Android phone over an encrypted connection.</p>
+    <p class="eyebrow">Windows &amp; Android · Free preview</p>
+    <h1 id="hero-title">Talk, share, and stream.</h1>
+    <p class="lede">A peer-to-peer media app for voice, chat, file sharing, and live screens.</p>
     <div class="actions">
       <a class="button primary" data-download="windows" href="{{WINDOWS_URL}}">Download for Windows <span aria-hidden="true">↓</span></a>
-      <a class="button" data-download="android" href="{{ANDROID_URL}}">Get the Android viewer <span aria-hidden="true">↓</span></a>
+      <a class="button" data-download="android" href="{{ANDROID_URL}}">Get the Android app <span aria-hidden="true">↓</span></a>
     </div>
     <p class="small-copy">{{RELEASE_LABEL}} · Source on <a href="{{REPO}}">GitHub</a> under MIT or Apache-2.0</p>
     <ul class="hero-facts">
-      <li>Whole screen or a single window</li>
-      <li>Up to eight people watch one session</li>
-      <li>Voice, chat and files ride along the same fabric</li>
+      <li>Share a screen or window from Windows</li>
+      <li>Watch on Windows or Android</li>
+      <li>In development: <a href="#capabilities">features and known limitations</a></li>
     </ul>
   </div>
   <div class="hero-visual">
@@ -22,12 +22,12 @@
 <section class="light-panel light-panel-2" id="interface">
   <div class="wrap" data-reveal>
     <div class="section-heading">
-      <div><p class="eyebrow">Windows interface</p><h2>Choose exactly<br>what they see</h2></div>
-      <p>Cast lives inside Pyrenet. Import the invitation from whoever is watching, pick a screen or a single window, set audio and remote input, then click Start sharing.</p>
+      <div><p class="eyebrow">Screen sharing</p><h2>Show exactly<br>what you mean.</h2></div>
+      <p>Share a window or your entire screen from your Windows PC. Choose whether to include sound or allow remote control before you start.</p>
     </div>
     {{SCREENSHOT_WIDE}}
     <div class="permissions">
-      <div class="permissions-heading"><h3>Audio and<br>remote control</h3><p>Audio, microphone and remote input each have their own switch, and they all start off.</p></div>
+      <div class="permissions-heading"><h3>Audio and<br>remote control</h3><p>Choose separately whether to share computer audio, use your microphone, or allow remote control. Review these switches before starting.</p></div>
       <div class="permission-list" data-snap role="group" aria-label="Permissions you can grant separately" tabindex="0">
         <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-volume"/></svg><div><h4>System audio</h4><p>Your PC's sound goes out with the picture. We have not confirmed it plays audibly on a phone.</p></div><span class="status status-available"><span class="status-word">Available</span></span></article>
         <article><svg class="icon icon-lg" aria-hidden="true"><use href="#i-mic"/></svg><div><h4>Microphone</h4><p>Turn it on when you want to talk during the session.</p></div><span class="status status-preview"><span class="status-word">Preview</span></span></article>
@@ -39,22 +39,20 @@
 
 <section class="section wrap" id="setup" aria-labelledby="role-title" data-reveal>
   <div class="section-heading">
-    <div><p class="eyebrow">Setup</p><h2 id="role-title">Two devices,<br>one invitation</h2></div>
-    <p>Start on the device that will watch. It makes the invitation, and the sharing PC imports it.</p>
+    <div><p class="eyebrow">Choose your setup</p><h2 id="role-title">Share from Windows.<br>Watch on either device.</h2></div>
+    <p>Use a Windows PC to share. Watch on another Windows PC or an Android device. The setup guide covers invitations for each device.</p>
   </div>
   <div class="role-grid">
     <a class="role-card" id="receive-setup" href="get-started.html#invite">
-      <span class="eyebrow">Step 1 · The PC or phone that watches</span>
+      <span class="eyebrow">Windows &amp; Android</span>
       <h3>I want to watch</h3>
-      <p>Install {{PRODUCT}}, choose Receive, and copy the invitation it gives you. Anyone holding that invitation can join the session, so send it privately.</p>
-      <p class="role-order">Start here</p>
+      <p>Follow a shared screen on your PC or phone. Use the invitation steps for your device to connect.</p>
       <span class="text-link">Viewer setup →</span>
     </a>
     <a class="role-card" href="get-started.html#share">
-      <span class="eyebrow">Step 2 · The Windows PC with the screen</span>
+      <span class="eyebrow">Windows</span>
       <h3>I want to share</h3>
-      <p>Open Share, import the invitation, and pick a screen or a single window. Set the audio and input switches, then click Start sharing.</p>
-      <p class="role-order">Finish here</p>
+      <p>Choose one window or your entire screen. Review audio and remote-control settings before starting.</p>
       <span class="text-link">Sender setup →</span>
     </a>
   </div>
@@ -67,7 +65,6 @@
   </div>
   <div class="network-grid">
     <div class="network-copy">
-      {{SCRYING_ORB}}
       <p>Your PC encodes the picture; the watching device decodes it. Nobody in between can read it.</p>
       <p class="tower-line">Pairing and discovery messages help the two devices find each other. They travel separately from the screen and audio.</p>
       <aside class="release-caveat">
@@ -77,7 +74,6 @@
       <a class="text-link connection-more" href="how-it-works.html">Explore the routes, data and technical stack →</a>
     </div>
     <figure class="route-card">
-      {{RUNE_CIRCLE_SM}}
       <p class="diagram-label">Connection design</p>
       <div class="route-diagram" role="img" aria-label="A Windows PC sends encrypted media directly to the viewing device where possible. The fallback path goes from the PC through the {{PRODUCT}} relay to the viewer.">
         <div class="route-end"><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg><span>Windows PC</span></div>
@@ -94,13 +90,15 @@
   <div class="class-card">
     <div class="class-body">
       <p class="eyebrow">Why {{PRODUCT}}</p>
-      <h2 id="class-title">Screen sharing<br><span>without a new platform</span></h2>
-      <p class="class-lede">Your group already has somewhere to talk, and we are not asking anyone to move. Open {{PRODUCT}} for the screen and leave the conversation where it lives. When the direct route works, the video passes between your two devices and nowhere else.</p>
-      <p class="class-lede">If you would rather keep everything in one place, voice calls, text rooms and file sending live in the session too. They are newer than the screen sharing, and their limits are stated on their own page.</p>
-      <p class="class-lede"><a class="text-link" href="calls-and-rooms.html">What calls and rooms do today →</a> <a class="text-link" href="why-pyrenet.html">Why {{PRODUCT}} is a separate tool →</a></p>
+      <h2 id="class-title">Talk while<br><span>you share.</span></h2>
+      <p class="class-lede">Start a voice call alongside a screen share. Use text chat for the details, or send a file for the other person to accept.</p>
+      <p class="class-lede">Calls and chat are preview features. File transfers need a direct connection. Check the current limitations before relying on {{PRODUCT}} for a call.</p>
+      <p class="class-lede"><a class="text-link" href="calls-and-rooms.html">Explore calls, chat and files →</a></p>
     </div>
-    <div class="class-figure" aria-hidden="true">
-      <img src="assets/fastcast-wizard.webp" width="1203" height="926" alt="">
+    <div class="conversation-summary">
+      <div><h3>Voice calls</h3><p>Talk one-to-one or with a small group.</p></div>
+      <div><h3>Room chat</h3><p>Put the details in writing.</p></div>
+      <div><h3>File transfer</h3><p>Send a file for the other person to accept.</p></div>
     </div>
   </div>
 </section>
@@ -131,7 +129,7 @@
 
 <section class="light-panel light-panel-2" id="help">
   <div class="wrap help-grid" data-reveal>
-    <div class="help-heading"><p class="eyebrow">Help</p><h2>Common setup<br>questions</h2><p>Most first sessions fail because the two builds are different versions, or because guest Wi-Fi is keeping the devices apart. Check both before filing a bug.</p></div>
+    <div class="help-heading"><p class="eyebrow">Help</p><h2>Getting started</h2><p>Use the same version on both devices. If they cannot connect, check whether your network allows devices to communicate with each other.</p></div>
     <div>
       <details class="faq" open>
         <summary>The devices won't connect.</summary>
@@ -169,5 +167,5 @@
       <a class="text-link" href="get-started.html#android">Install notes →</a>
     </article>
   </div>
-  <div class="download-footer"><p class="free-note">The preview is free. Your devices still use power, and your network charges are your own.</p><div class="download-links"><a href="{{BUNDLE_URL}}">Portable bundle</a><a href="{{CHECKSUMS_URL}}">Checksums ↗</a><a href="releases.html">Release notes</a></div></div>
+  <div class="download-footer"><p class="free-note">Free preview for Windows and Android.</p><div class="download-links"><a href="{{BUNDLE_URL}}">Portable bundle</a><a href="{{CHECKSUMS_URL}}">Checksums ↗</a><a href="releases.html">Release notes</a></div></div>
 </section>

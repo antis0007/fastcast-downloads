@@ -18,7 +18,7 @@ REPO = 'https://github.com/antis0007/fastcast-downloads'
 PRODUCT = 'Pyrenet'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
-    'index': ('Screen sharing without the meeting', 'Pick a window or your whole screen on Windows and it shows up on another PC or an Android phone. Direct encrypted connection with relay fallback. Free preview; no account needed to share a screen.'),
+    'index': ('Talk, share, and stream', 'A peer-to-peer media app for voice, chat, file sharing, and live screens. Share from Windows. Watch on Windows or Android. Explore the Pyrenet preview.'),
     'product': ('Product overview', 'Windows and Android screen-sharing features, native interface captures, and release testing status.'),
     'downloads': (f'Download {PRODUCT}', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
     'get-started': ('Setup', 'Install matching versions, create an invitation on the viewing device, and start sharing from Windows.'),
@@ -30,7 +30,7 @@ PAGES = {
     'releases': ('Release notes', f'Download files, changes, and known limitations for published {PRODUCT} releases.'),
     'privacy': ('Privacy', 'This site has no analytics. GitHub hosts the files. Keep invites private.'),
     '404': ('Page not found', f'Find {PRODUCT} downloads, setup instructions, and help.'),
-    'why-pyrenet': (f'Why {PRODUCT}', 'An independent screen-sharing tool alongside the conversations and communities you already have.'),
+    'why-pyrenet': (f'Why {PRODUCT}', 'Choose what to share, talk through the details, and control access to your screen. Explore the free Windows and Android preview.'),
     'how-it-works': (f'How {PRODUCT} connects', 'Compare direct and relayed screen-sharing routes, discover who handles which data, and explore the native media stack.'),
     'data-and-privacy': ('Data compared', f'What Discord documents, next to what this {PRODUCT} preview actually does.'),
     'bandwidth': ('Bandwidth calculator', 'Estimate video payload at each end and the server traffic added by a relayed route.'),
@@ -751,7 +751,7 @@ def write_screenshots_doc():
     compact = shots['windows-compact']
     text = f'''# Native screenshot provenance
 
-Both `windows-share.png` and `windows-compact.png` are unchanged client-area captures of the Cast Windows {wide['capture_build']}, taken {wide['captured']}. An isolated preferences file selected its default {wide['theme']}. Windows captured only the client area, so the operating-system title bar and its sample-application title are absent. No screenshot colours, controls, text, conversations, or session state were painted or generated.
+Both `windows-share.png` and `windows-compact.png` are unchanged client-area captures from the {wide['capture_build']}, taken {wide['captured']}. The app used its {wide['theme']}. The native renderer captured the client area directly; the operating-system title bar is not part of that output. No screenshot colours, controls, text, conversations, or session state were painted or generated.
 
 - Wide capture: {wide['width']} × {wide['height']} pixels.
 - Smaller window: {compact['width']} × {compact['height']} pixels. {compact['note']}
@@ -887,7 +887,7 @@ def render(slug, title, description):
   <meta property="og:image" content="{BASE}assets/og.png">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="640">
-  <meta property="og:image:alt" content="{PRODUCT}. Screen sharing with a little magic and careful networking. Windows sender and Android viewer development preview.">
+  <meta property="og:image:alt" content="{PRODUCT}. Talk, share, and stream. Peer-to-peer voice, chat, files, and live screens. Windows and Android preview.">
   <meta name="twitter:card" content="summary_large_image">
   {structured}
   <script src="site.js" defer></script>
@@ -907,7 +907,7 @@ def render(slug, title, description):
   </header>
   <main id="main" tabindex="-1">{body}</main>
   <footer class="site-footer wrap">
-    <div class="footer-intro">{brand('brand footer-brand')}<p>Screen sharing with a little magic and careful networking.</p><p class="small-copy">{escape(release['offer'])}</p><p class="small-copy">{escape(release['application_source'])}</p></div>
+    <div class="footer-intro">{brand('brand footer-brand')}<p>Talk, share, and stream.</p><p class="small-copy">{escape(release['offer'])}</p><p class="small-copy">{escape(release['application_source'])}</p></div>
     <nav aria-label="Product links"><h2>Product</h2>{link('product','Overview',slug)}{link('downloads','Downloads',slug)}{link('platforms','Platforms',slug)}{link('releases','Release notes',slug)}</nav>
     <nav aria-label="Resources"><h2>Resources</h2>{link('get-started','Setup',slug)}{link('help','Help',slug)}{link('community','Bugs',slug)}{link('privacy','Privacy',slug)}</nav>
     <nav aria-label="More"><h2>More</h2>{link('why-pyrenet',f'Why {PRODUCT}',slug)}{link('calls-and-rooms','Calls & rooms',slug)}{link('how-it-works','How it works',slug)}{link('roadmap','Roadmap',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
