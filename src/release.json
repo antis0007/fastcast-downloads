@@ -1,9 +1,9 @@
 {
-  "version": "0.3.3-preview.2",
-  "tag": "v0.3.3-preview.2",
-  "label": "0.3.3 Preview 2",
-  "published": "2026-09-20",
-  "published_display": "September 20, 2026",
+  "version": "0.4.0-preview.1",
+  "tag": "v0.4.0-preview.1",
+  "label": "0.4.0 Preview 1",
+  "published": "2026-09-23",
+  "published_display": "September 23, 2026",
   "status": "Development preview",
   "network": "Direct peer route, with a Pyrenet relay fallback",
   "offer": "Screen sharing does not require an account. Friends, calls, rooms and files use a device-owned account in this preview.",
@@ -29,38 +29,38 @@
   },
   "assets": {
     "windows": {
-      "filename": "FastCast-0.3.3-preview.2-Setup.exe",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/FastCast-0.3.3-preview.2-Setup.exe",
-      "size": "11.8 MB",
-      "bytes": 12376062,
-      "sha256": "6f49c73da76d4cdb966c2433d3db5690f5aa91f8966357795b255dd62d7edc63",
+      "filename": "FastCast-0.4.0-preview.1-Setup.exe",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.1/FastCast-0.4.0-preview.1-Setup.exe",
+      "size": "11.9 MB",
+      "bytes": 12442837,
+      "sha256": "519c3c3f0514fab43e76e63b5b357a7aa146cc3322dd3989bf2730f1ba6ae261",
       "role": "Windows sender and receiver",
       "signing": "Unsigned preview"
     },
     "android": {
-      "filename": "FastCast-0.3.3-preview.2-Android.apk",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/FastCast-0.3.3-preview.2-Android.apk",
+      "filename": "FastCast-0.4.0-preview.1-Android.apk",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.1/FastCast-0.4.0-preview.1-Android.apk",
       "size": "26.1 MB",
-      "bytes": 27372662,
-      "sha256": "c9af7f0817f02d4f7360446fbe86569a0a96ee0437b5a279a3dec0029cd3076f",
+      "bytes": 27413242,
+      "sha256": "390d4f84c3dccf65b27e83c7ca29dc46566ac956e6331acf1c8ef9e3a1962ef2",
       "role": "Android viewer",
       "signing": "Debug-signed preview"
     },
     "bundle": {
-      "filename": "FastCast-0.3.3-preview.2-windows-android-x64.zip",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/FastCast-0.3.3-preview.2-windows-android-x64.zip",
-      "size": "27.0 MB",
-      "bytes": 28362258,
-      "sha256": "38605d6180997924d1c30035e571755734979bd6ad0e7149c5fce8a79590d6cc",
+      "filename": "FastCast-0.4.0-preview.1-windows-android-x64.zip",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.1/FastCast-0.4.0-preview.1-windows-android-x64.zip",
+      "size": "27.2 MB",
+      "bytes": 28487444,
+      "sha256": "bad7c1992914d2f026c68fde7cb9ba6853cac39c869a1f7f284299fc2a089ec2",
       "role": "Portable Windows + Android bundle",
       "signing": "Same unsigned Windows and debug-signed Android packages"
     },
     "checksums": {
       "filename": "SHA256SUMS.txt",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.3.3-preview.2/SHA256SUMS.txt",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.1/SHA256SUMS.txt",
       "size": "410 B",
       "bytes": 410,
-      "sha256": "976cf51c4dc3f5e1becbcdde8eefae44ba61ffec09e98cec00dfbfb80c3376d1"
+      "sha256": "eb103daf31e4f88e1b7b4d81ead69f242d237592d1264b2e93358d739cae5728"
     }
   },
   "screenshots": {
@@ -90,20 +90,19 @@
     }
   },
   "evidence": {
-    "headline": "Preview 2 build and package checks",
+    "headline": "Preview 1 build and package checks",
     "framing": "Automated checks and package integrity do not establish physical playback, audible calls, or daily-use reliability.",
     "scope": "Matching {{RELEASE_LABEL}} Windows and Android packages",
     "items": [
       "Windows desktop and capture host built in release mode from the Pyrenet release source.",
-      "Desktop tests: 400 passed, 8 ignored. Three additional parallel runs passed after the Windows audio enumeration fix.",
-      "Host tests: 82 passed, 5 ignored. Protocol: 155 passed. Packet properties: 3 passed.",
-      "Android ARM64 and x86-64 native builds, APK assembly, lint and 114 unit tests passed.",
-      "Windows binary versions, Android package and signature, APK structure, updater manifest and SHA-256 checksums checked.",
-      "The Android signing certificate matches published Preview 1."
+      "Desktop tests: 423 passed, 8 ignored. Focused lint, formatting, and COVE architecture checks passed.",
+      "Android ARM64 and x86-64 native build and APK assembly completed. The lint report completed with existing API-level warnings; the APK version, signature, and structure checked.",
+      "Package updater manifest and SHA-256 checksums validated.",
+      "The Windows installer passed fresh install, reinstall, binary-hash, uninstall, and user-data-preservation checks."
     ],
     "caveats": [
       "No physical two-device screen playback, audible call, remote input, or long-running session was tested for these packages.",
-      "Separate-network connectivity, blocked-UDP behavior and installer/update lifecycle remain unverified.",
+      "Separate-network connectivity and blocked-UDP behavior remain unverified.",
       "Windows is unsigned; Android is debug-signed."
     ]
   },
@@ -272,11 +271,20 @@
   ],
   "history": [
     {
+      "version": "0.4.0-preview.1",
+      "tag": "v0.4.0-preview.1",
+      "published": "2026-09-23",
+      "published_display": "September 23, 2026",
+      "current": true,
+      "label": "0.4.0 Preview 1",
+      "summary": "Conversation navigation and responsive Messages layout, bounded session text, reaction history, peer-data generation fencing, COVE checks, and matching Windows and Android preview packages. Physical playback and call acceptance remain open."
+    },
+    {
       "version": "0.3.3-preview.2",
       "tag": "v0.3.3-preview.2",
       "published": "2026-09-20",
       "published_display": "September 20, 2026",
-      "current": true,
+      "current": false,
       "label": "0.3.3 Preview 2",
       "summary": "Pyrenet branding, the Gold interface palette, and a Windows audio-device enumeration lifetime fix. Matching Windows and Android preview packages; physical playback and call acceptance remain open."
     },
@@ -380,5 +388,5 @@
       "summary": "First published preview ZIP and APK for testing. Historical release; use the current preview unless you need to compare an older package."
     }
   ],
-  "source_commit": "375154a"
+  "source_commit": "ef3756d"
 }
