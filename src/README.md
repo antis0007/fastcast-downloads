@@ -15,7 +15,7 @@
   </p>
 </div>
 
-{{PRODUCT}} is a free development-preview screen-sharing app. Matching Windows and Android packages are published here. There are no subscriptions in the current offer. This repository holds the public website and release assets, not the native application source.
+{{PRODUCT}} is a free development-preview screen-sharing app. Matching Windows, Android and Linux viewer packages are published here. There are no subscriptions in the current offer. This repository holds the public website and release assets, not the native application source.
 
 > [!IMPORTANT]
 > Use matching app versions. The supported testing path is a Windows sender and an Android or Windows receiver on the same LAN, or another reachable private network. A {{PRODUCT}} relay is available as a fallback when no direct route works. Sharing a screen needs no account; friends and calls use an account the device owns. Windows installers are unsigned; Android packages are debug-signed.
@@ -26,6 +26,7 @@ The reconciled Windows and Android build is available from [this release]({{RELE
 
 - [Windows installer]({{WINDOWS_URL}})
 - [Android APK]({{ANDROID_URL}})
+- [Linux x64 viewer]({{LINUX_URL}}) — Ubuntu 24.04 or compatible; ALSA and GStreamer 1.22+ required. Physical playback acceptance pending.
 - [Portable Windows + Android bundle]({{BUNDLE_URL}})
 - [SHA-256 checksums]({{CHECKSUMS_URL}})
 

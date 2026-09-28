@@ -42,7 +42,7 @@ def main():
         if shot.get('represents_public_release') is False and not shot.get('note'):
             fail(f'screenshot {name} is not the public release and has no explanation')
     downloads = (ROOT / 'downloads.html').read_text(encoding='utf-8')
-    for key in ('windows', 'android', 'bundle'):
+    for key in ('windows', 'android', 'linux', 'bundle'):
         digest = release['assets'][key]['sha256']
         if digest not in downloads:
             fail(f'downloads.html is missing sha256 for {key}')

@@ -1404,7 +1404,7 @@ section[id], article[id] { scroll-margin-top: 88px; }
 }
 .closing-cta p { color: var(--muted); margin-top: 8px; font-size: 14px; }
 
-.download-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 18px; }
 .download-card {
   display: flex;
   flex-direction: column;

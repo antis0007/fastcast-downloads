@@ -1,9 +1,9 @@
 {
-  "version": "0.4.0-preview.1",
-  "tag": "v0.4.0-preview.1",
-  "label": "0.4.0 Preview 1",
-  "published": "2026-09-23",
-  "published_display": "September 23, 2026",
+  "version": "0.4.0-preview.2",
+  "tag": "v0.4.0-preview.2",
+  "label": "0.4.0 Preview 2",
+  "published": "2026-09-28",
+  "published_display": "September 28, 2026",
   "status": "Development preview",
   "network": "Direct peer route, with a Pyrenet relay fallback",
   "offer": "Screen sharing does not require an account. Friends, calls, rooms and files use a device-owned account in this preview.",
@@ -21,6 +21,12 @@
       "send": false,
       "receive": true,
       "role": "Receive Cast streams, join calls and use in-call chat; no screen broadcasting"
+    },
+    "linux": {
+      "name": "Linux x64",
+      "send": "unavailable",
+      "receive": true,
+      "role": "Ubuntu 24.04 or compatible desktop viewer; no screen broadcasting"
     }
   },
   "signing": {
@@ -29,38 +35,39 @@
   },
   "assets": {
     "windows": {
-      "filename": "FastCast-0.4.0-preview.1-Setup.exe",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.1/FastCast-0.4.0-preview.1-Setup.exe",
-      "size": "11.9 MB",
-      "bytes": 12442837,
-      "sha256": "519c3c3f0514fab43e76e63b5b357a7aa146cc3322dd3989bf2730f1ba6ae261",
-      "role": "Windows sender and receiver",
-      "signing": "Unsigned preview"
+      "filename": "FastCast-0.4.0-preview.2-Setup.exe",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.2/FastCast-0.4.0-preview.2-Setup.exe",
+      "bytes": 12578403,
+      "size": "12.0 MiB",
+      "sha256": "1bba76cc1555498fb8b111fb6a922e8d9267c7820772d5a1e1a140b5978da9a0"
     },
     "android": {
-      "filename": "FastCast-0.4.0-preview.1-Android.apk",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.1/FastCast-0.4.0-preview.1-Android.apk",
-      "size": "26.1 MB",
-      "bytes": 27413242,
-      "sha256": "390d4f84c3dccf65b27e83c7ca29dc46566ac956e6331acf1c8ef9e3a1962ef2",
-      "role": "Android viewer",
-      "signing": "Debug-signed preview"
+      "filename": "FastCast-0.4.0-preview.2-Android.apk",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.2/FastCast-0.4.0-preview.2-Android.apk",
+      "bytes": 27415786,
+      "size": "26.1 MiB",
+      "sha256": "8047a956020ab4aa35998556233a7d76c0d9ef5a6d9ff82343df53c5971e6859"
     },
     "bundle": {
-      "filename": "FastCast-0.4.0-preview.1-windows-android-x64.zip",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.1/FastCast-0.4.0-preview.1-windows-android-x64.zip",
-      "size": "27.2 MB",
-      "bytes": 28487444,
-      "sha256": "bad7c1992914d2f026c68fde7cb9ba6853cac39c869a1f7f284299fc2a089ec2",
-      "role": "Portable Windows + Android bundle",
-      "signing": "Same unsigned Windows and debug-signed Android packages"
+      "filename": "FastCast-0.4.0-preview.2-windows-android-x64.zip",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.2/FastCast-0.4.0-preview.2-windows-android-x64.zip",
+      "bytes": 28725394,
+      "size": "27.4 MiB",
+      "sha256": "68f4919fb63f5452b960709fb66d164551dc35fd54e82ce08dfc50011fbb71e5"
     },
     "checksums": {
       "filename": "SHA256SUMS.txt",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.1/SHA256SUMS.txt",
-      "size": "410 B",
-      "bytes": 410,
-      "sha256": "eb103daf31e4f88e1b7b4d81ead69f242d237592d1264b2e93358d739cae5728"
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.2/SHA256SUMS.txt",
+      "bytes": 608,
+      "size": "608 B",
+      "sha256": "54f09f47bd4a7f13c1d1e75c49d37a75122c0eeeb5eb33ccd7bf04fb0463cdcd"
+    },
+    "linux": {
+      "filename": "FastCast-0.4.0-preview.2-linux-x64.tar.gz",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.2/FastCast-0.4.0-preview.2-linux-x64.tar.gz",
+      "bytes": 11964890,
+      "size": "11.4 MiB",
+      "sha256": "197ea15f0e7d8de8ce0ab20b77c3a2e12f9c918bebd4ee24a6e02ad152934c75"
     }
   },
   "screenshots": {
@@ -68,42 +75,42 @@
       "width": 1770,
       "height": 1170,
       "label": "Windows Share screenshot",
-      "alt": "Upcoming Pyrenet Windows interface: Share screen, Watch and People navigation; screen selection, audio controls and Start sharing.",
-      "caption": "Upcoming Windows interface, September 20, 2026. Not yet included in the downloadable Preview 2.",
+      "alt": "Pyrenet development Windows interface: Share screen, Watch and People navigation; screen selection, audio controls and Start sharing.",
+      "caption": "Earlier development interface, September 20, 2026. Details may differ from the current preview.",
       "captured": "2026-09-20",
       "capture_build": "native appearance_review harness using production DesktopApp at app commit cc326f1",
       "theme": "default Amber theme with an isolated profile",
       "represents_public_release": false,
-      "note": "Unmodified renderer capture of the upcoming Share interface, with no active screen share or call."
+      "note": "Unmodified earlier development renderer capture; no active share or call. Not a capture of the current package."
     },
     "windows-compact": {
       "width": 1230,
       "height": 1170,
       "label": "compact Windows screenshot",
-      "alt": "Upcoming Pyrenet Windows interface: Share screen, Watch and People navigation; screen selection, audio controls and Start sharing.",
-      "caption": "Upcoming Windows interface, September 20, 2026. Not yet included in the downloadable Preview 2.",
+      "alt": "Pyrenet development Windows interface: Share screen, Watch and People navigation; screen selection, audio controls and Start sharing.",
+      "caption": "Earlier development interface, September 20, 2026. Details may differ from the current preview.",
       "captured": "2026-09-20",
       "capture_build": "native appearance_review harness using production DesktopApp at app commit cc326f1",
       "theme": "default Amber theme with an isolated profile",
       "represents_public_release": false,
-      "note": "Unmodified renderer capture of the upcoming Share interface, with no active screen share or call."
+      "note": "Unmodified earlier development renderer capture; no active share or call. Not a capture of the current package."
     }
   },
   "evidence": {
-    "headline": "Preview 1 build and package checks",
-    "framing": "Automated checks and package integrity do not establish physical playback, audible calls, or daily-use reliability.",
-    "scope": "Matching {{RELEASE_LABEL}} Windows and Android packages",
+    "headline": "Preview 2 validation and package checks",
+    "framing": "Local checks do not establish physical playback, audible calls or daily-use reliability.",
+    "scope": "Matching {{RELEASE_LABEL}} Windows, Android and Linux viewer packages",
     "items": [
-      "Windows desktop and capture host built in release mode from the Pyrenet release source.",
-      "Desktop tests: 423 passed, 8 ignored. Focused lint, formatting, and COVE architecture checks passed.",
-      "Android ARM64 and x86-64 native build and APK assembly completed. The lint report completed with existing API-level warnings; the APK version, signature, and structure checked.",
-      "Package updater manifest and SHA-256 checksums validated.",
-      "The Windows installer passed fresh install, reinstall, binary-hash, uninstall, and user-data-preservation checks."
+      "Optimized Windows desktop/host, Android ARM64/x86-64 native libraries and Linux x64 viewer builds completed.",
+      "Desktop integration: 496 distinct tests passed across the suite and four normal-OS reruns; eight ignored. Focused lint and architecture checks passed before the version-only release bump.",
+      "Coordination tests: 34 passed on Linux. Android JVM tests: 114 passed on the final version; the final test task executed.",
+      "Android package version, signature, ZIP structure, native-library hashes and signing continuity checked.",
+      "Installer lifecycle, package component hashes and anonymous public download hashes verified."
     ],
     "caveats": [
-      "No physical two-device screen playback, audible call, remote input, or long-running session was tested for these packages.",
-      "Separate-network connectivity and blocked-UDP behavior remain unverified.",
-      "Windows is unsigned; Android is debug-signed."
+      "Physical install/upgrade, audible calls, screen playback and unrelated-network acceptance remain pending.",
+      "Windows is unsigned; Android is debug-signed. Linux requires a compatible desktop, ALSA and GStreamer.",
+      "Hosted service stays on schema 4; room voice channels are unavailable."
     ]
   },
   "status_legend": [
@@ -163,6 +170,11 @@
           "name": "Computer audio",
           "status": "preview",
           "detail": "The sending PC can include system audio with its screen. Audible output and endurance remain unverified for this build."
+        },
+        {
+          "name": "Linux x64 receiving",
+          "status": "preview",
+          "detail": "Separate viewer package for Ubuntu 24.04 or compatible desktops with ALSA and GStreamer 1.22+. No Linux screen broadcasting; physical playback and audio acceptance pending."
         }
       ]
     },
@@ -246,14 +258,9 @@
       "intro": "The following features are not included in {{RELEASE_LABEL}}.",
       "items": [
         {
-          "name": "Linux desktop",
-          "status": "not-yet",
-          "detail": "The application source includes a Linux viewer using OpenH264 with optional VA-API, but no Linux package is published here. Sending a screen from Linux is unavailable."
-        },
-        {
           "name": "macOS, iPhone, and iPad",
           "status": "not-yet",
-          "detail": "Not implemented. This preview download is Windows x64 and Android 8 or newer only. Android does not send."
+          "detail": "Not implemented. This preview download is Windows x64, Android 8 or newer and a Linux x64 viewer. Android does not send."
         }
       ]
     }
@@ -267,15 +274,26 @@
     "Automatic Table viewing is view-only. Named-account remote control currently requires a compatible Windows viewer.",
     "Android receives screens and supports calls/chat; Android screen broadcasting is not implemented.",
     "No owner/process migration or durable offline peer chat is provided.",
-    "macOS, iPhone, iPad and browser apps are not available; Linux is not in this download."
+    "macOS, iPhone, iPad and browser apps are not available.",
+    "Linux is viewer-only and dynamically linked; use Ubuntu 24.04 or a compatible desktop with ALSA and GStreamer 1.22+.",
+    "Room voice channels are unavailable on the hosted schema-4 service. Search covers loaded messages in one selected conversation, not a global index."
   ],
   "history": [
+    {
+      "version": "0.4.0-preview.2",
+      "tag": "v0.4.0-preview.2",
+      "published": "2026-09-28",
+      "published_display": "September 28, 2026",
+      "current": true,
+      "label": "0.4.0 Preview 2",
+      "summary": "Local message times, adjustable desktop text and density, reduced motion, loaded-conversation search, integrated share/voice lifecycle improvements, and matching Windows, Android and Linux viewer packages. Physical acceptance remains pending; the hosted service is unchanged."
+    },
     {
       "version": "0.4.0-preview.1",
       "tag": "v0.4.0-preview.1",
       "published": "2026-09-23",
       "published_display": "September 23, 2026",
-      "current": true,
+      "current": false,
       "label": "0.4.0 Preview 1",
       "summary": "Conversation navigation and responsive Messages layout, bounded session text, reaction history, peer-data generation fencing, COVE checks, and matching Windows and Android preview packages. Physical playback and call acceptance remain open."
     },
@@ -388,5 +406,5 @@
       "summary": "First published preview ZIP and APK for testing. Historical release; use the current preview unless you need to compare an older package."
     }
   ],
-  "source_commit": "ef3756d"
+  "source_commit": "9dee6e2fde8b3dfd4fa726f50b18019a30b10bd8"
 }

@@ -1,16 +1,17 @@
 <section class="hero wrap" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <p class="eyebrow">Windows &amp; Android · Free preview</p>
+    <p class="eyebrow">Windows · Android · Linux viewer · Free preview</p>
     <h1 id="hero-title">Talk, share, and stream.</h1>
     <p class="lede">A peer-to-peer media app for voice, chat, file sharing, and live screens.</p>
     <div class="actions">
       <a class="button primary" data-download="windows" href="{{WINDOWS_URL}}">Download for Windows <span aria-hidden="true">↓</span></a>
       <a class="button" data-download="android" href="{{ANDROID_URL}}">Get the Android app <span aria-hidden="true">↓</span></a>
+      <a class="button" data-download="linux" href="{{LINUX_URL}}">Get the Linux viewer <span aria-hidden="true">↓</span></a>
     </div>
-    <p class="small-copy">{{RELEASE_LABEL}} · Source on <a href="{{REPO}}">GitHub</a> under MIT or Apache-2.0</p>
+    <p class="small-copy">{{RELEASE_LABEL}} · Website and downloads on <a href="{{REPO}}">GitHub</a></p>
     <ul class="hero-facts">
       <li>Share a screen or window from Windows</li>
-      <li>Watch on Windows or Android</li>
+      <li>Watch on Windows, Android or Linux</li>
       <li>In development: <a href="#capabilities">features and known limitations</a></li>
     </ul>
   </div>
@@ -120,7 +121,8 @@
         <tr><th scope="row">Calls, rooms &amp; files</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>Voice calls, text rooms, and file sending the receiver has to accept. No reactions, editing or unread counts yet, and files need a direct route. <a href="calls-and-rooms.html">What they do today</a>.</td></tr>
         <tr><th scope="row">Outside your local network</th><td><span class="status status-limited"><span class="status-word">Limited</span></span></td><td>Direct routes and relay fallback are built in. We have not yet watched a session work between two separate networks.</td></tr>
         <tr><th scope="row">Relay &amp; multiple viewers</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>Eight viewers on one share, run on a single machine. We have not tried it with eight real devices.</td></tr>
-        <tr><th scope="row">Other platforms</th><td><span class="status status-not-yet"><span class="status-word">Not yet</span></span></td><td>No macOS, iPhone, iPad or browser app. A Linux viewer exists in source only.</td></tr>
+        <tr><th scope="row">Linux x64 viewer</th><td><span class="status status-preview"><span class="status-word">Preview</span></span></td><td>Separate viewer download for Ubuntu 24.04 or compatible; no Linux screen broadcasting.</td></tr>
+        <tr><th scope="row">Other platforms</th><td><span class="status status-not-yet"><span class="status-word">Not yet</span></span></td><td>No macOS, iPhone, iPad or browser app.</td></tr>
       </tbody>
     </table>
     <div class="ledger-footnote"><p>How well it plays depends on your devices and the network between them. This build passes our compile and packaging checks; the hardware testing is still ahead of us.</p><a class="text-link" href="product.html#capabilities">Full capability notes →</a></div>
@@ -141,7 +143,7 @@
       </details>
       <details class="faq">
         <summary>What do I need before installing?</summary>
-        <p>A Windows x64 PC to send, and a second Windows PC or an Android 8+ device to watch. The Windows installer is unsigned and the APK is debug-signed, so compare the published checksum before you run either. <a href="downloads.html">Install notes.</a></p>
+        <p>A Windows x64 PC to send, and Windows, Android 8+ or a compatible Linux desktop to watch. The Windows installer is unsigned and the APK is debug-signed; Linux requires ALSA and GStreamer. Compare the published checksum before running a package. <a href="downloads.html">Install notes.</a></p>
       </details>
       <a class="text-link" href="help.html">Open full help →</a>
     </div>

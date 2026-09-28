@@ -108,11 +108,12 @@ async function checkLayouts(name, engine) {
     const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 900 } });
     const page = await context.newPage();
     await page.goto(base);
-    assert.equal(await page.locator('[data-download]').count(), 2);
+    assert.deepEqual(await page.locator('[data-download]').evaluateAll(links => links.map(link => link.dataset.download).sort()), ['android', 'linux', 'windows'], 'all three platforms are downloadable without JavaScript');
     await page.getByRole('link', { name: 'Enlarge Windows Share screenshot', exact: true }).focus();
     await page.keyboard.press('Enter');
     await page.waitForURL('**/assets/windows-share.png');
     await page.goto(base + 'downloads.html');
+    assert.deepEqual(await page.locator('[data-download]').evaluateAll(links => links.map(link => link.dataset.download).sort()), ['android', 'linux', 'windows']);
     for (const link of await page.locator('[data-download]').all()) {
       assert.match(await link.getAttribute('href'), /^https:\/\/github.com\/antis0007\/fastcast-downloads\/releases\/download\//);
     }
@@ -354,7 +355,7 @@ async function checkJourneysAndAccessibility() {
     assert.equal(await page.getByText('FASTCAST_DISCOVERY').count(), 0);
     assert.equal(await page.getByText('helper URL').count(), 0);
     await page.goto(base + 'downloads.html');
-    assert.equal(await page.locator('code.hash').count(), 3);
+    assert.equal(await page.locator('code.hash').count(), 4, 'Windows, Android, Linux and bundle checksums are visible');
     for (const [from, to] of Object.entries(redirects)) {
       await page.goto(base + from);
       await page.waitForURL(base + to);

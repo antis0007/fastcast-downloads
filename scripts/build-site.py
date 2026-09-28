@@ -18,12 +18,12 @@ REPO = 'https://github.com/antis0007/fastcast-downloads'
 PRODUCT = 'Pyrenet'
 release = json.loads((ROOT / 'src/release.json').read_text(encoding='utf-8'))
 PAGES = {
-    'index': ('Talk, share, and stream', 'A peer-to-peer media app for voice, chat, file sharing, and live screens. Share from Windows. Watch on Windows or Android. Explore the Pyrenet preview.'),
-    'product': ('Product overview', 'Windows and Android screen-sharing features, native interface captures, and release testing status.'),
-    'downloads': (f'Download {PRODUCT}', 'Unsigned Windows sender/receiver, debug-signed Android viewer, matching zip. Direct GitHub links.'),
+    'index': ('Talk, share, and stream', 'A peer-to-peer media app for voice, chat, file sharing, and live screens. Share from Windows. Watch on Windows, Android or Linux. Explore the Pyrenet preview.'),
+    'product': ('Product overview', 'Windows, Android and Linux viewer features, native interface captures, and release testing status.'),
+    'downloads': (f'Download {PRODUCT}', 'Windows sender/receiver, Android viewer, Linux x64 viewer and matching Windows/Android zip. Direct GitHub links.'),
     'get-started': ('Setup', 'Install matching versions, create an invitation on the viewing device, and start sharing from Windows.'),
     'calls-and-rooms': ('Calls, rooms & files', f'Voice calls, multi-screen Tables, room discussions and consent-based file transfer in the {PRODUCT} preview, with the remaining gaps stated.'),
-    'platforms': ('Supported platforms', 'Windows x64 sends and watches. Android 8+ watches. Linux receive is in source, not in this zip. No Mac, iOS, or browser app.'),
+    'platforms': ('Supported platforms', 'Windows x64 sends and watches. Android 8+ and Linux x64 watch. No Mac, iOS, or browser app.'),
     'community': ('Bugs', 'Public GitHub issues for a screen-sharing preview. Do not paste invitations.'),
     'help': ('Help', 'Troubleshoot installation, connections, audio, and remote input. Help search runs in your browser.'),
     'roadmap': ('Roadmap', 'What is built, what is being qualified, and what is not started yet.'),
@@ -692,7 +692,7 @@ def capability_ledger():
 
 def sha_rows():
     rows = []
-    for key in ('windows', 'android', 'bundle'):
+    for key in ('windows', 'android', 'linux', 'bundle'):
         asset = release['assets'][key]
         rows.append(
             f"<tr><th scope=\"row\">{escape(asset['filename'])}</th>"
@@ -721,7 +721,8 @@ def history_html():
   <p>{escape(item['summary'])}</p>
   <h3>Included features</h3>
   <ul>
-    <li>Windows sending and receiving, plus Android receiving.</li>
+    <li>Windows sending and receiving, plus Android and Linux x64 viewers.</li>
+    <li>Desktop local message times, text size controls, reduced motion and search of loaded conversation messages.</li>
     <li>Session invitations and screen or window selection.</li>
     <li>Audio and remote-control controls exist in the UI. Physical remote input is unproven. Audible output was not independently confirmed.</li>
     <li>Matching bundle and USB update helpers.</li>
@@ -773,10 +774,12 @@ def write_readme():
         'PUBLISHED': release['published_display'],
         'WINDOWS_URL': release['assets']['windows']['url'],
         'ANDROID_URL': release['assets']['android']['url'],
+        'LINUX_URL': release['assets']['linux']['url'],
         'BUNDLE_URL': release['assets']['bundle']['url'],
         'CHECKSUMS_URL': release['assets']['checksums']['url'],
         'WINDOWS_SHA': release['assets']['windows']['sha256'],
         'ANDROID_SHA': release['assets']['android']['sha256'],
+        'LINUX_SHA': release['assets']['linux']['sha256'],
         'BUNDLE_SHA': release['assets']['bundle']['sha256'],
         'WINDOWS_SIZE': release['assets']['windows']['size'],
         'ANDROID_SIZE': release['assets']['android']['size'],
@@ -813,10 +816,12 @@ def render(slug, title, description):
         'STATUS': release['status'],
         'WINDOWS_URL': release['assets']['windows']['url'],
         'ANDROID_URL': release['assets']['android']['url'],
+        'LINUX_URL': release['assets']['linux']['url'],
         'BUNDLE_URL': release['assets']['bundle']['url'],
         'CHECKSUMS_URL': release['assets']['checksums']['url'],
         'WINDOWS_SIZE': release['assets']['windows']['size'],
         'ANDROID_SIZE': release['assets']['android']['size'],
+        'LINUX_SIZE': release['assets']['linux']['size'],
         'BUNDLE_SIZE': release['assets']['bundle']['size'],
         'WINDOWS_SHA': release['assets']['windows']['sha256'],
         'ANDROID_SHA': release['assets']['android']['sha256'],
@@ -911,7 +916,7 @@ def render(slug, title, description):
     <nav aria-label="Product links"><h2>Product</h2>{link('product','Overview',slug)}{link('downloads','Downloads',slug)}{link('platforms','Platforms',slug)}{link('releases','Release notes',slug)}</nav>
     <nav aria-label="Resources"><h2>Resources</h2>{link('get-started','Setup',slug)}{link('help','Help',slug)}{link('community','Bugs',slug)}{link('privacy','Privacy',slug)}</nav>
     <nav aria-label="More"><h2>More</h2>{link('why-pyrenet',f'Why {PRODUCT}',slug)}{link('calls-and-rooms','Calls & rooms',slug)}{link('how-it-works','How it works',slug)}{link('roadmap','Roadmap',slug)}{link('bandwidth','Bandwidth calculator',slug)}{link('data-and-privacy','Data & privacy compared',slug)}</nav>
-    <div class="footer-bottom"><span>Windows sends · Windows or Android watches · Preview</span><a href="{REPO}">GitHub ↗</a><a href="{REPO}/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
+    <div class="footer-bottom"><span>Windows sends · Windows, Android and Linux watch · Preview</span><a href="{REPO}">GitHub ↗</a><a href="{REPO}/blob/main/LICENSE">MIT OR Apache-2.0 ↗</a></div>
   </footer>
   <dialog class="image-dialog" aria-label="Full-size app screenshot"><form method="dialog"><button class="button" aria-label="Close screenshot">Close <span aria-hidden="true">×</span></button></form><div class="image-scroll"><img alt=""></div><p>{tokens['DIALOG_CAPTION']}</p></dialog>
 </body>
