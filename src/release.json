@@ -1,9 +1,9 @@
 {
-  "version": "0.4.0-preview.2",
-  "tag": "v0.4.0-preview.2",
-  "label": "0.4.0 Preview 2",
-  "published": "2026-09-28",
-  "published_display": "September 28, 2026",
+  "version": "0.4.0-preview.3",
+  "tag": "v0.4.0-preview.3",
+  "label": "0.4.0 Preview 3",
+  "published": "2026-09-29",
+  "published_display": "September 29, 2026",
   "status": "Development preview",
   "network": "Direct peer route, with a Pyrenet relay fallback",
   "offer": "Screen sharing does not require an account. Friends, calls, rooms and files use a device-owned account in this preview.",
@@ -35,39 +35,39 @@
   },
   "assets": {
     "windows": {
-      "filename": "FastCast-0.4.0-preview.2-Setup.exe",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.2/FastCast-0.4.0-preview.2-Setup.exe",
-      "bytes": 12578403,
-      "size": "12.0 MiB",
-      "sha256": "1bba76cc1555498fb8b111fb6a922e8d9267c7820772d5a1e1a140b5978da9a0"
+      "filename": "FastCast-0.4.0-preview.3-Setup.exe",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.3/FastCast-0.4.0-preview.3-Setup.exe",
+      "bytes": 12707889,
+      "size": "12.1 MiB",
+      "sha256": "6c69834f09117dde05fa759b44b3569c3771bee3488692baaa26368e4518ed7e"
     },
     "android": {
-      "filename": "FastCast-0.4.0-preview.2-Android.apk",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.2/FastCast-0.4.0-preview.2-Android.apk",
-      "bytes": 27415786,
-      "size": "26.1 MiB",
-      "sha256": "8047a956020ab4aa35998556233a7d76c0d9ef5a6d9ff82343df53c5971e6859"
+      "filename": "FastCast-0.4.0-preview.3-Android.apk",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.3/FastCast-0.4.0-preview.3-Android.apk",
+      "bytes": 27579002,
+      "size": "26.3 MiB",
+      "sha256": "e1405b298aaeba1a73402e3435d741dff9ac71f9921709adbcdf4fb18d7541bb"
     },
     "bundle": {
-      "filename": "FastCast-0.4.0-preview.2-windows-android-x64.zip",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.2/FastCast-0.4.0-preview.2-windows-android-x64.zip",
-      "bytes": 28725394,
-      "size": "27.4 MiB",
-      "sha256": "68f4919fb63f5452b960709fb66d164551dc35fd54e82ce08dfc50011fbb71e5"
+      "filename": "FastCast-0.4.0-preview.3-windows-android-x64.zip",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.3/FastCast-0.4.0-preview.3-windows-android-x64.zip",
+      "bytes": 28986571,
+      "size": "27.6 MiB",
+      "sha256": "3032c57309d39a2aa844320852463483954d35a4ad81e63faa1b1766684ce964"
     },
     "checksums": {
       "filename": "SHA256SUMS.txt",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.2/SHA256SUMS.txt",
-      "bytes": 608,
-      "size": "608 B",
-      "sha256": "54f09f47bd4a7f13c1d1e75c49d37a75122c0eeeb5eb33ccd7bf04fb0463cdcd"
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.3/SHA256SUMS.txt",
+      "bytes": 518,
+      "size": "518 B",
+      "sha256": "833dd132d9e631a7f18880761986d360efd0ea605457b87563147184319ab48b"
     },
     "linux": {
-      "filename": "FastCast-0.4.0-preview.2-linux-x64.tar.gz",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.2/FastCast-0.4.0-preview.2-linux-x64.tar.gz",
-      "bytes": 11964890,
-      "size": "11.4 MiB",
-      "sha256": "197ea15f0e7d8de8ce0ab20b77c3a2e12f9c918bebd4ee24a6e02ad152934c75"
+      "filename": "FastCast-0.4.0-preview.3-linux-x64.tar.gz",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.3/FastCast-0.4.0-preview.3-linux-x64.tar.gz",
+      "bytes": 12118801,
+      "size": "11.6 MiB",
+      "sha256": "14cbe44715e249b59fcf3e0d60e6c81ca6cb68ebf4976eeb83e0540cbcf8d0b6"
     }
   },
   "screenshots": {
@@ -97,20 +97,20 @@
     }
   },
   "evidence": {
-    "headline": "Preview 2 validation and package checks",
-    "framing": "Local checks do not establish physical playback, audible calls or daily-use reliability.",
+    "headline": "Preview 3 playback and release checks",
+    "framing": "Measured on a Windows sender and S25 Ultra over a controlled 5 Mbps path. Other devices and networks may behave differently.",
     "scope": "Matching {{RELEASE_LABEL}} Windows, Android and Linux viewer packages",
     "items": [
-      "Optimized Windows desktop/host, Android ARM64/x86-64 native libraries and Linux x64 viewer builds completed.",
-      "Desktop integration: 496 distinct tests passed across the suite and four normal-OS reruns; eight ignored. Focused lint and architecture checks passed before the version-only release bump.",
-      "Coordination tests: 34 passed on Linux. Android JVM tests: 114 passed on the final version; the final test task executed.",
-      "Android package version, signature, ZIP structure, native-library hashes and signing continuity checked.",
-      "Installer lifecycle, package component hashes and anonymous public download hashes verified."
+      "Five minutes of 720p playback rendered all 8,990 frames at 29.96 fps, with no loss episodes, reassembly drops or freezes. Five playback deadlines were missed; capture timing still varies.",
+      "A ten-minute physical playback run recovered from a deliberate one-second outage without disconnecting. Phone zoom and rotation were accepted on the S25 Ultra.",
+      "A 200-second three-participant phone/desktop group probe passed using generated audio. Public VPS probes passed participant isolation and media/chat recovery after direct-route failure.",
+      "507 desktop, 90 sender, 108 voice unit, nine relay, one channel-rekey and 117 Android JVM tests passed, plus a real Windows CPU encoder regression. Android lint had no errors.",
+      "Matched release builds, Windows installer lifecycle, Android signing continuity and anonymous public download hashes verified. Updated VPS services passed database-backup and live health checks."
     ],
     "caveats": [
-      "Physical install/upgrade, audible calls, screen playback and unrelated-network acceptance remain pending.",
-      "Windows is unsigned; Android is debug-signed. Linux requires a compatible desktop, ALSA and GStreamer.",
-      "Hosted coordination now supports room voice channels in the Windows preview; physical multi-device call acceptance remains pending."
+      "Audible microphone/speaker quality, physical Linux playback and screen sharing between unrelated networks remain unverified. These are not glass-to-glass latency measurements.",
+      "Update every group participant: older unsigned group invitations are rejected.",
+      "Windows is unsigned; Android is debug-signed. Linux requires a compatible desktop, ALSA and GStreamer."
     ]
   },
   "status_legend": [
@@ -149,7 +149,7 @@
         {
           "name": "Video quality controls",
           "status": "available",
-          "detail": "Before sharing, choose 60 or 30 fps, 50–100% resolution, and 5–50 Mb/s picture detail. Reduced resolution uses CPU encoding in this preview; sustained 60 fps is not promised on every PC."
+          "detail": "Choose source size or a 480p, 720p, 1080p, 1440p or 2160p resolution limit, 30 or 60 fps, and 1–50 Mb/s. The 5 Mbps Wi-Fi preset uses 720p, 30 fps and a 3 Mb/s video ceiling. Reduced resolution uses CPU encoding; sustained 60 fps depends on the PC."
         },
         {
           "name": "H.264 encoding",
@@ -159,7 +159,7 @@
         {
           "name": "Android receiving",
           "status": "preview",
-          "detail": "Android 8 or newer receives screens using its decoder. This release includes ARM64 and x86-64 native libraries; physical playback remains unverified for these packages."
+          "detail": "Android 8 or newer receives screens using its decoder. S25 Ultra playback, full-screen pinch zoom and rotation were checked on this release. ARM64 and x86-64 libraries are included; other devices remain unqualified."
         },
         {
           "name": "Windows receiving",
@@ -191,7 +191,7 @@
         {
           "name": "Two-way microphone voice",
           "status": "preview",
-          "detail": "One-to-one and group calls use direct peer paths with relay fallback. Physical microphone, echo and network-handoff checks remain outstanding."
+          "detail": "One-to-one and group calls use direct peer paths with relay fallback and authenticated sender identities. A phone/desktop group probe passed with generated audio; physical microphone, echo and network-handoff checks remain outstanding. Update all participants."
         },
         {
           "name": "Remote control from Android",
@@ -231,7 +231,7 @@
         {
           "name": "Automatic update checks",
           "status": "preview",
-          "detail": "These matched downloads include the update manifest used by the Windows and Android preview update channel. Installer/update lifecycle validation remains open."
+          "detail": "Matched downloads include the Windows and Android preview update manifest. Windows installer lifecycle and Android signing continuity passed; automatic update prompts still need physical acceptance."
         }
       ]
     },
@@ -266,8 +266,8 @@
     }
   ],
   "limitations": [
-    "Windows binaries are unsigned; Android is debug-signed. Use matching versions.",
-    "Physical UI, audio, screen-sharing and unrelated-network acceptance remains open for these packages.",
+    "Windows binaries are unsigned; Android is debug-signed. Update every group participant to this version.",
+    "Windows-to-S25 Ultra playback was checked on a controlled 5 Mbps path. Capture timing still varies; audible media, physical Linux playback and unrelated-network screen sharing remain unverified.",
     "Direct connections minimize relay traffic; relay fallback still uses relay bandwidth.",
     "Bulk file transfers require a direct route and explicit acceptance; they do not use relay fallback.",
     "Networks blocking all UDP have no call/media fallback. Persistent room discussions use the coordination service.",
@@ -280,11 +280,20 @@
   ],
   "history": [
     {
+      "version": "0.4.0-preview.3",
+      "tag": "v0.4.0-preview.3",
+      "published": "2026-09-29",
+      "published_display": "September 29, 2026",
+      "label": "0.4.0 Preview 3",
+      "current": true,
+      "summary": "Paced screen sharing, on-demand CPU refresh frames, Android loss recovery and full-screen zoom/rotation, resolution controls and a 5 Mbps preset. Group senders now authenticate individually; update all participants. Windows-to-S25 playback and generated-audio group recovery checks passed. Hosted services and matching Windows, Android and Linux viewer packages updated."
+    },
+    {
       "version": "0.4.0-preview.2",
       "tag": "v0.4.0-preview.2",
       "published": "2026-09-28",
       "published_display": "September 28, 2026",
-      "current": true,
+      "current": false,
       "label": "0.4.0 Preview 2",
       "summary": "Local message times, adjustable desktop text and density, reduced motion, loaded-conversation search, integrated share/voice lifecycle improvements, and matching Windows, Android and Linux viewer packages. Physical acceptance remains pending; the hosted service is unchanged."
     },
@@ -406,5 +415,5 @@
       "summary": "First published preview ZIP and APK for testing. Historical release; use the current preview unless you need to compare an older package."
     }
   ],
-  "source_commit": "9dee6e2fde8b3dfd4fa726f50b18019a30b10bd8"
+  "source_commit": "7eb8cce2f5fc1d2e73fa98165a29008e3aef605a"
 }
