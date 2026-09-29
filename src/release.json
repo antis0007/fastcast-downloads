@@ -110,7 +110,7 @@
     "caveats": [
       "Physical install/upgrade, audible calls, screen playback and unrelated-network acceptance remain pending.",
       "Windows is unsigned; Android is debug-signed. Linux requires a compatible desktop, ALSA and GStreamer.",
-      "Hosted service stays on schema 4; room voice channels are unavailable."
+      "Hosted coordination now supports room voice channels in the Windows preview; physical multi-device call acceptance remains pending."
     ]
   },
   "status_legend": [
@@ -276,7 +276,7 @@
     "No owner/process migration or durable offline peer chat is provided.",
     "macOS, iPhone, iPad and browser apps are not available.",
     "Linux is viewer-only and dynamically linked; use Ubuntu 24.04 or a compatible desktop with ALSA and GStreamer 1.22+.",
-    "Room voice channels are unavailable on the hosted schema-4 service. Search covers loaded messages in one selected conversation, not a global index."
+    "Windows room voice channels have hosted coordination support. Shared viewer cursors and measured multi-device latency remain unfinished. Search covers loaded messages in one selected conversation, not a global index."
   ],
   "history": [
     {
