@@ -1,7 +1,7 @@
 {
-  "version": "0.4.0-preview.3",
-  "tag": "v0.4.0-preview.3",
-  "label": "0.4.0 Preview 3",
+  "version": "0.4.0-preview.4",
+  "tag": "v0.4.0-preview.4",
+  "label": "0.4.0 Preview 4",
   "published": "2026-09-29",
   "published_display": "September 29, 2026",
   "status": "Development preview",
@@ -35,39 +35,39 @@
   },
   "assets": {
     "windows": {
-      "filename": "FastCast-0.4.0-preview.3-Setup.exe",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.3/FastCast-0.4.0-preview.3-Setup.exe",
-      "bytes": 12707889,
+      "filename": "FastCast-0.4.0-preview.4-Setup.exe",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.4/FastCast-0.4.0-preview.4-Setup.exe",
+      "bytes": 12736825,
       "size": "12.1 MiB",
-      "sha256": "6c69834f09117dde05fa759b44b3569c3771bee3488692baaa26368e4518ed7e"
+      "sha256": "8f12da48ffe7189987332aa673f6c46bd8689a20a3f9e16490988dda72154de1"
     },
     "android": {
-      "filename": "FastCast-0.4.0-preview.3-Android.apk",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.3/FastCast-0.4.0-preview.3-Android.apk",
-      "bytes": 27579002,
-      "size": "26.3 MiB",
-      "sha256": "e1405b298aaeba1a73402e3435d741dff9ac71f9921709adbcdf4fb18d7541bb"
+      "filename": "FastCast-0.4.0-preview.4-Android.apk",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.4/FastCast-0.4.0-preview.4-Android.apk",
+      "bytes": 26912004,
+      "size": "25.7 MiB",
+      "sha256": "9f8b0bd876dcade95623daa9e9467debcf1a1593aa918aa08f4759405b658fa0"
     },
     "bundle": {
-      "filename": "FastCast-0.4.0-preview.3-windows-android-x64.zip",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.3/FastCast-0.4.0-preview.3-windows-android-x64.zip",
-      "bytes": 28986571,
-      "size": "27.6 MiB",
-      "sha256": "3032c57309d39a2aa844320852463483954d35a4ad81e63faa1b1766684ce964"
+      "filename": "FastCast-0.4.0-preview.4-windows-android-x64.zip",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.4/FastCast-0.4.0-preview.4-windows-android-x64.zip",
+      "bytes": 28371637,
+      "size": "27.1 MiB",
+      "sha256": "08595c52296edeb4c335eea4c814a999a3f2025d2100ff098f51e71cf54a2a1c"
     },
     "checksums": {
       "filename": "SHA256SUMS.txt",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.3/SHA256SUMS.txt",
-      "bytes": 518,
-      "size": "518 B",
-      "sha256": "833dd132d9e631a7f18880761986d360efd0ea605457b87563147184319ab48b"
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.4/SHA256SUMS.txt",
+      "bytes": 515,
+      "size": "515 B",
+      "sha256": "7737420b80a3d7dc89026bdbe51d48a6cc8eed3157ac57a8fe4c04098222ff62"
     },
     "linux": {
-      "filename": "FastCast-0.4.0-preview.3-linux-x64.tar.gz",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.3/FastCast-0.4.0-preview.3-linux-x64.tar.gz",
-      "bytes": 12118801,
+      "filename": "FastCast-0.4.0-preview.4-linux-x64.tar.gz",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.4/FastCast-0.4.0-preview.4-linux-x64.tar.gz",
+      "bytes": 12151205,
       "size": "11.6 MiB",
-      "sha256": "14cbe44715e249b59fcf3e0d60e6c81ca6cb68ebf4976eeb83e0540cbcf8d0b6"
+      "sha256": "520b4f4ace472575e36e62c7b99f2ca73f2fce6f54f779581052ee76e2dfb342"
     }
   },
   "screenshots": {
@@ -97,17 +97,19 @@
     }
   },
   "evidence": {
-    "headline": "Preview 3 playback and release checks",
-    "framing": "Measured on a Windows sender and S25 Ultra over a controlled 5 Mbps path. Other devices and networks may behave differently.",
+    "headline": "Preview 4 release checks and Preview 3 playback results",
+    "framing": "Playback was measured on Preview 3 with a Windows sender and S25 Ultra over a controlled 5 Mbps path; Preview 4 does not change the streaming code. Other devices and networks may behave differently.",
     "scope": "Matching {{RELEASE_LABEL}} Windows, Android and Linux viewer packages",
     "items": [
+      "533 desktop tests passed (eight ignored) and the architecture check passed for Preview 4. The shared person-actions fixture (112 cases) is checked by both the desktop and Android tests.",
+      "Matched Windows, Android and Linux viewer packages were built from app commit e153194. Android keeps the Preview 3 signing key, and every published download matched its local SHA-256.",
       "Five minutes of 720p playback rendered all 8,990 frames at 29.96 fps, with no loss episodes, reassembly drops or freezes. Five playback deadlines were missed; capture timing still varies.",
       "A ten-minute physical playback run recovered from a deliberate one-second outage without disconnecting. Phone zoom and rotation were accepted on the S25 Ultra.",
-      "A 200-second three-participant phone/desktop group probe passed using generated audio. Public VPS probes passed participant isolation and media/chat recovery after direct-route failure.",
-      "507 desktop, 90 sender, 108 voice unit, nine relay, one channel-rekey and 117 Android JVM tests passed, plus a real Windows CPU encoder regression. Android lint had no errors.",
-      "Matched release builds, Windows installer lifecycle, Android signing continuity and anonymous public download hashes verified. Updated VPS services passed database-backup and live health checks."
+      "A 200-second three-participant phone/desktop group probe passed using generated audio. Public VPS probes passed participant isolation and media/chat recovery after direct-route failure."
     ],
     "caveats": [
+      "Person cards, menus and the Blocked list have not been checked on a physical Android device, touch hardware or a screen reader.",
+      "The Blocked list appears once the hosted comms service is updated; until then it stays empty.",
       "Audible microphone/speaker quality, physical Linux playback and screen sharing between unrelated networks remain unverified. These are not glass-to-glass latency measurements.",
       "Update every group participant: older unsigned group invitations are rejected.",
       "Windows is unsigned; Android is debug-signed. Linux requires a compatible desktop, ALSA and GStreamer."
@@ -183,6 +185,16 @@
       "title": "Features awaiting physical validation",
       "intro": "These features are included, but physical-device tests remain outstanding.",
       "items": [
+        {
+          "name": "Person cards and actions",
+          "status": "preview",
+          "detail": "Every place a person appears opens the same card, with the same actions from right-click, long-press or Shift+F10. Remove friend and Block ask first. Windows and Android share one set of rules. Physical touch and screen-reader checks remain open."
+        },
+        {
+          "name": "Blocked list and unblocking",
+          "status": "limited",
+          "detail": "Lists the people you blocked so you can unblock them. Needs the updated hosted comms service; until it is deployed the list stays empty."
+        },
         {
           "name": "Private session admission",
           "status": "preview",
@@ -280,12 +292,21 @@
   ],
   "history": [
     {
+      "version": "0.4.0-preview.4",
+      "tag": "v0.4.0-preview.4",
+      "published": "2026-09-29",
+      "published_display": "September 29, 2026",
+      "label": "0.4.0 Preview 4",
+      "current": true,
+      "summary": "Person cards with the same actions everywhere (right-click, long-press, Shift+F10), confirmed Remove friend and Block, a Blocked list, Table seat actions, the Android person sheet, and desktop menus sized and placed like other chat apps. Matching Windows, Android and Linux viewer packages; the hosted service is unchanged, so the Blocked list stays empty until it is updated."
+    },
+    {
       "version": "0.4.0-preview.3",
       "tag": "v0.4.0-preview.3",
       "published": "2026-09-29",
       "published_display": "September 29, 2026",
       "label": "0.4.0 Preview 3",
-      "current": true,
+      "current": false,
       "summary": "Paced screen sharing, on-demand CPU refresh frames, Android loss recovery and full-screen zoom/rotation, resolution controls and a 5 Mbps preset. Group senders now authenticate individually; update all participants. Windows-to-S25 playback and generated-audio group recovery checks passed. Hosted services and matching Windows, Android and Linux viewer packages updated."
     },
     {
@@ -415,5 +436,5 @@
       "summary": "First published preview ZIP and APK for testing. Historical release; use the current preview unless you need to compare an older package."
     }
   ],
-  "source_commit": "7eb8cce2f5fc1d2e73fa98165a29008e3aef605a"
+  "source_commit": "e1531944ffe3a66fcd0f6d5d8b0a5972c68380a6"
 }
