@@ -20,15 +20,15 @@ Pyrenet is a free development-preview screen-sharing app. Matching Windows, Andr
 > [!IMPORTANT]
 > Use matching app versions. The supported testing path is a Windows sender and an Android or Windows receiver on the same LAN, or another reachable private network. A Pyrenet relay is available as a fallback when no direct route works. Sharing a screen needs no account; friends and calls use an account the device owns. Windows installers are unsigned; Android packages are debug-signed.
 
-## Current release: 0.4.0 Preview 4
+## Current release: 0.4.0 Preview 5
 
-The reconciled Windows and Android build is available from [this release](https://github.com/antis0007/fastcast-downloads/releases/tag/v0.4.0-preview.4):
+The reconciled Windows and Android build is available from [this release](https://github.com/antis0007/fastcast-downloads/releases/tag/v0.4.0-preview.5):
 
-- [Windows installer](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.4/FastCast-0.4.0-preview.4-Setup.exe)
-- [Android APK](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.4/FastCast-0.4.0-preview.4-Android.apk)
-- [Linux x64 viewer](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.4/FastCast-0.4.0-preview.4-linux-x64.tar.gz) — Ubuntu 24.04 or compatible; ALSA and GStreamer 1.22+ required. Physical playback acceptance pending.
-- [Portable Windows + Android bundle](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.4/FastCast-0.4.0-preview.4-windows-android-x64.zip)
-- [SHA-256 checksums](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.4/SHA256SUMS.txt)
+- [Windows installer](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.5/FastCast-0.4.0-preview.5-Setup.exe)
+- [Android APK](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.5/FastCast-0.4.0-preview.5-Android.apk)
+- [Linux x64 viewer](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.5/FastCast-0.4.0-preview.5-linux-x64.tar.gz) — Ubuntu 24.04 or compatible; ALSA and GStreamer 1.22+ required. Physical playback acceptance pending.
+- [Portable Windows + Android bundle](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.5/FastCast-0.4.0-preview.5-windows-android-x64.zip)
+- [SHA-256 checksums](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.5/SHA256SUMS.txt)
 
 Windows shares and receives screens. Android receives screens and includes calls
 and in-call chat; Android screen broadcasting is not implemented. These remain
