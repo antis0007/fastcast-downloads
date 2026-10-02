@@ -1,7 +1,7 @@
 {
-  "version": "0.4.0-preview.5",
-  "tag": "v0.4.0-preview.5",
-  "label": "0.4.0 Preview 5",
+  "version": "0.4.0-preview.6",
+  "tag": "v0.4.0-preview.6",
+  "label": "0.4.0 Preview 6",
   "published": "2026-10-02",
   "published_display": "October 2, 2026",
   "status": "Development preview",
@@ -35,39 +35,39 @@
   },
   "assets": {
     "windows": {
-      "filename": "FastCast-0.4.0-preview.5-Setup.exe",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.5/FastCast-0.4.0-preview.5-Setup.exe",
-      "bytes": 12804231,
+      "filename": "FastCast-0.4.0-preview.6-Setup.exe",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Setup.exe",
+      "bytes": 12800938,
       "size": "12.2 MiB",
-      "sha256": "d86b3dbf8fe793b94b87fb9d43a2e1b3ce5f5998a0ef8bf6bc26a21c4e0ba893"
+      "sha256": "c4bcd0c691bda982a33957f0a954ef6a3ba23298cc4d226bfce708d5edfba9ad"
     },
     "android": {
-      "filename": "FastCast-0.4.0-preview.5-Android.apk",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.5/FastCast-0.4.0-preview.5-Android.apk",
-      "bytes": 27537529,
+      "filename": "FastCast-0.4.0-preview.6-Android.apk",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Android.apk",
+      "bytes": 27537533,
       "size": "26.3 MiB",
-      "sha256": "646134df23d4a4d138bd26020acf78d0ad6eaf6beaf071f3a4a234e302980756"
+      "sha256": "b0c18e8b6d0b374f408085b94eed5d6b834a6b1fe89ea5c489353c3b1068342a"
     },
     "bundle": {
-      "filename": "FastCast-0.4.0-preview.5-windows-android-x64.zip",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.5/FastCast-0.4.0-preview.5-windows-android-x64.zip",
-      "bytes": 28732032,
+      "filename": "FastCast-0.4.0-preview.6-windows-android-x64.zip",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-windows-android-x64.zip",
+      "bytes": 28727750,
       "size": "27.4 MiB",
-      "sha256": "c084fe95951efd625db21d59b599193581dc1a7c713a1cb0b884487dcc41c84c"
+      "sha256": "82c08982df91d6a21c880588dc28231d50cbfc2dd7f1b4a18213677bae83b5ba"
     },
     "checksums": {
       "filename": "SHA256SUMS.txt",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.5/SHA256SUMS.txt",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/SHA256SUMS.txt",
       "bytes": 633,
       "size": "633 B",
-      "sha256": "b577592c82b783e5ab30aa0a66c0e4498e40f0c30e23dee2a9133a8f7590e6b6"
+      "sha256": "0a6db88ad2acfd39389f43bed78a9d0d7b2c43f8085fae88843c2703795c139c"
     },
     "linux": {
-      "filename": "FastCast-0.4.0-preview.5-linux-x64.tar.gz",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.5/FastCast-0.4.0-preview.5-linux-x64.tar.gz",
-      "bytes": 12174637,
+      "filename": "FastCast-0.4.0-preview.6-linux-x64.tar.gz",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-linux-x64.tar.gz",
+      "bytes": 12173529,
       "size": "11.6 MiB",
-      "sha256": "6c48ba0725dc54911fef5cc5257494b70521bfdebc22f9c77737e7c63c11c36a"
+      "sha256": "b8ea4ae42f5a6417415f9ad50d26d4fe09da7464d7a25d19ececa466a2bc4aca"
     }
   },
   "screenshots": {
@@ -97,18 +97,19 @@
     }
   },
   "evidence": {
-    "headline": "Preview 5 build and package checks",
-    "framing": "Preview 5 changes remote input and video recovery. Earlier Preview 3 playback results are historical; physical-device and Internet gameplay acceptance for Preview 5 remain pending.",
+    "headline": "Preview 6 build, package and emulator checks",
+    "framing": "Preview 6 preserves queued input age and pending loss feedback. Earlier Preview 3 playback results are historical; physical-device and Internet gameplay acceptance for Preview 6 remain pending.",
     "scope": "Matching {{RELEASE_LABEL}} Windows, Android and Linux viewer packages",
     "items": [
       "Optimized Windows desktop and host builds, signed Android ARM64/x86_64 builds and release lint, and the Linux viewer build passed.",
-      "Package checks validated the embedded versions, Android signature and archive structure, and updater hashes. Every public download matched its local SHA-256.",
-      "Local input and video-recovery regression checks cover delayed input, rejected sends and recovery races. They do not measure gameplay latency.",
-      "Windows and Android were built from 70a598f; Linux was built from 1574155, which adds only a non-Windows compiler type annotation. The source is merged and tagged as Preview 5."
+      "Package checks validated embedded versions, Android signature and archive structure, and updater hashes. All seven public assets matched their local SHA-256.",
+      "Local input and feedback regressions cover queue dwell, partial and rejected sends, and loss-ID retention. They do not measure gameplay latency.",
+      "The signed release APK executed pointer and scroll JNI calls and rejected input without a session on an Android API 36 x86_64 emulator.",
+      "All platforms share production source d801732. The release source tag adds only instrumentation and acceptance documentation; the release includes build provenance."
     ],
     "caveats": [
-      "Use Preview 5 on both ends for remote control. Its input protocol differs from older previews.",
-      "No Android device was connected for the Preview 5 release run. Physical controller/game compatibility, Internet input-to-photon latency and video quality under congestion remain unverified.",
+      "Use Preview 6 on both ends for the latest remote-input fixes. Remote-input protocol remains version 3.",
+      "The emulator check does not establish ARM64 runtime, physical controller/game compatibility, Internet input-to-photon latency or video quality under congestion.",
       "Person cards, menus and the Blocked list have not been checked on a physical Android device, touch hardware or a screen reader.",
       "The Blocked list appears once the hosted comms service is updated; until then it stays empty.",
       "Audible microphone/speaker quality, physical Linux playback and screen sharing between unrelated networks remain unverified. These are not glass-to-glass latency measurements.",
@@ -293,10 +294,19 @@
   ],
   "history": [
     {
+      "version": "0.4.0-preview.6",
+      "tag": "v0.4.0-preview.6",
+      "published": "2026-10-02",
+      "current": true,
+      "label": "0.4.0 Preview 6",
+      "published_display": "October 2, 2026",
+      "summary": "Desktop feedback retains loss IDs omitted from compact packets. Desktop and Android pointer and scroll paths preserve queued sample age. Matched Windows, Android and Linux viewer packages; packaged JNI checks passed on an x86_64 Android emulator. Physical gameplay and Internet latency remain unverified."
+    },
+    {
       "version": "0.4.0-preview.5",
       "tag": "v0.4.0-preview.5",
       "published": "2026-10-02",
-      "current": true,
+      "current": false,
       "label": "0.4.0 Preview 5",
       "published_display": "October 2, 2026",
       "summary": "Remote-play input and recovery improvements: reliable controller button transitions, stale-input expiry, bounded interactive queues and persistent video repair requests. Windows, Android and Linux viewer packages; physical gameplay and Internet latency remain unverified."
