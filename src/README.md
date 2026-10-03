@@ -24,7 +24,7 @@
 
 The reconciled Windows and Android build is available from [this release]({{RELEASE_URL}}):
 
-- [Windows installer]({{WINDOWS_URL}})
+- [Windows portable ZIP]({{WINDOWS_URL}})
 - [Android APK]({{ANDROID_URL}})
 - [Linux x64 viewer]({{LINUX_URL}}) — Ubuntu 24.04 or compatible; ALSA and GStreamer 1.22+ required. Physical playback acceptance pending.
 - [Portable Windows + Android bundle]({{BUNDLE_URL}})
@@ -37,7 +37,7 @@ development-preview packages with physical acceptance pending.
 ## Install the preview
 
 1. Open the [downloads page](https://antis0007.github.io/fastcast-downloads/downloads.html) or the [latest release](https://github.com/antis0007/fastcast-downloads/releases).
-2. On Windows, run `FastCast-<version>-Setup.exe`.
+2. On Windows, close the old app, extract the ZIP and run `Start Pyrenet.cmd` with `FastCast.exe` and `cast-host.exe` together.
 3. On Android 8 or newer, install `FastCast-<version>-Android.apk` and allow installation from that source.
 4. Follow [getting started](https://antis0007.github.io/fastcast-downloads/get-started.html) so both devices stay on the same version.
 

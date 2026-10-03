@@ -24,11 +24,11 @@ Pyrenet is a free development-preview screen-sharing app. Matching Windows, Andr
 
 The reconciled Windows and Android build is available from [this release](https://github.com/antis0007/fastcast-downloads/releases/tag/v0.4.0-preview.6):
 
-- [Windows installer](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Setup.exe)
+- [Windows portable ZIP](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Windows-update-5e6010e.zip)
 - [Android APK](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Android.apk)
 - [Linux x64 viewer](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-linux-x64.tar.gz) — Ubuntu 24.04 or compatible; ALSA and GStreamer 1.22+ required. Physical playback acceptance pending.
-- [Portable Windows + Android bundle](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-windows-android-x64.zip)
-- [SHA-256 checksums](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/SHA256SUMS.txt)
+- [Portable Windows + Android bundle](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-windows-android-update-5e6010e.zip)
+- [SHA-256 checksums](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/SHA256SUMS-Windows-update-5e6010e.txt)
 
 Windows shares and receives screens. Android receives screens and includes calls
 and in-call chat; Android screen broadcasting is not implemented. These remain
@@ -37,7 +37,7 @@ development-preview packages with physical acceptance pending.
 ## Install the preview
 
 1. Open the [downloads page](https://antis0007.github.io/fastcast-downloads/downloads.html) or the [latest release](https://github.com/antis0007/fastcast-downloads/releases).
-2. On Windows, run `FastCast-<version>-Setup.exe`.
+2. On Windows, close the old app, extract the ZIP and run `Start Pyrenet.cmd` with `FastCast.exe` and `cast-host.exe` together.
 3. On Android 8 or newer, install `FastCast-<version>-Android.apk` and allow installation from that source.
 4. Follow [getting started](https://antis0007.github.io/fastcast-downloads/get-started.html) so both devices stay on the same version.
 
