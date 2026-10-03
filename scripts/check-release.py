@@ -31,10 +31,18 @@ def main():
         fail('exactly one history entry must be marked current and match version')
     for key, asset in release['assets'].items():
         url = asset['url']
-        if f'/{tag}/' not in url:
-            fail(f'{key} URL does not include tag {tag}')
-        if version not in url and key != 'checksums':
-            fail(f'{key} URL does not include version {version}')
+        asset_version = asset.get('version', version)
+        if asset_version != version and key != 'linux':
+            fail(f'{key} must match the current Windows/Android release')
+        asset_tag = f'v{asset_version}'
+        if f'/{asset_tag}/' not in url:
+            fail(f'{key} URL does not include tag {asset_tag}')
+        if asset_version not in url and key != 'checksums':
+            fail(f'{key} URL does not include version {asset_version}')
+        if key == 'linux' and asset_version != version:
+            downloads = (ROOT / 'downloads.html').read_text(encoding='utf-8')
+            if f'Linux viewer {asset_version}' not in downloads:
+                fail('The retained Linux viewer version must be visible on downloads.html')
         digest = asset.get('sha256', '')
         if digest and not SHA.match(digest):
             fail(f'{key} sha256 is not 64 lowercase hex chars')

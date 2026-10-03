@@ -1,9 +1,9 @@
 {
-  "version": "0.4.0-preview.6",
-  "tag": "v0.4.0-preview.6",
-  "label": "0.4.0 Preview 6",
-  "published": "2026-10-02",
-  "published_display": "October 2, 2026",
+  "version": "0.4.0-preview.7",
+  "tag": "v0.4.0-preview.7",
+  "label": "0.4.0 Preview 7",
+  "published": "2026-10-03",
+  "published_display": "October 3, 2026",
   "status": "Development preview",
   "network": "Direct peer route, with a Pyrenet relay fallback",
   "offer": "Screen sharing does not require an account. Friends, calls, rooms and files use a device-owned account in this preview.",
@@ -35,40 +35,41 @@
   },
   "assets": {
     "windows": {
-      "filename": "FastCast-0.4.0-preview.6-Windows-update-1d71cca.zip",
-      "bytes": 17118510,
-      "size": "16.3 MiB",
-      "sha256": "0f4a26876b2ad7e4a9690f59bc113f2e5dabfa559b63becf8920dbca42d3cfa9",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Windows-update-1d71cca.zip",
-      "package": "Portable ZIP"
+      "filename": "FastCast-0.4.0-preview.7-Setup.exe",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-Setup.exe",
+      "bytes": 13891634,
+      "size": "13.2 MiB",
+      "sha256": "c0691a6caef7bcf24dfed0d86738c0df7eb09882d0f43a2ebd2a92465a8667fd",
+      "package": "EXE installer"
     },
     "android": {
-      "filename": "FastCast-0.4.0-preview.6-Android.apk",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Android.apk",
-      "bytes": 27537533,
-      "size": "26.3 MiB",
-      "sha256": "b0c18e8b6d0b374f408085b94eed5d6b834a6b1fe89ea5c489353c3b1068342a"
+      "filename": "FastCast-0.4.0-preview.7-Android.apk",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-Android.apk",
+      "bytes": 31091641,
+      "size": "29.7 MiB",
+      "sha256": "2839f84e039013710363b0db6d4039e15651f69fe6b1607263e0e51e88bb15ee"
     },
     "bundle": {
-      "filename": "FastCast-0.4.0-preview.6-windows-android-update-1d71cca.zip",
-      "bytes": 30399974,
-      "size": "29.0 MiB",
-      "sha256": "a2ea20585bd9114bde23558baeb51962f04b01c6144809ae1193761781164a7b",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-windows-android-update-1d71cca.zip"
+      "filename": "FastCast-0.4.0-preview.7-windows-android-x64.zip",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-windows-android-x64.zip",
+      "bytes": 32094523,
+      "size": "30.6 MiB",
+      "sha256": "9cf5902900fd67ae1238845d9aad4043f99c53d27504292ae571e445e2ba6304"
     },
     "checksums": {
-      "filename": "SHA256SUMS-Windows-update-1d71cca.txt",
-      "bytes": 459,
-      "size": "459 B",
-      "sha256": "0f39825f60e0dd7913d23a9f345b8decd10d1d2b21f156723848ebcfff86364a",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/SHA256SUMS-Windows-update-1d71cca.txt"
+      "filename": "SHA256SUMS.txt",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/SHA256SUMS.txt",
+      "bytes": 524,
+      "size": "524 B",
+      "sha256": "bf71f694c4b514fa7673c799c27aabf2d5bf028c77ad049510ab7476a11843dd"
     },
     "linux": {
       "filename": "FastCast-0.4.0-preview.6-linux-x64.tar.gz",
       "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-linux-x64.tar.gz",
       "bytes": 12173529,
       "size": "11.6 MiB",
-      "sha256": "b8ea4ae42f5a6417415f9ad50d26d4fe09da7464d7a25d19ececa466a2bc4aca"
+      "sha256": "b8ea4ae42f5a6417415f9ad50d26d4fe09da7464d7a25d19ececa466a2bc4aca",
+      "version": "0.4.0-preview.6"
     }
   },
   "screenshots": {
@@ -98,24 +99,22 @@
     }
   },
   "evidence": {
-    "headline": "Preview 6 build, package and emulator checks",
-    "framing": "Preview 6 preserves queued input age and pending loss feedback. Earlier Preview 3 playback results are historical; physical-device and Internet gameplay acceptance for Preview 6 remain pending.",
-    "scope": "Matching {{RELEASE_LABEL}} Windows, Android and Linux viewer packages",
+    "headline": "Preview 7 Android and Windows package checks",
+    "framing": "The APK and Windows download contain the integrated streaming and controls changes. Earlier Preview 3 playback and Preview 6 emulator observations concern older packages; current gameplay quality and latency remain unverified.",
+    "scope": "Current Windows and Android Preview 7 packages; retained Linux Preview 6 viewer",
     "items": [
-      "Optimized Windows desktop and host builds, signed Android ARM64/x86_64 builds and release lint, and the Linux viewer build passed.",
-      "Package checks validated embedded versions, Android signature and archive structure, and updater hashes. All seven public assets matched their local SHA-256.",
-      "Local input and feedback regressions cover queue dwell, partial and rejected sends, and loss-ID retention. They do not measure gameplay latency.",
-      "The signed release APK executed pointer and scroll JNI calls and rejected input without a session on an Android API 36 x86_64 emulator.",
-      "All platforms share production source d801732. The release source tag adds only instrumentation and acceptance documentation; the release includes build provenance."
+      "Optimized Windows desktop/host builds and the current-source architecture gate passed.",
+      "Signed Android ARM64 and x86-64 release compilation and lint passed; lint reports 71 warnings and no errors.",
+      "APK version code 22 and signing certificate match the upgrade path. Both packaged JNI libraries exactly match freshly rebuilt libraries after stripping.",
+      "Windows versions, installer, portable bundle, APK archive structure and updater hashes were checked locally.",
+      "Production source c4ce682 is published on the application feature branch; build provenance and SHA-256 checksums accompany the release."
     ],
     "caveats": [
-      "Use Preview 6 on both ends for the latest remote-input fixes. Remote-input protocol remains version 3.",
-      "The emulator check does not establish ARM64 runtime, physical controller/game compatibility, Internet input-to-photon latency or video quality under congestion.",
-      "Person cards, menus and the Blocked list have not been checked on a physical Android device, touch hardware or a screen reader.",
-      "The Blocked list appears once the hosted comms service is updated; until then it stays empty.",
-      "Audible microphone/speaker quality, physical Linux playback and screen sharing between unrelated networks remain unverified. These are not glass-to-glass latency measurements.",
-      "Update every group participant: older unsigned group invitations are rejected.",
-      "Windows is unsigned; Android is debug-signed. Linux requires a compatible desktop, ALSA and GStreamer."
+      "Physical Android, sustained two-PC/GPD gameplay, audible playback and unrelated-network video quality remain unverified for this update.",
+      "No input-to-photon measurement or Steam Link performance parity is claimed.",
+      "No automated tests or hosted CI were run for this update.",
+      "Linux retains its separately published Preview 6 viewer; it has not been qualified with this update.",
+      "Windows is unsigned and Android retains its existing compatible debug signing certificate."
     ]
   },
   "status_legend": [
@@ -164,12 +163,12 @@
         {
           "name": "Android receiving",
           "status": "preview",
-          "detail": "Android 8 or newer receives screens using its decoder. S25 Ultra playback, full-screen pinch zoom and rotation were checked on this release. ARM64 and x86-64 libraries are included; other devices remain unqualified."
+          "detail": "Android 8+ receives screens with rebuilt ARM64 and x86-64 native libraries. Preview 7 includes restored control access, Fill height/Fit, clearer playback timing and a smaller panel that hides after inactivity. Physical-device playback remains unqualified for this build."
         },
         {
           "name": "Windows receiving",
           "status": "available",
-          "detail": "A second Windows PC can receive the screen and system audio. Both ends need matching builds."
+          "detail": "A second Windows PC receives screen and audio through the compact viewer. Preview 7 retains conversion and GPU scaling changes, repair pacing and input controls, separates buffering from decoder pressure and begins buffered decode before display time. Actual gameplay quality remains unverified."
         },
         {
           "name": "Computer audio",
@@ -281,8 +280,8 @@
     }
   ],
   "limitations": [
-    "Windows binaries are unsigned; Android is debug-signed. Update every group participant to this version.",
-    "Windows-to-S25 Ultra playback was checked on a controlled 5 Mbps path. Capture timing still varies; audible media, physical Linux playback and unrelated-network screen sharing remain unverified.",
+    "Windows binaries are unsigned and Android retains the compatible debug signer. Use Preview 7 on both Windows PCs and Android receivers for the current changes.",
+    "Physical Android playback, sustained two-PC/GPD gameplay, audible media and unrelated-network latency/video quality remain unverified for the updated packages.",
     "Direct connections minimize relay traffic; relay fallback still uses relay bandwidth.",
     "Bulk file transfers require a direct route and explicit acceptance; they do not use relay fallback.",
     "Networks blocking all UDP have no call/media fallback. Persistent room discussions use the coordination service.",
@@ -295,10 +294,19 @@
   ],
   "history": [
     {
+      "version": "0.4.0-preview.7",
+      "tag": "v0.4.0-preview.7",
+      "published": "2026-10-03",
+      "published_display": "October 3, 2026",
+      "current": true,
+      "label": "0.4.0 Preview 7",
+      "summary": "Matched Windows and Android streaming update: Android control access, immersive Fit/Fill height and smaller hiding panel; Windows compact viewer, NVENC scaling, decoder conversion, repair pacing and pressure feedback. Buffered decoding begins before display time. APK libraries and signing identity are verified; physical gameplay latency remains unmeasured. Linux retains Preview 6."
+    },
+    {
       "version": "0.4.0-preview.6",
       "tag": "v0.4.0-preview.6",
       "published": "2026-10-02",
-      "current": true,
+      "current": false,
       "label": "0.4.0 Preview 6",
       "published_display": "October 2, 2026",
       "summary": "Desktop feedback retains loss IDs omitted from compact packets. Desktop and Android pointer and scroll paths preserve queued sample age. Matched Windows, Android and Linux viewer packages; packaged JNI checks passed on an x86_64 Android emulator. Physical gameplay and Internet latency remain unverified."
@@ -457,14 +465,14 @@
       "summary": "First published preview ZIP and APK for testing. Historical release; use the current preview unless you need to compare an older package."
     }
   ],
-  "source_commit": "fcd81bb96e95e2c10e69aa881a8ab1090d089283",
+  "source_commit": "c4ce682d475c2bc635eb7432c337b0b8de76f695",
   "windows_update": {
     "published": "2026-10-03",
-    "desktop_source": "1d71cca",
-    "host_source": "19ea87c",
-    "summary": "Windows update reduces high-resolution receiver conversion time, reuses decoder buffers, shows the viewer build revision, and retains GPU-scaled NVENC, controller selection and Gaming presets.",
-    "validation": "Optimized Windows build and architecture check passed. Local static-image native profiling reduced 1440p decode plus conversion from 20.38 ms to 13.52 ms median; native viewer layout reviewed. Sustained two-PC/GPD playback and gameplay remain unverified.",
-    "android": "Unchanged Preview 6 APK",
-    "linux": "Unchanged Preview 6 viewer"
+    "desktop_source": "c4ce682",
+    "host_source": "c4ce682",
+    "summary": "Matched Windows and Android streaming and receiver-controls update.",
+    "validation": "Optimized builds, architecture and package checks passed. Physical gameplay remains unverified.",
+    "android": "New Preview 7 APK, version code 22, with rebuilt native libraries and compatible signer.",
+    "linux": "Retained Preview 6 viewer."
   }
 }

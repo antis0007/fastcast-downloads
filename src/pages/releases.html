@@ -1,19 +1,19 @@
 <section class="page-hero wrap"><h1>Release notes</h1><p class="lede">Review the files, changes, and known limitations for each published release before updating your devices.</p></section>
-<section class="wrap release-entry"><div class="release-date"><span class="tag">WINDOWS UPDATE</span><p>October 3, 2026</p></div><article>
-  <h2>Preview 6 Windows remote-play update</h2>
-  <p>The Windows download and combined Windows/Android bundle now include the updated Windows app. Android and Linux retain their existing Preview 6 packages. This update is a portable ZIP; close the old app, extract into a new folder and run <strong>Start Pyrenet.cmd</strong>.</p>
+<section class="wrap release-entry"><div class="release-date"><span class="tag">WINDOWS + ANDROID</span><p>October 3, 2026</p></div><article>
+  <h2>Preview 7 streaming and receiver controls</h2>
+  <p>The Windows download, Android APK and portable bundle contain the combined streaming and controls changes. Update both Windows PCs and Android receivers. The APK retains the earlier signing certificate and uses version code 22, so it can upgrade the installed preview.</p>
   <ul>
-    <li>Windows 10 capture uses the border setting supported by the operating system.</li>
-    <li>Incoming screen sessions open the viewer, and valid late decoded frames remain available for display.</li>
-    <li>Compact viewer controls, centered video, clear waiting/recovery states and fullscreen without the app shell.</li>
-    <li>Explicit local Xbox controller selection, separate computer/voice audio levels, and Ctrl+Alt+Shift+Backspace to release remote input.</li>
-    <li>Screen-request sessions attach their input controls; controller selection is directly visible in the viewer and host controller grants are applied.</li>
-    <li>Superseded frame-loss reports no longer reset a repaired video chain. Input transport failure disables control while video continues.</li>
-    <li>Gaming presets: 1080p60 at 20 Mbps or 1440p60 at 35 Mbps, with immediate playback. Actual bitrate still adapts to connection capacity.</li>
+    <li>Android restores permitted control access, exposes a mouse/keyboard or gamepad shortcut, and offers immersive Fit/Fill height with bounded panning.</li>
+    <li>A smaller Android live panel hides after inactivity. Tap video to restore it; screen reader timing, keyboard focus and ongoing gestures keep controls accessible. Narrow screens can scroll the view controls.</li>
+    <li>Windows keeps the compact viewer, explicit local controller selection, independent audio levels and input release shortcut.</li>
+    <li>Supported NVIDIA hardware retains NVENC for scaled captures. The receiver keeps buffer reuse and the previously measured conversion changes.</li>
+    <li>Intentional buffering is separated from decoder pressure. Repair frames have a bounded delivery window, stale losses preserve the repaired chain, and input or one viewer failing does not stop independent video.</li>
+    <li>Buffered PC playback begins decoding before display time; Gaming playback remains immediate. Actual bitrate still adapts to the connection.</li>
   </ul>
-  <p>Local checks, the optimized Windows build and native offline layout review passed. Two-PC/GPD playback, 1440p quality and Ace Combat/controller gameplay remain unverified.</p>
+  <p>Optimized Windows builds, Android release builds/lint, architecture and package checks passed locally. Both packaged Android libraries match rebuilt source after stripping. Physical Android and sustained two-PC/GPD gameplay, motion quality and input-to-photon latency remain unverified. No automated tests or hosted CI ran for this update.</p>
   <p>Update both Windows PCs. Before starting the share, the gaming PC must enable the intended viewer's input permissions and have a virtual Xbox controller driver installed. On the handheld, select the connected controller, center the sticks and release buttons, then use <strong>Take control</strong>.</p>
-  <div class="actions"><a class="button primary" href="{{WINDOWS_URL}}">Download Windows update</a><a class="button" href="{{BUNDLE_URL}}">Windows + Android bundle</a><a class="text-link" href="{{CHECKSUMS_URL}}">Update checksums</a></div>
+  <p>The Linux download remains the separately published Preview 6 viewer.</p>
+  <div class="actions"><a class="button primary" href="{{WINDOWS_URL}}">Download Windows update</a><a class="button" href="{{ANDROID_URL}}">Download Android APK</a><a class="button" href="{{BUNDLE_URL}}">Windows + Android bundle</a><a class="text-link" href="{{CHECKSUMS_URL}}">Release checksums</a></div>
 </article></section>
 {{RELEASE_HISTORY}}
 <section class="wrap statement"><h2>Screenshots and release versions</h2><p>The screenshots on this site come from a development interface captured {{CAPTURED}}, so they can differ in detail from the package behind a given tag. Use the version and file links in each release entry to identify the package you are downloading.</p></section>
