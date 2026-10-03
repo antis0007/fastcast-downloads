@@ -35,11 +35,11 @@
   },
   "assets": {
     "windows": {
-      "filename": "FastCast-0.4.0-preview.6-Windows-update-0796b00.zip",
-      "bytes": 17114731,
+      "filename": "FastCast-0.4.0-preview.6-Windows-update-19ea87c.zip",
+      "bytes": 17114225,
       "size": "16.3 MiB",
-      "sha256": "1deedd6c6f6b4bd2d41c812418694cf011976548549c2029f55b5a452e92193e",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Windows-update-0796b00.zip",
+      "sha256": "c1a0a89514ff6910852e8eec87ee0bf0628551bfd044b28bd0aae047c816ca35",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Windows-update-19ea87c.zip",
       "package": "Portable ZIP"
     },
     "android": {
@@ -50,18 +50,18 @@
       "sha256": "b0c18e8b6d0b374f408085b94eed5d6b834a6b1fe89ea5c489353c3b1068342a"
     },
     "bundle": {
-      "filename": "FastCast-0.4.0-preview.6-windows-android-update-0796b00.zip",
-      "bytes": 30396189,
+      "filename": "FastCast-0.4.0-preview.6-windows-android-update-19ea87c.zip",
+      "bytes": 30395688,
       "size": "29.0 MiB",
-      "sha256": "2ba60414cbf1c9bf40f9dd933fe612d1bbb264f7272197473a2b3b0746f9da5f",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-windows-android-update-0796b00.zip"
+      "sha256": "2252899edf6e61eb4ed5fcd9f35ca0b88ef4d89a9c3aebd641beb957c64ce1cc",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-windows-android-update-19ea87c.zip"
     },
     "checksums": {
-      "filename": "SHA256SUMS-Windows-update-0796b00.txt",
+      "filename": "SHA256SUMS-Windows-update-19ea87c.txt",
       "bytes": 459,
       "size": "459 B",
-      "sha256": "7dfc144e63025070ffb219aa7efc11f3b4f5be33e2207851c1c2f39c373ef591",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/SHA256SUMS-Windows-update-0796b00.txt"
+      "sha256": "8f6ff16f31461f7495c422112552bff0a82767d2533b6f14f27a86af2992218d",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/SHA256SUMS-Windows-update-19ea87c.txt"
     },
     "linux": {
       "filename": "FastCast-0.4.0-preview.6-linux-x64.tar.gz",
@@ -461,9 +461,9 @@
   "windows_update": {
     "published": "2026-10-03",
     "desktop_source": "0796b00",
-    "host_source": "b06d308",
-    "summary": "Matched Windows host/viewer with screen-request input initialization, visible local controller selection, host controller-grant updates, repaired-reference continuity and Gaming presets.",
-    "validation": "Local compilation, optimized matched Windows build and architecture check passed; native offline layout reviewed. Physical two-PC/GPD playback and gameplay remain unverified.",
+    "host_source": "19ea87c",
+    "summary": "Windows update keeps scaled output and resized windows on NVIDIA NVENC, corrects over-sensitive quality reduction, and includes visible controller selection and Gaming presets.",
+    "validation": "Optimized Windows build and architecture check passed. GPU scaling and completed NVENC output measured locally on RTX 4090 with static images; viewer layout reviewed. Sustained two-PC/GPD playback and gameplay remain unverified.",
     "android": "Unchanged Preview 6 APK",
     "linux": "Unchanged Preview 6 viewer"
   }
