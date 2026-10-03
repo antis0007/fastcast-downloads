@@ -35,11 +35,11 @@
   },
   "assets": {
     "windows": {
-      "filename": "FastCast-0.4.0-preview.7-Setup.exe",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-Setup.exe",
-      "bytes": 13891634,
-      "size": "13.2 MiB",
-      "sha256": "c0691a6caef7bcf24dfed0d86738c0df7eb09882d0f43a2ebd2a92465a8667fd",
+      "filename": "FastCast-0.4.0-preview.7-PC-Fullscreen-Setup.exe",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-PC-Fullscreen-Setup.exe",
+      "bytes": 13895876,
+      "size": "13.3 MB",
+      "sha256": "1f5a49f3144a051d083e55da61f5b8242f7e300eedb37b0978940d93660157e0",
       "package": "EXE installer"
     },
     "android": {
@@ -50,18 +50,18 @@
       "sha256": "2839f84e039013710363b0db6d4039e15651f69fe6b1607263e0e51e88bb15ee"
     },
     "bundle": {
-      "filename": "FastCast-0.4.0-preview.7-windows-android-x64.zip",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-windows-android-x64.zip",
-      "bytes": 32094523,
-      "size": "30.6 MiB",
-      "sha256": "9cf5902900fd67ae1238845d9aad4043f99c53d27504292ae571e445e2ba6304"
+      "filename": "FastCast-0.4.0-preview.7-PC-Fullscreen-windows-android-x64.zip",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-PC-Fullscreen-windows-android-x64.zip",
+      "bytes": 32110163,
+      "size": "30.6 MB",
+      "sha256": "d942f3305125dbf1a8850f32d6752a45e25cb9d6d50d62cfb82dc8507ba5107d"
     },
     "checksums": {
-      "filename": "SHA256SUMS.txt",
-      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/SHA256SUMS.txt",
-      "bytes": 524,
-      "size": "524 B",
-      "sha256": "bf71f694c4b514fa7673c799c27aabf2d5bf028c77ad049510ab7476a11843dd"
+      "filename": "SHA256SUMS-PC-Fullscreen.txt",
+      "url": "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/SHA256SUMS-PC-Fullscreen.txt",
+      "bytes": 581,
+      "size": "581 bytes",
+      "sha256": "4368b3f84dd3e8ce994fbdc9bb45f826d1f4d9718f4c6baf1ddc31708a445500"
     },
     "linux": {
       "filename": "FastCast-0.4.0-preview.6-linux-x64.tar.gz",
