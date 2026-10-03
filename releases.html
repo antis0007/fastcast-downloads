@@ -41,16 +41,20 @@
   </header>
   <main id="main" tabindex="-1"><section class="page-hero wrap"><h1>Release notes</h1><p class="lede">Review the files, changes, and known limitations for each published release before updating your devices.</p></section>
 <section class="wrap release-entry"><div class="release-date"><span class="tag">WINDOWS UPDATE</span><p>October 3, 2026</p></div><article>
-  <h2>Preview 6 Windows capture and viewer update</h2>
+  <h2>Preview 6 Windows remote-play update</h2>
   <p>The Windows download and combined Windows/Android bundle now include the updated Windows app. Android and Linux retain their existing Preview 6 packages. This update is a portable ZIP; close the old app, extract into a new folder and run <strong>Start Pyrenet.cmd</strong>.</p>
   <ul>
     <li>Windows 10 capture uses the border setting supported by the operating system.</li>
     <li>Incoming screen sessions open the viewer, and valid late decoded frames remain available for display.</li>
     <li>Compact viewer controls, centered video, clear waiting/recovery states and fullscreen without the app shell.</li>
     <li>Explicit local Xbox controller selection, separate computer/voice audio levels, and Ctrl+Alt+Shift+Backspace to release remote input.</li>
+    <li>Screen-request sessions attach their input controls; controller selection is directly visible in the viewer and host controller grants are applied.</li>
+    <li>Superseded frame-loss reports no longer reset a repaired video chain. Input transport failure disables control while video continues.</li>
+    <li>Gaming presets: 1080p60 at 20 Mbps or 1440p60 at 35 Mbps, with immediate playback. Actual bitrate still adapts to connection capacity.</li>
   </ul>
   <p>Local checks, the optimized Windows build and native offline layout review passed. Two-PC/GPD playback, 1440p quality and Ace Combat/controller gameplay remain unverified.</p>
-  <div class="actions"><a class="button primary" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Windows-update-5e6010e.zip">Download Windows update</a><a class="button" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-windows-android-update-5e6010e.zip">Windows + Android bundle</a><a class="text-link" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/SHA256SUMS-Windows-update-5e6010e.txt">Update checksums</a></div>
+  <p>Update both Windows PCs. Before starting the share, the gaming PC must enable the intended viewer's input permissions and have a virtual Xbox controller driver installed. On the handheld, select the connected controller, center the sticks and release buttons, then use <strong>Take control</strong>.</p>
+  <div class="actions"><a class="button primary" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Windows-update-0796b00.zip">Download Windows update</a><a class="button" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-windows-android-update-0796b00.zip">Windows + Android bundle</a><a class="text-link" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/SHA256SUMS-Windows-update-0796b00.txt">Update checksums</a></div>
 </article></section>
 <section class="wrap release-entry"><div class="release-date"><span class="tag">CURRENT PREVIEW</span><p>October 2, 2026</p></div><article>
   <h2>Pyrenet 0.4.0 Preview 6</h2>
@@ -66,7 +70,7 @@
   <h3>Known limitations</h3>
   <ul><li>Windows binaries are unsigned; Android is debug-signed. Update every group participant to this version.</li><li>Windows-to-S25 Ultra playback was checked on a controlled 5 Mbps path. Capture timing still varies; audible media, physical Linux playback and unrelated-network screen sharing remain unverified.</li><li>Direct connections minimize relay traffic; relay fallback still uses relay bandwidth.</li><li>Bulk file transfers require a direct route and explicit acceptance; they do not use relay fallback.</li><li>Networks blocking all UDP have no call/media fallback. Persistent room discussions use the coordination service.</li><li>Automatic Table viewing is view-only. Named-account remote control currently requires a compatible Windows viewer.</li><li>Android receives screens and supports calls/chat; Android screen broadcasting is not implemented.</li><li>No owner/process migration or durable offline peer chat is provided.</li><li>macOS, iPhone, iPad and browser apps are not available.</li><li>Linux is viewer-only and dynamically linked; use Ubuntu 24.04 or a compatible desktop with ALSA and GStreamer 1.22+.</li><li>Windows room voice channels have hosted coordination support. Shared viewer cursors and measured multi-device latency remain unfinished. Search covers loaded messages in one selected conversation, not a global index.</li></ul>
   <p class="note">SHA-256 checks confirm the published files match their recorded hashes. Device and network compatibility require separate testing.</p>
-  <div class="actions"><a class="button primary" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Windows-update-5e6010e.zip">Download Windows app</a><a class="button" href="downloads.html">All packages</a><a class="text-link" href="https://github.com/antis0007/fastcast-downloads/releases/tag/v0.4.0-preview.6">Original release notes ↗</a></div>
+  <div class="actions"><a class="button primary" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-Windows-update-0796b00.zip">Download Windows app</a><a class="button" href="downloads.html">All packages</a><a class="text-link" href="https://github.com/antis0007/fastcast-downloads/releases/tag/v0.4.0-preview.6">Original release notes ↗</a></div>
 </article></section>
 <section class="wrap release-entry"><div class="release-date"><span class="tag neutral">PREVIOUS PREVIEW</span><p>October 2, 2026</p></div><article>
   <h2>FastCast 0.4.0 Preview 5</h2>

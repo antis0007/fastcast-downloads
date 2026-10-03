@@ -1,14 +1,18 @@
 <section class="page-hero wrap"><h1>Release notes</h1><p class="lede">Review the files, changes, and known limitations for each published release before updating your devices.</p></section>
 <section class="wrap release-entry"><div class="release-date"><span class="tag">WINDOWS UPDATE</span><p>October 3, 2026</p></div><article>
-  <h2>Preview 6 Windows capture and viewer update</h2>
+  <h2>Preview 6 Windows remote-play update</h2>
   <p>The Windows download and combined Windows/Android bundle now include the updated Windows app. Android and Linux retain their existing Preview 6 packages. This update is a portable ZIP; close the old app, extract into a new folder and run <strong>Start Pyrenet.cmd</strong>.</p>
   <ul>
     <li>Windows 10 capture uses the border setting supported by the operating system.</li>
     <li>Incoming screen sessions open the viewer, and valid late decoded frames remain available for display.</li>
     <li>Compact viewer controls, centered video, clear waiting/recovery states and fullscreen without the app shell.</li>
     <li>Explicit local Xbox controller selection, separate computer/voice audio levels, and Ctrl+Alt+Shift+Backspace to release remote input.</li>
+    <li>Screen-request sessions attach their input controls; controller selection is directly visible in the viewer and host controller grants are applied.</li>
+    <li>Superseded frame-loss reports no longer reset a repaired video chain. Input transport failure disables control while video continues.</li>
+    <li>Gaming presets: 1080p60 at 20 Mbps or 1440p60 at 35 Mbps, with immediate playback. Actual bitrate still adapts to connection capacity.</li>
   </ul>
   <p>Local checks, the optimized Windows build and native offline layout review passed. Two-PC/GPD playback, 1440p quality and Ace Combat/controller gameplay remain unverified.</p>
+  <p>Update both Windows PCs. Before starting the share, the gaming PC must enable the intended viewer's input permissions and have a virtual Xbox controller driver installed. On the handheld, select the connected controller, center the sticks and release buttons, then use <strong>Take control</strong>.</p>
   <div class="actions"><a class="button primary" href="{{WINDOWS_URL}}">Download Windows update</a><a class="button" href="{{BUNDLE_URL}}">Windows + Android bundle</a><a class="text-link" href="{{CHECKSUMS_URL}}">Update checksums</a></div>
 </article></section>
 {{RELEASE_HISTORY}}
