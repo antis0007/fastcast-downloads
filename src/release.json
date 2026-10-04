@@ -153,7 +153,7 @@
                                                 {
                                                     "name":  "Video quality controls",
                                                     "status":  "available",
-                                                    "detail":  "Choose source size or a 480p, 720p, 1080p, 1440p or 2160p resolution limit, 30 or 60 fps, and 1â€“50 Mb/s. The 5 Mbps Wi-Fi preset uses 720p, 30 fps and a 3 Mb/s video ceiling. Reduced resolution uses CPU encoding; sustained 60 fps depends on the PC."
+                                                    "detail":  "Choose source size or a 480p, 720p, 1080p, 1440p or 2160p resolution limit, 30 or 60 fps, and 1\u00e2\u20ac\u201c50 Mb/s. The 5 Mbps Wi-Fi preset uses 720p, 30 fps and a 3 Mb/s video ceiling. Reduced resolution uses CPU encoding; sustained 60 fps depends on the PC."
                                                 },
                                                 {
                                                     "name":  "H.264 encoding",
