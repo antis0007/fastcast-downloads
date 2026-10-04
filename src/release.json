@@ -1,9 +1,9 @@
 {
-    "version":  "0.4.0-preview.7",
-    "tag":  "v0.4.0-preview.7",
-    "label":  "0.4.0 Preview 7",
-    "published":  "2026-10-03",
-    "published_display":  "October 3, 2026",
+    "version":  "0.4.0-preview.8",
+    "tag":  "v0.4.0-preview.8",
+    "label":  "0.4.0 Preview 8",
+    "published":  "2026-10-04",
+    "published_display":  "October 4, 2026",
     "status":  "Development preview",
     "network":  "Direct peer route, with a Pyrenet relay fallback",
     "offer":  "Screen sharing does not require an account. Friends, calls, rooms and files use a device-owned account in this preview.",
@@ -35,33 +35,38 @@
                 },
     "assets":  {
                    "windows":  {
-                                   "filename":  "FastCast-0.4.0-preview.7-PC-Fullscreen-Setup.exe",
-                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-PC-Fullscreen-Setup.exe",
-                                   "bytes":  13895876,
-                                   "size":  "13.3 MB",
-                                   "sha256":  "1f5a49f3144a051d083e55da61f5b8242f7e300eedb37b0978940d93660157e0",
-                                   "package":  "EXE installer"
+                                   "filename":  "FastCast-0.4.0-preview.8-Setup.exe",
+                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.8/FastCast-0.4.0-preview.8-Setup.exe",
+                                   "size":  "16.6 MB",
+                                   "bytes":  17418387,
+                                   "sha256":  "bf621690fd88d6eb9792d5d7cf49c5c16d15c43d03c330071a83adfcdc571c97",
+                                   "role":  "Windows sender and receiver",
+                                   "signing":  "Unsigned preview"
                                },
                    "android":  {
-                                   "filename":  "FastCast-0.4.0-preview.7-Android.apk",
-                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-Android.apk",
-                                   "bytes":  31091641,
-                                   "size":  "29.7 MiB",
-                                   "sha256":  "2839f84e039013710363b0db6d4039e15651f69fe6b1607263e0e51e88bb15ee"
+                                   "filename":  "FastCast-0.4.0-preview.8-Android.apk",
+                                   "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.8/FastCast-0.4.0-preview.8-Android.apk",
+                                   "size":  "30.4 MB",
+                                   "bytes":  31871590,
+                                   "sha256":  "5f999a0b67444c8d6dd01b8dbb10bdcd0817a71e46472fbbd2b1639f67401d67",
+                                   "role":  "Android viewer",
+                                   "signing":  "Debug-signed preview"
                                },
                    "bundle":  {
-                                  "filename":  "FastCast-0.4.0-preview.7-PC-Fullscreen-windows-android-x64.zip",
-                                  "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-PC-Fullscreen-windows-android-x64.zip",
-                                  "bytes":  32110163,
-                                  "size":  "30.6 MB",
-                                  "sha256":  "d942f3305125dbf1a8850f32d6752a45e25cb9d6d50d62cfb82dc8507ba5107d"
+                                  "filename":  "FastCast-0.4.0-preview.8-windows-android-x64.zip",
+                                  "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.8/FastCast-0.4.0-preview.8-windows-android-x64.zip",
+                                  "size":  "35.2 MB",
+                                  "bytes":  36922124,
+                                  "sha256":  "6cdbd0424d4f35f4a6efb329981de5867a61118ee330b77fe4d029b0f1529eea",
+                                  "role":  "Portable Windows + Android bundle",
+                                  "signing":  "Same unsigned Windows and debug-signed Android packages"
                               },
                    "checksums":  {
-                                     "filename":  "SHA256SUMS-PC-Fullscreen.txt",
-                                     "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/SHA256SUMS-PC-Fullscreen.txt",
-                                     "bytes":  581,
-                                     "size":  "581 bytes",
-                                     "sha256":  "4368b3f84dd3e8ce994fbdc9bb45f826d1f4d9718f4c6baf1ddc31708a445500"
+                                     "filename":  "SHA256SUMS.txt",
+                                     "url":  "https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.8/SHA256SUMS.txt",
+                                     "size":  "410 B",
+                                     "bytes":  410,
+                                     "sha256":  "84b29df97ab0d936928a93cfaf36314f62d74928add921caa899769d2d642df2"
                                  },
                    "linux":  {
                                  "filename":  "FastCast-0.4.0-preview.6-linux-x64.tar.gz",
@@ -153,7 +158,7 @@
                                                 {
                                                     "name":  "Video quality controls",
                                                     "status":  "available",
-                                                    "detail":  "Choose source size or a 480p, 720p, 1080p, 1440p or 2160p resolution limit, 30 or 60 fps, and 1\u00e2\u20ac\u201c50 Mb/s. The 5 Mbps Wi-Fi preset uses 720p, 30 fps and a 3 Mb/s video ceiling. Reduced resolution uses CPU encoding; sustained 60 fps depends on the PC."
+                                                    "detail":  "Choose source size or a 480p, 720p, 1080p, 1440p or 2160p resolution limit, 30 or 60 fps, and 1â€“50 Mb/s. The 5 Mbps Wi-Fi preset uses 720p, 30 fps and a 3 Mb/s video ceiling. Reduced resolution uses CPU encoding; sustained 60 fps depends on the PC."
                                                 },
                                                 {
                                                     "name":  "H.264 encoding",
@@ -294,12 +299,21 @@
                     ],
     "history":  [
                     {
+                        "version":  "0.4.0-preview.8",
+                        "tag":  "v0.4.0-preview.8",
+                        "published":  "2026-10-04",
+                        "current":  true,
+                        "label":  "0.4.0 Preview 8",
+                        "published_display":  "October 4, 2026",
+                        "summary":  "Receiver-owned video recovery, bundled controller support and independent community sync"
+                    },
+                    {
                         "version":  "0.4.0-preview.7",
                         "tag":  "v0.4.0-preview.7",
                         "published":  "2026-10-03",
-                        "published_display":  "October 3, 2026",
-                        "current":  true,
+                        "current":  false,
                         "label":  "0.4.0 Preview 7",
+                        "published_display":  "October 3, 2026",
                         "summary":  "Matched Windows and Android streaming update: Android control access, immersive Fit/Fill height and smaller hiding panel; Windows compact viewer, NVENC scaling, decoder conversion, repair pacing and pressure feedback. Buffered decoding begins before display time. APK libraries and signing identity are verified; physical gameplay latency remains unmeasured. Linux retains Preview 6."
                     },
                     {
@@ -324,45 +338,45 @@
                         "version":  "0.4.0-preview.4",
                         "tag":  "v0.4.0-preview.4",
                         "published":  "2026-09-29",
-                        "published_display":  "September 29, 2026",
-                        "label":  "0.4.0 Preview 4",
                         "current":  false,
+                        "label":  "0.4.0 Preview 4",
+                        "published_display":  "September 29, 2026",
                         "summary":  "Person cards with the same actions everywhere (right-click, long-press, Shift+F10), confirmed Remove friend and Block, a Blocked list, Table seat actions, the Android person sheet, and desktop menus sized and placed like other chat apps. Matching Windows, Android and Linux viewer packages; the hosted service is unchanged, so the Blocked list stays empty until it is updated."
                     },
                     {
                         "version":  "0.4.0-preview.3",
                         "tag":  "v0.4.0-preview.3",
                         "published":  "2026-09-29",
-                        "published_display":  "September 29, 2026",
-                        "label":  "0.4.0 Preview 3",
                         "current":  false,
+                        "label":  "0.4.0 Preview 3",
+                        "published_display":  "September 29, 2026",
                         "summary":  "Paced screen sharing, on-demand CPU refresh frames, Android loss recovery and full-screen zoom/rotation, resolution controls and a 5 Mbps preset. Group senders now authenticate individually; update all participants. Windows-to-S25 playback and generated-audio group recovery checks passed. Hosted services and matching Windows, Android and Linux viewer packages updated."
                     },
                     {
                         "version":  "0.4.0-preview.2",
                         "tag":  "v0.4.0-preview.2",
                         "published":  "2026-09-28",
-                        "published_display":  "September 28, 2026",
                         "current":  false,
                         "label":  "0.4.0 Preview 2",
+                        "published_display":  "September 28, 2026",
                         "summary":  "Local message times, adjustable desktop text and density, reduced motion, loaded-conversation search, integrated share/voice lifecycle improvements, and matching Windows, Android and Linux viewer packages. Physical acceptance remains pending; the hosted service is unchanged."
                     },
                     {
                         "version":  "0.4.0-preview.1",
                         "tag":  "v0.4.0-preview.1",
                         "published":  "2026-09-23",
-                        "published_display":  "September 23, 2026",
                         "current":  false,
                         "label":  "0.4.0 Preview 1",
+                        "published_display":  "September 23, 2026",
                         "summary":  "Conversation navigation and responsive Messages layout, bounded session text, reaction history, peer-data generation fencing, COVE checks, and matching Windows and Android preview packages. Physical playback and call acceptance remain open."
                     },
                     {
                         "version":  "0.3.3-preview.2",
                         "tag":  "v0.3.3-preview.2",
                         "published":  "2026-09-20",
-                        "published_display":  "September 20, 2026",
                         "current":  false,
                         "label":  "0.3.3 Preview 2",
+                        "published_display":  "September 20, 2026",
                         "summary":  "Pyrenet branding, the Gold interface palette, and a Windows audio-device enumeration lifetime fix. Matching Windows and Android preview packages; physical playback and call acceptance remain open."
                     },
                     {
@@ -474,5 +488,6 @@
                            "validation":  "Published after local compilation and package verification. Physical playback, WAN recovery and driver installation remain unverified.",
                            "android":  "Matching rebuilt APK, version code 23, with the compatible preview signer.",
                            "linux":  "Retained Preview 6 viewer."
-                       }
+                       },
+    "android_version_code":  23
 }
