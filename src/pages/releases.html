@@ -1,4 +1,17 @@
 <section class="page-hero wrap"><h1>Release notes</h1><p class="lede">Review the files, changes, and known limitations for each published release before updating your devices.</p></section>
+<section class="wrap release-entry"><div class="release-date"><span class="tag">WINDOWS UPDATE</span><p>October 3, 2026</p></div><article>
+  <h2>Preview 7 PC fullscreen patch</h2>
+  <p>The current Windows installer and portable ZIP include this patch. Install it manually on both Windows PCs, including PCs already running Preview 7. The app still reports Preview 7; choose the files with <strong>PC-Fullscreen</strong> in their names. The ZIP includes the released Preview 7 Android APK.</p>
+  <ul>
+    <li>Fullscreen uses the complete window for video. A temporary overlay gives access to controls without reducing the picture.</li>
+    <li>Controls hide during remote input. Ctrl+Alt+Shift+Space releases input and opens controls; Ctrl+Alt+Shift+Backspace releases input and exits fullscreen. While watching, the top edge reveals controls.</li>
+    <li>Take control, mute and fullscreen remain directly accessible. More contains input devices, audio levels, view options, connection details and disconnect.</li>
+    <li>Enabling remote input selects immediate Gaming playback. A direct 1080p60 / 20 Mbps preset is available on the sharing PC. Connection details show the negotiated video buffer and slow decode work.</li>
+    <li>Older retry keyframes cannot reset a healthy decoder that has advanced past them. Reliable bootstrap frames also count in complete-frame observations.</li>
+  </ul>
+  <p>Local compilation, native fullscreen layout captures and architecture validation cover this patch. Live stream quality, gameplay latency and recovery under network loss still require physical-device verification.</p>
+  <p><a class="button" href="downloads.html">Download PC fullscreen patch ↓</a></p>
+</article></section>
 <section class="wrap release-entry"><div class="release-date"><span class="tag">WINDOWS + ANDROID</span><p>October 3, 2026</p></div><article>
   <h2>Preview 7 streaming and receiver controls</h2>
   <p>The Windows download, Android APK and portable bundle contain the combined streaming and controls changes. Update both Windows PCs and Android receivers. The APK retains the earlier signing certificate and uses version code 22, so it can upgrade the installed preview.</p>

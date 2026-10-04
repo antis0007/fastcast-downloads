@@ -24,11 +24,11 @@ Pyrenet is a free development-preview screen-sharing app. Matching Windows, Andr
 
 The reconciled Windows and Android build is available from [this release](https://github.com/antis0007/fastcast-downloads/releases/tag/v0.4.0-preview.7):
 
-- [Windows portable ZIP](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-Setup.exe)
+- [Windows portable ZIP](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-PC-Fullscreen-Setup.exe)
 - [Android APK](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-Android.apk)
 - [Linux x64 viewer](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.6/FastCast-0.4.0-preview.6-linux-x64.tar.gz) — Ubuntu 24.04 or compatible; ALSA and GStreamer 1.22+ required. Physical playback acceptance pending.
-- [Portable Windows + Android bundle](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-windows-android-x64.zip)
-- [SHA-256 checksums](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/SHA256SUMS.txt)
+- [Portable Windows + Android bundle](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-PC-Fullscreen-windows-android-x64.zip)
+- [SHA-256 checksums](https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/SHA256SUMS-PC-Fullscreen.txt)
 
 Windows shares and receives screens. Android receives screens and includes calls
 and in-call chat; Android screen broadcasting is not implemented. These remain
