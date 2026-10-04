@@ -40,9 +40,20 @@
     </div>
   </header>
   <main id="main" tabindex="-1"><section class="page-hero wrap"><h1>Release notes</h1><p class="lede">Review the files, changes, and known limitations for each published release before updating your devices.</p></section>
+<section class="wrap release-entry"><div class="release-date"><span class="tag">WINDOWS + ANDROID</span><p>October 3, 2026</p></div><article>
+  <h2>0.4.0 Preview 7 video recovery and controller setup</h2>
+  <p>Update both Windows PCs and Android receivers. The Windows installer and portable bundle include the controller driver, so no separate driver download is needed. Windows asks for administrator approval when controller support is missing; an existing shared driver stays installed.</p>
+  <ul>
+    <li>Video recovery tracks picture progress independently of audio. A decoder that stops producing pictures is recreated for the next repair keyframe.</li>
+    <li>Static-picture keepalives confirm only the frame actually decoded. The earlier fullscreen, remote-play controls and keyframe delivery fixes remain included.</li>
+    <li>Windows and both Android native libraries are built from the same committed source, with package checksums verified before the download links change.</li>
+  </ul>
+  <p>This is a development preview. Compilation and package verification do not establish physical playback, WAN recovery or controller installation acceptance. No automated tests or hosted build CI were run. Community content sync requires a separate server upgrade that this release does not deploy.</p>
+  <div class="actions"><a class="button primary" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-PC-Fullscreen-Setup.exe">Download Windows update</a><a class="button" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-Android.apk">Download Android APK</a><a class="button" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-PC-Fullscreen-windows-android-x64.zip">Windows + Android bundle</a><a class="text-link" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/SHA256SUMS-PC-Fullscreen.txt">Release checksums</a></div>
+</article></section>
 <section class="wrap release-entry"><div class="release-date"><span class="tag">WINDOWS UPDATE</span><p>October 3, 2026</p></div><article>
   <h2>Preview 7 PC fullscreen patch</h2>
-  <p>The current Windows installer and portable ZIP include this patch. Install it manually on both Windows PCs, including PCs already running Preview 7. The app still reports Preview 7; choose the files with <strong>PC-Fullscreen</strong> in their names. The ZIP includes the released Preview 7 Android APK.</p>
+  <p>The Preview 7 Windows installer and portable ZIP named PC-Fullscreen include this patch. Install it manually on both Windows PCs, including PCs already running Preview 7. The app still reports Preview 7; choose the files with <strong>PC-Fullscreen</strong> in their names. The ZIP includes the released Preview 7 Android APK.</p>
   <ul>
     <li>Fullscreen uses the complete window for video. A temporary overlay gives access to controls without reducing the picture.</li>
     <li>Controls hide during remote input. Ctrl+Alt+Shift+Space releases input and opens controls; Ctrl+Alt+Shift+Backspace releases input and exits fullscreen. While watching, the top edge reveals controls.</li>
@@ -51,7 +62,7 @@
     <li>Older retry keyframes cannot reset a healthy decoder that has advanced past them. Reliable bootstrap frames also count in complete-frame observations.</li>
   </ul>
   <p>Local compilation, native fullscreen layout captures and architecture validation cover this patch. Live stream quality, gameplay latency and recovery under network loss still require physical-device verification.</p>
-  <p><a class="button" href="downloads.html">Download PC fullscreen patch ↓</a></p>
+  <p><a class="button" href="https://github.com/antis0007/fastcast-downloads/releases/download/v0.4.0-preview.7/FastCast-0.4.0-preview.7-PC-Fullscreen-Setup.exe">Download PC fullscreen patch ↓</a></p>
 </article></section>
 <section class="wrap release-entry"><div class="release-date"><span class="tag">WINDOWS + ANDROID</span><p>October 3, 2026</p></div><article>
   <h2>Preview 7 streaming and receiver controls</h2>
